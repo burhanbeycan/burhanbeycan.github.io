@@ -709,6 +709,119 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Lectures Section
+--------------------------------------------------------------*/
+.lectures {
+  padding: 80px 0;
+}
+
+.lectures .section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.lectures .course-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+  margin-bottom: 30px;
+}
+
+.lectures .course-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+.lectures .course-img {
+  overflow: hidden;
+  height: 200px;
+}
+
+.lectures .course-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.lectures .course-item:hover .course-img img {
+  transform: scale(1.1);
+}
+
+.lectures .course-info {
+  padding: 25px;
+}
+
+.lectures .course-info h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.lectures .course-info h4 a {
+  color: #173b6c;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.lectures .course-info h4 a:hover {
+  color: #149ddd;
+}
+
+.lectures .course-info p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.lectures .course-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.lectures .course-details span {
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.lectures .course-details span i {
+  margin-right: 5px;
+  color: #149ddd;
+}
+
+.lectures .course-level {
+  background: #149ddd;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lectures .course-item {
+    margin-bottom: 20px;
+  }
+  
+  .lectures .course-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
 .contact {
