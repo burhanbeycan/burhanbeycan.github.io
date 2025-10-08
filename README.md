@@ -2,6 +2,12 @@
 
 A professional, responsive CV website showcasing the research and academic achievements of Burhan Beycan, a multidisciplinary researcher specializing in polymer chemistry and artificial intelligence.
 
+[![Burhan_Beycan Preview](burhan_beycan_preview.webp)](https://burhanbeycan.github.io/)
+
+
+
+
+
 ## 🎯 Features
 
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
