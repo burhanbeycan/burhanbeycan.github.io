@@ -8,6 +8,33 @@ A professional, responsive CV website showcasing the research and academic achie
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🎯 Features
 
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
