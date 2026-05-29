@@ -1,0 +1,54 @@
+name: Validate GitHub project portfolio
+
+on:
+  pull_request:
+    paths:
+      - "assets/data/github-projects.json"
+      - "assets/js/github-projects.js"
+      - "assets/css/github-projects.css"
+      - "github-projects.html"
+      - "scripts/validate-github-projects.py"
+      - ".github/workflows/validate-github-projects.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "assets/data/github-projects.json"
+      - "assets/js/github-projects.js"
+      - "assets/css/github-projects.css"
+      - "github-projects.html"
+      - "scripts/validate-github-projects.py"
+      - ".github/workflows/validate-github-projects.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate project data and static assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate project JSON
+        run: python scripts/validate-github-projects.py assets/data/github-projects.json
+
+      - name: Check required static files exist
+        run: |
+          test -f github-projects.html
+          test -f assets/data/github-projects.json
+          test -f assets/css/github-projects.css
+          test -f assets/js/github-projects.js
+
+      - name: Check HTML references integration assets
+        run: |
+          grep -q "assets/data/github-projects.json" assets/js/github-projects.js
+          grep -q "assets/css/github-projects.css" github-projects.html
+          grep -q "assets/js/github-projects.js" github-projects.html
