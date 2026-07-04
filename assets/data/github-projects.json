@@ -1,0 +1,167 @@
+{
+  "profile": {
+    "name": "Burhan Beycan",
+    "positioning": "Applied AI / Machine Learning Researcher with PhD-level scientific R&D expertise",
+    "website": "https://burhanbeycan.github.io",
+    "github_owner": "burhanbeycan"
+  },
+  "categories": [
+    {
+      "id": "general-ai",
+      "label": "General AI",
+      "summary": "LLM/RAG, model evaluation, and deployable AI applications beyond chemistry."
+    },
+    {
+      "id": "computer-vision",
+      "label": "Computer Vision",
+      "summary": "Detection, tracking, image analytics, and real-time decision systems."
+    },
+    {
+      "id": "scientific-ai",
+      "label": "Scientific AI",
+      "summary": "Materials informatics, experimental optimization, and AI for R&D workflows."
+    },
+    {
+      "id": "research-tools",
+      "label": "Research Tools",
+      "summary": "Utilities that make research planning, literature work, and lab workflows reproducible."
+    }
+  ],
+  "projects": [
+    {
+      "id": "ai-research-assistant-rag",
+      "title": "AI Research Assistant with RAG",
+      "category": "general-ai",
+      "status": "planned",
+      "priority": 1,
+      "repository": "ai-research-assistant-rag",
+      "github_url": "",
+      "live_url": "",
+      "tagline": "A deployable RAG system for technical documents with citations, evaluation, and a clean API.",
+      "why_it_matters": "Shows that the portfolio is not limited to chemistry or materials science.",
+      "technical_stack": ["Python", "FastAPI", "Streamlit", "Vector search", "LLM evaluation", "Docker"],
+      "deliverables": ["Document ingestion pipeline", "Retriever/evaluator", "FastAPI service", "Streamlit demo", "Model card", "CI tests"],
+      "evidence_to_show": ["Precision/recall style retrieval metrics", "Citation-grounded answers", "Deployment screenshot"]
+    },
+    {
+      "id": "computer-vision-tracking",
+      "title": "Real-Time Computer Vision Tracking System",
+      "category": "computer-vision",
+      "status": "planned_or_private_work",
+      "priority": 2,
+      "repository": "ironclad",
+      "github_url": "https://github.com/burhanbeycan/ironclad",
+      "live_url": "",
+      "tagline": "Object detection and multi-object tracking workflow inspired by YOLOv8 + Deep SORT experience.",
+      "why_it_matters": "Positions the profile for broad computer-vision roles outside chemistry.",
+      "technical_stack": ["Python", "YOLO", "Deep SORT", "OpenCV", "Tracking metrics", "Dashboard"],
+      "deliverables": ["Inference pipeline", "Tracking metrics", "Demo video", "Deployment notes", "Ethical-use note"],
+      "evidence_to_show": ["FPS benchmark", "mAP or tracking summary", "Before/after sample frames"]
+    },
+    {
+      "id": "mxene-database",
+      "title": "MXene Functionalization Database",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 3,
+      "repository": "Mxene-database",
+      "github_url": "https://github.com/burhanbeycan/Mxene-database",
+      "live_url": "https://burhanbeycan.github.io/Mxene-database/",
+      "tagline": "Structured materials database for MXene surface functionalization and data-driven discovery.",
+      "why_it_matters": "Connects materials science expertise with searchable scientific data products.",
+      "technical_stack": ["Materials informatics", "Data curation", "JavaScript", "GitHub Pages"],
+      "deliverables": ["Curated dataset", "Searchable interface", "Documentation", "Reproducible data model"],
+      "evidence_to_show": ["Dataset schema", "Use-case walkthrough", "Update/versioning protocol"]
+    },
+    {
+      "id": "glycopolymer-ml-platform",
+      "title": "Glycopolymer ML Platform",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 4,
+      "repository": "glycopolymer-ml-platform",
+      "github_url": "https://github.com/burhanbeycan/glycopolymer-ml-platform",
+      "live_url": "https://burhanbeycan.github.io/glycopolymer-ml-platform/",
+      "tagline": "Machine-learning platform for glycopolymer design and structure-property exploration.",
+      "why_it_matters": "Highlights chemistry expertise as a domain advantage inside AI-for-science.",
+      "technical_stack": ["Python", "Machine learning", "Polymer science", "Data visualization"],
+      "deliverables": ["Model workflow", "Dataset documentation", "Interactive app", "Validation notes"],
+      "evidence_to_show": ["Model metrics", "Feature importance", "Example prediction workflow"]
+    },
+    {
+      "id": "polyloop-bo",
+      "title": "PolyLoop Bayesian Optimization",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 5,
+      "repository": "polyloop-bo",
+      "github_url": "https://github.com/burhanbeycan/polyloop-bo",
+      "live_url": "",
+      "tagline": "Bayesian optimization workflow for polymer/materials design loops.",
+      "why_it_matters": "Demonstrates experimental optimization skills that transfer to autonomous labs and R&D AI.",
+      "technical_stack": ["Python", "Bayesian optimization", "scikit-learn", "Experimental design"],
+      "deliverables": ["Optimization notebook", "Reproducible benchmarks", "Decision dashboard", "Experiment protocol"],
+      "evidence_to_show": ["Optimization trace", "Baseline comparison", "Suggested next experiments"]
+    },
+    {
+      "id": "teng-ml-platform",
+      "title": "TENG ML Platform",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 6,
+      "repository": "teng-ml-platform",
+      "github_url": "https://github.com/burhanbeycan/teng-ml-platform",
+      "live_url": "",
+      "tagline": "Machine-learning workflow for triboelectric nanogenerator research data.",
+      "why_it_matters": "Shows energy-materials AI capability beyond polymer-only applications.",
+      "technical_stack": ["Python", "Regression models", "Materials data", "Visualization"],
+      "deliverables": ["Data pipeline", "Model notebook", "Prediction app", "Project README"],
+      "evidence_to_show": ["Prediction metrics", "Error analysis", "Ablation or baseline comparison"]
+    },
+    {
+      "id": "celluloseacetate-hts",
+      "title": "Cellulose Acetate High-Throughput Screening",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 7,
+      "repository": "celluloseacetate-hts",
+      "github_url": "https://github.com/burhanbeycan/celluloseacetate-hts",
+      "live_url": "",
+      "tagline": "High-throughput screening workflow for cellulose acetate and related material variables.",
+      "why_it_matters": "Connects experimental design, data analysis, and materials R&D automation.",
+      "technical_stack": ["Python", "High-throughput screening", "Materials data", "Pandas"],
+      "deliverables": ["Screening dataset", "Analysis notebook", "Reproducible figures", "Decision rules"],
+      "evidence_to_show": ["Screening matrix", "Top candidate ranking", "Uncertainty or limitations note"]
+    },
+    {
+      "id": "lis-battery-research",
+      "title": "Li-S Battery Research Toolkit",
+      "category": "scientific-ai",
+      "status": "active_repo",
+      "priority": 8,
+      "repository": "lis-battery-research",
+      "github_url": "https://github.com/burhanbeycan/lis-battery-research",
+      "live_url": "",
+      "tagline": "Research repository for lithium-sulfur battery cathode materials and analysis workflows.",
+      "why_it_matters": "Supports a high-value AI-for-energy-materials narrative.",
+      "technical_stack": ["Battery materials", "Data analysis", "Scientific Python", "Documentation"],
+      "deliverables": ["Data summaries", "Analysis scripts", "Experiment log template", "Literature map"],
+      "evidence_to_show": ["Reproducible plots", "Material comparison table", "Next-experiment plan"]
+    },
+    {
+      "id": "researcher-agenda",
+      "title": "Researcher Agenda",
+      "category": "research-tools",
+      "status": "active_repo",
+      "priority": 9,
+      "repository": "researcher-agenda",
+      "github_url": "https://github.com/burhanbeycan/researcher-agenda",
+      "live_url": "",
+      "tagline": "Planning and productivity tool for research milestones, experiments, and literature workflows.",
+      "why_it_matters": "Shows product thinking and software organization for research users.",
+      "technical_stack": ["JavaScript", "Product design", "Research workflows", "GitHub Pages"],
+      "deliverables": ["Roadmap view", "Milestone tracker", "Experiment checklist", "Documentation"],
+      "evidence_to_show": ["User workflow screenshots", "Feature roadmap", "Demo task board"]
+    }
+  ]
+}
