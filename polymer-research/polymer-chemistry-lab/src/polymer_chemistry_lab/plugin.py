@@ -1,7 +1,7 @@
 """Academic GUI adapter; chemistry is implemented in the model module."""
 from __future__ import annotations
 
-from . import experiments
+from . import experiments, microstructure
 from .model import TEMPLATES, build_oligomer, molecular_view, sequence_statistics
 
 REFERENCES = [
@@ -13,7 +13,7 @@ REFERENCES = [
 ]
 
 APP = {
-    "id": "chemistry", "name": "Polymer Chemistry Lab", "version": "0.3.0", "accent": "#936326",
+    "id": "chemistry", "name": "Polymer Chemistry Lab", "version": "0.4.0", "accent": "#936326",
     "tagline": "Connect repeat units, resolve end groups, and inspect molecular sequence.",
     "description": "Build a finite linear oligomer from explicit polymerized repeat connectivity; inspect atom/bond structure, formula, end-group-aware molar mass and A/B sequence dyads.",
     "scope": "A graph constructor and chemistry ledger. H/H graph caps are stated assumptions; no reaction mechanism, conformational energy, tacticity distribution or material-property accuracy is inferred.",
@@ -43,10 +43,18 @@ for field in APP["fields"]:
 for preset in APP["presets"]:
     preset["inputs"]["chemistry_mode"] = "graph"
 APP["fields"] = [experiments.MODE_FIELD, *APP["fields"], *experiments.FIELDS]
-APP["presets"] = [*experiments.PRESETS, *APP["presets"]]
-APP["models"].extend(experiments.MODELS)
-APP["references"].extend(experiments.REFERENCES)
-APP["description"] = "Construct finite oligomers, compare PEtOx end-group assignments and model PVA/PVAc sequence populations from composition or quantitative NMR dyads."
+APP["fields"][0]["options"].extend([
+    {"value":"pva_benchmark","label":"PVA · independent NMR grade holdout"},
+    {"value":"petox_hydrolysis","label":"WBPU blend partner · explicit PEtOx/EI ion states"},
+])
+APP["fields"].extend(microstructure.FIELDS)
+for f in APP["fields"]:
+    if f["key"] in ("ensemble_dp","ensemble_count","ensemble_seed"):
+        f["show_if"] = {"key":"chemistry_mode", "value":[*experiments.PVA_MODES, "pva_benchmark"]}
+APP["presets"] = [*microstructure.PRESETS, *experiments.PRESETS, *APP["presets"]]
+APP["models"].extend([*experiments.MODELS, *microstructure.MODELS])
+APP["references"].extend([*experiments.REFERENCES, *microstructure.REFERENCES])
+APP["description"] = "Build finite oligomers, examine PEtOx/EI hydrolysis and charge, and test PVA sequence models against experimental NMR grades."
 APP["scope"] = "Graph identity, stated positive-ion mass targets and stationary sequence models. Chain-specific assignments require independent structural evidence."
 
 
@@ -59,6 +67,10 @@ def calculate(inputs, material=None):
     values = {field["key"]: field["default"] for field in APP["fields"]}
     values.update(inputs)
     mode = values["chemistry_mode"]
+    if mode == "pva_benchmark":
+        return microstructure.pva_benchmark(values)
+    if mode == "petox_hydrolysis":
+        return microstructure.hydrolysis(values)
     if mode == "petox":
         return experiments.compare_ends(values)
     if mode in ("pva_nmr", "pva_random"):

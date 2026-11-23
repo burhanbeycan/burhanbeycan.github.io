@@ -4,6 +4,12 @@
 
 Polymer Research Studio is developed for Burhan Beycan's polymer-chemistry research workflow. Six independent projects share a local academic interface and a versioned sample record. The Studio source folder is `polymer-research-studio`; the Python distribution remains `polymer-research-workbench` for compatibility. Start the user interface with `polymer-studio`. PolyChemMD is a separate project and is not a dependency.
 
+## The LDI / PEtOx research pilot
+
+Open **Research pilot** to compare two neutral dimers and two starting poses for a chemically defined LDI diurethane cluster. Each entry shows four independent starting conformations, individual contact counts and the normalization per donor and per eligible pair. [Run record, structure and reproduction script](examples/ldi-blend/README.md).
+
+Under **Material record**, the simulation context records end groups, protonation, ensemble, force field, conditions, independent initializations and matched experimental observable. Chemistry-specific models and validation are documented in the six laboratory folders.
+
 ## Review the research workflows
 
 Open **Material record** to register a synthesis batch and derive a cast film and an electrospun mat. Each specimen carries its own processing history and evidence. Import the [worked session](examples/batch-film-mat.json) with **Import record** to try the workflow. The film has an illustrative thickness and the mat has its own empty evidence record. Select the active specimen before sending an earlier calculation to another lab.
@@ -21,7 +27,7 @@ The six laboratories add PEtOx terminal-group comparison and PVA NMR dyads, reci
 | [Polymer Network Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-network-lab) | Neutral-network equilibrium swelling, consistent mixing/elastic free energy, homogeneous stability and equilibrated-film release | `polymer-network-lab` | 8768 |
 | [Polymer Electrolyte Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-electrolyte-lab) | Binary Nernst–Einstein baseline, supplied collective Onsager coefficients, PSD checks and polymer-fixed transference | `polymer-electrolyte-lab` | 8769 |
 
-Version **0.3.0** distinguishes a finite chemical graph from a polymer sample and from a statistical chain model. Molecular Chemistry performs explicit structural calculations on the supplied templates. Physics-model demonstration coefficients are illustrative and do not establish predictive accuracy for a named polymer. Each laboratory documents equations, sources, tests and model boundaries.
+Version **0.4.0** distinguishes a finite chemical graph from a polymer sample and from a statistical chain model. Molecular Chemistry performs explicit structural calculations on the supplied templates. Physics-model demonstration coefficients are illustrative and do not establish predictive accuracy for a named polymer. Each laboratory documents equations, sources, tests and model boundaries.
 
 ## Install all six
 

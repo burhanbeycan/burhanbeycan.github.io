@@ -1,6 +1,6 @@
-# Current release verification · 0.3.0
+# Current release verification · 0.4.0
 
-All 26 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+34 tests passed in the local suite run on 24 November 2026. See the [release verification report](../../VALIDATION_TR.md) and the [worked scientific examples](../INCELEME.md).
 
 # Verification record
 

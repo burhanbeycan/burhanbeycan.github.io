@@ -2,7 +2,11 @@
 
 **Functional groups, chain counts, end groups and copolymer sequence statistics.**
 
-A local scientific application by **Burhan Beycan** for explicit polymer-chemistry bookkeeping, independently launchable and connected to Polymer Research Studio through its shared workbench. Version **0.3.0**.
+A local scientific application by **Burhan Beycan** for explicit polymer-chemistry bookkeeping, independently launchable and connected to Polymer Research Studio through its shared workbench. Version **0.4.0**.
+
+## Choose the next PEtOx concentration and feed
+
+Run **PEtOx · next feed/concentration against four measured flow feeds** to rank a user-defined candidate list for the next measurement. The app evaluates fixed published kinetics, optional locally supported log-residual coefficients and strict blind holdouts. Recorded conversion stays diagnostic. [Design method and worked example](docs/ACTIVE_DESIGN.md) · [Türkçe inceleme](INCELEME.md)
 
 ## Implemented chemistry
 

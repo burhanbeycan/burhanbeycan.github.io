@@ -4,6 +4,10 @@
 
 A local scientific application by **Burhan Beycan** for a polymer-chemistry research workflow. It builds atom/bond graphs from mapped polymerized repeat units and connects to [Polymer Research Studio](../polymer-research-studio). No PolyChemMD installation is required.
 
+## Compare independently measured PVA grades and explicit PEtOx/EI charge states
+
+Select **PVA · 2026 NMR and independent sample holdout** to compare synthesis-route predictions across six experimental grades. The sample-held-out MAE is 0.110 η units, compared with 0.447 for independent random repeat placement. A separate seeded ensemble compares two experimental η values at one chosen acetate fraction. Select **WBPU blend partner · PEtOx/EI protonation** to edit a directed chain, compare neutral and protonated covalent graphs, inspect donors/acceptors and balance the accompanying counterions. [Methods, sources and interpretation](docs/MICROSTRUCTURE.md)
+
 ## Compare PEtOx termini at fixed DP
 
 Select **PEtOx · same DP, three end groups**. The workbench shows the same backbone with H/H model caps and the two literature end pairs expected from methyl tosylate initiation with hydroxyl or azide termination. Inspect the N-bound α-methyl and the carbon-bound ω substituent, then compare neutral mass with the selected ion composition. The structural assignments are grounded in the end-group and tandem-MS study by [Morgan et al.](https://doi.org/10.1039/D2PY00437B).

@@ -113,3 +113,7 @@ An evidence row records quantity, value, unit, method and conditions, and a tabl
 `POST /api/material/derive` takes `parent`, `sample_id`, `name`, `form` and `process`. Transfers accept an optional `destination` material. With different specimen IDs, the transfer returns the destination and an empty input map. A destination with the same ID must have matching lineage. The GUI supplies the active specimen. Legacy clients omitting the destination request a transfer for the source specimen. New session exports include a `samples` registry alongside `runs` and `material`; earlier session files remain readable.
 
 The distinction between specimens and preparation activities follows the entity/activity terminology of the [W3C PROV model](https://www.w3.org/TR/prov-o/). The Studio serializes its own JSON exchange format.
+
+## Model population and specimen in 0.4
+
+Open **Material record → Simulation and experimental counterpart** to declare the method, chain population, termini, protonation and counterions, force field and its source, physical conditions, independent initial systems, and experimental comparator. Missing details remain open and appear in the audit. The study declaration accompanies the specimen and is captured in each result JSON. Distinguish a published MD result, a planned run and a trajectory actually produced. A new derived specimen requires its own declaration. The declaration describes the user's context and does not attest to a runtime or convert a model output into an experiment.

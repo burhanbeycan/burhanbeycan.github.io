@@ -60,3 +60,7 @@ The numerical module in `src/polymer_electrolyte_lab/model.py` is independent of
 ## Development and attribution
 
 Scientific algorithms are implemented in this repository; NumPy/SciPy provide general numerical primitives. Literature models are attributed in the scientific documentation. The implementation was developed with AI assistance and must be reviewed like other research software. See [CONTRIBUTING](CONTRIBUTING.md). MIT license.
+
+## Review oxygen coordination and charge transport
+
+Choose **PEO shell · original versus scaled force field** to compare published oxygen counts at EO:Li = 10 or 18. Two further modes calculate continuous contact persistence and collective/tracer conductivity from your own independently prepared trajectory records. The contact and transport presets contain synthetic checks. The methods page includes Python adapters for orthorhombic coordinates and unwrapped ion displacements. [Trajectory analysis and worked examples](docs/TRAJECTORY_ANALYSIS.md)

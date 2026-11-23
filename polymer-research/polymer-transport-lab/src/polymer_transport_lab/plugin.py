@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from . import __version__, pva_workflow
+from . import __version__, grade_uptake, pva_workflow
 from .model import (
     MODEL_ID, characteristic_times, finite_number, finite_volume_slab,
     fit_diffusivity, fraction_transferred, integer_number, parse_fraction_data,
@@ -79,6 +79,7 @@ APP = {
 }
 
 pva_workflow.add_controls(APP, _select, _number)
+grade_uptake.controls(APP, _select)
 
 DEFAULTS = {field["key"]: field["default"] for field in APP["fields"]}
 
@@ -113,7 +114,9 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
     for field in APP["fields"]:
         if field["type"] == "number":
             numbers[field["key"]] = finite_number(values[field["key"]], field["label"], field["min"], field["max"])
-    mode = _choice(values, "mode", ["release", "uptake", pva_workflow.FORWARD, pva_workflow.HOLDOUT, pva_workflow.PAPER])
+    mode = _choice(values, "mode", ["release", "uptake", pva_workflow.FORWARD, pva_workflow.HOLDOUT, pva_workflow.PAPER, grade_uptake.MODE])
+    if mode == grade_uptake.MODE:
+        return grade_uptake.run(values, _metric, _plot)
     if mode in {pva_workflow.FORWARD, pva_workflow.HOLDOUT, pva_workflow.PAPER}:
         return pva_workflow.run(values, _metric, _plot)
     fit_mode = _choice(values, "fit_mode", ["off", "fit_diffusivity"])

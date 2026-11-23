@@ -1,0 +1,13 @@
+specimen,grade,md_origin,dh_fraction,Mn_g_mol,Xc_fraction,mixed_dyad,water_per_oh,water_per_oac,md_wref_g_g,md_T_K,md_protocol,nmr_source,md_source
+fixture-F01,fixture-G01,synthetic,0.75,67000,0.162,0.36,1.68,1.277,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F02,fixture-G02,synthetic,0.75,81000,0.309,0.08625,1.864,0.667,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F03,fixture-G03,synthetic,0.75,65000,0.331,0.36,1.762,0.625,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F04,fixture-G04,synthetic,0.75,83000,0.198,0.08625,1.28,0.614,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F05,fixture-G05,synthetic,0.85,61000,0.202,0.2448,1.666,0.913,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F06,fixture-G06,synthetic,0.85,45000,0.17,0.05865,1.525,0.778,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F07,fixture-G07,synthetic,0.85,70000,0.249,0.2448,1.901,0.881,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F08,fixture-G08,synthetic,0.85,74000,0.215,0.05865,2.102,1.046,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F09,fixture-G09,synthetic,0.94,58000,0.136,0.10829,2.162,1.273,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F10,fixture-G10,synthetic,0.94,55000,0.196,0.02594,1.155,0.643,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F11,fixture-G11,synthetic,0.94,89000,0.146,0.10829,2.144,0.803,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration
+fixture-F12,fixture-G12,synthetic,0.94,86000,0.136,0.02594,1.802,1.228,0.05,298.15,FICTITIOUS 0.35 nm O-water cutoff,synthetic sequence,synthetic hydration

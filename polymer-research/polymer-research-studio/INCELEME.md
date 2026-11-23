@@ -1,17 +1,13 @@
-# Numune kimliği ve ölçümün kaynağı
+# WBPU/PEtOx pilotunu aç ve başlangıç koşulunu değiştir
 
-Aynı PVA partisinden elde edilen döküm film ve elektro-eğrilmiş mat hangi özellikleri paylaşır?
+**Research pilot** sekmesinde kısa PEG ve PCL parçaları taşıyan LDI diüretanın iki nötr dimerle temasını inceleyebilirsin. [Modelin çizimi](src/polymer_workbench/static/ldi-structure.svg) · [Yörünge başına sonuçlar ve tekrarlama](examples/ldi-blend/README.md)
 
-## Uygulamada incele
+**Starting pose** menüsünde serbestçe yaklaştırılmış başlangıç ile önceden bir N–H···O=C teması verilmiş başlangıcı karşılaştır. **Partner sequence** ve **Acceptor site** seçenekleri değiştiğinde dört bağımsız başlangıcın sonucu ayrı görünür. İki modelde de yönlendirilmemiş başlangıçların hiçbirinde üretan N–H ile EtOx amid karbonili için ölçütü sağlayan temas görülmedi. Aynı etkileşim başlangıçta kurulunca bazı yörüngelerde korundu. Bu kısa, çözücüsüz model başlangıç konumuna duyarlı. Film afinitesi, lif morfolojisi ve deneysel FTIR doğrulaması için ek veri gerekli.
 
-Üst çubuktan **Import record** ile [örnek oturumu](examples/batch-film-mat.json) aç. **Material record → Physical specimens** altında parti, film ve matı sırayla seç.
+![Kısa PEG/PCL uçları olan etil-LDI diüretan modelinde üretan NH ve akseptörler](src/polymer_workbench/static/ldi-structure.svg)
 
-## Örnek sonuç
+**Material record → Simulation and experimental counterpart** altında uç grupları, protonlanma durumunu, kuvvet alanını, bağımsız başlangıç sayısını ve hangi deneysel numuneyle karşılaştırma yaptığını kaydet. Boş alanlar denetimde görünür. Her hesap sonucu, o anda seçili numune ve model bilgilerinin bir kopyasını taşır.
 
-İki alt numunenin hazırlama adımı ve kimliği ayrı. Filmde örnek olarak girilmiş 100 µm kalınlık var. Matın ölçüm listesi boş. Bir numunenin sonucunu diğerine aktarırken Studio o numuneye özgü kalınlık ve katsayıları taşımaz.
+**Yorum için:** Öncelikle hangi film numunesinin sınanmasını istersin? Elindeki reçetede LDI esteri, zincir uzatıcı ve kuru film karakterizasyonu tanımlıysa hangi modelin deneyle eşleştirilebileceğini birlikte belirleyebiliriz.
 
-## Kimyasal yorum
-
-Bir sayı başka bir makaleden alıntılanıyorsa **Evidence origin** alanında bunu işaretle. Aktaran makaleyi, asıl kaynağı ve tablo ya da şekil konumunu kaydet.
-
-[Bilimsel yöntem ve veri](docs/EXCHANGE.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-research-studio-0.3.0.zip) · [Tüm projeler](../README.md)
+[Proje](README.md) · [Numune ve veri aktarımı](docs/EXCHANGE.md) · [Tüm projeler](../README.md)

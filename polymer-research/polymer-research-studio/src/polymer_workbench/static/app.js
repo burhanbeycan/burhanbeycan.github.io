@@ -31,6 +31,7 @@ function setView(view){
   for(const n of document.querySelectorAll('.view'))n.hidden=n.id!==`view-${view}`;
   for(const b of document.querySelectorAll('[data-view]'))b.setAttribute('aria-selected',String(b.dataset.view===view));
   if(view==='science')renderScience();
+  if(view==='pilots')renderPilots();
   if(view==='material')renderMaterial();
   if(view==='workflow')renderWorkflow();
 }
@@ -143,6 +144,12 @@ function renderResults(doc){
   for(const h of out.handoffs||[]){const available=S.apps.some(a=>a.id===h.target);const button=el('button','primary small',h.label||`Transfer to ${h.target}`);button.disabled=!available;button.title=available?'Review the mapped inputs in the next application':'Install the target application in this workbench, or export and import the result JSON.';button.addEventListener('click',()=>transfer(doc,h.target));handoffs.append(button);}
   if(handoffs.children.length)notes.append(handoffs);
   root.append(notes);
+  if(doc.study?.declaration){
+    const details=el('details','card');details.append(el('summary',null,'Declared model and experimental counterpart'));
+    details.append(tableCard({title:'Specimen '+doc.study.specimen,columns:['Field','Declared value'],rows:Object.entries(doc.study.declaration)}));
+    for(const text of doc.study.audit)details.append(el('p',null,text));
+    root.append(details);
+  }
   const report=el('details','card print-only');report.open=true;report.append(el('summary',null,'Calculation inputs and sources'));
   const pre=el('pre','equation',JSON.stringify(doc.inputs,null,2));report.append(pre);for(const ref of doc.references||[])report.append(el('p',null,`${ref.title} — ${ref.url}`));root.append(report);
   root.append(el('div','run-provenance',`Sample ${doc.material.sample_id} · ${doc.application.name} ${doc.application.version} · ${new Date(doc.created_utc).toLocaleString()}\nRun ${doc.run_id} · SHA-256 ${doc.checksum_sha256}`));
@@ -236,7 +243,7 @@ function moleculeCard(view){
   }
   for(const input of [allAtoms,indices,units,zoom])input.addEventListener('input',draw);
   draw();
-  const legend=el('div','molecule-legend');legend.append(el('span','model-badge','FINITE MOLECULAR GRAPH'),el('span',null,'Lines are covalent bonds · colours identify repeat membership · hover to inspect atoms · scroll for large structures'));if(view.comparison_group)legend.append(el('b','alpha-end','α initiation end'),el('b','omega-end','ω termination end'));card.append(legend);
+  const legend=el('div','molecule-legend');legend.append(el('span','model-badge','FINITE MOLECULAR GRAPH'),el('span',null,'Lines are covalent bonds · colours identify repeat membership · hover to inspect atoms · scroll for large structures'));if(view.atoms.some(a=>a.end_role))legend.append(el('b','alpha-end','α initiation end'),el('b','omega-end','ω termination end'));card.append(legend);
   if(view.smiles){const details=el('details','molecule-smiles');details.append(el('summary',null,'Canonical isomeric SMILES'),el('p','equation',view.smiles));card.append(details);}
   save.addEventListener('click',()=>{const copy=svg.cloneNode(true);copy.removeAttribute('style');download(`${slug(view.title)}.svg`,new XMLSerializer().serializeToString(copy),'image/svg+xml');});
   return card;
@@ -266,7 +273,7 @@ function renderMaterial(){
   const side=el('div'),scope=el('div','card assumptions');scope.append(el('h3',null,'What transfers between applications'),el('p',null,'The sample identity, chemistry metadata, population and calculation lineage travel together. Model coefficients retain their physical meaning and units. A tracer diffusion coefficient is not silently substituted for a Fickian transport coefficient.'));
   const exportButton=el('button','quiet','↓ Export material JSON');exportButton.addEventListener('click',()=>exportJSON(`${slug(S.material.sample_id)}-material.json`,S.material));scope.append(exportButton);side.append(scope);
   const dist=S.material.molar_mass_distribution;if(dist){side.append(tableCard({title:'Imported polymer population',columns:['M (g/mol)','Number fraction'],rows:dist.molar_mass_g_mol.map((m,i)=>[m,dist.number_fraction[i]])}));}
-  const history=el('div','card');history.append(el('h3',null,'Calculation lineage'));if(!S.material.history.length)history.append(el('p',null,'No completed calculation is attached yet.'));else for(const h of S.material.history.slice(-10).reverse())history.append(el('p',null,`${h.application} · v${h.version} · ${h.run_id.slice(0,8)}`));side.append(history);grid.append(card,side);root.append(specimenPanel(),evidencePanel(),grid);
+  const history=el('div','card');history.append(el('h3',null,'Calculation lineage'));if(!S.material.history.length)history.append(el('p',null,'No completed calculation is attached yet.'));else for(const h of S.material.history.slice(-10).reverse())history.append(el('p',null,`${h.application} · v${h.version} · ${h.run_id.slice(0,8)}`));side.append(history);grid.append(card,side);root.append(specimenPanel(),studyPanel(),evidencePanel(),grid);
 }
 
 function renderWorkflow(){

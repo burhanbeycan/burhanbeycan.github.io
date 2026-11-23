@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "polymer-chemistry-lab"
-version = "0.3.0"
+version = "0.4.0"
 description = "Connectivity-explicit linear oligomers, sequence chemistry and end-group-aware repeat masses."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Burhan Beycan"}]
-dependencies = ["rdkit>=2024.3,<2027", "polymer-research-workbench==0.3.0"]
+dependencies = ["rdkit>=2024.3,<2027", "polymer-research-workbench==0.4.0"]
 
 [project.scripts]
 polymer-chemistry-lab = "polymer_chemistry_lab.cli:main"

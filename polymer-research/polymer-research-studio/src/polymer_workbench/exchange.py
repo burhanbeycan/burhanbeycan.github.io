@@ -14,6 +14,7 @@ from typing import Any
 import uuid
 
 from .lineage import check_lineage, check_registry
+from .study import validate_study, study_snapshot
 
 MATERIAL_SCHEMA = "polymer-material/1.0"
 RESULT_SCHEMA = "polymer-result/1.0"
@@ -103,6 +104,7 @@ def validate_material(material: dict | None) -> dict:
     for h in m["history"]:
         if not isinstance(h, dict) or any(not isinstance(h.get(k), str) for k in ("run_id", "application", "version")):
             raise ValueError("Calculation history requires run_id, application and version strings.")
+    validate_study(m.get("study_context"))
     check_lineage(m)
     distribution = m.get("molar_mass_distribution")
     if distribution is not None:
@@ -218,7 +220,7 @@ def make_result(app: dict, inputs: dict, output: dict, material: dict | None) ->
     if not isinstance(updates, dict):
         raise ValueError("Material updates must be an object.")
     for key, value in updates.items():
-        if key in ("schema", "sample_id", "name", "history", "lineage", "evidence"):
+        if key in ("schema", "sample_id", "name", "history", "lineage", "evidence", "study_context"):
             raise ValueError("A model may not overwrite the material identity.")
         if key == "parameters":
             if not isinstance(value, list):
@@ -241,6 +243,7 @@ def make_result(app: dict, inputs: dict, output: dict, material: dict | None) ->
         "inputs": deepcopy(inputs),
         "results": output,
         "references": deepcopy(app.get("references", [])),
+        "study": study_snapshot(mat),
         "interpretation": "Model calculation. Numerical verification does not establish experimental validity for a named polymer.",
     }
     result["checksum_sha256"] = digest(result)
@@ -266,6 +269,8 @@ def validate_exchange(document: dict) -> dict:
             raise ValueError("Calculation application requires id, name and version strings.")
         if any(not isinstance(document.get(k), str) for k in ("run_id", "created_utc")):
             raise ValueError("Calculation run id and creation time must be text.")
+        if "study" in document and document["study"] != study_snapshot(document["material"]):
+            raise ValueError("Study snapshot must agree with the specimen and declared model context.")
         validate_output(document["results"])
         references = document.get("references", [])
         if not isinstance(references, list) or any(not isinstance(r, dict) or not isinstance(r.get("title"), str) or not isinstance(r.get("url"), str) for r in references):

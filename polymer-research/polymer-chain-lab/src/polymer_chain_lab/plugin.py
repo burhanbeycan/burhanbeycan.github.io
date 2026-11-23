@@ -6,12 +6,15 @@ import math
 
 import numpy as np
 
+from .md_workflow import md_output
+
 from .viscosity import CSV_FIELDS, benchmark, literature_series, mixture, read_observations
 from .model import (degrees_of_polymerization, finite_number, gaussian_dimensions, integer,
                     make_distribution, parse_distribution, population_form_factor,
                     sample_ris, wormlike_dimensions)
 
 POPULATION_MODELS = {"key": "model", "value": ["gaussian", "wlc"]}
+MD_MODEL = {"key": "model", "value": "petox_md"}
 FIT_MODEL = {"key": "model", "value": "intrinsic_viscosity_fit"}
 MIX_MODEL = {"key": "model", "value": "intrinsic_viscosity_mwd"}
 MWD_MODELS = {"key": "model", "value": ["gaussian", "wlc", "intrinsic_viscosity_mwd"]}
@@ -29,6 +32,7 @@ def _number(key, label, default, unit, minimum, maximum, help_text, group, show_
 
 
 REFERENCES = [
+    {"id": "galata2024", "title":"Galata and Kröger, aqueous linear/cyclic PEtOx simulation", "url":"https://doi.org/10.1021/acs.macromol.4c00174"},
     {"id": "gubarev2018", "title": "Gubarev et al., PEtOx hydrodynamics in PBS", "url": "https://doi.org/10.1039/C8PY00255J", "year": 2018},
     {"id": "gubarev_si", "title": "Experimental SI, Tables S1 and S2 (SEC–MALS and intrinsic viscosity)", "url": "https://www.rsc.org/suppdata/c8/py/c8py00255j/c8py00255j1.pdf", "year": 2018},
     {"id": "iupac_mw_viscosity", "title": "IUPAC Gold Book: viscosity-average molar mass", "url": "https://goldbook.iupac.org/terms/view/12220"},
@@ -44,17 +48,21 @@ DEFAULT_CSV = "molar_mass_g_mol,amount\n20000,0.5\n80000,0.5"
 TAIL_CSV = "molar_mass_g_mol,amount\n10000,0.09375\n50000,0.8875\n250000,0.01875"
 
 APP = {
-    "id": "chain", "name": "Polymer Chain Lab", "version": "0.3.0", "accent": "#287f80",
+    "id": "chain", "name": "Polymer Chain Lab", "version": "0.4.0", "accent": "#287f80",
     "tagline": "Resolve populations, chain stiffness, and local conformational statistics.",
     "description": "Analyze user-supplied molar-mass distributions; compare Gaussian and worm-like chain dimensions; sample an explicit finite-chain rotational-isomeric-state model; evaluate PEtOx dilute-solution viscometry by held-out molar-mass class.",
     "scope": "Equilibrium single-chain statistics and population weighting. PEtOx viscometry benchmarks use measured literature data. Conformational presets and the component-law MWD example use illustrative parameters.",
     "fields": [
         {"key": "model", "label": "Physical model", "type": "select", "default": "gaussian", "unit": "", "help": "Population models use MWD; RIS describes independent chains with an explicit local torsion Hamiltonian.", "group": "Model", "options": [
+            {"value":"petox_md","label":"PEtOx · end-group MD trajectories"},
             {"value": "gaussian", "label": "Gaussian chain + MWD + scattering"},
             {"value": "wlc", "label": "Worm-like chain + MWD dimensions"},
             {"value": "ris", "label": "Finite-chain RIS ensemble"},
             {"value": "intrinsic_viscosity_fit", "label": "PEtOx · measured intrinsic-viscosity benchmark"},
             {"value": "intrinsic_viscosity_mwd", "label": "Intrinsic viscosity from a complete MWD"}]},
+        _number("pilot_dp","Degree of polymerization",4,"repeats",1,10000,"The bundled finite-cluster trajectories cover DP 2 and 4.","End-group MD",MD_MODEL,1),
+        {"key":"trajectory_csv","label":"Analyzed trajectory CSV (optional)","type":"textarea","default":"","group":"End-group MD","show_if":MD_MODEL,
+         "help":"Leave empty for the executed MMFF94 cluster pilot, or paste the output from polymer-petox-md gro. One sample series and matched conditions per comparison."},
         _number("temperature_K", "Temperature", 298.15, "K", 1, 5000, "RIS uses temperature in Boltzmann weights. Gaussian/WLC stiffness is user-supplied at this temperature; no temperature law is inferred.", "Conditions", {"key": "model", "value": ["gaussian", "wlc", "ris"]}),
         {"key": "mwd_source", "label": "Population source", "type": "select", "default": "csv", "unit": "", "group": "Population", "help": "Use the table below or the number-fraction MWD in an imported material record.", "show_if": MWD_MODELS, "options": [{"value": "csv", "label": "Entered CSV"}, {"value": "material", "label": "Imported material MWD"}]},
         {"key": "distribution_basis", "label": "CSV amount basis", "type": "select", "default": "number", "unit": "", "group": "Population", "help": "Discrete fractions/counts are normalized. Log-density means density per d(log10 M), integrated over the supplied range by trapezoidal quadrature. This field does not alter imported material number fractions.", "show_if": MWD_MODELS, "options": [
@@ -90,6 +98,7 @@ APP = {
         _number("seed", "Random seed", 1729, "", 0, 2**32 - 1, "Reproducible with the same code and NumPy environment; no Markov-chain burn-in is required.", "RIS sampling", RIS_MODEL, 1),
     ],
     "presets": [
+        {"name":"Executed MD · PEtOx termini with 12 waters","description":"Short atomistic MMFF94 microsolvation trajectories for two chemical ends; inspect three independent packing seeds per end.","inputs":{"model":"petox_md","pilot_dp":4}},
         {"name": "Measured PEtOx · PBS at 37 °C", "description": "Seven SEC–MALS mass classes with independent dilute-solution viscometry. Inspect withheld-class errors and the separate SEC conditions.", "inputs": {"model": "intrinsic_viscosity_fit", "viscosity_temp_C": 37, "calibration_csv": "", "target_mw_g_mol": 50000}},
         {"name": "Synthetic MWD · viscosity-average molar mass", "description": "Apply a specified single-component law to a two-bin polymer mass distribution.", "inputs": {"model": "intrinsic_viscosity_mwd", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": DEFAULT_CSV}},
         {"name": "Synthetic A · two mass populations", "description": "Mn=50,000 g/mol, Mw=68,000 g/mol, Đ=1.36; compare with Synthetic B to expose high-tail differences.", "inputs": {"model": "gaussian", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": DEFAULT_CSV, "repeat_mass_g_mol": 100, "contour_increment_nm": 0.25, "kuhn_length_nm": 1, "tail_threshold_g_mol": 100000}},
@@ -98,6 +107,8 @@ APP = {
         {"name": "Synthetic RIS · local steric coupling", "description": "Finite-chain trans/gauche model with an explicit adjacent opposite-gauche penalty. Parameters are illustrative and have no assigned chemistry.", "inputs": {"model": "ris", "temperature_K": 298.15, "n_bonds": 80, "bond_length_nm": 0.154, "bond_angle_deg": 112, "gauche_energy_kj_mol": 1.5, "opposite_gauche_penalty_kj_mol": 4, "n_chains": 200, "seed": 1729}},
     ],
     "models": [
+        {"name":"Finite-cluster MD and aqueous trajectory analysis","equation":"Rg² = Σmi |ri−rCOM|²/Σmi; n = Σ I(rsite,water ≤ cutoff)/Nsites",
+         "assumptions":["Matched chain length and α end", "Bundled simulations are isolated clusters; PBC only for user-supplied orthorhombic liquid trajectories", "Replica is the statistical unit"],"references":["galata2024"]},
         {"name": "Intrinsic viscosity versus sample Mw", "equation": "ln[η] = ln K + a ln Mw", "assumptions": ["Matched linear PEtOx, SEC–MALS protocol, viscometry medium and temperature", "Similar within-series dispersities", "Testing with complete nominal mass classes held out"], "references": ["gubarev2018", "gubarev_si"]},
         {"name": "Dilute-solution MWD viscosity average", "equation": "[η]mix = Σwi K Mi^a; Mv = (Σwi Mi^a)^(1/a)", "assumptions": ["Noninteracting chains at infinite dilution", "Mass fractions; uniform chemistry, architecture and conditions", "Component-level constants supplied independently"], "references": ["iupac_mw_viscosity"]},
         {"name": "Chemically explicit mass-to-contour mapping", "equation": "DPi=(Mi−Mend)/M0; Li=DPi a", "assumptions": ["One common repeat contribution and terminal correction across the population", "Open linear chains; fractional effective DP for continuum bins", "Terminal geometry is not included in contour length", "No sequence-resolved copolymer mapping is inferred"], "references": ["iupac_dp"]},
@@ -118,7 +129,7 @@ def _validated_inputs(inputs):
         raise ValueError("Unknown calculation input(s): " + ", ".join(sorted(map(str, unknown))))
     values = {field["key"]: field["default"] for field in APP["fields"]}
     values.update(inputs)
-    integers = {"n_points", "n_bonds", "n_chains", "seed"}
+    integers = {"pilot_dp","n_points", "n_bonds", "n_chains", "seed"}
     for field in APP["fields"]:
         key, value = field["key"], values[field["key"]]
         if field["type"] == "number":
@@ -294,6 +305,8 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
         architecture = str(chemistry.get("architecture", "")).strip().lower()
         if any(term in architecture for term in ("cyclic", "ring", "branch", "star", "brush", "network", "crosslink", "dendri")):
             raise ValueError("The selected chain models require open linear chains; the material declares an unsupported architecture.")
+    if values["model"] == "petox_md":
+        return md_output(values)
     if values["model"] == "intrinsic_viscosity_fit":
         return _viscosity_benchmark(values)
     if values["model"] == "intrinsic_viscosity_mwd":

@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "polymer-network-lab"
-version = "0.3.0"
+version = "0.4.0"
 description = "Neutral network equilibrium swelling, thermodynamic stability and a fixed swollen-geometry release handoff."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Burhan Beycan"}]
-dependencies = ["numpy>=1.24,<3", "scipy>=1.11,<2", "polymer-research-workbench==0.3.0"]
+dependencies = ["numpy>=1.24,<3", "scipy>=1.11,<2", "polymer-research-workbench==0.4.0"]
 
 [project.scripts]
 polymer-network-lab = "polymer_network_lab.cli:main"

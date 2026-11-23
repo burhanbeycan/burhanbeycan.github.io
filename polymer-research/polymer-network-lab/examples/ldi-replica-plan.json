@@ -1,0 +1,12 @@
+{
+  "evidence": "Replace with force-field version, ester/termini/urea assignments, reference validation, topology source, temperatures, hydration and how each starting system was prepared.",
+  "stages": [
+    {"id": "minimize", "mdp": "em.mdp"},
+    {"id": "equilibrate", "mdp": "npt.mdp"},
+    {"id": "production", "mdp": "production.mdp", "continue_from_previous_checkpoint": true}
+  ],
+  "replicas": [
+    {"id":"prepacked-A","system_dir":"replica-A-inputs","topology":"system.top","coordinates":"independent-start.gro"},
+    {"id":"polyply-B","system_dir":"replica-B-inputs","topology":"system.top","polyply_box_nm":[6.0,6.0,6.0]}
+  ]
+}

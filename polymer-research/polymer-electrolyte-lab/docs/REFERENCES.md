@@ -8,3 +8,5 @@
 5. Zheng, Q., et al. **Optimizing Ion Transport in Polyether-Based Electrolytes for Lithium Batteries.** Macromolecules 51, 2847–2858 (2018). The PEO control in the experimental columns of Table 3 supplies the second specimen. [DOI](https://doi.org/10.1021/acs.macromol.7b02706)
 
 [Field-level evidence and digitization notes](PEO_COMPARISON.md)
+
+The 300 K PEO/LiTFSI oxygen-coordination benchmark uses tabulated-in-text original and modified force-field values surrounding Figure 3; the modified Li–O Lennard-Jones interaction parameters are given in Table 2. [Charge Scaling in Classical Force Fields for Lithium Ions in Polymers (2024)](https://doi.org/10.1021/acsmacrolett.4c00368)

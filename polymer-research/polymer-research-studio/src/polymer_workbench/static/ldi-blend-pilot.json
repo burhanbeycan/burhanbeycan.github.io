@@ -1,0 +1,1015 @@
+{
+  "system": "isolated neutral LDI diurethane + dimer, dielectric 1, no water",
+  "host_smiles": "CCOC(=[O:31])[C@H](CCCC[NH:2]C(=[O:42])OCCCCCC(=[O:21])OC)[NH:1]C(=[O:41])OCC[O:11]CC[O:12]C",
+  "partner_smiles": {
+    "EtOx/EtOx": "CN(C(=[O:51])CC)CCN(C(=[O:52])CC)CC[OH:61]",
+    "EtOx/EI": "CN(C(=[O:51])CC)CC[NH:71]CC[OH:61]"
+  },
+  "n_h_donors_on_host": 2,
+  "seeds": [
+    11,
+    37,
+    71,
+    103
+  ],
+  "method": "MMFF94; BAOAB Langevin, 298.15 K, 0.5 fs, 5/ps friction",
+  "initial_relaxation_ps": 0.5,
+  "production_ps": 3,
+  "save_interval_ps": 0.025,
+  "criteria": "D–A <= 0.35 nm and D–H–A >= 150 deg; exclude <=3 graph bonds",
+  "scope": "Local geometry and initialization sensitivity only; no equilibrium affinity, film morphology or macroscopic ranking.",
+  "runs": [
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "undirected",
+      "seed": 11,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "undirected",
+      "seed": 37,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "undirected",
+      "seed": 71,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 24,
+          "frames": 120,
+          "contacts_per_donor": 0.1,
+          "occupancy_per_eligible_pair": 0.1
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "undirected",
+      "seed": 103,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "undirected",
+      "seed": 11,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "undirected",
+      "seed": 37,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "undirected",
+      "seed": 71,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 4,
+          "frames": 120,
+          "contacts_per_donor": 0.016666666666666666,
+          "occupancy_per_eligible_pair": 0.016666666666666666
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "undirected",
+      "seed": 103,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "carbonyl contact",
+      "seed": 11,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "carbonyl contact",
+      "seed": 37,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 92,
+          "frames": 120,
+          "contacts_per_donor": 0.38333333333333336,
+          "occupancy_per_eligible_pair": 0.19166666666666668
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "carbonyl contact",
+      "seed": 71,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 67,
+          "frames": 120,
+          "contacts_per_donor": 0.2791666666666667,
+          "occupancy_per_eligible_pair": 0.13958333333333334
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EtOx",
+      "initialization": "carbonyl contact",
+      "seed": 103,
+      "atoms": 112,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 4,
+          "contact_count": 95,
+          "frames": 120,
+          "contacts_per_donor": 0.3958333333333333,
+          "occupancy_per_eligible_pair": 0.19791666666666666
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "carbonyl contact",
+      "seed": 11,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 97,
+          "frames": 120,
+          "contacts_per_donor": 0.4041666666666667,
+          "occupancy_per_eligible_pair": 0.4041666666666667
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "carbonyl contact",
+      "seed": 37,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 62,
+          "frames": 120,
+          "contacts_per_donor": 0.25833333333333336,
+          "occupancy_per_eligible_pair": 0.25833333333333336
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "carbonyl contact",
+      "seed": 71,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 101,
+          "frames": 120,
+          "contacts_per_donor": 0.42083333333333334,
+          "occupancy_per_eligible_pair": 0.42083333333333334
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    },
+    {
+      "partner": "EtOx/EI",
+      "initialization": "carbonyl contact",
+      "seed": 103,
+      "atoms": 104,
+      "rdkit_version": "2026.09.2",
+      "last_time_ps": 3.0,
+      "contacts": [
+        {
+          "group": "LDI ester carbonyl",
+          "available_pairs": 1,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "urethane carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PCL ester carbonyl",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "PEG ether",
+          "available_pairs": 4,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "EtOx amide carbonyl",
+          "available_pairs": 2,
+          "contact_count": 90,
+          "frames": 120,
+          "contacts_per_donor": 0.375,
+          "occupancy_per_eligible_pair": 0.375
+        },
+        {
+          "group": "neutral EI nitrogen",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        },
+        {
+          "group": "partner terminal OH",
+          "available_pairs": 2,
+          "contact_count": 0,
+          "frames": 120,
+          "contacts_per_donor": 0.0,
+          "occupancy_per_eligible_pair": 0.0
+        }
+      ]
+    }
+  ]
+}

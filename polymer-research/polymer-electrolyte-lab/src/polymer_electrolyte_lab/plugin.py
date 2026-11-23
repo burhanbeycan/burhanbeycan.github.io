@@ -2,10 +2,11 @@ from __future__ import annotations
 import math
 import numpy as np
 from .model import finite, nernst_einstein, onsager
+from .md_views import DOI, FIELDS, OPTIONS, PRESETS, md_result
 from .records import FORM_GROUPS, PESKO, RECORDS, gui_inputs, peo_results
 
 APP = {
-    "id": "electrolyte", "name": "Polymer Electrolyte Lab", "version": "0.3.0",
+    "id": "electrolyte", "name": "Polymer Electrolyte Lab", "version": "0.4.0",
     "tagline": "Ion motion, collective transport & reference frames",
     "description": "Compare the ideal Nernst–Einstein estimate with a user-supplied Onsager matrix. Preserve the difference between tracer diffusion and collective charge transport.",
     "accent": "#6453a0",
@@ -60,6 +61,17 @@ APP["references"].extend([
 ])
 
 
+APP["fields"][0]["options"].extend({"value":value, "label":label} for value,label in OPTIONS)
+APP["fields"].extend(FIELDS)
+APP["presets"].extend(PRESETS)
+APP["scope"] += " The MD modes compare published first-shell coordination, atom-pair persistence, and formal charge displacement in dry PEO/LiTFSI."
+APP["references"].append({"id":"force_scaling","title":"Charge Scaling in Classical Force Fields for Lithium Ions in Polymers (2024).","year":2024,"url":"https://doi.org/"+DOI})
+APP["models"].append({"name":"Oxygen-resolved Li shells and collective transport",
+    "equation":"CN = contacts/(frames × Li); σ = e² slope⟨|Σ zᵢ Δrᵢ|²⟩/(6VkBT).",
+    "assumptions":["Count distinct oxygen atoms within the declared first-shell cutoff.","Use unwrapped positions and all ions of the neutral box for the collective term."],
+    "references":["force_scaling","ion_pairing","frame_gap"]})
+
+
 def calculate(inputs, material=None):
     if not isinstance(inputs, dict):
         raise ValueError("Inputs must be a dictionary.")
@@ -70,13 +82,15 @@ def calculate(inputs, material=None):
     if unknown:
         raise ValueError("Unknown input fields: " + ", ".join(sorted(str(key) for key in unknown)))
     p.update(inputs)
-    if not isinstance(p["model"], str) or p["model"] not in ("nernst_einstein", "onsager", "peo_matched"):
+    if not isinstance(p["model"], str) or p["model"] not in {option["value"] for option in APP["fields"][0]["options"]}:
         raise ValueError("Choose a listed electrolyte model.")
     # The backend enforces the declared GUI ranges even for hidden fields.
     for field in APP["fields"]:
         if field["type"] == "number":
             p[field["key"]] = finite(p[field["key"]], field["label"],
                                      lower=field.get("min"), upper=field.get("max"))
+    if p["model"] in {value for value,_ in OPTIONS}:
+        return md_result(p)
     if p["model"] == "peo_matched":
         return peo_results(p)
     T = p["temperature_K"]

@@ -1,6 +1,7 @@
 """Scientific GUI adapter for polymer reaction balances."""
 import numpy as np
 from .crop_views import add_models, recipe_view, benchmark_view
+from . import design_view
 from .model import finite, living_chain_growth, step_growth, terminal_copolymer
 
 
@@ -18,7 +19,7 @@ REFERENCES = [
 ]
 
 APP = {
-    "id": "synthesis", "name": "Polymer Synthesis Lab", "version": "0.3.0", "accent": "#b66b33",
+    "id": "synthesis", "name": "Polymer Synthesis Lab", "version": "0.4.0", "accent": "#b66b33",
     "tagline": "From reactive equivalents to chain count, end groups and composition.",
     "description": "Track functional-group conversion and mass conservation; distinguish theoretical feed bookkeeping from measured molar mass and kinetic prediction.",
     "scope": "Ideal step-growth and chain-count balances, fixed-feed copolymerization and a literature-parameterized EtOx/MeOTs/MeCN kinetic model with grouped Mn evaluation.",
@@ -61,6 +62,7 @@ APP = {
 
 
 add_models(APP, number)
+design_view.register(APP, number)
 
 
 def metric(key, label, value, unit="1", note=""):
@@ -79,11 +81,13 @@ def calculate(inputs, material=None):
     if unknown:
         raise ValueError("Unknown inputs: " + ", ".join(sorted(map(str, unknown))))
     p.update(inputs)
-    if p["model"] not in ("step_growth", "living", "copolymer", "petox_recipe", "petox_benchmark"):
+    if p["model"] not in ("step_growth", "living", "copolymer", "petox_recipe", "petox_benchmark", design_view.MODE):
         raise ValueError("Unknown synthesis model.")
     for f in APP["fields"]:
         if f["type"] == "number":
             p[f["key"]] = finite(p[f["key"]], f["label"], f["min"], f["max"])
+    if p["model"] == design_view.MODE:
+        return design_view.render(p, metric)
     if p["model"] == "petox_recipe":
         return recipe_view(p, metric, plot)
     if p["model"] == "petox_benchmark":

@@ -1,5 +1,10 @@
 # Polymer Chain Lab
 
+## Automated end-group MD
+
+Compare [twelve executed PEtOx microsolvation trajectories](docs/PEtOx_MD.md), three independent packings per DP and terminus. Source files and a CLI reproduce the pilot from covalent structures. A GROMACS adapter reads condition-matched periodic trajectories supplied with validated end-group topologies. The graphical readout distinguishes finite clusters from bulk-water runs.
+
+
 **PEtOx dilute-solution viscometry, molar-mass distributions, Gaussian/WLC dimensions and finite-chain RIS conformations.**
 
 An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Studio](../polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.

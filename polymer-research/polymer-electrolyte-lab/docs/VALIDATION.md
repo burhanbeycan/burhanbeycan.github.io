@@ -1,6 +1,6 @@
-# Current release verification · 0.3.0
+# Current release verification · 0.4.0
 
-All 34 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+46 tests passed in the local suite run on 24 November 2026. See the [release verification report](../../VALIDATION_TR.md) and the [worked scientific examples](../INCELEME.md).
 
 # Verification and measured benchmarks
 
@@ -21,3 +21,7 @@ The tests check analytical units, recovered source quantities, sample and temper
 ## Numerical checks
 
 The generic Nernst–Einstein and Onsager kernels are checked against independently assembled species currents and number-density expressions, positive-semidefinite boundary conditions, singular matrices, negative transference, coefficient scaling and finite output contracts. The GUI uses the same calculation entry points as the tests.
+
+## Trajectory analysis verification
+
+Twelve additional tests cover rounded primary coordination values at two salt ratios, contact identities, break/re-entry, empty origins, independent replicates, sample matching, periodic minimum-image selection, dimensioned conductivity, contaminated fit windows, shared polymer translation and a physically impossible collective moment. The three new interface presets were executed. [Model and units](TRAJECTORY_ANALYSIS.md)

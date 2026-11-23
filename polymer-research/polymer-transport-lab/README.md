@@ -6,7 +6,7 @@ An independent, local scientific application developed for a polymer-chemistry r
 
 ## Scientific status
 
-Version **0.3.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
+Version **0.4.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
 
 ## Install and run independently
 
@@ -66,3 +66,7 @@ Select **PVA film · independent isotherm + humidity step** to follow the mean w
 Select **PVA film · compare models at a held-out thickness** to reserve every time series at one nominal thickness before fitting either model. Each curve carries its thickness, exposed faces, grade/history identifier, temperature and branch. Separate plots and RMSEs show the effect of model choice on the reserved thickness. The bundled 50/90 µm example uses simulated data.
 
 Select **PVA · inspect published equilibrium and apparent D** for the 25 °C HDI-crosslinked PVA results of El Shafee and Naguib. The table distinguishes the measured-curve apparent coefficients from equilibrium loadings calculated using the authors’ GAB fit. Numerical methods, CSV templates and the interpretation of each result are in [PVA water transport](docs/PVA_WATER.md).
+
+## Sequence-aware PVA vapour sorption
+
+Open **PVA · evidence for sequence and uptake** to see which primary data actually match. **PVA · withhold complete grades (synthetic)** runs three nested models on identical observation sets. The form accepts separate specimen and adsorption CSVs, with selection of grade, publication or joint holdout. **PVA · oxygen coordination across a periodic boundary** accepts selected oxygen coordinates from an external MD trajectory and calculates water contacts per site. See [methods, CSV units and benchmark](docs/PVA_SEQUENCE.md).

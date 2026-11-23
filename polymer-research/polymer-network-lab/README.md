@@ -66,3 +66,9 @@ Bu uygulama tek başına çalışır; ortak çalışma ortamında diğer laborat
 ## Development and attribution
 
 Scientific algorithms are implemented in this repository; NumPy/SciPy provide general numerical primitives. Literature models are attributed in the scientific documentation. The implementation was developed with AI assistance and must be reviewed like other research software. See [CONTRIBUTING](CONTRIBUTING.md). MIT license.
+
+## LDI polyurethane, molecular contacts and dry-film comparison
+
+Open the three **LDI / PEG / PCL** presets. Inspect the effect of replacing BDO by glycerol, measure urethane N–H contact preference for ether and ester oxygens in typed coordinates, then compare formulation-held-out FTIR predictions with and without the contact descriptor. For GROMACS output the module reads multi-frame GRO files directly. [Methods, worked examples and input guide](docs/LDI.md)
+
+A local replica adapter runs prepared systems through optional Polyply coordinate generation, GROMACS preprocessing and MD. The module records source files, commands and outputs per packing. [Two-replica configuration](examples/ldi-replica-plan.json) · [Operation and input requirements](docs/LDI.md#run-independent-gromacs-replicas-locally)

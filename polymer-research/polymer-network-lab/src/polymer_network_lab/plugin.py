@@ -5,6 +5,7 @@ from __future__ import annotations
 import numpy as np
 
 from .wbpu_ui import calculate_wbpu, extend_app
+from .ldi_ui import calculate_ldi, extend_ldi
 from .model import (
     MAX_SCAN_POINTS,
     PARAMETER_LIMITS,
@@ -49,7 +50,7 @@ REFERENCES = [
 APP = {
     "id": "network",
     "name": "Polymer Network Lab",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "tagline": "WBPU stoichiometry, film characterization and swelling",
     "description": (
         "Audit polyurethane feed, examine extraction and DMA, and compare withheld formulations under a common swelling protocol. "
@@ -154,6 +155,7 @@ APP = {
 
 
 extend_app(APP)
+extend_ldi(APP)
 
 DEFAULTS = {field["key"]: field["default"] for field in APP["fields"]}
 MODEL_SCOPE = "neutral_homogeneous_free_swelling_dry_reference_hong_neo_hookean_constant_chi"
@@ -178,7 +180,9 @@ def _validated_inputs(inputs: dict) -> dict:
             if not isinstance(value, str) or value not in [option["value"] for option in field["options"]]:
                 raise ValueError(f"{key} must be one of the available choices.")
         else:
-            limit = 50000 if key.endswith('_csv') else 8000
+            limit = 50000 if key.endswith('_csv') or key == 'ldi_ftirs' else 8000
+            if key == 'ldi_traj':
+                limit = 800000
             if not isinstance(value, str) or len(value) > limit:
                 raise ValueError(f"{key} must be text of at most {limit} characters.")
     if values["scan_variable"] == "chi" and values["chi_scan_max"] <= values["chi_scan_min"]:
@@ -202,6 +206,8 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
     if material is not None and not isinstance(material, dict):
         raise ValueError("The material record must be an object/dictionary.")
     material = material or {}
+    if values["network_mode"] in ("ldi_feed", "ldi_contacts", "ldi_folds"):
+        return calculate_ldi(values)
     if values["network_mode"] != "equilibrium":
         return calculate_wbpu(values)
     parameters = NetworkParameters(**{key: values[key] for key in PARAMETER_LIMITS})

@@ -100,3 +100,40 @@ function evidencePanel(){
   };
   card.append(form);return card;
 }
+
+function studyPanel(){
+  const card=el('section','card');
+  card.append(el('h3',null,'Simulation and experimental counterpart'),
+    el('p',null,'Attach a declared model population to this specimen. Each new calculation stores a dated snapshot with its inputs.'));
+  const form=el('form','material-form');form.id='study-record';
+  const previous=S.material.study_context||{};
+  const method=recordField(form,'method','Context',{
+    calculation:'General calculation',planned_md:'Planned molecular dynamics',executed_md:'User-executed molecular dynamics',
+    trajectory_analysis:'Imported trajectory analysis',published_md:'Published molecular dynamics'});
+  method.value=previous.method||'calculation';
+  const labels={population:'Chain population (DP, distribution, sequence)',termini:'End groups and attachment sites',
+    protonation:'Ionization state and counterions',force_field:'Force field, charges and parameter source',
+    conditions:'Geometry, solvent, temperature and pressure',replicas:'Independent initial systems',
+    target:'Observable and experimental specimen / source'};
+  for(const [key,label] of Object.entries(labels)){
+    const input=recordField(form,key,label);input.required=false;input.maxLength=1000;
+    if(key==='replicas'){input.type='number';input.min=1;input.max=100000;input.step=1;}
+    input.value=previous[key]??'';
+  }
+  const audit=el('ul');audit.setAttribute('aria-live','polite');
+  function show(messages){audit.replaceChildren();for(const text of messages)audit.append(el('li',null,text));}
+  form.append(el('button','primary small','Save study context'));
+  form.onsubmit=async e=>{
+    e.preventDefault();
+    try{
+      const record=Object.fromEntries([...new FormData(form)].filter(([k,v])=>String(v).trim()));
+      if(record.replicas)record.replicas=Number(record.replicas);
+      const report=await api('/api/study/audit',record);
+      const m=clone(S.material);m.study_context=record;S.material=await api('/api/exchange/validate',m);
+      markAllDirty();updateSample();updateExportState();show(report.audit);
+      notify('Study context saved for '+S.material.sample_id+'.');
+    }catch(err){notify(err.message,true);}
+  };
+  if(previous.method)api('/api/study/audit',previous).then(x=>show(x.audit)).catch(err=>notify(err.message,true));
+  card.append(form,audit);return card;
+}

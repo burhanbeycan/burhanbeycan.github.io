@@ -15,6 +15,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from . import __version__
 from .lineage import derive_material
+from .study import study_audit, validate_study
 from .exchange import MAX_JSON_BYTES, default_material, ensure_json, handoff, make_result, validate_exchange, validate_material
 
 APPS = {
@@ -115,6 +116,10 @@ def create_app(selected: str | None = None) -> FastAPI:
     @app.post("/api/exchange/validate")
     def validate(document: dict):
         return validate_exchange(document)
+
+    @app.post("/api/study/audit")
+    def audit(document: dict):
+        return {"audit":study_audit(validate_study(document))}
 
     @app.post("/api/material/derive")
     def derive(request: DerivedSpecimen):

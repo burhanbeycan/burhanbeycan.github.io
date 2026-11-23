@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Cite this software and the RDKit and chemical identity references used in your calculation."
 title: "Polymer Chemistry Lab"
-version: 0.3.0
+version: 0.4.0
 type: software
 authors:
   - family-names: Beycan

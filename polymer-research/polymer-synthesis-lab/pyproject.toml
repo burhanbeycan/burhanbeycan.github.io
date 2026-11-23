@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "polymer-synthesis-lab"
-version = "0.3.0"
+version = "0.4.0"
 description = "Functional-group balances, ideal chain-growth mass bookkeeping and terminal copolymer composition."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [{name = "Burhan Beycan"}]
-dependencies = ["numpy>=1.24,<3", "polymer-research-workbench==0.3.0"]
+dependencies = ["numpy>=1.24,<3", "polymer-research-workbench==0.4.0"]
 
 [project.scripts]
 polymer-synthesis-lab = "polymer_synthesis_lab.cli:main"

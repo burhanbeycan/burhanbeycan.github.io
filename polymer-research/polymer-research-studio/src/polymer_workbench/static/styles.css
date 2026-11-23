@@ -11,3 +11,5 @@
 @media print{.molecule-controls{display:none}.molecule-viewport{overflow:visible;max-height:none}.molecule-viewport svg{width:100%!important}.molecule-smiles{display:none}}
 
 .molecular-comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px}.molecular-comparison .molecule-card{min-width:0}.molecular-comparison .chart-heading{flex-wrap:wrap}.alpha-end{color:#13766d}.omega-end{color:#a74679}#switch-specimen{max-width:30rem}#new-specimen,#new-evidence{max-width:65rem}#view-material>section.card>.card{padding:8px 0;border:0}
+
+.pilot-structure{width:100%;max-width:900px;height:auto}.view-tabs{flex-wrap:wrap;row-gap:0}#view-pilots h2{font-family:var(--serif);font-weight:400}#view-pilots details summary{cursor:pointer}
