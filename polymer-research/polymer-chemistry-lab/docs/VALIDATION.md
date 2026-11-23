@@ -1,4 +1,16 @@
+# Current release verification · 0.3.0
+
+All 26 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+
 # Verification record
+
+## Chemistry and sequence additions
+
+The 0.3.0 suite passed 26 tests locally with RDKit 2026.09.2, including all legacy cases. Independent DP 1 reference SMILES check the orientation of both termini. DP 6 elemental formulas, the azide motif and formal charge, expected proton/sodium/double proton ion shifts, aligned backbone coordinates, assigned-terminus transfers, and DP limits are tested.
+
+The Poval 217 example recomputes the published ¹³C-NMR hydrolysis fraction, blockiness index and bulk OH/OAc mean run lengths from measured dyads. The comparison checks arithmetic against the original example. It does not validate a unique sequence or identify the physical chain-length distribution. Tests separately check composition-only Bernoulli variance, Markov dyads, reproducibility, ensemble boundaries and an acetate substructure count in the drawn model chain. PEtOx examples are calculated prospective masses. The repository contains no sample-specific experimental mass spectrum.
+
+## Earlier graph constructor
 
 Verified on 23 November 2026 using Python 3.12.14 and RDKit 2026.09.2 in the build environment. Command:
 

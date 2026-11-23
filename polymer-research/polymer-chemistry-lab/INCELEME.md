@@ -1,23 +1,19 @@
-# Polymer Chemistry Lab
+# PEtOx uç grupları ve PVA dizisi
 
-Tekrar birimindeki iki bağ noktası birleştirilince hangi sonlu molekül oluşur?
+Aynı tekrarlardan oluşan iki zincirin kütle spektrumu neden farklı olabilir?
 
-## PEtOx, altı tekrar
+## Uygulamada incele
 
-**Girdiler** — A = `[*:1]CCN(C(=O)CC)[*:2]`, dizi `AAAAAA`, iki uçta H.
+PEtOx için **same DP, three end groups** örneğini seç. Zincir başındaki azota bağlı metili ve zincir sonundaki karbona bağlı OH veya azidi çizim üzerinde incele. **Poval 217** örneğinde ¹³C-NMR diyadlarıyla eş hidroliz derecesindeki rastgele diziyi karşılaştır.
 
-**Hesaplanan sonuç** — C₃₀H₅₆N₆O₆. Ortalama molar kütle 596,814 g/mol, kesin molekül kütlesi 596,426134 Da. Atom–bağ gösterimi 42 ağır atom içerir.
+![PEtOx trimerinde uç grupları ve bağlanma noktaları](docs/assets/petox-ends.svg)
 
-![İki ucu hidrojenle kapatılmış altı tekrarlı PEtOx yapısı](docs/assets/inceleme-ornegi.svg)
+## Örnek sonuç
 
-**Modelin kapsamı** — H/H uçları bu örneğin kimyasal varsayımıdır. Gerçek başlatıcı ve sonlandırıcı kalıntıları için uç kimyası değiştirilmelidir. Belirtilmemiş stereomerkezlerden taktisite çıkarılmaz. Tek bir molekülün kütlesinden numunenin Mₙ değeri belirlenemez.
+DP = 6 için [M+H]⁺ hedefleri H/H örneğinde 597,433410, α-Me/ω-OH için 627,443974, α-Me/ω-N₃ için 652,450457 m/z. Poval 217 diyadlarından %88,1 OH ve yaklaşık 20,02 OH birimlik ortalama ardışık dizi uzunluğu bulunur.
 
-![Dört tekrarlı, H/H uçlu altı örnek polimer zinciri](docs/assets/finite-chain-gallery.png)
+## Kimyasal yorum
 
-Şekilde her yapı dört tekrar içerir. Yukarıdaki sayısal örnek altı tekrarlı PEtOx içindir.
+Kütleler teoriktir. Uç grup konumunu deneysel olarak tayin etmek için tanısal fragmanları ve spektrumu incele. NMR diyadları uyumlu bir zincir popülasyonunu sınırlar.
 
-**İncelerken** — Hangi gerçek uç gruplarını, tekrar birimini ya da açık A/B dizisini ilk olarak görmek istersin?
-
-Kurulumdan sonra uygulamayı `polymer-chemistry-lab` komutuyla açabilirsin. [Kurulum ve kullanım](README.md) · [Model veya veri aktarımı](docs/SCIENCE.md) · [Doğrulama](docs/VALIDATION.md)
-
-[Bu projenin sürüm 0.2.0 kaynak kodunu ZIP olarak indir](../downloads/polymer-chemistry-lab-0.2.0.zip?raw=true)
+[Bilimsel yöntem ve veri](docs/SCIENCE.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-chemistry-lab-0.3.0.zip) · [Tüm projeler](../README.md)

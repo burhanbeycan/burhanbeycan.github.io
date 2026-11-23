@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="633.6pt" height="352.8pt" viewBox="0 0 633.6 352.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>İki PEO molar kütlesinde EIS ölçümü ve yeterli verisi olan seride Nernst–Einstein iletkenliği</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>İki PEO molar kütlesinde EIS ölçümü ve yeterli verisi olan seride Nernst–Einstein iletkenliği</dc:title>
+    <dc:description>İki PEO molar kütlesinde EIS ölçümü ve yeterli verisi olan seride Nernst–Einstein iletkenliği</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 352.8 
+L 633.6 352.8 
+L 633.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 82.368 271.656 
+L 611.424 271.656 
+L 611.424 98.784 
+L 82.368 98.784 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #35515e" x="220.930286" y="286.014281" transform="rotate(-0 220.930286 286.014281)">Pesko ve ark. • 5 kg/mol PEO</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #35515e" x="472.861714" y="286.014281" transform="rotate(-0 472.861714 286.014281)">Zheng ve ark. • 100 kg/mol PEO</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 82.368 271.656 
+L 611.424 271.656 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="275.835141" transform="rotate(-0 76.368 275.835141)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 82.368 239.642667 
+L 611.424 239.642667 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="243.821807" transform="rotate(-0 76.368 243.821807)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 82.368 207.629333 
+L 611.424 207.629333 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="211.808474" transform="rotate(-0 76.368 211.808474)">1.0</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 82.368 175.616 
+L 611.424 175.616 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="179.795141" transform="rotate(-0 76.368 179.795141)">1.5</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 82.368 143.602667 
+L 611.424 143.602667 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="147.781807" transform="rotate(-0 76.368 147.781807)">2.0</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <path d="M 82.368 111.589333 
+L 611.424 111.589333 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #d8e1e5; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #35515e" x="76.368" y="115.768474" transform="rotate(-0 76.368 115.768474)">2.5</text>
+     </g>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #193443" x="52.586906" y="185.22" transform="rotate(-90 52.586906 185.22)">İletkenlik (mS/cm)</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 137.792914 271.656 
+L 218.410971 271.656 
+L 218.410971 143.602667 
+L 137.792914 143.602667 
+z
+" clip-path="url(#pcce53fdd06)" style="fill: #166f75"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 389.724343 271.656 
+L 470.3424 271.656 
+L 470.3424 175.616 
+L 389.724343 175.616 
+z
+" clip-path="url(#pcce53fdd06)" style="fill: #166f75"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 223.4496 271.656 
+L 304.067657 271.656 
+L 304.067657 154.125694 
+L 223.4496 154.125694 
+z
+" clip-path="url(#pcce53fdd06)" style="fill: #294e88"/>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 263.758629 164.703421 
+L 263.758629 143.547966 
+" clip-path="url(#pcce53fdd06)" style="fill: none; stroke: #22343f; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_15">
+    <defs>
+     <path id="m40c0ba1c27" d="M 5 0 
+L -5 -0 
+" style="stroke: #22343f"/>
+    </defs>
+    <g clip-path="url(#pcce53fdd06)">
+     <use xlink:href="#m40c0ba1c27" x="263.758629" y="164.703421" style="fill: #1f77b4; stroke: #22343f"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#pcce53fdd06)">
+     <use xlink:href="#m40c0ba1c27" x="263.758629" y="143.547966" style="fill: #1f77b4; stroke: #22343f"/>
+    </g>
+   </g>
+   <g id="patch_6">
+    <path d="M 82.368 271.656 
+L 82.368 98.784 
+" style="fill: none; stroke: #adbdc6; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 82.368 271.656 
+L 611.424 271.656 
+" style="fill: none; stroke: #adbdc6; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #193443" x="178.101943" y="138.522979" transform="rotate(-0 178.101943 138.522979)">2,0</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #193443" x="430.033371" y="170.536313" transform="rotate(-0 430.033371 170.536313)">1,5</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #193443" x="263.758629" y="138.266945" transform="rotate(-0 263.758629 138.266945)">≈ 1,84</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #6c7a82" transform="translate(485.062635 250.693435)">Molar derişim</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #6c7a82" transform="translate(494.182167 260.771467)">kaydı yok</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_8">
+     <path d="M 90.018 114.184937 
+L 107.018 114.184937 
+L 107.018 108.234937 
+L 90.018 108.234937 
+z
+" style="fill: #166f75"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193443" x="113.818" y="114.184937" transform="rotate(-0 113.818 114.184937)">EIS ölçümü</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 178.083313 114.184937 
+L 195.083313 114.184937 
+L 195.083313 108.234937 
+L 178.083313 108.234937 
+z
+" style="fill: #294e88"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193443" x="201.883313" y="114.184937" transform="rotate(-0 201.883313 114.184937)">İzleyicilerden Nernst–Einstein</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #193443" x="28.512" y="41.141344" transform="rotate(-0 28.512 41.141344)">PEO–LiTFSI elektrolitinde iletkenlik</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #435c69" x="28.512" y="69.550687" transform="rotate(-0 28.512 69.550687)">EO/Li = 12,5 ve 90 °C. İki PEO serisi ayrı deneylerdir.</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526671" x="28.512" y="337.27375" transform="rotate(-0 28.512 337.27375)">Kaynaklar • Pesko ve ark., 10.1149/2.0581711jes, Tablo I/Şekil 4  |  Zheng ve ark., 10.1021/acs.macromol.7b02706, Tablo 3.</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #435c69" x="82.368" y="308.7" transform="rotate(-0 82.368 308.7)">Hata çubuğu, izleyici katsayılarının şekilden okunmasındaki ±%9 duyarlılık aralığıdır.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pcce53fdd06">
+   <rect x="82.368" y="98.784" width="529.056" height="172.872"/>
+  </clipPath>
+ </defs>
+</svg>

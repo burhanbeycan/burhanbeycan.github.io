@@ -1,3 +1,7 @@
+# Current release verification · 0.3.0
+
+All 31 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+
 # Verification record · 0.2.0
 
 **Executed on 2026-11-23: 21 unittest tests passed.**
@@ -34,3 +38,7 @@ Use traceable experimental inputs with units, conditions, sample distributions,
 preparation history and model-compatible reference states. Compare predictions
 against independent observations. Read SCIENCE.md and REFERENCES.md in the
 owning laboratory before assigning material-specific meaning to a calculation.
+
+## WBPU formulation checks
+
+The WBPU tests check the twentyfold difference in ideal PEG 20k and PCL 1k diol OH equivalents per gram, independent assay conversions, amine/water accounting, operational gel/sol limits, frequency-specific DMA grouping and suppression of incompatible handoffs. Tests confirm that a held-out replicate's response cannot change its own predictions. Reference measurements, source table mapping, extrapolated folds and the interpretation of the three experimental errors are documented in [WBPU](WBPU.md).

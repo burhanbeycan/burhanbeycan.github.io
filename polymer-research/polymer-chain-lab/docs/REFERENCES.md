@@ -14,3 +14,9 @@ Sources were checked on 23 November 2026. Literature and official documentation 
 | `abe_jernigan_flory_1966` | [A. Abe, R. L. Jernigan, and P. J. Flory, “Conformational Energies of n-Alkanes and the Random Configuration of Higher Homologs Including Polymethylene”](https://doi.org/10.1021/ja00956a001), J. Am. Chem. Soc. 88 (1966), 631–639 | Primary RIS chemical context; bibliographic record verified; no fitted energy constants copied into this app |
 
 The finite-chain forward/backward recurrences follow directly from the explicitly stated finite partition sum in SCIENCE.md. The implementation and its enumeration tests are original project code. Neither a citation nor an imported material record is treated as evidence that the synthetic presets represent a real polymer.
+
+## PEtOx viscometry
+
+Gubarev et al. (2018), *Polymer Chemistry*, 9, 2232–2237. SEC–MALS masses and viscosity are joined by sample identifier. [DOI](https://doi.org/10.1039/C8PY00255J) · [Experimental SI, S1/S2](https://www.rsc.org/suppdata/c8/py/c8py00255j/c8py00255j1.pdf)
+
+The viscosity-average molar mass calculation uses mass fractions and a condition-specific exponent. [IUPAC Gold Book](https://goldbook.iupac.org/terms/view/12220)

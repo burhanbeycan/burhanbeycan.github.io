@@ -2,7 +2,7 @@
 
 ## Implemented system
 
-Isothermal, homogeneous, electroneutral binary **1:1 monovalent salt** in a neutral polymer matrix. The velocity reference is the **polymer-fixed frame** throughout. User-supplied transport coefficients must refer to the same composition, temperature, normalization and frame. A solvent-fixed frame is equivalent only when that solvent has the same mean velocity as the polymer. Independent solvent motion is not modelled here. The application does not convert between barycentric, volume-fixed, solvent-fixed or laboratory frames.
+Isothermal, homogeneous, electroneutral binary **1:1 monovalent salt** in a neutral polymer matrix. The collective Onsager calculation uses a **polymer-fixed frame**. PFG-NMR tracer measurements refer to a macroscopically stationary specimen. User-supplied transport coefficients must refer to the same composition, temperature, normalization and frame. A solvent-fixed frame is equivalent only when that solvent has the same mean velocity as the polymer. Independent solvent motion is not modelled here. The application does not convert between barycentric, volume-fixed, solvent-fixed or laboratory frames.
 
 Architecture, molar mass, tacticity, sequence, crystallinity, water content and end groups are scientifically important metadata. This release preserves them but **does not infer physical coefficients from them**. No force field, molecular simulation or learned material-parameter database is included.
 
@@ -39,7 +39,7 @@ If a diagonal coefficient is zero, the cross-correlation ratio is undefined and 
 
 ## Demonstrations and numerical verification
 
-Every bundled preset is synthetic. The negative-transference preset uses a positive-definite matrix to demonstrate a mathematically admissible outcome, not a measurement on PEO or any other named material.
+The ideal-ion and Onsager presets use synthetic coefficients. Two additional matched-state presets use published PEO/LiTFSI data. The named records, density conversion and qualifications are documented in [the PEO comparison](PEO_COMPARISON.md). The negative-transference preset uses a positive-definite matrix to demonstrate a mathematically admissible outcome, not a measurement on PEO or any other named material.
 
 Tests compare NE to an independent number-density/elementary-charge expression, recover the ideal limit from Onsager coefficients, and compare t+ with independently assembled species fluxes and currents. They also check positive quadratic dissipation, rank-one PSD boundaries over different scales, genuine PSD violations at small coefficient magnitudes, zero-diagonal behavior, scale invariance of t+, singularity handling, SI conversion, strict finite payloads and invalid inputs. These are numerical/model checks, not experimental validation.
 

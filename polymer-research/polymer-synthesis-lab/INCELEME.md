@@ -1,19 +1,19 @@
-# Polymer Synthesis Lab
+# Reçeteden PEtOx molar kütlesi
 
-Fonksiyonel grup dönüşümü ve başlangıç stokiyometrisi ortalama zincir uzunluğunu nasıl sınırlar?
+Başlangıç beslemesi, sıcaklık ve süreden hesaplanan Mₙ, deneysel SEC sonucuna ne kadar yaklaşır?
 
-## İdeal AA + BB kondenzasyonu
+## Uygulamada incele
 
-**Girdiler** — AA = BB = 0,010 mol, M(AA) = 146,14 g/mol, M(BB) = 116,21 g/mol. Oluşan bağ başına ayrılan küçük molekül 18,015 g/mol. Fonksiyonel grup dönüşümü %99.
+İki PEtOx deney serisini ayrı çalıştır. Kesikli reaktör için dört zaman noktasını, akış reaktörü için dört beslemeyi incele. Özel CSV ile yayını, seriyi, derişimi veya beslemeyi dışarıda bırakabilirsin.
 
-**Hesaplanan sonuç** — Molekül başına başlangıç monomeri sayısı Xₙ = 100. Kalan zincir ve serbest monomerlerin toplam madde miktarı 0,000200 mol. Tüm popülasyon için Mₙ = 11.334,015 g/mol.
+## Örnek sonuç
 
-![Dengeli AA + BB beslemesinde Xₙ. Düşey eksen logaritmiktir. İşaretli nokta %99 dönüşümü gösterir.](docs/assets/inceleme-ornegi.svg)
+Kesikli seride sabit kinetik modelin medyan mutlak bağıl hatası %10,30 (P90 %16,75). Akış serisinde sırayla bir besleme dışarıda bırakıldığında sabit model %49,01, eğitim beslemelerine göre SEC ölçeği düzeltilmiş model %28,54 (P90 %46,66) verdi.
 
-**Modelin kapsamı** — Hesap ideal doğrusal ve halkalaşmasız büyüme varsayar. Xₙ burada başlangıçtaki AA ve BB moleküllerini tek tek sayar. 1 + p = 1,99 uzunluk dispersitesidir. Verilen dönüşümden hesap yapılır.
+![İki PEtOx deney serisinde SEC molar kütlesine göre model hataları](docs/assets/benchmark-comparison.svg)
 
-**İncelerken** — Belirli bir poliüretan veya poli(2-oksazolin) deneyinde stokiyometrinin, uç grupların ya da dönüşümün nasıl tanımlanmasını istersin?
+## Kimyasal yorum
 
-Kurulumdan sonra uygulamayı `polymer-synthesis-lab` komutuyla açabilirsin. [Kurulum ve kullanım](README.md) · [Model veya veri aktarımı](docs/SCIENCE.md) · [Doğrulama](docs/VALIDATION.md)
+SEC sonuçlarının PMMA kalibrasyonunu ve reaktör tipini kaydet. Gözlenen dönüşüm model girdisi değildir. Her kohort tek başlangıç monomer derişimi içeriyor. Yeni derişimde %10 altı hata hedefi açık.
 
-[Bu projenin sürüm 0.2.0 kaynak kodunu ZIP olarak indir](../downloads/polymer-synthesis-lab-0.2.0.zip?raw=true)
+[Bilimsel yöntem ve veri](docs/PETOX.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-synthesis-lab-0.3.0.zip) · [Tüm projeler](../README.md)

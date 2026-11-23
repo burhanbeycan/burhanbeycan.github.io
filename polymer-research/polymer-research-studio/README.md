@@ -2,33 +2,34 @@
 
 **Chemical structure, polymer populations and physical response in one connected research environment.**
 
-Polymer Research Studio is developed for Burhan Beycan's polymer-chemistry research workflow. Six independent projects share a local academic interface and a versioned sample record. The GitHub repository is `polymer-research-studio`; the Python distribution remains `polymer-research-workbench` for compatibility. Start the user interface with `polymer-studio`. PolyChemMD is a separate project and is not a dependency.
+Polymer Research Studio is developed for Burhan Beycan's polymer-chemistry research workflow. Six independent projects share a local academic interface and a versioned sample record. The Studio source folder is `polymer-research-studio`; the Python distribution remains `polymer-research-workbench` for compatibility. Start the user interface with `polymer-studio`. PolyChemMD is a separate project and is not a dependency.
+
+## Review the research workflows
+
+Open **Material record** to register a synthesis batch and derive a cast film and an electrospun mat. Each specimen carries its own processing history and evidence. Import the [worked session](examples/batch-film-mat.json) with **Import record** to try the workflow. The film has an illustrative thickness and the mat has its own empty evidence record. Select the active specimen before sending an earlier calculation to another lab.
+
+The six laboratories add PEtOx terminal-group comparison and PVA NMR dyads, recipe-only CROP predictions, condition-specific dilute-solution viscometry, WBPU formulation/evidence comparisons, water uptake in PVA films, and paired PEO–LiTFSI EIS/tracer measurements. Each scenario identifies its data source and validation scope. The [Turkish project index](../README.md) links directly to the results and instructions for each laboratory.
 
 ## Independent laboratories
 
 | Project | Implemented work | Independent command | Local port |
 |---|---|---|---|
-| [Polymer Chemistry Lab](https://github.com/burhanbeycan/polymer-chemistry-lab) | Valence-checked finite oligomers from mapped repeat units, explicit A/B sequences, H caps, molecular formula and molar mass, atom/bond diagrams | `polymer-chemistry-lab` | 8771 |
-| [Polymer Synthesis Lab](https://github.com/burhanbeycan/polymer-synthesis-lab) | AA+BB Carothers balances, ideal initiated-chain DPn/Mn, terminal Mayo–Lewis composition, stationary dyads and run lengths | `polymer-synthesis-lab` | 8770 |
-| [Polymer Chain Lab](https://github.com/burhanbeycan/polymer-chain-lab) | Number/mass MWD, Mn/Mw/Mz/Đ, end-group-aware DP mapping, Gaussian/WLC dimensions, Gaussian scattering and finite-chain RIS | `polymer-chain-lab` | 8766 |
-| [Polymer Transport Lab](https://github.com/burhanbeycan/polymer-transport-lab) | Slab diffusion, finite-volume verification, fixed-geometry D fitting and Henry-law permeation | `polymer-transport-lab` | 8767 |
-| [Polymer Network Lab](https://github.com/burhanbeycan/polymer-network-lab) | Neutral-network equilibrium swelling, consistent mixing/elastic free energy, homogeneous stability and equilibrated-film release | `polymer-network-lab` | 8768 |
-| [Polymer Electrolyte Lab](https://github.com/burhanbeycan/polymer-electrolyte-lab) | Binary Nernst–Einstein baseline, supplied collective Onsager coefficients, PSD checks and polymer-fixed transference | `polymer-electrolyte-lab` | 8769 |
+| [Polymer Chemistry Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-chemistry-lab) | Valence-checked finite oligomers from mapped repeat units, explicit A/B sequences, H caps, molecular formula and molar mass, atom/bond diagrams | `polymer-chemistry-lab` | 8771 |
+| [Polymer Synthesis Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-synthesis-lab) | AA+BB Carothers balances, ideal initiated-chain DPn/Mn, terminal Mayo–Lewis composition, stationary dyads and run lengths | `polymer-synthesis-lab` | 8770 |
+| [Polymer Chain Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-chain-lab) | Number/mass MWD, Mn/Mw/Mz/Đ, end-group-aware DP mapping, Gaussian/WLC dimensions, Gaussian scattering and finite-chain RIS | `polymer-chain-lab` | 8766 |
+| [Polymer Transport Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-transport-lab) | Slab diffusion, finite-volume verification, fixed-geometry D fitting and Henry-law permeation | `polymer-transport-lab` | 8767 |
+| [Polymer Network Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-network-lab) | Neutral-network equilibrium swelling, consistent mixing/elastic free energy, homogeneous stability and equilibrated-film release | `polymer-network-lab` | 8768 |
+| [Polymer Electrolyte Lab](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-electrolyte-lab) | Binary Nernst–Einstein baseline, supplied collective Onsager coefficients, PSD checks and polymer-fixed transference | `polymer-electrolyte-lab` | 8769 |
 
-Version **0.2.0** distinguishes a finite chemical graph from a polymer sample and from a statistical chain model. Molecular Chemistry performs explicit structural calculations on the supplied templates. Physics-model demonstration coefficients are illustrative and do not establish predictive accuracy for a named polymer. Each laboratory documents equations, sources, tests and model boundaries.
+Version **0.3.0** distinguishes a finite chemical graph from a polymer sample and from a statistical chain model. Molecular Chemistry performs explicit structural calculations on the supplied templates. Physics-model demonstration coefficients are illustrative and do not establish predictive accuracy for a named polymer. Each laboratory documents equations, sources, tests and model boundaries.
 
 ## Install all six
 
-Use Python 3.10 or newer and clone the repositories into sibling folders:
+Use Python 3.10 or newer and check out the reviewed project folders:
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-chemistry-lab.git
-git clone https://github.com/burhanbeycan/polymer-synthesis-lab.git
-git clone https://github.com/burhanbeycan/polymer-chain-lab.git
-git clone https://github.com/burhanbeycan/polymer-transport-lab.git
-git clone https://github.com/burhanbeycan/polymer-network-lab.git
-git clone https://github.com/burhanbeycan/polymer-electrolyte-lab.git
+git clone --single-branch --branch polymer-research-review-v0.2.0 https://github.com/burhanbeycan/burhanbeycan.github.io.git
+cd burhanbeycan.github.io/polymer-research
 python -m venv .venv
 ```
 

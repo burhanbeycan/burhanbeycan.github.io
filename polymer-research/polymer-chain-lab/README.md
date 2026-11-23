@@ -1,20 +1,24 @@
 # Polymer Chain Lab
 
-**Chemically explicit mass-to-chain mapping, molar-mass distributions, Gaussian/WLC dimensions and finite-chain RIS conformations.**
+**PEtOx dilute-solution viscometry, molar-mass distributions, Gaussian/WLC dimensions and finite-chain RIS conformations.**
 
-An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
+An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Studio](../polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
 
 ## Scientific status
 
-Version **0.2.0** implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
+The PEtOx viscometry benchmark uses 26 published experimental values from seven sample classes. The Gaussian, WLC, RIS and component-viscosity presets use illustrative parameters. Source tables, model assumptions and the per-temperature validation results are in [PEtOx viscometry](docs/PEtOx_VISCOMETRY.md). Other models are documented in [SCIENCE](docs/SCIENCE.md) and [VALIDATION](docs/VALIDATION.md).
+
+## Examine the PEtOx series
+
+1. Select **Measured PEtOx · PBS at 37 °C**. The chart plots measured intrinsic viscosity against SEC–MALS mass-average molar mass. Each sample row reports the prediction made while its entire nominal mass class was withheld.
+2. Change the viscometry temperature to 15, 25, 45 or 55 °C. Each fit uses only measurements at that temperature. Set the target Mw inside the mass range for an interpolation.
+3. Select **Intrinsic viscosity from a complete MWD** to study a broad distribution. Enter a component-level calibration, its condition and mass limits, and the mass distribution. The result lists each bin's mass fraction and contribution to the mixture's intrinsic viscosity.
 
 ## Install and run independently
 
-Use Python 3.10 or newer. Clone the common runtime and this application as sibling folders:
+Use Python 3.10 or newer. From the directory containing both the Studio and the Chain Lab source folders, create a virtual environment:
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-chain-lab.git
 python -m venv .venv
 ```
 
@@ -60,7 +64,7 @@ The numerical module in `src/polymer_chain_lab/model.py` is independent of the G
 
 ## Türkçe kullanım özeti
 
-Bu uygulama tek başına çalışır; ortak çalışma ortamında diğer laboratuvarlarla birlikte de kullanılabilir. Model, birimler, parametre kaynakları ve geçerlilik sınırları sonuçların yanında gösterilir. Varsayılan değerler gösterim içindir. Gerçek bir polimer için tahmin iddiası, uygun parametreler ve bağımsız deneysel doğrulama gerektirir.
+Bu uygulama tek başına çalışır; ortak çalışma ortamında diğer laboratuvarlarla birlikte de kullanılabilir. Model, birimler, parametre kaynakları ve geçerlilik sınırları sonuçların yanında gösterilir. PEtOx viskozimetri ekranı Gubarev ve arkadaşlarının deneysel verilerini kullanır. Her kütle sınıfı sırayla dışarıda bırakılır. Karışım ekranında ise kullanıcı kendi polimerine, çözücüsüne ve sıcaklığına ait bileşen katsayılarını belirtir.
 
 ## Development and attribution
 

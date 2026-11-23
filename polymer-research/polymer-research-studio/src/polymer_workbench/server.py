@@ -14,6 +14,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from . import __version__
+from .lineage import derive_material
 from .exchange import MAX_JSON_BYTES, default_material, ensure_json, handoff, make_result, validate_exchange, validate_material
 
 APPS = {
@@ -50,6 +51,15 @@ class Calculation(BaseModel):
 class Transfer(BaseModel):
     document: dict[str, Any]
     target: str
+    destination: dict[str, Any] | None = None
+
+
+class DerivedSpecimen(BaseModel):
+    parent: dict[str, Any]
+    sample_id: str
+    name: str
+    form: str
+    process: str
 
 
 def create_app(selected: str | None = None) -> FastAPI:
@@ -106,11 +116,15 @@ def create_app(selected: str | None = None) -> FastAPI:
     def validate(document: dict):
         return validate_exchange(document)
 
+    @app.post("/api/material/derive")
+    def derive(request: DerivedSpecimen):
+        return derive_material(request.parent, request.sample_id, request.name, request.form, request.process)
+
     @app.post("/api/exchange/transfer")
     def transfer(request: Transfer):
         if request.target not in plugins:
             raise HTTPException(404, "Target application is not installed.")
-        return handoff(request.document, request.target, plugins[request.target].APP["fields"])
+        return handoff(request.document, request.target, plugins[request.target].APP["fields"], request.destination)
 
     static = Path(__file__).parent / "static"
     app.mount("/static", StaticFiles(directory=static), name="static")

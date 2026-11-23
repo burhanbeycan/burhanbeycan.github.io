@@ -103,3 +103,13 @@ The backward-compatible `results.molecular_views` list stores numerical 2D drawi
 The GUI constructs SVG elements from this data; arbitrary SVG/HTML supplied by a calculation or import is not inserted. A molecular drawing does not imply equilibrium geometry, force-field assignment or a stereochemical assignment beyond the supplied template. Existing 1.0 result files without molecular views remain readable.
 
 Material `chemistry` metadata now includes optional `repeat_smiles`, `stereochemistry_source`, `branch_topology`, `functional_groups`, `synthesis_route` and `conversion_basis` strings. Existing records lacking them remain valid. These fields preserve evidence; text entries are not interpreted as physical model coefficients.
+
+## Physical specimens and evidence in Studio 0.3
+
+The **Material record** register holds up to 100 specimens. An independent batch has an empty ancestor path. A derived specimen records the ordered ancestor IDs, its physical form and the processing step. The chemistry description is copied as a starting point. The new specimen starts with its own conditions, evidence, calculation history and coefficient list. Record any covalent modification or fractionation in the child chemistry. An imported single specimen can retain the ID of an ancestor held elsewhere.
+
+An evidence row records quantity, value, unit, method and conditions, and a table, figure or laboratory locator. A primary-article row identifies where the measurement was made. A secondary row identifies both the reporting article and the original work it cites, or explicitly records the attribution as unresolved. User-entered origins are declarations, not independent verification.
+
+`POST /api/material/derive` takes `parent`, `sample_id`, `name`, `form` and `process`. Transfers accept an optional `destination` material. With different specimen IDs, the transfer returns the destination and an empty input map. A destination with the same ID must have matching lineage. The GUI supplies the active specimen. Legacy clients omitting the destination request a transfer for the source specimen. New session exports include a `samples` registry alongside `runs` and `material`; earlier session files remain readable.
+
+The distinction between specimens and preparation activities follows the entity/activity terminology of the [W3C PROV model](https://www.w3.org/TR/prov-o/). The Studio serializes its own JSON exchange format.

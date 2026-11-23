@@ -1,19 +1,19 @@
-# Polymer Chain Lab
+# PEtOx zincir popülasyonu ve intrinsik viskozite
 
-Aynı zincir popülasyonunda sayı ve kütle ağırlıklı ortalamalar nasıl farklılaşır?
+PBS içinde PEtOx için [η]–M ilişkisi sıcaklıkla nasıl değişiyor?
 
-## İki bileşenli doğrusal zincir popülasyonu
+## Uygulamada incele
 
-**Girdiler** — 20.000 ve 80.000 g/mol kütlelerde eşit sayıda zincir. Tekrar kütlesi 100 g/mol, uç düzeltmesi 0 g/mol. Gaussian modelinde kontur artışı 0,25 nm/tekrar, Kuhn uzunluğu 1 nm.
+PEtOx viskozite örneğinde 37 °C seç. Her adımda bir molar kütle sınıfının tamamen çıkarıldığı tabloyu incele. Ardından 55 °C seçip veri sayısının ve hatanın değişimini karşılaştır.
 
-**Hesaplanan sonuç** — Mₙ = 50.000 g/mol, M<sub>w</sub> = 68.000 g/mol, Đ = 1,36 ve DPₙ = 500. Sayı ağırlıklı RMS jirasyon yarıçapı 4,564 nm, kütle ağırlıklı RMS değer 5,323 nm.
+## Örnek sonuç
 
-![İki bileşenin sayı, kütle ve sıfır açılı saçılma payları.](docs/assets/inceleme-ornegi.svg)
+37 °C’de yedi sınıfta medyan mutlak bağıl hata %2,33, P90 %7,12. 55 °C’de dört sınıfta medyan %10,91. Deneysel seri toplam beş sıcaklıkta 26 viskozite ölçümü içeriyor.
 
-**Modelin kapsamı** — Kütleden DP hesabı (M − M<sub>uç</sub>)/M₀ ilişkisini kullanır. Zincir boyutları girilen sertlik ve kontur artışına bağlıdır. Örnek dağılım sentetiktir.
+![Yedi PEtOx kütle sınıfında 37 °C için ölçülen ve öngörülen intrinsik viskozite](docs/assets/benchmark-comparison.svg)
 
-**İncelerken** — Ölçtüğün SEC dağılımının sütunları, sayı/kütle temeli ve uç grup düzeltmesi bu forma uyuyor mu?
+## Kimyasal yorum
 
-Kurulumdan sonra uygulamayı `polymer-chain-lab` komutuyla açabilirsin. [Kurulum ve kullanım](README.md) · [Model veya veri aktarımı](docs/SCIENCE.md) · [Doğrulama](docs/VALIDATION.md)
+SEC–MALS için DMAc/LiCl ortamı ile viskozite ölçümündeki PBS ayrı alanlar. Tek çalışmadaki kütle sınıflarının sınanması laboratuvarlar arası aktarımı ölçmez. Geniş kütle dağılımlarına ilişkin hesap için uygun bileşen K ve a katsayıları gerekir.
 
-[Bu projenin sürüm 0.2.0 kaynak kodunu ZIP olarak indir](../downloads/polymer-chain-lab-0.2.0.zip?raw=true)
+[Bilimsel yöntem ve veri](docs/PEtOx_VISCOMETRY.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-chain-lab-0.3.0.zip) · [Tüm projeler](../README.md)

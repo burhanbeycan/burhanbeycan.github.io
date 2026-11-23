@@ -159,10 +159,16 @@ def build_oligomer(template_a: str, sequence: str, template_b: str | None = None
     return Oligomer(mol, sequence, repeats)
 
 
-def molecular_view(oligomer: Oligomer) -> dict:
+def molecular_view(oligomer: Oligomer, *, molecule=None, alignment=None) -> dict:
     """Hydrogen-suppressed 2D connectivity, with wedge/dash and unit lineage."""
-    mol = Chem.Mol(oligomer.molecule)
-    rdDepictor.Compute2DCoords(mol)
+    mol = Chem.Mol(oligomer.molecule if molecule is None else molecule)
+    if alignment is None:
+        rdDepictor.Compute2DCoords(mol)
+    else:
+        # Explicit index correspondence keeps identical backbone atoms aligned,
+        # including terminal sites whose implicit hydrogen count changes.
+        atom_map = [(idx, idx) for idx in range(alignment.GetNumAtoms())]
+        rdDepictor.GenerateDepictionMatching2DStructure(mol, alignment, atom_map)
     Chem.WedgeMolBonds(mol, mol.GetConformer())
     conf = mol.GetConformer()
     atoms = []
@@ -183,11 +189,14 @@ def molecular_view(oligomer: Oligomer) -> dict:
                       "label": label, "charge": atom.GetFormalCharge(), "isotope": atom.GetIsotope(),
                       "chiral": atom.GetProp("_CIPCode") if atom.HasProp("_CIPCode") else "",
                       "unit_index": atom.GetIntProp("unit_index") if atom.HasProp("unit_index") else -1})
+        if atom.HasProp("end_role"):
+            atoms[-1]["end_role"] = atom.GetProp("end_role")
     bonds = [{"begin": bond.GetBeginAtomIdx(), "end": bond.GetEndAtomIdx(),
               "order": float(bond.GetBondTypeAsDouble()), "stereo": str(bond.GetStereo()),
-              "direction": str(bond.GetBondDir())} for bond in mol.GetBonds()]
+              "direction": str(bond.GetBondDir()),
+              **({"end_role": bond.GetProp("end_role")} if bond.HasProp("end_role") else {})} for bond in mol.GetBonds()]
     return {"title": "Finite oligomer · explicit connectivity", "caption": "Hydrogen-suppressed 2D connectivity diagram. Vertices and unlabelled ends denote carbon; implicit H complete valence. Drawing coordinates are arbitrary units, not an equilibrium conformation. Only specified stereochemistry is retained.",
-            "smiles": oligomer.summary["canonical_isomeric_smiles"], "atoms": atoms, "bonds": bonds}
+            "smiles": Chem.MolToSmiles(mol, canonical=True, isomericSmiles=True), "atoms": atoms, "bonds": bonds}
 
 
 def sequence_statistics(sequence: str) -> dict:

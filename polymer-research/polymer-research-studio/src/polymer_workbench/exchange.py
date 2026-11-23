@@ -13,6 +13,8 @@ import math
 from typing import Any
 import uuid
 
+from .lineage import check_lineage, check_registry
+
 MATERIAL_SCHEMA = "polymer-material/1.0"
 RESULT_SCHEMA = "polymer-result/1.0"
 SESSION_SCHEMA = "polymer-session/1.0"
@@ -101,6 +103,7 @@ def validate_material(material: dict | None) -> dict:
     for h in m["history"]:
         if not isinstance(h, dict) or any(not isinstance(h.get(k), str) for k in ("run_id", "application", "version")):
             raise ValueError("Calculation history requires run_id, application and version strings.")
+    check_lineage(m)
     distribution = m.get("molar_mass_distribution")
     if distribution is not None:
         if not isinstance(distribution, dict):
@@ -215,7 +218,7 @@ def make_result(app: dict, inputs: dict, output: dict, material: dict | None) ->
     if not isinstance(updates, dict):
         raise ValueError("Material updates must be an object.")
     for key, value in updates.items():
-        if key in ("schema", "sample_id", "name", "history"):
+        if key in ("schema", "sample_id", "name", "history", "lineage", "evidence"):
             raise ValueError("A model may not overwrite the material identity.")
         if key == "parameters":
             if not isinstance(value, list):
@@ -271,6 +274,8 @@ def validate_exchange(document: dict) -> dict:
         if not isinstance(document.get("material"), dict):
             raise ValueError("Session document has no material record.")
         validate_material(document["material"])
+        if "samples" in document:
+            check_registry(document["samples"], document["material"])
         runs = document.get("runs")
         if not isinstance(runs, list) or len(runs) > 50:
             raise ValueError("A session may contain at most 50 calculation runs.")
@@ -283,17 +288,24 @@ def validate_exchange(document: dict) -> dict:
     return deepcopy(document)
 
 
-def handoff(document: dict, target: str, target_fields: list[dict]) -> dict:
+def handoff(document: dict, target: str, target_fields: list[dict], destination: dict | None = None) -> dict:
     source = validate_exchange(document)
     if source.get("schema") != RESULT_SCHEMA:
         raise ValueError("A parameter handoff requires a completed calculation.")
+    if destination is not None:
+        destination = validate_material(destination)
+        if destination["sample_id"] != source["material"]["sample_id"]:
+            return {"material": destination, "inputs": {}, "notes": [
+                "The selected specimen has a different identifier. Enter coefficients and geometry measured for this specimen."]}
+        if destination.get("lineage") != source["material"].get("lineage"):
+            raise ValueError("Source and destination disagree on specimen lineage.")
     links = source["results"].get("handoffs", [])
     link = next((x for x in links if isinstance(x, dict) and x.get("target") == target), None)
     if link is None:
-        return {"material": source["material"], "inputs": {}, "notes": ["Material identity and provenance transferred. No physical coefficient was inferred or mapped."]}
+        return {"material": destination if destination is not None else source["material"], "inputs": {}, "notes": ["Material identity and provenance transferred. No physical coefficient was inferred or mapped."]}
     allowed = {f["key"] for f in target_fields}
     inputs = link.get("inputs", {})
     if not isinstance(inputs, dict) or set(inputs) - allowed:
         raise ValueError("This handoff contains inputs unsupported by the target application.")
-    return {"material": source["material"], "inputs": deepcopy(inputs), "notes": link.get("notes", []), "source_run_id": source["run_id"]}
+    return {"material": destination if destination is not None else source["material"], "inputs": deepcopy(inputs), "notes": link.get("notes", []), "source_run_id": source["run_id"]}
 

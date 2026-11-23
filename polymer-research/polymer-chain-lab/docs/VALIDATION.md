@@ -1,4 +1,14 @@
-# Verification record · 0.2.0
+# Current release verification · 0.3.0
+
+All 61 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+
+# Verification record
+
+## PEtOx viscometry and MWD
+
+The current suite passes 61 tests. Ten viscometry tests cover the experimental transcription, grouped withholding, separate SEC and viscometry conditions, a reference NumPy regression, domain checks and physically required mass weighting. The measured errors at all five temperatures are in [PEtOx viscometry](PEtOx_VISCOMETRY.md).
+
+## Historical 0.2.0 checks
 
 **Executed on 2026-11-23: 51 unittest tests passed.**
 

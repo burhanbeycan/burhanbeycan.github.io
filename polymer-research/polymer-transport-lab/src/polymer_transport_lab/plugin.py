@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from . import __version__
+from . import __version__, pva_workflow
 from .model import (
     MODEL_ID, characteristic_times, finite_number, finite_volume_slab,
     fit_diffusivity, fraction_transferred, integer_number, parse_fraction_data,
@@ -43,9 +43,9 @@ _SYNTHETIC_CSV = "time_s,fraction\n" + "\n".join(
 APP = {
     "id": "transport", "name": "Polymer Transport Lab", "version": __version__,
     "tagline": "Resolve diffusion through a polymer film, with an independent mass-balance check.",
-    "description": "Own analytical and finite-volume implementations for uniform, constant-D slab release and uptake. Fit D at known full thickness; inspect sensitivity and optional Henry-law permeation. Default scenarios are synthetic demonstrations.",
+    "description": "Own analytical and finite-volume implementations for uniform, constant-D slab release and uptake. Fit D at known full thickness; inspect sensitivity and optional Henry-law permeation. Humidity-step workflows compare constant and loading-dependent D for fixed PVA films and include a published PVA/HDI reference.",
     "accent": "#0891b2",
-    "scope": "One-dimensional fixed full slab; constant positive effective diffusivity; two faces at imposed concentration; no swelling kinetics, binding, degradation, finite bath or chemical inference of D.",
+    "scope": "Fixed, one-dimensional films. Separate constant-D and PVA water-activity workflows; explicit geometry, independently supplied isotherm, and documented specimen conditions. Freshly cast solution drying and moving boundaries are outside scope.",
     "fields": [
         _select("mode", "Experiment", "release", [("release", "Release to two perfect sinks"), ("uptake", "Uptake from two constant-concentration faces")], "The normalized transferred fraction has the same mathematical form in both modes; concentration profiles differ.", "Model"),
         _number("thickness_um", "Full film thickness", 100, "µm", "Full distance between the two exposed faces, not half-thickness. For a network handoff use fully equilibrated wet thickness.", "Model", 0.001, 1e6),
@@ -77,6 +77,8 @@ APP = {
     ],
     "references": REFERENCES,
 }
+
+pva_workflow.add_controls(APP, _select, _number)
 
 DEFAULTS = {field["key"]: field["default"] for field in APP["fields"]}
 
@@ -111,7 +113,9 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
     for field in APP["fields"]:
         if field["type"] == "number":
             numbers[field["key"]] = finite_number(values[field["key"]], field["label"], field["min"], field["max"])
-    mode = _choice(values, "mode", ["release", "uptake"])
+    mode = _choice(values, "mode", ["release", "uptake", pva_workflow.FORWARD, pva_workflow.HOLDOUT, pva_workflow.PAPER])
+    if mode in {pva_workflow.FORWARD, pva_workflow.HOLDOUT, pva_workflow.PAPER}:
+        return pva_workflow.run(values, _metric, _plot)
     fit_mode = _choice(values, "fit_mode", ["off", "fit_diffusivity"])
     data_origin = _choice(values, "fit_data_origin", ["user_supplied_unverified", "synthetic_demonstration"])
     permeation_mode = _choice(values, "permeation_mode", ["off", "henry"])

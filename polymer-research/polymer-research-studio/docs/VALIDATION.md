@@ -1,3 +1,7 @@
+# Current release verification · 0.3.0
+
+All 31 tests in this project passed in the suite run on 24 November 2026. The [release report](../../VALIDATION_TR.md) lists the installed-wheel and interface checks. The following notes also retain the earlier release record where identified.
+
 # Verification record · 0.2.0
 
 **Executed on 2026-11-23: 26 unittest tests passed, with all six laboratories available.** JavaScript syntax was checked with `node --check`.

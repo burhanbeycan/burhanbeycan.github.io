@@ -2,17 +2,33 @@
 
 **Explicit repeat connectivity, finite chains, sequence chemistry, and end-group-aware mass bookkeeping.**
 
-A local scientific application by **Burhan Beycan** for a polymer-chemistry research workflow. It builds atom/bond graphs from mapped polymerized repeat units and connects to [Polymer Research Workbench](https://github.com/burhanbeycan/polymer-research-studio). No PolyChemMD installation is required.
+A local scientific application by **Burhan Beycan** for a polymer-chemistry research workflow. It builds atom/bond graphs from mapped polymerized repeat units and connects to [Polymer Research Studio](../polymer-research-studio). No PolyChemMD installation is required.
 
-Version **0.2.0** implements a bounded molecular graph constructor. It does not infer polymerization reactions or predict material properties from chemical names. The GUI displays actual connectivity, with heteroatoms, multiple bonds, stereochemical wedge/dash cues and repeat lineage. Coordinates describe a 2D drawing, not an equilibrium conformation.
+## Compare PEtOx termini at fixed DP
+
+Select **PEtOx · same DP, three end groups**. The workbench shows the same backbone with H/H model caps and the two literature end pairs expected from methyl tosylate initiation with hydroxyl or azide termination. Inspect the N-bound α-methyl and the carbon-bound ω substituent, then compare neutral mass with the selected ion composition. The structural assignments are grounded in the end-group and tandem-MS study by [Morgan et al.](https://doi.org/10.1039/D2PY00437B).
+
+![Three aligned PEtOx trimer structures with their α and ω sites highlighted](docs/assets/petox-ends.svg)
+
+| DP 6 candidate | Formula | Neutral exact mass (Da) | [M+H]⁺ (m/z) |
+|---|---|---:|---:|
+| H/H reference | C₃₀H₅₆N₆O₆ | 596.426134 | 597.433410 |
+| α-Me / ω-OH | C₃₁H₅₈N₆O₇ | 626.436698 | 627.443974 |
+| α-Me / ω-N₃ | C₃₁H₅₇N₉O₆ | 651.443181 | 652.450457 |
+
+Calculated ion targets do not identify a measured chain. Record diagnostic end-retaining fragments and the spectrum identifier alongside any proposed assignment. **Compare only** leaves the sample record intact. Selecting one end pair enables transfer of its specific molar-mass correction to Chain Lab.
+
+## Distinguish PVA samples with the same degree of hydrolysis
+
+Open **PVA · Poval 217 (¹³C NMR dyads)**. The published fractions are 0.837 OH–OH, 0.088 mixed and 0.075 OAc–OAc. They give 88.1 mol% OH, η = 0.420 and bulk mean run lengths of 20.02 OH and 2.70 OAc units. Changing to the **equal-hydrolysis Bernoulli reference** preserves the target OH fraction and changes the mixed dyad fraction to 0.2097. The GUI displays bulk target statistics, empirical dyads from a seeded finite ensemble, the distribution of chain compositions and the covalent graph of one simulated chain. The primary NMR measurements and run-length definitions are given in [Budhlall et al., equations 1–8](https://bpb-us-w2.wpmucdn.com/sites.uml.edu/dist/4/136/files/2018/09/Budhlall_2000_Macromol.Symposia_PVOHviaNMRandHPLC-22fn4h7.pdf).
 
 ## Install and run
 
-Use Python 3.10 or newer. Clone the runtime and this laboratory into sibling directories:
+Use Python 3.10 or newer. The reviewed sources for all seven projects share one GitHub branch.
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-chemistry-lab.git
+git clone --single-branch --branch polymer-research-review-v0.2.0 https://github.com/burhanbeycan/burhanbeycan.github.io.git
+cd burhanbeycan.github.io/polymer-research
 python -m venv .venv
 ```
 
@@ -27,7 +43,7 @@ The local GUI opens at **http://127.0.0.1:8771**. Use `--no-browser` to suppress
 
 ## Chemically explicit inputs
 
-Enter the **already polymerized repeat**, with exactly two neutral dummy ports: `[*:1]` and `[*:2]`. Endpoint 2 of each unit joins endpoint 1 of the next. Every unit has the same declared orientation; the constructor does not decide regioselectivity. Both terminal ports are replaced by **H atoms**. These are computational graph caps. Real initiator and termination groups must be specified in a future end-group model before interpreting a synthetic sample.
+Enter the **already polymerized repeat**, with exactly two neutral dummy ports: `[*:1]` and `[*:2]`. Endpoint 2 of each unit joins endpoint 1 of the next. Every unit has the same declared orientation; the constructor does not decide regioselectivity. The general-purpose graph builder uses explicit H/H model caps. Use **PEtOx end groups & ion masses** for chemically assigned α and ω candidates.
 
 | Preset | Polymerized mapped repeat | Repeat contribution |
 |---|---|---|
@@ -48,13 +64,13 @@ The gallery shows H/H-capped finite graphs. Unspecified stereocentres are not an
 
 ## Mass bookkeeping and connected calculations
 
-The repeat contribution excludes the two terminal H atoms:
+In the general H/H builder the repeat contribution excludes both terminal atoms.
 
 \[
 M_{\mathrm{chain}}=\sum_i M_{\mathrm{repeat},i}+2M_H.
 \]
 
-Formula, average molar mass and exact molecular mass are reported separately. A finite molecule's mass is not a sample's measured Mn or Mw. For homopolymers, the explicit handoff to Chain Lab transfers only the average repeat mass and H/H end correction. It does not invent a measured MWD, contour increment, persistence length or Kuhn length. Mixed-repeat chains have no automatic one-repeat mapping.
+Formula, average molar mass and exact molecular mass are reported separately. A finite molecule's mass is not a sample's measured Mn or Mw. The homopolymer handoff transfers the average repeat mass and the end correction for the selected model. It does not invent a measured MWD, contour increment, persistence length or Kuhn length. Mixed-repeat chains have no automatic one-repeat mapping.
 
 ## Verify and inspect
 

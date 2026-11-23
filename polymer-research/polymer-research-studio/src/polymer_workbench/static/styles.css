@@ -9,3 +9,5 @@
 @media(max-width:1180px){.workflow-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.molecule-controls{gap:10px}.molecule-legend{gap:8px}.workflow-strip{grid-template-columns:1fr}.molecule-card{padding:14px 10px}.hero{padding:22px 0}.topbar{height:auto}}
 @media print{.molecule-controls{display:none}.molecule-viewport{overflow:visible;max-height:none}.molecule-viewport svg{width:100%!important}.molecule-smiles{display:none}}
+
+.molecular-comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:10px}.molecular-comparison .molecule-card{min-width:0}.molecular-comparison .chart-heading{flex-wrap:wrap}.alpha-end{color:#13766d}.omega-end{color:#a74679}#switch-specimen{max-width:30rem}#new-specimen,#new-evidence{max-width:65rem}#view-material>section.card>.card{padding:8px 0;border:0}

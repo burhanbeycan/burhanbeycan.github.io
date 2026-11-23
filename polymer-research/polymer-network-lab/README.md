@@ -1,20 +1,28 @@
 # Polymer Network Lab
 
-**Neutral network equilibrium swelling, thermodynamic stability and a fixed swollen-geometry release handoff.**
+**Polyurethane functional-group balances, film extraction, DMA and condition-matched swelling analysis.**
 
-An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
+An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
 
 ## Scientific status
 
-Version **0.2.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
+Choose a WBPU preset in the GUI to review the component ledger, an extraction/DMA example, or a measured formulation series. The legacy equilibrium mode calculates free isotropic swelling of an ideal neutral network with supplied parameters.
+
+| WBPU analysis | Input | Readout |
+|---|---|---|
+| Functional groups | Component masses, lot-specific OH number or NCO content, equivalent weights or nominal molar masses and functionality | OH, NCO, amine and independently reacted-water equivalents by component and stage, NCO/OH, overall reactive index |
+| Extraction and DMA | Initial, blotted and redried masses, solvent, exposure and temperature, optional dry-film tensile DMA | Operational gel/sol, net swelling on initial dry mass, solvent uptake on retained gel and E′ traces by frequency |
+| Withheld formulation | Matched recipe and swelling observations, optional independent DMA | Fold predictions and MAE in percentage points for a training mean, recipe fraction, or independent modulus |
+
+The experimental preset contains three jatropha WBPU films measured in toluene. The recipe example illustrates equal masses of PEG 20k and PCL 1k diols. Each gram supplies 0.10 and 2.00 mmol of OH, respectively. Keep sample-level results for your PEG/PCL films and electrospun mats linked to their original records. [WBPU methods and worked example](docs/WBPU.md)
 
 ## Install and run independently
 
-Use Python 3.10 or newer. Clone the common runtime and this application as sibling folders:
+Use Python 3.10 or newer. Check out the review branch containing both source folders:
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-network-lab.git
+git clone --single-branch --branch polymer-research-review-v0.2.0 https://github.com/burhanbeycan/burhanbeycan.github.io.git
+cd burhanbeycan.github.io/polymer-research
 python -m venv .venv
 ```
 

@@ -6,11 +6,15 @@ import math
 
 import numpy as np
 
+from .viscosity import CSV_FIELDS, benchmark, literature_series, mixture, read_observations
 from .model import (degrees_of_polymerization, finite_number, gaussian_dimensions, integer,
                     make_distribution, parse_distribution, population_form_factor,
                     sample_ris, wormlike_dimensions)
 
 POPULATION_MODELS = {"key": "model", "value": ["gaussian", "wlc"]}
+FIT_MODEL = {"key": "model", "value": "intrinsic_viscosity_fit"}
+MIX_MODEL = {"key": "model", "value": "intrinsic_viscosity_mwd"}
+MWD_MODELS = {"key": "model", "value": ["gaussian", "wlc", "intrinsic_viscosity_mwd"]}
 RIS_MODEL = {"key": "model", "value": "ris"}
 
 
@@ -25,6 +29,9 @@ def _number(key, label, default, unit, minimum, maximum, help_text, group, show_
 
 
 REFERENCES = [
+    {"id": "gubarev2018", "title": "Gubarev et al., PEtOx hydrodynamics in PBS", "url": "https://doi.org/10.1039/C8PY00255J", "year": 2018},
+    {"id": "gubarev_si", "title": "Experimental SI, Tables S1 and S2 (SEC–MALS and intrinsic viscosity)", "url": "https://www.rsc.org/suppdata/c8/py/c8py00255j/c8py00255j1.pdf", "year": 2018},
+    {"id": "iupac_mw_viscosity", "title": "IUPAC Gold Book: viscosity-average molar mass", "url": "https://goldbook.iupac.org/terms/view/12220"},
     {"id": "iupac_dp", "title": "IUPAC Gold Book: degree of polymerization", "url": "https://goldbook.iupac.org/terms/view/D01569"},
     {"id": "iupac_mn", "title": "IUPAC Gold Book: number-average molar mass", "url": "https://goldbook.iupac.org/terms/view/12216", "year": 2025},
     {"id": "iupac_dispersity", "title": "IUPAC Gold Book: molar-mass dispersity", "url": "https://goldbook.iupac.org/terms/view/12224", "year": 2025},
@@ -37,23 +44,34 @@ DEFAULT_CSV = "molar_mass_g_mol,amount\n20000,0.5\n80000,0.5"
 TAIL_CSV = "molar_mass_g_mol,amount\n10000,0.09375\n50000,0.8875\n250000,0.01875"
 
 APP = {
-    "id": "chain", "name": "Polymer Chain Lab", "version": "0.2.0", "accent": "#287f80",
+    "id": "chain", "name": "Polymer Chain Lab", "version": "0.3.0", "accent": "#287f80",
     "tagline": "Resolve populations, chain stiffness, and local conformational statistics.",
-    "description": "Analyze user-supplied molar-mass distributions; compare Gaussian and worm-like chain dimensions; sample an explicit finite-chain rotational-isomeric-state model.",
-    "scope": "Equilibrium single-chain statistics and population weighting. Synthetic defaults; no chemistry-specific parameter database, intermolecular interactions, dynamics, or parameter fitting.",
+    "description": "Analyze user-supplied molar-mass distributions; compare Gaussian and worm-like chain dimensions; sample an explicit finite-chain rotational-isomeric-state model; evaluate PEtOx dilute-solution viscometry by held-out molar-mass class.",
+    "scope": "Equilibrium single-chain statistics and population weighting. PEtOx viscometry benchmarks use measured literature data. Conformational presets and the component-law MWD example use illustrative parameters.",
     "fields": [
         {"key": "model", "label": "Physical model", "type": "select", "default": "gaussian", "unit": "", "help": "Population models use MWD; RIS describes independent chains with an explicit local torsion Hamiltonian.", "group": "Model", "options": [
             {"value": "gaussian", "label": "Gaussian chain + MWD + scattering"},
             {"value": "wlc", "label": "Worm-like chain + MWD dimensions"},
-            {"value": "ris", "label": "Finite-chain RIS ensemble"}]},
-        _number("temperature_K", "Temperature", 298.15, "K", 1, 5000, "RIS uses temperature in Boltzmann weights. Gaussian/WLC stiffness is user-supplied at this temperature; no temperature law is inferred.", "Conditions"),
-        {"key": "mwd_source", "label": "Population source", "type": "select", "default": "csv", "unit": "", "group": "Population", "help": "Use the table below or the number-fraction MWD in an imported material record.", "show_if": POPULATION_MODELS, "options": [{"value": "csv", "label": "Entered CSV"}, {"value": "material", "label": "Imported material MWD"}]},
-        {"key": "distribution_basis", "label": "CSV amount basis", "type": "select", "default": "number", "unit": "", "group": "Population", "help": "Discrete fractions/counts are normalized. Log-density means density per d(log10 M), integrated over the supplied range by trapezoidal quadrature. This field does not alter imported material number fractions.", "show_if": POPULATION_MODELS, "options": [
+            {"value": "ris", "label": "Finite-chain RIS ensemble"},
+            {"value": "intrinsic_viscosity_fit", "label": "PEtOx · measured intrinsic-viscosity benchmark"},
+            {"value": "intrinsic_viscosity_mwd", "label": "Intrinsic viscosity from a complete MWD"}]},
+        _number("temperature_K", "Temperature", 298.15, "K", 1, 5000, "RIS uses temperature in Boltzmann weights. Gaussian/WLC stiffness is user-supplied at this temperature; no temperature law is inferred.", "Conditions", {"key": "model", "value": ["gaussian", "wlc", "ris"]}),
+        {"key": "mwd_source", "label": "Population source", "type": "select", "default": "csv", "unit": "", "group": "Population", "help": "Use the table below or the number-fraction MWD in an imported material record.", "show_if": MWD_MODELS, "options": [{"value": "csv", "label": "Entered CSV"}, {"value": "material", "label": "Imported material MWD"}]},
+        {"key": "distribution_basis", "label": "CSV amount basis", "type": "select", "default": "number", "unit": "", "group": "Population", "help": "Discrete fractions/counts are normalized. Log-density means density per d(log10 M), integrated over the supplied range by trapezoidal quadrature. This field does not alter imported material number fractions.", "show_if": MWD_MODELS, "options": [
             {"value": "number", "label": "Discrete number amounts"},
             {"value": "mass", "label": "Discrete mass amounts"},
             {"value": "number_log_density", "label": "Number density per log10 M"},
             {"value": "mass_log_density", "label": "Mass density per log10 M"}]},
-        {"key": "distribution_csv", "label": "Molar mass, amount", "type": "textarea", "default": DEFAULT_CSV, "unit": "g/mol, relative amount", "group": "Population", "help": "Two comma-separated columns; optional molar_mass_g_mol,amount header. Up to 512 rows. Masses must be positive; amounts nonnegative. Raw SEC retention times are not molar masses.", "show_if": POPULATION_MODELS},
+        {"key": "distribution_csv", "label": "Molar mass, amount", "type": "textarea", "default": DEFAULT_CSV, "unit": "g/mol, relative amount", "group": "Population", "help": "Two comma-separated columns; optional molar_mass_g_mol,amount header. Up to 512 rows. Masses must be positive; amounts nonnegative. Raw SEC retention times are not molar masses.", "show_if": MWD_MODELS},
+        _number("viscosity_temp_C", "Viscometry temperature", 37, "°C", -273.14, 600, "The published series covers 15, 25, 37, 45 and 55 °C. Each fit uses one measured temperature.", "Dilute-solution conditions", FIT_MODEL),
+        {"key": "calibration_csv", "label": "Custom PEtOx measurement CSV (optional)", "type": "textarea", "default": "", "unit": "", "group": "Dilute-solution conditions", "show_if": FIT_MODEL, "help": "Leave blank to use Gubarev et al. Experimental linear PEtOx and SEC–MALS Mw only. Keep the same chemistry, architecture and medium within a fit. Header: " + ",".join(CSV_FIELDS)},
+        _number("target_mw_g_mol", "Target sample Mw", 50000, "g/mol", 1, 1e10, "Interpolate for a sample of comparable dispersity and end chemistry measured under the same conditions.", "Dilute-solution conditions", FIT_MODEL),
+        _number("component_k", "Component-law K", 0.04, "(mL/g)/(g/mol)^a", 1e-12, 1e5, "Enter an independently justified law for individual mass components. The default is illustrative.", "Component viscosity law", MIX_MODEL),
+        _number("component_a", "Component-law exponent a", 0.65, "", 0.001, 2, "All populations must share the same linear chemistry, solvent and temperature.", "Component viscosity law", MIX_MODEL),
+        _number("component_low_g_mol", "Lower calibrated component mass", 10000, "g/mol", 1, 1e12, "Smallest mass for which the component law applies.", "Component viscosity law", MIX_MODEL),
+        _number("component_high_g_mol", "Upper calibrated component mass", 150000, "g/mol", 1, 1e12, "All populated mass bins must lie within the calibration interval.", "Component viscosity law", MIX_MODEL),
+        {"key": "component_medium", "label": "Polymer, solvent and temperature", "type": "text", "default": "Illustrative linear homopolymer in solvent S at 25 °C", "unit": "", "group": "Component viscosity law", "show_if": MIX_MODEL, "help": "Identify the actual polymer, solvent composition and temperature used for the constants."},
+        {"key": "component_source", "label": "Source of component law", "type": "text", "default": "Synthetic example", "unit": "", "group": "Component viscosity law", "show_if": MIX_MODEL, "help": "Cite a calibration record and mass range for measured constants."},
         _number("tail_threshold_g_mol", "High-mass tail threshold", 100000, "g/mol", 1e-6, 1e12, "Report fractions strictly above this molar mass. Useful when Mn and dispersity hide different tails.", "Population", POPULATION_MODELS),
         _number("repeat_mass_g_mol", "Repeat-unit molar mass", 100, "g/mol", 0.001, 1e6, "Common repeat contribution M0. Effective DP=(M−Mend)/M0; do not substitute the molar mass of a capped monomer. The default is synthetic.", "Chain mapping", POPULATION_MODELS),
         _number("end_group_mass_g_mol", "Net end-group mass correction", 0, "g/mol per chain", 0, 1e6, "Mend in M=DP×M0+Mend: terminal atoms not already counted in the repeat contribution. Zero explicitly neglects this correction. Supply the value appropriate to your chain chemistry.", "Chain mapping", POPULATION_MODELS),
@@ -72,12 +90,16 @@ APP = {
         _number("seed", "Random seed", 1729, "", 0, 2**32 - 1, "Reproducible with the same code and NumPy environment; no Markov-chain burn-in is required.", "RIS sampling", RIS_MODEL, 1),
     ],
     "presets": [
+        {"name": "Measured PEtOx · PBS at 37 °C", "description": "Seven SEC–MALS mass classes with independent dilute-solution viscometry. Inspect withheld-class errors and the separate SEC conditions.", "inputs": {"model": "intrinsic_viscosity_fit", "viscosity_temp_C": 37, "calibration_csv": "", "target_mw_g_mol": 50000}},
+        {"name": "Synthetic MWD · viscosity-average molar mass", "description": "Apply a specified single-component law to a two-bin polymer mass distribution.", "inputs": {"model": "intrinsic_viscosity_mwd", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": DEFAULT_CSV}},
         {"name": "Synthetic A · two mass populations", "description": "Mn=50,000 g/mol, Mw=68,000 g/mol, Đ=1.36; compare with Synthetic B to expose high-tail differences.", "inputs": {"model": "gaussian", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": DEFAULT_CSV, "repeat_mass_g_mol": 100, "contour_increment_nm": 0.25, "kuhn_length_nm": 1, "tail_threshold_g_mol": 100000}},
         {"name": "Synthetic B · same Mn and Đ, different tail", "description": "Matches Synthetic A in Mn and Mw but changes Mz and the scattering-weighted radius. This is an exact discrete demonstration.", "inputs": {"model": "gaussian", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": TAIL_CSV, "repeat_mass_g_mol": 100, "contour_increment_nm": 0.25, "kuhn_length_nm": 1, "tail_threshold_g_mol": 100000}},
         {"name": "Synthetic WLC · rod-to-coil span", "description": "A discrete log-spaced population explores finite contour length relative to persistence length; no WLC scattering curve is substituted.", "inputs": {"model": "wlc", "mwd_source": "csv", "distribution_basis": "number", "distribution_csv": "molar_mass_g_mol,amount\n1000,1\n10000,1\n100000,1", "repeat_mass_g_mol": 100, "contour_increment_nm": 0.25, "persistence_length_nm": 25}},
         {"name": "Synthetic RIS · local steric coupling", "description": "Finite-chain trans/gauche model with an explicit adjacent opposite-gauche penalty. Parameters are illustrative and have no assigned chemistry.", "inputs": {"model": "ris", "temperature_K": 298.15, "n_bonds": 80, "bond_length_nm": 0.154, "bond_angle_deg": 112, "gauche_energy_kj_mol": 1.5, "opposite_gauche_penalty_kj_mol": 4, "n_chains": 200, "seed": 1729}},
     ],
     "models": [
+        {"name": "Intrinsic viscosity versus sample Mw", "equation": "ln[η] = ln K + a ln Mw", "assumptions": ["Matched linear PEtOx, SEC–MALS protocol, viscometry medium and temperature", "Similar within-series dispersities", "Testing with complete nominal mass classes held out"], "references": ["gubarev2018", "gubarev_si"]},
+        {"name": "Dilute-solution MWD viscosity average", "equation": "[η]mix = Σwi K Mi^a; Mv = (Σwi Mi^a)^(1/a)", "assumptions": ["Noninteracting chains at infinite dilution", "Mass fractions; uniform chemistry, architecture and conditions", "Component-level constants supplied independently"], "references": ["iupac_mw_viscosity"]},
         {"name": "Chemically explicit mass-to-contour mapping", "equation": "DPi=(Mi−Mend)/M0; Li=DPi a", "assumptions": ["One common repeat contribution and terminal correction across the population", "Open linear chains; fractional effective DP for continuum bins", "Terminal geometry is not included in contour length", "No sequence-resolved copolymer mapping is inferred"], "references": ["iupac_dp"]},
         {"name": "Molar-mass population", "equation": "Mn=ΣnM; Mw=ΣnM²/ΣnM; Mz=ΣnM³/ΣnM²; Đ=Mw/Mn", "assumptions": ["Normalized number fractions", "Each row represents a discrete bin or a documented quadrature node", "Scattering weights nM² require equal contrast per mass"], "references": ["iupac_mn", "iupac_dispersity"]},
         {"name": "Gaussian dimensions and Debye scattering", "equation": "<Re²>=bL; <Rg²>=bL/6; P(q)=2[exp(−x)−1+x]/x², x=q²<Rg²>", "assumptions": ["Ideal linear chains with many Kuhn segments", "Unperturbed dimensions; no excluded-volume expansion", "Population scattering assumes independent chains and uniform contrast per mass"], "references": ["sasview_debye"]},
@@ -133,7 +155,7 @@ def _material_notes(material):
     return notes
 
 
-def _population(values, material):
+def _distribution(values, material):
     if values["mwd_source"] == "material":
         record = material.get("molar_mass_distribution")
         if not isinstance(record, dict) or record.get("basis") != "number_fraction":
@@ -141,6 +163,11 @@ def _population(values, material):
         distribution = make_distribution(record.get("molar_mass_g_mol", []), record.get("number_fraction", []), "number")
     else:
         distribution = parse_distribution(values["distribution_csv"], values["distribution_basis"])
+    return distribution
+
+
+def _population(values, material):
+    distribution = _distribution(values, material)
     mass, number = distribution.molar_mass_g_mol, distribution.number_fraction
     mass_fraction, scattering = distribution.mass_fraction, distribution.scattering_fraction
     moments = distribution.moments()
@@ -267,6 +294,78 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
         architecture = str(chemistry.get("architecture", "")).strip().lower()
         if any(term in architecture for term in ("cyclic", "ring", "branch", "star", "brush", "network", "crosslink", "dendri")):
             raise ValueError("The selected chain models require open linear chains; the material declares an unsupported architecture.")
+    if values["model"] == "intrinsic_viscosity_fit":
+        return _viscosity_benchmark(values)
+    if values["model"] == "intrinsic_viscosity_mwd":
+        return _viscosity_mixture(values, material)
     if values["model"] == "ris":
         return _ris(values, material)
     return _population(values, material)
+
+
+def _viscosity_benchmark(values):
+    custom = values["calibration_csv"].strip()
+    observations = read_observations(custom) if custom else literature_series()
+    rows, predictions, k, a = benchmark(observations, values["viscosity_temp_C"])
+    mass = np.asarray([r.mw for r in rows])
+    observed = [r.eta for r in rows]
+    held_out = [predictions[r.sample][0] for r in rows]
+    errors = [predictions[r.sample][1] for r in rows]
+    query = values["target_mw_g_mol"]
+    in_domain = min(mass) <= query <= max(mass)
+    target = k * query**a if in_domain else None
+    metrics = [
+        _metric("mh_a", "Sample-Mw scaling exponent", a),
+        _metric("mh_k", "Sample-Mw prefactor K", k, "(mL/g)/(g/mol)^a"),
+        _metric("mass_class_count", "Withheld mass classes", len({r.group for r in rows})),
+        _metric("heldout_median_ape", "Median held-out sample error", np.median(errors), "%"),
+        _metric("heldout_p90_ape", "90th percentile held-out sample error", np.percentile(errors, 90), "%"),
+        _metric("heldout_mae", "Mean absolute held-out sample error", np.mean(np.abs(np.array(held_out) - observed)), "mL/g"),
+        _metric("target_intrinsic_viscosity", "Interpolated intrinsic viscosity", target, "mL/g",
+                f"Target Mw = {query:g} g/mol, same medium, temperature and comparable dispersity."),
+    ]
+    r0 = rows[0]
+    notes = [
+        f"Viscometry: {r0.medium} at {r0.temperature:g} °C. SEC–MALS: {r0.sec_eluent} at {r0.sec_temperature:g} °C.",
+        "Each validation fold trains on all other mass classes at this temperature. Rows outside the remaining training mass range are identified in the last column.",
+        "K and a come from unweighted log-space regression on sample Mw. Component-level constants for a broad distribution require their own calibration.",
+    ]
+    if not custom:
+        notes += ["Gubarev et al., SI S1/S2: dilute-solution [η] from averaged Huggins/Kraemer extrapolations. Published dispersities of these samples span 1.04–1.18.",
+                  "This cross-validation uses one experimental series. The authors' 37 °C scaling law used sedimentation–diffusion masses; this implementation uses SEC–MALS Mw."]
+    warnings = [] if in_domain else ["The requested Mw falls outside the calibrated mass interval; the interpolation result is empty."]
+    table_rows = [[r.sample, r.group, r.mw, r.eta, *predictions[r.sample], r.source] for r in rows]
+    mass_grid = np.geomspace(min(mass), max(mass), 50)
+    return {"metrics": metrics, "plots": [
+        _plot("PEtOx intrinsic viscosity at fixed conditions", "Sample Mw (g/mol)", "[η] (mL/g)", [
+            _series("Measured", mass, observed), _series("Held-out prediction", mass, held_out),
+            _series("Fit using all classes", mass_grid, k * mass_grid**a)], "log", "log")],
+        "tables": [{"title": "Leave-one-mass-class-out predictions",
+                    "columns": ["Sample", "Mass class", "Mw (g/mol)", "Measured (mL/g)", "Held out (mL/g)", "Absolute error (%)", "Fold training interval", "Source"],
+                    "rows": table_rows}],
+        "notes": notes, "warnings": warnings, "material_updates": {}, "handoffs": []}
+
+
+def _viscosity_mixture(values, material):
+    condition = values["component_medium"].strip()
+    source = values["component_source"].strip()
+    if not condition or not source or max(len(condition), len(source)) > 500:
+        raise ValueError("Supply a polymer/solvent/temperature description and a calibration source (1–500 characters each).")
+    distribution = _distribution(values, material)
+    k, a = values["component_k"], values["component_a"]
+    eta, mv, components = mixture(distribution, k, a, values["component_low_g_mol"], values["component_high_g_mol"])
+    contributions = components * distribution.mass_fraction
+    metrics = [_metric("mixture_intrinsic_viscosity", "Intrinsic viscosity at infinite dilution", eta, "mL/g"),
+               _metric("viscosity_average_mass", "Viscosity-average molar mass Mv", mv, "g/mol"),
+               _metric("Mw", "Mass-average molar mass Mw", distribution.moments()["Mw"], "g/mol")]
+    rows = [[float(m), float(w), float(e), float(c)] for m, w, e, c in zip(
+        distribution.molar_mass_g_mol, distribution.mass_fraction, components, contributions)]
+    return {"metrics": metrics, "plots": [
+        _plot("Intrinsic viscosity contributions by mass", "Component M (g/mol)", "Contribution (mL/g)",
+              [_series("wᵢ [η]ᵢ", distribution.molar_mass_g_mol, contributions)], "log")],
+        "tables": [{"title": "Mass-weighted dilute-solution contributions",
+                    "columns": ["M (g/mol)", "Mass fraction", "Component [η] (mL/g)", "Contribution (mL/g)"],
+                    "rows": rows}],
+        "notes": [f"Component calibration: {condition}. Source: {source}.",
+                  "Weights are mass fractions after conversion of the supplied MWD. All components must share the calibration chemistry, linear architecture, solvent and temperature."],
+        "warnings": [], "material_updates": {}, "handoffs": []}

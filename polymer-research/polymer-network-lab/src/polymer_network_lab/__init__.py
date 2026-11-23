@@ -15,7 +15,7 @@ from .model import (
     time_to_release_fraction,
 )
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = [
     "EquilibriumResult", "EquilibriumRoot", "NetworkParameters", "ScanPoint",
     "chemical_potential_residual", "equilibrium_scan", "free_energy_components",

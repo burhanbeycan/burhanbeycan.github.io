@@ -1,17 +1,15 @@
-# Polymer Research Studio 0.2.0
+# Polymer Research Studio 0.3.0
 
-Bir proje seçerek Türkçe örneği açabilirsin. Her sayfada girdi, hesaplanan sonuç, modelin varsayımları ve kaynak koda geçiş bağlantısı bulunur. Sayısal örnekler model çıktılarıdır.
+Her proje için Türkçe inceleme sayfası girdileri, yeniden hesaplanan örneği ve sonucu yorumlarken gerekli deney koşullarını gösterir. İngilizce uygulamaların her biri bağımsız açılabilir.
 
-| Proje | İnceleme sorusu |
+| Proje | Çalışma sorusu |
 |---|---|
-| [Polymer Research Studio](polymer-research-studio/INCELEME.md) | Laboratuvarlar arasında hangi numune ve büyüklükler taşınıyor? |
-| [Polymer Chemistry Lab](polymer-chemistry-lab/INCELEME.md) | Tekrar birimindeki iki bağ noktası birleştirilince hangi sonlu molekül oluşur? |
-| [Polymer Synthesis Lab](polymer-synthesis-lab/INCELEME.md) | Fonksiyonel grup dönüşümü ve başlangıç stokiyometrisi ortalama zincir uzunluğunu nasıl sınırlar? |
-| [Polymer Chain Lab](polymer-chain-lab/INCELEME.md) | Aynı zincir popülasyonunda sayı ve kütle ağırlıklı ortalamalar nasıl farklılaşır? |
-| [Polymer Transport Lab](polymer-transport-lab/INCELEME.md) | Tam kalınlığı ve difüzyon katsayısı bilinen bir filmde çözünen maddenin ne kadarı salınır? |
-| [Polymer Network Lab](polymer-network-lab/INCELEME.md) | Çözücüyle etkileşim ve etkin ağ zinciri yoğunluğu denge şişmesini nasıl belirler? |
-| [Polymer Electrolyte Lab](polymer-electrolyte-lab/INCELEME.md) | İyonların izleyici difüzyon katsayıları iletkenlik için hangi ideal referans değerini verir? |
+| [Numune kimliği ve ölçümün kaynağı](polymer-research-studio/INCELEME.md) | Aynı PVA partisinden elde edilen döküm film ve elektro-eğrilmiş mat hangi özellikleri paylaşır? |
+| [PEtOx uç grupları ve PVA dizisi](polymer-chemistry-lab/INCELEME.md) | Aynı tekrarlardan oluşan iki zincirin kütle spektrumu neden farklı olabilir? |
+| [Reçeteden PEtOx molar kütlesi](polymer-synthesis-lab/INCELEME.md) | Başlangıç beslemesi, sıcaklık ve süreden hesaplanan Mₙ, deneysel SEC sonucuna ne kadar yaklaşır? |
+| [PEtOx zincir popülasyonu ve intrinsik viskozite](polymer-chain-lab/INCELEME.md) | PBS içinde PEtOx için [η]–M ilişkisi sıcaklıkla nasıl değişiyor? |
+| [WBPU eşdeğerleri, çözünmeyen fraksiyon ve şişme](polymer-network-lab/INCELEME.md) | Bir WBPU reçetesinde hangi fonksiyonel gruplar reaksiyona girebilir ve kuru filmin modülü şişme karşılaştırmasına ne katar? |
+| [PVA filminde su difüzyonu](polymer-transport-lab/INCELEME.md) | Neme bağlı bir difüzyon katsayısı su alımını hangi koşullarda sabit katsayıdan daha iyi açıklar? |
+| [PEO–LiTFSI reçetesi, EIS ve izleyici difüzyonu](polymer-electrolyte-lab/INCELEME.md) | Aynı EO:Li oranındaki iki elektrolitte hangi ölçümler birlikte kullanılabilir? |
 
-Zincir yapısından başlamak için **Polymer Chemistry Lab** sayfasındaki PEtOx örneğini aç. Ağ ve taşınım arasındaki sayısal aktarımı görmek için **Polymer Research Studio** örneğini incele. Düzeltme bildirirken proje adını, değiştirmek istediğin girdiyi ve beklediğin çıktıyı belirtmen yeterli.
-
-Her kaynak arşivi kendi proje klasörünü içerir. [Yedi bağımsız kaynak arşivi](downloads) · [Birlikte kurulum](INSTALL_TR.md)
+[Kurulum](INSTALL_TR.md) · [Yedi projeyi birlikte indir](downloads/polymer-research-suite-0.3.0.zip) · [Sürümün doğrulama sonuçları](VALIDATION_TR.md)

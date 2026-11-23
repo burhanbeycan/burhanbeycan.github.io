@@ -2,9 +2,10 @@ from __future__ import annotations
 import math
 import numpy as np
 from .model import finite, nernst_einstein, onsager
+from .records import FORM_GROUPS, PESKO, RECORDS, gui_inputs, peo_results
 
 APP = {
-    "id": "electrolyte", "name": "Polymer Electrolyte Lab", "version": "0.2.0",
+    "id": "electrolyte", "name": "Polymer Electrolyte Lab", "version": "0.3.0",
     "tagline": "Ion motion, collective transport & reference frames",
     "description": "Compare the ideal Nernst–Einstein estimate with a user-supplied Onsager matrix. Preserve the difference between tracer diffusion and collective charge transport.",
     "accent": "#6453a0",
@@ -36,6 +37,29 @@ APP = {
 }
 
 
+APP["fields"][0]["options"].append({"value": "peo_matched", "label": "PEO/LiTFSI · matched tracer and EIS measurements"})
+for field in APP["fields"]:
+    if field["group"] == "Tracer baseline":
+        field["show_if"] = {"key": "model", "value": ["nernst_einstein", "onsager"]}
+for key, label, help_text in FORM_GROUPS:
+    APP["fields"].append({"key": f"peo_{key}", "label": label, "type": "textarea",
+                          "default": gui_inputs(PESKO)[f"peo_{key}"], "group": "PEO/LiTFSI specimen",
+                          "show_if": {"key": "model", "value": "peo_matched"}, "help": help_text})
+APP["presets"].extend({"name": name, "description": desc, "inputs": gui_inputs(record)}
+                      for name, desc, record in RECORDS)
+APP["models"].append({"name": "Dry PEO/LiTFSI matched-state comparison",
+                      "equation": "r = Li/EO; c (mol/L) = 1000 ρ (g/mL) r/(M_EO + r M_LiTFSI) on the long-chain repeat basis; σ_EIS = l/(A Rb).",
+                      "assumptions": ["Dry binary formulation, anhydrous salt, a single reported composition and thermal state.",
+                                      "An independent mixture volume, density or concentration at the same temperature is required for the volumetric NE estimate."],
+                      "references": ["pesko2017", "zheng2018", "ion_pairing", "frame_gap"]})
+APP["references"].extend([
+    {"id": "pesko2017", "title": "Pesko et al. Negative Transference Numbers in Poly(ethylene oxide)-Based Electrolytes.",
+     "url": "https://doi.org/10.1149/2.0581711jes", "year": 2017},
+    {"id": "zheng2018", "title": "Zheng et al. Optimizing Ion Transport in Polyether-Based Electrolytes for Lithium Batteries.",
+     "url": "https://doi.org/10.1021/acs.macromol.7b02706", "year": 2018},
+])
+
+
 def calculate(inputs, material=None):
     if not isinstance(inputs, dict):
         raise ValueError("Inputs must be a dictionary.")
@@ -46,13 +70,15 @@ def calculate(inputs, material=None):
     if unknown:
         raise ValueError("Unknown input fields: " + ", ".join(sorted(str(key) for key in unknown)))
     p.update(inputs)
-    if not isinstance(p["model"], str) or p["model"] not in ("nernst_einstein", "onsager"):
-        raise ValueError("Choose Nernst–Einstein or Onsager.")
+    if not isinstance(p["model"], str) or p["model"] not in ("nernst_einstein", "onsager", "peo_matched"):
+        raise ValueError("Choose a listed electrolyte model.")
     # The backend enforces the declared GUI ranges even for hidden fields.
     for field in APP["fields"]:
         if field["type"] == "number":
             p[field["key"]] = finite(p[field["key"]], field["label"],
                                      lower=field.get("min"), upper=field.get("max"))
+    if p["model"] == "peo_matched":
+        return peo_results(p)
     T = p["temperature_K"]
     c_L = p["concentration_mol_L"]
     ideal = nernst_einstein(c_L * 1000, p["d_plus_m2_s"], p["d_minus_m2_s"], T)

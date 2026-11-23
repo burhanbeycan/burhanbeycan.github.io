@@ -2,19 +2,19 @@
 
 **Slab sorption and release, independently discretized diffusion, parameter fitting and Henry permeation.**
 
-An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
+An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
 
 ## Scientific status
 
-Version **0.2.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
+Version **0.3.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
 
 ## Install and run independently
 
-Use Python 3.10 or newer. Clone the common runtime and this application as sibling folders:
+Use Python 3.10 or newer. Check out the review branch containing both source folders:
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-transport-lab.git
+git clone --single-branch --branch polymer-research-review-v0.2.0 https://github.com/burhanbeycan/burhanbeycan.github.io.git
+cd burhanbeycan.github.io/polymer-research
 python -m venv .venv
 ```
 
@@ -58,3 +58,11 @@ Bu uygulama tek başına çalışır; ortak çalışma ortamında diğer laborat
 ## Development and attribution
 
 Scientific algorithms are implemented in this repository; NumPy/SciPy provide general numerical primitives. Literature models are attributed in the scientific documentation. The implementation was developed with AI assistance and must be reviewed like other research software. See [CONTRIBUTING](CONTRIBUTING.md). MIT license.
+
+## PVA films under a humidity step
+
+Select **PVA film · independent isotherm + humidity step** to follow the mean water content of an equilibrated film after changing vapour activity. Enter equilibrium and kinetic measurements on a dry-polymer mass basis and select a supported film (one exposed face) or suspended film (two equally exposed faces). Compare the analytical constant-D baseline with a conservative numerical model in which D varies with local water loading.
+
+Select **PVA film · compare models at a held-out thickness** to reserve every time series at one nominal thickness before fitting either model. Each curve carries its thickness, exposed faces, grade/history identifier, temperature and branch. Separate plots and RMSEs show the effect of model choice on the reserved thickness. The bundled 50/90 µm example uses simulated data.
+
+Select **PVA · inspect published equilibrium and apparent D** for the 25 °C HDI-crosslinked PVA results of El Shafee and Naguib. The table distinguishes the measured-curve apparent coefficients from equilibrium loadings calculated using the authors’ GAB fit. Numerical methods, CSV templates and the interpretation of each result are in [PVA water transport](docs/PVA_WATER.md).

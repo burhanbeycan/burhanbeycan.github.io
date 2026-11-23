@@ -1,6 +1,7 @@
 """Academic GUI adapter; chemistry is implemented in the model module."""
 from __future__ import annotations
 
+from . import experiments
 from .model import TEMPLATES, build_oligomer, molecular_view, sequence_statistics
 
 REFERENCES = [
@@ -12,7 +13,7 @@ REFERENCES = [
 ]
 
 APP = {
-    "id": "chemistry", "name": "Polymer Chemistry Lab", "version": "0.2.0", "accent": "#936326",
+    "id": "chemistry", "name": "Polymer Chemistry Lab", "version": "0.3.0", "accent": "#936326",
     "tagline": "Connect repeat units, resolve end groups, and inspect molecular sequence.",
     "description": "Build a finite linear oligomer from explicit polymerized repeat connectivity; inspect atom/bond structure, formula, end-group-aware molar mass and A/B sequence dyads.",
     "scope": "A graph constructor and chemistry ledger. H/H graph caps are stated assumptions; no reaction mechanism, conformational energy, tacticity distribution or material-property accuracy is inferred.",
@@ -35,6 +36,19 @@ APP = {
     "references": REFERENCES,
 }
 
+# Preserve v0.2 input replay and default graph behaviour. Presets reset the
+# mode explicitly when a researcher switches back from a comparison.
+for field in APP["fields"]:
+    field["show_if"] = {"key": "chemistry_mode", "value": "graph"}
+for preset in APP["presets"]:
+    preset["inputs"]["chemistry_mode"] = "graph"
+APP["fields"] = [experiments.MODE_FIELD, *APP["fields"], *experiments.FIELDS]
+APP["presets"] = [*experiments.PRESETS, *APP["presets"]]
+APP["models"].extend(experiments.MODELS)
+APP["references"].extend(experiments.REFERENCES)
+APP["description"] = "Construct finite oligomers, compare PEtOx end-group assignments and model PVA/PVAc sequence populations from composition or quantitative NMR dyads."
+APP["scope"] = "Graph identity, stated positive-ion mass targets and stationary sequence models. Chain-specific assignments require independent structural evidence."
+
 
 def calculate(inputs, material=None):
     if not isinstance(inputs, dict):
@@ -44,6 +58,13 @@ def calculate(inputs, material=None):
         raise ValueError("Unknown chemistry input(s): " + ", ".join(sorted(set(inputs) - keys)))
     values = {field["key"]: field["default"] for field in APP["fields"]}
     values.update(inputs)
+    mode = values["chemistry_mode"]
+    if mode == "petox":
+        return experiments.compare_ends(values)
+    if mode in ("pva_nmr", "pva_random"):
+        return experiments.model_pva(values)
+    if mode != "graph":
+        raise ValueError("Unknown chemistry analysis mode.")
     oligomer = build_oligomer(values["template_a"], values["sequence"], values["template_b"])
     summary = oligomer.summary
     statistics = sequence_statistics(oligomer.sequence)
@@ -72,6 +93,7 @@ def calculate(inputs, material=None):
         "end_groups": "H/H computational graph caps (2.016 g/mol with current RDKit atomic weights); not inferred synthesis end groups",
         "tacticity": "not inferred; stereochemistry only as explicitly encoded in the molecular graph",
         "finite_oligomer_smiles": summary["canonical_isomeric_smiles"],
+        "end_group_evidence": "Illustrative graph caps.",
     }
     metrics = [
         {"key": "dp", "label": "Explicit repeat count", "value": len(oligomer.sequence), "unit": "units", "note": "Single finite chain, not DPn of a sample."},

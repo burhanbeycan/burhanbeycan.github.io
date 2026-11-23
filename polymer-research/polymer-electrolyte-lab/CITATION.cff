@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "Cite this software and the model-specific primary references used in your calculation."
 title: "Polymer Electrolyte Lab"
-version: 0.2.0
+version: 0.3.0
 type: software
 authors:
   - family-names: Beycan
     given-names: Burhan
 license: MIT
-repository-code: "https://github.com/burhanbeycan/polymer-electrolyte-lab"
+repository-code: "https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-electrolyte-lab"

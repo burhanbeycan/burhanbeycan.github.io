@@ -117,7 +117,8 @@ class ChemistryTests(unittest.TestCase):
         for preset in APP["presets"]:
             with self.subTest(name=preset["name"]):
                 output = calculate(preset["inputs"])
-                self.assertEqual(output["material_updates"]["chemistry"]["architecture"], "linear")
+                if preset["inputs"]["chemistry_mode"] == "graph":
+                    self.assertEqual(output["material_updates"]["chemistry"]["architecture"], "linear")
                 self.assertTrue(output["molecular_views"][0]["atoms"])
 
     def test_runtime_output_contract_when_available(self):

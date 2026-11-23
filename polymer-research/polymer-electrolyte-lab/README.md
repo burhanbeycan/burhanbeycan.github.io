@@ -2,19 +2,21 @@
 
 **Nernst–Einstein estimates and reference-frame-explicit collective Onsager transport.**
 
-An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
+An independent, local scientific application developed for a polymer-chemistry research workflow. It also connects to [Polymer Research Workbench](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-research-studio) through a versioned material and result protocol. There is no PolyChemMD dependency.
 
 ## Scientific status
 
-Version **0.2.0** retains the independently verified scientific kernels and connects to the expanded Polymer Research Studio. It implements explicitly scoped models, numerical checks, synthetic reference scenarios and reproducible exports. Initial example coefficients are **illustrative, not measured material constants**. Numerical verification does not establish accuracy for a particular polymer. See [SCIENCE](docs/SCIENCE.md), [REFERENCES](docs/REFERENCES.md) and [VALIDATION](docs/VALIDATION.md).
+The PEO/LiTFSI experiment view calculates dry salt loading from EO:Li or weighed components and compares measured impedance with the Nernst–Einstein baseline from PFG-NMR. The two primary-source presets retain different PEO molar masses, histories and independent transport measurements. The numerical Onsager and ideal-ion demonstration presets remain available alongside them.
+
+Start with **PEO/LiTFSI · Pesko 2017**. At 90 °C and EO:Li = 12.5, measured impedance gives 2 mS/cm. Approximate readings from the paper's tracer plot give σNE ≈ 1.84 mS/cm. The GUI reports the sensitivity to plot reading and records all source locations. **PEO/LiTFSI · Zheng 2018** checks the tracer fraction of a separate 100 kg/mol material using tabulated values. [Worked comparison and input guide](docs/PEO_COMPARISON.md) · [Scientific model](docs/SCIENCE.md) · [Validation](docs/VALIDATION.md).
 
 ## Install and run independently
 
-Use Python 3.10 or newer. Clone the common runtime and this application as sibling folders:
+Use Python 3.10 or newer. Check out the review branch containing both source folders:
 
 ```bash
-git clone https://github.com/burhanbeycan/polymer-research-studio.git
-git clone https://github.com/burhanbeycan/polymer-electrolyte-lab.git
+git clone --single-branch --branch polymer-research-review-v0.2.0 https://github.com/burhanbeycan/burhanbeycan.github.io.git
+cd burhanbeycan.github.io/polymer-research
 python -m venv .venv
 ```
 
@@ -53,7 +55,7 @@ The numerical module in `src/polymer_electrolyte_lab/model.py` is independent of
 
 ## Türkçe kullanım özeti
 
-Bu uygulama tek başına çalışır; ortak çalışma ortamında diğer laboratuvarlarla birlikte de kullanılabilir. Model, birimler, parametre kaynakları ve geçerlilik sınırları sonuçların yanında gösterilir. Varsayılan değerler gösterim içindir. Gerçek bir polimer için tahmin iddiası, uygun parametreler ve bağımsız deneysel doğrulama gerektirir.
+**PEO/LiTFSI · Pesko 2017** örneğini açın. EO:Li bileşimi, 90 °C’de karışım yoğunluğu ve PFG-NMR özdifüzyon katsayılarından hesaplanan iletkenliği, aynı bileşimde EIS ile ölçülen değerle karşılaştırın. **PEO/LiTFSI · weighed film** örneğinde kendi filminizin kalınlığını, elektrot alanını ve yığın direncini girebilirsiniz. Kristallik ölçümünüz yoksa alanı `null` bırakın. İletkenlik oranından serbest iyon yüzdesi elde edilemez.
 
 ## Development and attribution
 

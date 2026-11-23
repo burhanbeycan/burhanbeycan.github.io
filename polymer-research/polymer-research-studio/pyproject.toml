@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "polymer-research-workbench"
-version = "0.2.0"
+version = "0.3.0"
 description = "Shared local GUI, material exchange protocol and integrated launcher for independent polymer research applications."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,7 +20,7 @@ polymer-workbench = "polymer_workbench.server:main"
 polymer-studio = "polymer_workbench.server:main"
 
 [project.urls]
-Repository = "https://github.com/burhanbeycan/polymer-research-studio"
+Repository = "https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-research-studio"
 
 [tool.setuptools.packages.find]
 where = ["src"]

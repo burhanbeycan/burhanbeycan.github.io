@@ -61,3 +61,7 @@ prediction accuracy for any named hydrogel, drug carrier, membrane, sensor,
 electrolyte, biological response or clinical application. Any material-specific
 calibration should record the sample, preparation state, solvent, temperature,
 measurement protocol, uncertainty and held-out validation conditions.
+
+## WBPU experiments and mass calculations
+
+[WBPU methods](WBPU.md) identifies the study, source tables, individual measurements, mass denominators and matched test conditions for the independent WBPU modes.

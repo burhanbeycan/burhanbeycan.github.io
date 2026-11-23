@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
+from .wbpu_ui import calculate_wbpu, extend_app
 from .model import (
     MAX_SCAN_POINTS,
     PARAMETER_LIMITS,
@@ -48,17 +49,17 @@ REFERENCES = [
 APP = {
     "id": "network",
     "name": "Polymer Network Lab",
-    "version": "0.2.0",
-    "tagline": "Equilibrium swelling, elastic state and transparent transport handoff",
+    "version": "0.3.0",
+    "tagline": "WBPU stoichiometry, film characterization and swelling",
     "description": (
-        "Explore a neutral network's free-swelling equilibrium from a consistent mixing and elastic free energy. "
-        "Track effective elastic-chain density and its provenance, scan solvent quality, and preview solute release "
+        "Audit polyurethane feed, examine extraction and DMA, and compare withheld formulations under a common swelling protocol. "
+        "Explore neutral-network equilibrium and preview solute release "
         "from the fully equilibrated slab."
     ),
     "accent": "#0f9d8a",
     "scope": (
         "Homogeneous, neutral, dry-reference Gaussian network in a pure solvent; constant χ; free isotropic swelling. "
-        "The Hong/Suo neo-Hookean convention is explicit. Release uses fixed equilibrium geometry and a user-supplied D."
+        "The WBPU modes use their own mass balances and experimental protocols. Release uses fixed equilibrium geometry and a user-supplied D."
     ),
     "fields": [
         {"key": "chi", "label": "Flory–Huggins interaction parameter χ", "type": "number", "default": 0.35,
@@ -152,6 +153,8 @@ APP = {
 }
 
 
+extend_app(APP)
+
 DEFAULTS = {field["key"]: field["default"] for field in APP["fields"]}
 MODEL_SCOPE = "neutral_homogeneous_free_swelling_dry_reference_hong_neo_hookean_constant_chi"
 
@@ -175,8 +178,9 @@ def _validated_inputs(inputs: dict) -> dict:
             if not isinstance(value, str) or value not in [option["value"] for option in field["options"]]:
                 raise ValueError(f"{key} must be one of the available choices.")
         else:
-            if not isinstance(value, str) or len(value) > 8000:
-                raise ValueError(f"{key} must be text of at most 8000 characters.")
+            limit = 50000 if key.endswith('_csv') else 8000
+            if not isinstance(value, str) or len(value) > limit:
+                raise ValueError(f"{key} must be text of at most {limit} characters.")
     if values["scan_variable"] == "chi" and values["chi_scan_max"] <= values["chi_scan_min"]:
         raise ValueError("The maximum χ must exceed the minimum χ.")
     if values["scan_variable"] == "nu_e_mol_m3" and values["nu_e_scan_max"] <= values["nu_e_scan_min"]:
@@ -198,6 +202,8 @@ def calculate(inputs: dict, material: dict | None = None) -> dict:
     if material is not None and not isinstance(material, dict):
         raise ValueError("The material record must be an object/dictionary.")
     material = material or {}
+    if values["network_mode"] != "equilibrium":
+        return calculate_wbpu(values)
     parameters = NetworkParameters(**{key: values[key] for key in PARAMETER_LIMITS})
     result = solve_equilibrium(parameters)
     root = result.selected

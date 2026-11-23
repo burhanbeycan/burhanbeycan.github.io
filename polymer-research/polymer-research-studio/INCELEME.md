@@ -1,17 +1,17 @@
-# Polymer Research Studio
+# Numune kimliği ve ölçümün kaynağı
 
-Laboratuvarlar arasında hangi numune ve büyüklükler taşınıyor?
+Aynı PVA partisinden elde edilen döküm film ve elektro-eğrilmiş mat hangi özellikleri paylaşır?
 
-## Ağ → taşınım
+## Uygulamada incele
 
-**Girdiler** — 100 µm kuru film, χ = 0,35, νₑ = 100 mol/m³, çözücü molar hacmi 18 cm³/mol.
+Üst çubuktan **Import record** ile [örnek oturumu](examples/batch-film-mat.json) aç. **Material record → Physical specimens** altında parti, film ve matı sırayla seç.
 
-**Hesaplanan sonuç** — Hacimce şişme oranı 16,938 olan serbest ağın denge kalınlığı 256,815 µm. Transport Lab bu tam kalınlığı ve ayrıca girilen D = 10⁻¹² m²/s değerini alır. İki yüzü tam yutucu kabul edilen dengelenmiş filmde 3.600 s sonunda hesaplanan salım %52,63.
+## Örnek sonuç
 
-**Modelin kapsamı** — Kimya → zincir aktarımında yalnızca homopolimer tekrar kütlesi ve uç grup düzeltmesi taşınır. Örneğin H/H uçlu PEtOx için bunlar 99,133 ve 2,016 g/mol değerleridir. Zincir sertliği, dağılım ve difüzyon katsayısı bağımsız girdilerdir.
+İki alt numunenin hazırlama adımı ve kimliği ayrı. Filmde örnek olarak girilmiş 100 µm kalınlık var. Matın ölçüm listesi boş. Bir numunenin sonucunu diğerine aktarırken Studio o numuneye özgü kalınlık ve katsayıları taşımaz.
 
-**İncelerken** — Ortak numune kaydına hangi deneysel alan eklenmeli? Hangi aktarımda birimler veya kaynak bilgisi daha görünür olmalı?
+## Kimyasal yorum
 
-Kurulumdan sonra uygulamayı `polymer-studio` komutuyla açabilirsin. [Kurulum ve kullanım](README.md) · [Model veya veri aktarımı](docs/EXCHANGE.md) · [Doğrulama](docs/VALIDATION.md)
+Bir sayı başka bir makaleden alıntılanıyorsa **Evidence origin** alanında bunu işaretle. Aktaran makaleyi, asıl kaynağı ve tablo ya da şekil konumunu kaydet.
 
-[Bu projenin sürüm 0.2.0 kaynak kodunu ZIP olarak indir](../downloads/polymer-research-studio-0.2.0.zip?raw=true)
+[Bilimsel yöntem ve veri](docs/EXCHANGE.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-research-studio-0.3.0.zip) · [Tüm projeler](../README.md)

@@ -1,19 +1,19 @@
-# Polymer Network Lab
+# WBPU eşdeğerleri, çözünmeyen fraksiyon ve şişme
 
-Çözücüyle etkileşim ve etkin ağ zinciri yoğunluğu denge şişmesini nasıl belirler?
+Bir WBPU reçetesinde hangi fonksiyonel gruplar reaksiyona girebilir ve kuru filmin modülü şişme karşılaştırmasına ne katar?
 
-## Serbest ve izotrop şişen nötr ağ
+## Uygulamada incele
 
-**Girdiler** — χ = 0,35, νₑ = 100 mol/m³ kuru referans hacmi, çözücü molar hacmi 18 cm³/mol, T = 298,15 K. Kuru tam kalınlık 100 µm.
+WBPU reçete örneğinde PEG, PCL-diol, BDO ve izosiyanatı aşamalara göre incele. Ekstraksiyon bölümünde başlangıç, şişmiş ve yeniden kurutulmuş kütlelerin tanımlarına bak. Üç formülasyonlu örnekte her satır dışarıda iken beklenen şişmeyi karşılaştır.
 
-**Hesaplanan sonuç** — Dengede polimer hacim kesri 0,05904, hacimce şişme oranı V/V<sub>kuru</sub> = 16,938, doğrusal gerinim oranı λ = 2,568. Film kalınlığı 256,815 µm ve modelin küçük kaymadaki modülü 96,53 kPa.
+## Örnek sonuç
 
-![Her χ değerinde denge yeniden hesaplandı. İşaretli nokta χ = 0,35 örneğidir.](docs/assets/inceleme-ornegi.svg)
+İdeal diol varsayımında 1 g PEG 20.000, 0,10 mmol OH verir. Aynı kütlede PCL-diol 1.000, 2,00 mmol OH verir. Üç jatrofa esaslı WBPU filminde kuru modül kullanan modelin şişme hatası 17,36 yüzde puanı, reçetedeki sert segment oranını kullanan modelinki 33,31 yüzde puanıdır.
 
-**Modelin kapsamı** — Serbest izotrop şişme, nötr ağ ve homojen denge varsayılır. Etkin ağ zinciri yoğunluğunu çapraz bağlayıcı beslemesinden elde etmek için ayrıca bir etkinlik modeli gerekir.
+![Üç WBPU formülasyonu üzerinde şişme tahmininin ortalama mutlak hatası](docs/assets/benchmark-comparison.svg)
 
-**İncelerken** — Numunede iyonik gruplar, substrata bağlı şişme veya deneysel olarak ölçülmüş etkin ağ yoğunluğu var mı?
+## Kimyasal yorum
 
-Kurulumdan sonra uygulamayı `polymer-network-lab` komutuyla açabilirsin. [Kurulum ve kullanım](README.md) · [Model veya veri aktarımı](docs/SCIENCE.md) · [Doğrulama](docs/VALIDATION.md)
+Şişme burada toluende ve belirli ekstraksiyon koşullarında ölçülmüştür. Kuru modül ve çözünmeyen fraksiyon fiziksel birleşmelerden de etkilenir. PEG/PCL numuneleriniz için bu üç formülasyondan doğruluk çıkarılamaz.
 
-[Bu projenin sürüm 0.2.0 kaynak kodunu ZIP olarak indir](../downloads/polymer-network-lab-0.2.0.zip?raw=true)
+[Bilimsel yöntem ve veri](docs/WBPU.md) · [Proje ve kullanım](README.md) · [Tek proje kaynak arşivi](../downloads/polymer-network-lab-0.3.0.zip) · [Tüm projeler](../README.md)

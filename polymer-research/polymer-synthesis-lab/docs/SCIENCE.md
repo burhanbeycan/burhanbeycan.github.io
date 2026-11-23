@@ -29,3 +29,7 @@ At one fixed free-monomer feed fA+fB=1, rA=kAA/kAB and rB=kBB/kBA. The instantan
 Transition probabilities are PAA=rA fA/(rA fA+fB), PAB=fB/(rA fA+fB), PBA=fA/(fA+rB fB), PBB=rB fB/(fA+rB fB). Stationary ordered dyads are FAA=FA PAA, FAB=FA PAB, FBA=FB PBA, FBB=FB PBB. FAB=FBA and their sum with like dyads is one. Mean run lengths are 1/PAB and 1/PBA. These are stationary infinite-chain statistics at the fixed feed, not exact finite-oligomer sequence measurements.
 
 Strict interior feeds avoid absent-monomer undefined transitions. Both r=0 is the alternating stationary limit; both r=1 is a Bernoulli chain with FA=fA. The model assumes terminal reactivity, stationary propagating-end statistics and irreversible additions. Penultimate effects, slow-initiation transients, depropagation, feed depletion and cumulative batch composition require different models. In particular, applying the instantaneous equation directly to high-conversion bulk composition can bias estimated reactivity ratios.
+
+## EtOx recipe kinetics and SEC benchmarks
+
+The EtOx-specific calculation uses temperature, time and initial MeOTs concentration to model conversion. Its source coefficients, terminal masses, cohort definitions and validation design are detailed in [the PEtOx study](PETOX.md).

@@ -1,5 +1,6 @@
 """Scientific GUI adapter for polymer reaction balances."""
 import numpy as np
+from .crop_views import add_models, recipe_view, benchmark_view
 from .model import finite, living_chain_growth, step_growth, terminal_copolymer
 
 
@@ -17,10 +18,10 @@ REFERENCES = [
 ]
 
 APP = {
-    "id": "synthesis", "name": "Polymer Synthesis Lab", "version": "0.2.0", "accent": "#b66b33",
+    "id": "synthesis", "name": "Polymer Synthesis Lab", "version": "0.3.0", "accent": "#b66b33",
     "tagline": "From reactive equivalents to chain count, end groups and composition.",
     "description": "Track functional-group conversion and mass conservation; distinguish theoretical feed bookkeeping from measured molar mass and kinetic prediction.",
-    "scope": "Ideal acyclic bifunctional step growth, ideal chain-count bookkeeping and fixed-feed terminal copolymerization. Conversion, initiation efficiency and reactivity ratios are supplied by the user.",
+    "scope": "Ideal step-growth and chain-count balances, fixed-feed copolymerization and a literature-parameterized EtOx/MeOTs/MeCN kinetic model with grouped Mn evaluation.",
     "fields": [
         {"key": "model", "label": "Polymer chemistry model", "type": "select", "default": "step_growth", "group": "Model", "unit": "", "help": "Select a bounded model with explicit reaction and population assumptions.", "options": [
             {"value": "step_growth", "label": "AA + BB · functional-group and mass balances"},
@@ -59,6 +60,9 @@ APP = {
 }
 
 
+add_models(APP, number)
+
+
 def metric(key, label, value, unit="1", note=""):
     return {"key": key, "label": label, "value": value, "unit": unit, "note": note}
 
@@ -75,11 +79,15 @@ def calculate(inputs, material=None):
     if unknown:
         raise ValueError("Unknown inputs: " + ", ".join(sorted(map(str, unknown))))
     p.update(inputs)
-    if p["model"] not in ("step_growth", "living", "copolymer"):
+    if p["model"] not in ("step_growth", "living", "copolymer", "petox_recipe", "petox_benchmark"):
         raise ValueError("Unknown synthesis model.")
     for f in APP["fields"]:
         if f["type"] == "number":
             p[f["key"]] = finite(p[f["key"]], f["label"], f["min"], f["max"])
+    if p["model"] == "petox_recipe":
+        return recipe_view(p, metric, plot)
+    if p["model"] == "petox_benchmark":
+        return benchmark_view(p, metric)
     notes = ["All results are conditional on supplied conversion and coefficients. Reaction time, solvent and temperature do not predict conversion here.", "A theoretical number-average mass is not a calibrated SEC/GPC measurement. Isolation or removal of residual monomer changes the measured population."]
     warnings = []
     if p["model"] == "step_growth":
