@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polymer-transport-lab"
+version = "0.2.0"
+description = "Slab sorption and release, independently discretized diffusion, parameter fitting and Henry permeation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Burhan Beycan"}]
+dependencies = ["numpy>=1.24,<3", "scipy>=1.11,<2", "polymer-research-workbench==0.2.0"]
+
+[project.scripts]
+polymer-transport-lab = "polymer_transport_lab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/burhanbeycan/polymer-transport-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]

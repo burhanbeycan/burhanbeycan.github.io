@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the software version and the relevant scientific models separately."
+title: "Polymer Synthesis Lab"
+version: 0.2.0
+date-released: 2026-11-23
+authors:
+  - family-names: Beycan
+    given-names: Burhan
+url: "https://github.com/burhanbeycan/polymer-synthesis-lab"
+license: MIT
