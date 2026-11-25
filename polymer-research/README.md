@@ -13,3 +13,9 @@ LDI–PEG/PCL esaslı üretan zincirlerini, PEtOx hidrolizini ve diziye bağlı 
 | [Electrolyte Lab](polymer-electrolyte-lab/INCELEME.md) | Li–eter ve Li–TFSI koordinasyonu, temas süreleri ve kolektif iletkenlik | Yayımlanmış MD karşılaştırması ile kullanıcının yüklediği yörüngeler ayrı değerlendirilir |
 
 [Kurulum](INSTALL_TR.md) · [Yedi projenin kaynak arşivi](downloads/polymer-research-suite-0.4.0.zip) · [Doğrulama](VALIDATION_TR.md)
+
+## Yapı ve konformer enerjisi
+
+[Kendi polimerini oluştur ve konformer enerjilerini incele](polymer-structure-energy/README.md). Bu bağımsız uygulama, tanımlanan sonlu zincirin kimyasal kaydını ve izole konformer enerjilerini diğer modüllerin yeniden kullanabileceği biçimde saklar. Çözücü kayıtlarında yöntem ve hesap kapsamı izlenebilir.
+
+[Bağımsız uygulamayı indir](downloads/polymer-structure-energy-1.0.0.zip).

@@ -1,0 +1,3070 @@
+{
+  "schema_version": "solvent-components/1",
+  "scope": "Tekil çözücü molekülünün kimyasal kimliği ve izole konformer hesapları.",
+  "source": {
+    "smiles": "Proje içinde tanımlanmış moleküler yapılar.",
+    "numerical_results": "polymer_identity.build_structure + energy_store.analyze",
+    "conformer_count_requested": 12,
+    "seed": 2403
+  },
+  "protocol_use": "Kimyasal kimlik ve model geometrisi yeniden kullanılabilir. MMFF94s enerjileri aynı molekülün aynı protokoldeki konformerlerini karşılaştırır. Sıvı solvent kutusu ve polimer–çözücü karışımı kendi kuvvet alanı, yük modeli, bileşimi, sıcaklığı, basıncı ve dengelemesiyle hesaplanır.",
+  "water_model_note": "Su kartı tek bir H₂O molekülü içerir. Su içeren MD için polimer kuvvet alanıyla uyumlu su topolojisi ve o su modelinin geometri ve yükleri kullanılır.",
+  "coordinate_unit": "Å",
+  "components": [
+    {
+      "id": "water",
+      "name": "Su",
+      "name_en": "Water",
+      "smiles": "O",
+      "canonical_smiles": "O",
+      "structure_id": "structure-57b406b070fb6711410a7324f713773d7e5e275cf8219aaeea7b4f210c6b49e9",
+      "formula": "H2O",
+      "molar_mass_g_mol": 18.015,
+      "net_charge": 0,
+      "model_id": "sha256:2d9b6442adc99b21e79842eb1b490b30f8b83e1f2b477cd779550b176dcf3bf9",
+      "energy_record": {
+        "canonical_smiles": "O",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": 3.2661129162528113e-13,
+            "id": 5,
+            "rg_angstrom": 0.3172016114307904
+          },
+          {
+            "delta_kcal_mol": 2.892250588616415e-14,
+            "energy_kcal_mol": 3.555337975114453e-13,
+            "id": 2,
+            "rg_angstrom": 0.317201613124779
+          },
+          {
+            "delta_kcal_mol": 2.5794917158655853e-13,
+            "energy_kcal_mol": 5.845604632118397e-13,
+            "id": 8,
+            "rg_angstrom": 0.31720161030631977
+          },
+          {
+            "delta_kcal_mol": 3.6440691352800127e-13,
+            "energy_kcal_mol": 6.910182051532824e-13,
+            "id": 11,
+            "rg_angstrom": 0.31720161526995655
+          },
+          {
+            "delta_kcal_mol": 8.340665038136592e-13,
+            "energy_kcal_mol": 1.1606777954389402e-12,
+            "id": 9,
+            "rg_angstrom": 0.31720162320326634
+          },
+          {
+            "delta_kcal_mol": 1.2064763196601416e-12,
+            "energy_kcal_mol": 1.5330876112854227e-12,
+            "id": 0,
+            "rg_angstrom": 0.3172016249114197
+          },
+          {
+            "delta_kcal_mol": 1.299425627812741e-12,
+            "energy_kcal_mol": 1.626036919438022e-12,
+            "id": 3,
+            "rg_angstrom": 0.3172016211809341
+          },
+          {
+            "delta_kcal_mol": 1.4730818862249614e-11,
+            "energy_kcal_mol": 1.5057430153874894e-11,
+            "id": 6,
+            "rg_angstrom": 0.3172016356681094
+          },
+          {
+            "delta_kcal_mol": 4.554092204595201e-11,
+            "energy_kcal_mol": 4.586753333757729e-11,
+            "id": 7,
+            "rg_angstrom": 0.31720167537957417
+          },
+          {
+            "delta_kcal_mol": 7.400769464148937e-11,
+            "energy_kcal_mol": 7.433430593311465e-11,
+            "id": 10,
+            "rg_angstrom": 0.31720163241967264
+          },
+          {
+            "delta_kcal_mol": 1.290063782325491e-10,
+            "energy_kcal_mol": 1.293329895241744e-10,
+            "id": 4,
+            "rg_angstrom": 0.317201717260447
+          },
+          {
+            "delta_kcal_mol": 2.882761000954435e-10,
+            "energy_kcal_mol": 2.886027113870688e-10,
+            "id": 1,
+            "rg_angstrom": 0.31720176066558975
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "O",
+              "x": 0.004472837052874154,
+              "y": 0.3977899089947149,
+              "z": 0.0
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -0.7656560047635833,
+              "y": -0.19031089552336838,
+              "z": 0.0
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.7611831677107083,
+              "y": -0.20747901347134645,
+              "z": 0.0
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 2,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:2d9b6442adc99b21e79842eb1b490b30f8b83e1f2b477cd779550b176dcf3bf9",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": 3.2661129162528113e-13,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "O",
+            "x": 0.004472837052874154,
+            "y": 0.3977899089947149,
+            "z": 0.0
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -0.7656560047635833,
+            "y": -0.19031089552336838,
+            "z": 0.0
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.7611831677107083,
+            "y": -0.20747901347134645,
+            "z": 0.0
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 2,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": 3.2661129162528113e-13,
+          "id": 5,
+          "rg_angstrom": 0.3172016114307904
+        },
+        {
+          "delta_kcal_mol": 2.892250588616415e-14,
+          "energy_kcal_mol": 3.555337975114453e-13,
+          "id": 2,
+          "rg_angstrom": 0.317201613124779
+        },
+        {
+          "delta_kcal_mol": 2.5794917158655853e-13,
+          "energy_kcal_mol": 5.845604632118397e-13,
+          "id": 8,
+          "rg_angstrom": 0.31720161030631977
+        },
+        {
+          "delta_kcal_mol": 3.6440691352800127e-13,
+          "energy_kcal_mol": 6.910182051532824e-13,
+          "id": 11,
+          "rg_angstrom": 0.31720161526995655
+        },
+        {
+          "delta_kcal_mol": 8.340665038136592e-13,
+          "energy_kcal_mol": 1.1606777954389402e-12,
+          "id": 9,
+          "rg_angstrom": 0.31720162320326634
+        },
+        {
+          "delta_kcal_mol": 1.2064763196601416e-12,
+          "energy_kcal_mol": 1.5330876112854227e-12,
+          "id": 0,
+          "rg_angstrom": 0.3172016249114197
+        },
+        {
+          "delta_kcal_mol": 1.299425627812741e-12,
+          "energy_kcal_mol": 1.626036919438022e-12,
+          "id": 3,
+          "rg_angstrom": 0.3172016211809341
+        },
+        {
+          "delta_kcal_mol": 1.4730818862249614e-11,
+          "energy_kcal_mol": 1.5057430153874894e-11,
+          "id": 6,
+          "rg_angstrom": 0.3172016356681094
+        },
+        {
+          "delta_kcal_mol": 4.554092204595201e-11,
+          "energy_kcal_mol": 4.586753333757729e-11,
+          "id": 7,
+          "rg_angstrom": 0.31720167537957417
+        },
+        {
+          "delta_kcal_mol": 7.400769464148937e-11,
+          "energy_kcal_mol": 7.433430593311465e-11,
+          "id": 10,
+          "rg_angstrom": 0.31720163241967264
+        },
+        {
+          "delta_kcal_mol": 1.290063782325491e-10,
+          "energy_kcal_mol": 1.293329895241744e-10,
+          "id": 4,
+          "rg_angstrom": 0.317201717260447
+        },
+        {
+          "delta_kcal_mol": 2.882761000954435e-10,
+          "energy_kcal_mol": 2.886027113870688e-10,
+          "id": 1,
+          "rg_angstrom": 0.31720176066558975
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "ethanol",
+      "name": "Etanol",
+      "name_en": "Ethanol",
+      "smiles": "CCO",
+      "canonical_smiles": "CCO",
+      "structure_id": "structure-98f0e8c8ba2e5537532251d07f27b3c7bdf3f65ad014257a97d98162b9198ece",
+      "formula": "C2H6O",
+      "molar_mass_g_mol": 46.069,
+      "net_charge": 0,
+      "model_id": "sha256:74ebf3ffd141a9510bdc05fb1b5ee4072de3c27f0dbdd11b6af2397cc5ad8b3e",
+      "energy_record": {
+        "canonical_smiles": "CCO",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": -1.3368570638382737,
+            "id": 0,
+            "rg_angstrom": 1.182944900613395
+          },
+          {
+            "delta_kcal_mol": 5.012545933880119e-11,
+            "energy_kcal_mol": -1.3368570637881483,
+            "id": 4,
+            "rg_angstrom": 1.182944964992921
+          },
+          {
+            "delta_kcal_mol": 3.0816837970348843e-10,
+            "energy_kcal_mol": -1.3368570635301054,
+            "id": 3,
+            "rg_angstrom": 1.18294494107492
+          },
+          {
+            "delta_kcal_mol": 3.3150193701203534e-10,
+            "energy_kcal_mol": -1.3368570635067718,
+            "id": 9,
+            "rg_angstrom": 1.1829448435173167
+          },
+          {
+            "delta_kcal_mol": 3.495037592671224e-10,
+            "energy_kcal_mol": -1.33685706348877,
+            "id": 7,
+            "rg_angstrom": 1.182944717542302
+          },
+          {
+            "delta_kcal_mol": 3.722526731309017e-10,
+            "energy_kcal_mol": -1.336857063466021,
+            "id": 5,
+            "rg_angstrom": 1.1829449371079008
+          },
+          {
+            "delta_kcal_mol": 3.9888292668877057e-10,
+            "energy_kcal_mol": -1.3368570634393908,
+            "id": 11,
+            "rg_angstrom": 1.18294476120889
+          },
+          {
+            "delta_kcal_mol": 4.340590109563891e-10,
+            "energy_kcal_mol": -1.3368570634042147,
+            "id": 10,
+            "rg_angstrom": 1.1829449499406834
+          },
+          {
+            "delta_kcal_mol": 1.215230582829463e-09,
+            "energy_kcal_mol": -1.3368570626230432,
+            "id": 1,
+            "rg_angstrom": 1.182944749667311
+          },
+          {
+            "delta_kcal_mol": 2.348379046779314e-09,
+            "energy_kcal_mol": -1.3368570614898947,
+            "id": 6,
+            "rg_angstrom": 1.1829447924250067
+          },
+          {
+            "delta_kcal_mol": 2.8375748417630575e-09,
+            "energy_kcal_mol": -1.336857061000699,
+            "id": 2,
+            "rg_angstrom": 1.1829449384346196
+          },
+          {
+            "delta_kcal_mol": 2.8622435532810186e-09,
+            "energy_kcal_mol": -1.3368570609760302,
+            "id": 8,
+            "rg_angstrom": 1.1829449805847416
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -0.8870015616801364,
+              "y": -0.15427579057890428,
+              "z": -0.08461709154210777
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.6185048452278085,
+              "y": -0.3107020892181544,
+              "z": -0.02979230462050282
+            },
+            {
+              "charge": 0,
+              "element": "O",
+              "x": 1.2442380444914722,
+              "y": 0.9523014479537963,
+              "z": -0.20352984803155133
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.3839724533026259,
+              "y": -1.121480868811341,
+              "z": 0.031165654257575285
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.235384680565292,
+              "y": 0.5177356958871603,
+              "z": 0.7065793154216867
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.1937717035898534,
+              "y": 0.28969694703332505,
+              "z": -1.0373451477308673
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.9348633338653155,
+              "y": -0.7303444603068349,
+              "z": 0.9299501941893449
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.9636674137619134,
+              "y": -0.9749893600910391,
+              "z": -0.8273699820476225
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.938856761791405,
+              "y": 1.5320584781319961,
+              "z": 0.5149592101040446
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 3,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 4,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 6,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 7,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 8,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:74ebf3ffd141a9510bdc05fb1b5ee4072de3c27f0dbdd11b6af2397cc5ad8b3e",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": -1.3368570638382737,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -0.8870015616801364,
+            "y": -0.15427579057890428,
+            "z": -0.08461709154210777
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.6185048452278085,
+            "y": -0.3107020892181544,
+            "z": -0.02979230462050282
+          },
+          {
+            "charge": 0,
+            "element": "O",
+            "x": 1.2442380444914722,
+            "y": 0.9523014479537963,
+            "z": -0.20352984803155133
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.3839724533026259,
+            "y": -1.121480868811341,
+            "z": 0.031165654257575285
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.235384680565292,
+            "y": 0.5177356958871603,
+            "z": 0.7065793154216867
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.1937717035898534,
+            "y": 0.28969694703332505,
+            "z": -1.0373451477308673
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.9348633338653155,
+            "y": -0.7303444603068349,
+            "z": 0.9299501941893449
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.9636674137619134,
+            "y": -0.9749893600910391,
+            "z": -0.8273699820476225
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.938856761791405,
+            "y": 1.5320584781319961,
+            "z": 0.5149592101040446
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 6,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 7,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": -1.3368570638382737,
+          "id": 0,
+          "rg_angstrom": 1.182944900613395
+        },
+        {
+          "delta_kcal_mol": 5.012545933880119e-11,
+          "energy_kcal_mol": -1.3368570637881483,
+          "id": 4,
+          "rg_angstrom": 1.182944964992921
+        },
+        {
+          "delta_kcal_mol": 3.0816837970348843e-10,
+          "energy_kcal_mol": -1.3368570635301054,
+          "id": 3,
+          "rg_angstrom": 1.18294494107492
+        },
+        {
+          "delta_kcal_mol": 3.3150193701203534e-10,
+          "energy_kcal_mol": -1.3368570635067718,
+          "id": 9,
+          "rg_angstrom": 1.1829448435173167
+        },
+        {
+          "delta_kcal_mol": 3.495037592671224e-10,
+          "energy_kcal_mol": -1.33685706348877,
+          "id": 7,
+          "rg_angstrom": 1.182944717542302
+        },
+        {
+          "delta_kcal_mol": 3.722526731309017e-10,
+          "energy_kcal_mol": -1.336857063466021,
+          "id": 5,
+          "rg_angstrom": 1.1829449371079008
+        },
+        {
+          "delta_kcal_mol": 3.9888292668877057e-10,
+          "energy_kcal_mol": -1.3368570634393908,
+          "id": 11,
+          "rg_angstrom": 1.18294476120889
+        },
+        {
+          "delta_kcal_mol": 4.340590109563891e-10,
+          "energy_kcal_mol": -1.3368570634042147,
+          "id": 10,
+          "rg_angstrom": 1.1829449499406834
+        },
+        {
+          "delta_kcal_mol": 1.215230582829463e-09,
+          "energy_kcal_mol": -1.3368570626230432,
+          "id": 1,
+          "rg_angstrom": 1.182944749667311
+        },
+        {
+          "delta_kcal_mol": 2.348379046779314e-09,
+          "energy_kcal_mol": -1.3368570614898947,
+          "id": 6,
+          "rg_angstrom": 1.1829447924250067
+        },
+        {
+          "delta_kcal_mol": 2.8375748417630575e-09,
+          "energy_kcal_mol": -1.336857061000699,
+          "id": 2,
+          "rg_angstrom": 1.1829449384346196
+        },
+        {
+          "delta_kcal_mol": 2.8622435532810186e-09,
+          "energy_kcal_mol": -1.3368570609760302,
+          "id": 8,
+          "rg_angstrom": 1.1829449805847416
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "acetonitrile",
+      "name": "Asetonitril",
+      "name_en": "Acetonitrile",
+      "smiles": "CC#N",
+      "canonical_smiles": "CC#N",
+      "structure_id": "structure-6718e95ef342d1d5b5ba8b637a6d99e95a972fd3467d7683d14750bc3202a8dd",
+      "formula": "C2H3N",
+      "molar_mass_g_mol": 41.053,
+      "net_charge": 0,
+      "model_id": "sha256:73b28526c32cc4f0bf178b4d429b1f4162ca3f6c6bfc165cbd51f0db6de1514f",
+      "energy_record": {
+        "canonical_smiles": "CC#N",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": 0.02462649447039212,
+            "id": 10,
+            "rg_angstrom": 1.1771256834347217
+          },
+          {
+            "delta_kcal_mol": 4.426320421302421e-13,
+            "energy_kcal_mol": 0.024626494470834752,
+            "id": 3,
+            "rg_angstrom": 1.177125687630088
+          },
+          {
+            "delta_kcal_mol": 1.552310363583942e-12,
+            "energy_kcal_mol": 0.02462649447194443,
+            "id": 0,
+            "rg_angstrom": 1.177125678957105
+          },
+          {
+            "delta_kcal_mol": 6.041986355675988e-12,
+            "energy_kcal_mol": 0.024626494476434106,
+            "id": 1,
+            "rg_angstrom": 1.1771256721515968
+          },
+          {
+            "delta_kcal_mol": 1.065156643442755e-11,
+            "energy_kcal_mol": 0.024626494481043686,
+            "id": 9,
+            "rg_angstrom": 1.1771256740532074
+          },
+          {
+            "delta_kcal_mol": 3.132465120625483e-11,
+            "energy_kcal_mol": 0.02462649450171677,
+            "id": 4,
+            "rg_angstrom": 1.1771257169383103
+          },
+          {
+            "delta_kcal_mol": 8.04582234170681e-11,
+            "energy_kcal_mol": 0.024626494550850343,
+            "id": 7,
+            "rg_angstrom": 1.1771256387336184
+          },
+          {
+            "delta_kcal_mol": 9.058078592749652e-11,
+            "energy_kcal_mol": 0.024626494560972906,
+            "id": 11,
+            "rg_angstrom": 1.1771255867398045
+          },
+          {
+            "delta_kcal_mol": 9.956832927593418e-11,
+            "energy_kcal_mol": 0.02462649456996045,
+            "id": 2,
+            "rg_angstrom": 1.177125698499524
+          },
+          {
+            "delta_kcal_mol": 1.3010602664675908e-10,
+            "energy_kcal_mol": 0.024626494600498147,
+            "id": 8,
+            "rg_angstrom": 1.177125775285344
+          },
+          {
+            "delta_kcal_mol": 4.5349205640698997e-10,
+            "energy_kcal_mol": 0.024626494923884176,
+            "id": 6,
+            "rg_angstrom": 1.177125613740871
+          },
+          {
+            "delta_kcal_mol": 7.055048940884934e-10,
+            "energy_kcal_mol": 0.024626495175897014,
+            "id": 5,
+            "rg_angstrom": 1.1771257161077442
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -0.48630807512464713,
+              "y": -0.002971956054870352,
+              "z": -0.0019311948418787729
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.9755690534457023,
+              "y": 0.005961964587213545,
+              "z": 0.0038741419685813868
+            },
+            {
+              "charge": 0,
+              "element": "N",
+              "x": 2.1357859689324106,
+              "y": 0.013052340477510773,
+              "z": 0.008481526536078855
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -0.8677048186398425,
+              "y": -0.7381117888676528,
+              "z": -0.7167941084574935
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -0.8774159224554446,
+              "y": -0.2567266425409996,
+              "z": 0.9877991961911428
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -0.8799262061581744,
+              "y": 0.9787960823988009,
+              "z": -0.2814295613964337
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 3.0
+            },
+            {
+              "a": 0,
+              "b": 3,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 4,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:73b28526c32cc4f0bf178b4d429b1f4162ca3f6c6bfc165cbd51f0db6de1514f",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": 0.02462649447039212,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -0.48630807512464713,
+            "y": -0.002971956054870352,
+            "z": -0.0019311948418787729
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.9755690534457023,
+            "y": 0.005961964587213545,
+            "z": 0.0038741419685813868
+          },
+          {
+            "charge": 0,
+            "element": "N",
+            "x": 2.1357859689324106,
+            "y": 0.013052340477510773,
+            "z": 0.008481526536078855
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -0.8677048186398425,
+            "y": -0.7381117888676528,
+            "z": -0.7167941084574935
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -0.8774159224554446,
+            "y": -0.2567266425409996,
+            "z": 0.9877991961911428
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -0.8799262061581744,
+            "y": 0.9787960823988009,
+            "z": -0.2814295613964337
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 3.0
+          },
+          {
+            "a": 0,
+            "b": 3,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": 0.02462649447039212,
+          "id": 10,
+          "rg_angstrom": 1.1771256834347217
+        },
+        {
+          "delta_kcal_mol": 4.426320421302421e-13,
+          "energy_kcal_mol": 0.024626494470834752,
+          "id": 3,
+          "rg_angstrom": 1.177125687630088
+        },
+        {
+          "delta_kcal_mol": 1.552310363583942e-12,
+          "energy_kcal_mol": 0.02462649447194443,
+          "id": 0,
+          "rg_angstrom": 1.177125678957105
+        },
+        {
+          "delta_kcal_mol": 6.041986355675988e-12,
+          "energy_kcal_mol": 0.024626494476434106,
+          "id": 1,
+          "rg_angstrom": 1.1771256721515968
+        },
+        {
+          "delta_kcal_mol": 1.065156643442755e-11,
+          "energy_kcal_mol": 0.024626494481043686,
+          "id": 9,
+          "rg_angstrom": 1.1771256740532074
+        },
+        {
+          "delta_kcal_mol": 3.132465120625483e-11,
+          "energy_kcal_mol": 0.02462649450171677,
+          "id": 4,
+          "rg_angstrom": 1.1771257169383103
+        },
+        {
+          "delta_kcal_mol": 8.04582234170681e-11,
+          "energy_kcal_mol": 0.024626494550850343,
+          "id": 7,
+          "rg_angstrom": 1.1771256387336184
+        },
+        {
+          "delta_kcal_mol": 9.058078592749652e-11,
+          "energy_kcal_mol": 0.024626494560972906,
+          "id": 11,
+          "rg_angstrom": 1.1771255867398045
+        },
+        {
+          "delta_kcal_mol": 9.956832927593418e-11,
+          "energy_kcal_mol": 0.02462649456996045,
+          "id": 2,
+          "rg_angstrom": 1.177125698499524
+        },
+        {
+          "delta_kcal_mol": 1.3010602664675908e-10,
+          "energy_kcal_mol": 0.024626494600498147,
+          "id": 8,
+          "rg_angstrom": 1.177125775285344
+        },
+        {
+          "delta_kcal_mol": 4.5349205640698997e-10,
+          "energy_kcal_mol": 0.024626494923884176,
+          "id": 6,
+          "rg_angstrom": 1.177125613740871
+        },
+        {
+          "delta_kcal_mol": 7.055048940884934e-10,
+          "energy_kcal_mol": 0.024626495175897014,
+          "id": 5,
+          "rg_angstrom": 1.1771257161077442
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "acetone",
+      "name": "Aseton",
+      "name_en": "Acetone",
+      "smiles": "CC(=O)C",
+      "canonical_smiles": "CC(C)=O",
+      "structure_id": "structure-84ae8f4339c634c09fb79297e678b7da88c968d66855f8316de5930abd3b3d5c",
+      "formula": "C3H6O",
+      "molar_mass_g_mol": 58.08,
+      "net_charge": 0,
+      "model_id": "sha256:98ccda2734f6b28bd919447cc4ea8d5a2c2de4bc7a1d5419aa874d2f755d83dc",
+      "energy_record": {
+        "canonical_smiles": "CC(C)=O",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": 1.6522577166867793,
+            "id": 4,
+            "rg_angstrom": 1.3492874653392055
+          },
+          {
+            "delta_kcal_mol": 3.531841485937548e-12,
+            "energy_kcal_mol": 1.6522577166903112,
+            "id": 3,
+            "rg_angstrom": 1.3492874457609465
+          },
+          {
+            "delta_kcal_mol": 6.709477418098686e-11,
+            "energy_kcal_mol": 1.6522577167538741,
+            "id": 2,
+            "rg_angstrom": 1.3492874751387296
+          },
+          {
+            "delta_kcal_mol": 1.8508061749855642e-10,
+            "energy_kcal_mol": 1.65225771687186,
+            "id": 7,
+            "rg_angstrom": 1.3492874188441226
+          },
+          {
+            "delta_kcal_mol": 2.100806195670657e-10,
+            "energy_kcal_mol": 1.65225771689686,
+            "id": 9,
+            "rg_angstrom": 1.349287334016753
+          },
+          {
+            "delta_kcal_mol": 2.8788238459753757e-10,
+            "energy_kcal_mol": 1.6522577169746617,
+            "id": 10,
+            "rg_angstrom": 1.349287453496988
+          },
+          {
+            "delta_kcal_mol": 3.422937489006017e-10,
+            "energy_kcal_mol": 1.652257717029073,
+            "id": 8,
+            "rg_angstrom": 1.3492872695411329
+          },
+          {
+            "delta_kcal_mol": 4.173030809795364e-10,
+            "energy_kcal_mol": 1.6522577171040824,
+            "id": 1,
+            "rg_angstrom": 1.3492874076515988
+          },
+          {
+            "delta_kcal_mol": 5.412741366228602e-10,
+            "energy_kcal_mol": 1.6522577172280535,
+            "id": 11,
+            "rg_angstrom": 1.3492873969849328
+          },
+          {
+            "delta_kcal_mol": 5.768363564584433e-10,
+            "energy_kcal_mol": 1.6522577172636157,
+            "id": 0,
+            "rg_angstrom": 1.3492874229423182
+          },
+          {
+            "delta_kcal_mol": 8.47344416854412e-10,
+            "energy_kcal_mol": 1.6522577175341238,
+            "id": 6,
+            "rg_angstrom": 1.3492873873150342
+          },
+          {
+            "delta_kcal_mol": 8.81917650019659e-10,
+            "energy_kcal_mol": 1.652257717568697,
+            "id": 5,
+            "rg_angstrom": 1.349287418684526
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 1.2461079601645715,
+              "y": -0.3372547020800997,
+              "z": -0.05538988232709254
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.08364701082819934,
+              "y": 0.5896622753097426,
+              "z": 0.1766223377991722
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -1.29137477938984,
+              "y": 0.01814953764438343,
+              "z": -0.040192093593667176
+            },
+            {
+              "charge": 0,
+              "element": "O",
+              "x": 0.24927862465503134,
+              "y": 1.7572694926014214,
+              "z": 0.5263568600904998
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.2381157682903114,
+              "y": -0.682353746070591,
+              "z": -1.0921933346441095
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.1775116156282868,
+              "y": -1.1885182713353009,
+              "z": 0.6263461454309727
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 2.1837985368610418,
+              "y": 0.19260965800154428,
+              "z": 0.1337396462652976
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.3906777014407987,
+              "y": -0.3141616110794191,
+              "z": -1.0764483346184128
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -2.0451299276583383,
+              "y": 0.784921583083832,
+              "z": 0.15906663451303132
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.4512771079384585,
+              "y": -0.8203242160754926,
+              "z": 0.6420920210843187
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 3,
+              "order": 2.0
+            },
+            {
+              "a": 0,
+              "b": 4,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 6,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 7,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 8,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 9,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:98ccda2734f6b28bd919447cc4ea8d5a2c2de4bc7a1d5419aa874d2f755d83dc",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": 1.6522577166867793,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 1.2461079601645715,
+            "y": -0.3372547020800997,
+            "z": -0.05538988232709254
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.08364701082819934,
+            "y": 0.5896622753097426,
+            "z": 0.1766223377991722
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -1.29137477938984,
+            "y": 0.01814953764438343,
+            "z": -0.040192093593667176
+          },
+          {
+            "charge": 0,
+            "element": "O",
+            "x": 0.24927862465503134,
+            "y": 1.7572694926014214,
+            "z": 0.5263568600904998
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.2381157682903114,
+            "y": -0.682353746070591,
+            "z": -1.0921933346441095
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.1775116156282868,
+            "y": -1.1885182713353009,
+            "z": 0.6263461454309727
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 2.1837985368610418,
+            "y": 0.19260965800154428,
+            "z": 0.1337396462652976
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.3906777014407987,
+            "y": -0.3141616110794191,
+            "z": -1.0764483346184128
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -2.0451299276583383,
+            "y": 0.784921583083832,
+            "z": 0.15906663451303132
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.4512771079384585,
+            "y": -0.8203242160754926,
+            "z": 0.6420920210843187
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "order": 2.0
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 6,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 7,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": 1.6522577166867793,
+          "id": 4,
+          "rg_angstrom": 1.3492874653392055
+        },
+        {
+          "delta_kcal_mol": 3.531841485937548e-12,
+          "energy_kcal_mol": 1.6522577166903112,
+          "id": 3,
+          "rg_angstrom": 1.3492874457609465
+        },
+        {
+          "delta_kcal_mol": 6.709477418098686e-11,
+          "energy_kcal_mol": 1.6522577167538741,
+          "id": 2,
+          "rg_angstrom": 1.3492874751387296
+        },
+        {
+          "delta_kcal_mol": 1.8508061749855642e-10,
+          "energy_kcal_mol": 1.65225771687186,
+          "id": 7,
+          "rg_angstrom": 1.3492874188441226
+        },
+        {
+          "delta_kcal_mol": 2.100806195670657e-10,
+          "energy_kcal_mol": 1.65225771689686,
+          "id": 9,
+          "rg_angstrom": 1.349287334016753
+        },
+        {
+          "delta_kcal_mol": 2.8788238459753757e-10,
+          "energy_kcal_mol": 1.6522577169746617,
+          "id": 10,
+          "rg_angstrom": 1.349287453496988
+        },
+        {
+          "delta_kcal_mol": 3.422937489006017e-10,
+          "energy_kcal_mol": 1.652257717029073,
+          "id": 8,
+          "rg_angstrom": 1.3492872695411329
+        },
+        {
+          "delta_kcal_mol": 4.173030809795364e-10,
+          "energy_kcal_mol": 1.6522577171040824,
+          "id": 1,
+          "rg_angstrom": 1.3492874076515988
+        },
+        {
+          "delta_kcal_mol": 5.412741366228602e-10,
+          "energy_kcal_mol": 1.6522577172280535,
+          "id": 11,
+          "rg_angstrom": 1.3492873969849328
+        },
+        {
+          "delta_kcal_mol": 5.768363564584433e-10,
+          "energy_kcal_mol": 1.6522577172636157,
+          "id": 0,
+          "rg_angstrom": 1.3492874229423182
+        },
+        {
+          "delta_kcal_mol": 8.47344416854412e-10,
+          "energy_kcal_mol": 1.6522577175341238,
+          "id": 6,
+          "rg_angstrom": 1.3492873873150342
+        },
+        {
+          "delta_kcal_mol": 8.81917650019659e-10,
+          "energy_kcal_mol": 1.652257717568697,
+          "id": 5,
+          "rg_angstrom": 1.349287418684526
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "thf",
+      "name": "Tetrahidrofuran (THF)",
+      "name_en": "Tetrahydrofuran",
+      "smiles": "C1CCOC1",
+      "canonical_smiles": "C1CCOC1",
+      "structure_id": "structure-22a4b49bd603f29be6066262a810074282732a370b913474cddc0a919658a4cc",
+      "formula": "C4H8O",
+      "molar_mass_g_mol": 72.107,
+      "net_charge": 0,
+      "model_id": "sha256:852b7cb8724d7edb527a34b5e6f8441cd7d3a39f44460fb6fdaa068ff35c0a58",
+      "energy_record": {
+        "canonical_smiles": "C1CCOC1",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": 4.872987078297909,
+            "id": 5,
+            "rg_angstrom": 1.359487684974838
+          },
+          {
+            "delta_kcal_mol": 4.168043687968748e-11,
+            "energy_kcal_mol": 4.872987078339589,
+            "id": 1,
+            "rg_angstrom": 1.3594876559737095
+          },
+          {
+            "delta_kcal_mol": 1.1737366634179125e-10,
+            "energy_kcal_mol": 4.8729870784152824,
+            "id": 9,
+            "rg_angstrom": 1.359487579412678
+          },
+          {
+            "delta_kcal_mol": 2.1285906370849261e-10,
+            "energy_kcal_mol": 4.872987078510768,
+            "id": 6,
+            "rg_angstrom": 1.359487776491537
+          },
+          {
+            "delta_kcal_mol": 2.7631585908238776e-10,
+            "energy_kcal_mol": 4.872987078574225,
+            "id": 2,
+            "rg_angstrom": 1.3594877954480933
+          },
+          {
+            "delta_kcal_mol": 2.887166061782409e-10,
+            "energy_kcal_mol": 4.872987078586625,
+            "id": 3,
+            "rg_angstrom": 1.3594878116807982
+          },
+          {
+            "delta_kcal_mol": 1.7017951492448447e-09,
+            "energy_kcal_mol": 4.872987079999704,
+            "id": 0,
+            "rg_angstrom": 1.3594877307907276
+          },
+          {
+            "delta_kcal_mol": 4.226105687621384e-09,
+            "energy_kcal_mol": 4.8729870825240145,
+            "id": 4,
+            "rg_angstrom": 1.3594875181599329
+          },
+          {
+            "delta_kcal_mol": 5.606612063502325e-09,
+            "energy_kcal_mol": 4.872987083904521,
+            "id": 10,
+            "rg_angstrom": 1.3594881057636101
+          },
+          {
+            "delta_kcal_mol": 5.884125187094469e-09,
+            "energy_kcal_mol": 4.872987084182034,
+            "id": 7,
+            "rg_angstrom": 1.359487507878626
+          },
+          {
+            "delta_kcal_mol": 7.787457789731889e-09,
+            "energy_kcal_mol": 4.872987086085367,
+            "id": 8,
+            "rg_angstrom": 1.359487988011057
+          },
+          {
+            "delta_kcal_mol": 1.0040817954859449e-08,
+            "energy_kcal_mol": 4.872987088338727,
+            "id": 11,
+            "rg_angstrom": 1.359488072561262
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -0.6763539132651246,
+              "y": -0.8013759029767601,
+              "z": -0.15613692812316046
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.7120292596361891,
+              "y": -0.6670742442070551,
+              "z": 0.4148046094882418
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 1.1477864293194475,
+              "y": 0.672661522042449,
+              "z": -0.13758182994189064
+            },
+            {
+              "charge": 0,
+              "element": "O",
+              "x": -0.03581559184719066,
+              "y": 1.4742264742217166,
+              "z": -0.25968610379974005
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -1.1792969339150297,
+              "y": 0.6243515355335794,
+              "z": -0.09088758338710252
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.3113893720154681,
+              "y": -1.5041167855203306,
+              "z": 0.38937305789062154
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -0.6174614677125081,
+              "y": -1.1298528826585494,
+              "z": -1.2005697283815064
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.6600091852108082,
+              "y": -0.6215134508834358,
+              "z": 1.5090730820877434
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.3839642937592889,
+              "y": -1.4831191528859864,
+              "z": 0.13682985274290996
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.5836180280236454,
+              "y": 0.5666821416653747,
+              "z": -1.136767705013674
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.871554871359474,
+              "y": 1.1786258320603018,
+              "z": 0.507429938148738
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.9207176052730035,
+              "y": 0.8449386062193489,
+              "z": -0.8638807198211362
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.617927183280569,
+              "y": 0.8455663073893567,
+              "z": 0.8880000581099654
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 3,
+              "order": 1.0
+            },
+            {
+              "a": 3,
+              "b": 4,
+              "order": 1.0
+            },
+            {
+              "a": 4,
+              "b": 0,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 6,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 7,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 8,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 9,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 10,
+              "order": 1.0
+            },
+            {
+              "a": 4,
+              "b": 11,
+              "order": 1.0
+            },
+            {
+              "a": 4,
+              "b": 12,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:852b7cb8724d7edb527a34b5e6f8441cd7d3a39f44460fb6fdaa068ff35c0a58",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": 4.872987078297909,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -0.6763539132651246,
+            "y": -0.8013759029767601,
+            "z": -0.15613692812316046
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.7120292596361891,
+            "y": -0.6670742442070551,
+            "z": 0.4148046094882418
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 1.1477864293194475,
+            "y": 0.672661522042449,
+            "z": -0.13758182994189064
+          },
+          {
+            "charge": 0,
+            "element": "O",
+            "x": -0.03581559184719066,
+            "y": 1.4742264742217166,
+            "z": -0.25968610379974005
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -1.1792969339150297,
+            "y": 0.6243515355335794,
+            "z": -0.09088758338710252
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.3113893720154681,
+            "y": -1.5041167855203306,
+            "z": 0.38937305789062154
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -0.6174614677125081,
+            "y": -1.1298528826585494,
+            "z": -1.2005697283815064
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.6600091852108082,
+            "y": -0.6215134508834358,
+            "z": 1.5090730820877434
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.3839642937592889,
+            "y": -1.4831191528859864,
+            "z": 0.13682985274290996
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.5836180280236454,
+            "y": 0.5666821416653747,
+            "z": -1.136767705013674
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.871554871359474,
+            "y": 1.1786258320603018,
+            "z": 0.507429938148738
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.9207176052730035,
+            "y": 0.8449386062193489,
+            "z": -0.8638807198211362
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.617927183280569,
+            "y": 0.8455663073893567,
+            "z": 0.8880000581099654
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 3,
+            "order": 1.0
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "order": 1.0
+          },
+          {
+            "a": 4,
+            "b": 0,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 6,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 7,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 8,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 10,
+            "order": 1.0
+          },
+          {
+            "a": 4,
+            "b": 11,
+            "order": 1.0
+          },
+          {
+            "a": 4,
+            "b": 12,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": 4.872987078297909,
+          "id": 5,
+          "rg_angstrom": 1.359487684974838
+        },
+        {
+          "delta_kcal_mol": 4.168043687968748e-11,
+          "energy_kcal_mol": 4.872987078339589,
+          "id": 1,
+          "rg_angstrom": 1.3594876559737095
+        },
+        {
+          "delta_kcal_mol": 1.1737366634179125e-10,
+          "energy_kcal_mol": 4.8729870784152824,
+          "id": 9,
+          "rg_angstrom": 1.359487579412678
+        },
+        {
+          "delta_kcal_mol": 2.1285906370849261e-10,
+          "energy_kcal_mol": 4.872987078510768,
+          "id": 6,
+          "rg_angstrom": 1.359487776491537
+        },
+        {
+          "delta_kcal_mol": 2.7631585908238776e-10,
+          "energy_kcal_mol": 4.872987078574225,
+          "id": 2,
+          "rg_angstrom": 1.3594877954480933
+        },
+        {
+          "delta_kcal_mol": 2.887166061782409e-10,
+          "energy_kcal_mol": 4.872987078586625,
+          "id": 3,
+          "rg_angstrom": 1.3594878116807982
+        },
+        {
+          "delta_kcal_mol": 1.7017951492448447e-09,
+          "energy_kcal_mol": 4.872987079999704,
+          "id": 0,
+          "rg_angstrom": 1.3594877307907276
+        },
+        {
+          "delta_kcal_mol": 4.226105687621384e-09,
+          "energy_kcal_mol": 4.8729870825240145,
+          "id": 4,
+          "rg_angstrom": 1.3594875181599329
+        },
+        {
+          "delta_kcal_mol": 5.606612063502325e-09,
+          "energy_kcal_mol": 4.872987083904521,
+          "id": 10,
+          "rg_angstrom": 1.3594881057636101
+        },
+        {
+          "delta_kcal_mol": 5.884125187094469e-09,
+          "energy_kcal_mol": 4.872987084182034,
+          "id": 7,
+          "rg_angstrom": 1.359487507878626
+        },
+        {
+          "delta_kcal_mol": 7.787457789731889e-09,
+          "energy_kcal_mol": 4.872987086085367,
+          "id": 8,
+          "rg_angstrom": 1.359487988011057
+        },
+        {
+          "delta_kcal_mol": 1.0040817954859449e-08,
+          "energy_kcal_mol": 4.872987088338727,
+          "id": 11,
+          "rg_angstrom": 1.359488072561262
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "dmf",
+      "name": "N,N-Dimetilformamid (DMF)",
+      "name_en": "N,N-Dimethylformamide",
+      "smiles": "CN(C)C=O",
+      "canonical_smiles": "CN(C)C=O",
+      "structure_id": "structure-c7a09d66ddbaa7cef48ef61493969ee18f85cf7c7193fda65e8c96aefaafc541",
+      "formula": "C3H7NO",
+      "molar_mass_g_mol": 73.095,
+      "net_charge": 0,
+      "model_id": "sha256:fe7f1045b04e1d058b137994e354739cdd1fcc2658b6d762c5f78f6324592782",
+      "energy_record": {
+        "canonical_smiles": "CN(C)C=O",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": -18.45707334575397,
+            "id": 4,
+            "rg_angstrom": 1.5522749907214295
+          },
+          {
+            "delta_kcal_mol": 1.1857537174364552e-10,
+            "energy_kcal_mol": -18.457073345635393,
+            "id": 3,
+            "rg_angstrom": 1.5522750893195956
+          },
+          {
+            "delta_kcal_mol": 3.2657609949637845e-10,
+            "energy_kcal_mol": -18.457073345427393,
+            "id": 7,
+            "rg_angstrom": 1.552274998820378
+          },
+          {
+            "delta_kcal_mol": 5.750742104737583e-10,
+            "energy_kcal_mol": -18.457073345178895,
+            "id": 10,
+            "rg_angstrom": 1.5522749715249984
+          },
+          {
+            "delta_kcal_mol": 8.010907492916886e-10,
+            "energy_kcal_mol": -18.457073344952878,
+            "id": 8,
+            "rg_angstrom": 1.5522748383677876
+          },
+          {
+            "delta_kcal_mol": 1.345426881016465e-09,
+            "energy_kcal_mol": -18.457073344408542,
+            "id": 1,
+            "rg_angstrom": 1.5522750691831297
+          },
+          {
+            "delta_kcal_mol": 2.0433006397979625e-09,
+            "energy_kcal_mol": -18.457073343710668,
+            "id": 2,
+            "rg_angstrom": 1.5522748668142976
+          },
+          {
+            "delta_kcal_mol": 3.6135858749730687e-09,
+            "energy_kcal_mol": -18.457073342140383,
+            "id": 6,
+            "rg_angstrom": 1.5522748546498122
+          },
+          {
+            "delta_kcal_mol": 5.396749713781901e-09,
+            "energy_kcal_mol": -18.45707334035722,
+            "id": 11,
+            "rg_angstrom": 1.5522745836901242
+          },
+          {
+            "delta_kcal_mol": 8.952095953418393e-09,
+            "energy_kcal_mol": -18.457073336801873,
+            "id": 9,
+            "rg_angstrom": 1.5522751483224875
+          },
+          {
+            "delta_kcal_mol": 1.0097146230236831e-08,
+            "energy_kcal_mol": -18.457073335656823,
+            "id": 5,
+            "rg_angstrom": 1.5522746738730913
+          },
+          {
+            "delta_kcal_mol": 1.1571025027024007e-08,
+            "energy_kcal_mol": -18.457073334182944,
+            "id": 0,
+            "rg_angstrom": 1.5522757141043566
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -1.3518881050380118,
+              "y": -0.23816645455597057,
+              "z": 0.09737213228606321
+            },
+            {
+              "charge": 0,
+              "element": "N",
+              "x": 0.09038348581781014,
+              "y": -0.12530974688345486,
+              "z": 0.026459964580106896
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.6554034179800722,
+              "y": 1.1711194721945066,
+              "z": -0.29362801506165337
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 0.9107170619650867,
+              "y": -1.2099761372947597,
+              "z": 0.2543022126361636
+            },
+            {
+              "charge": 0,
+              "element": "O",
+              "x": 2.1341851998655574,
+              "y": -1.208074869736582,
+              "z": 0.2160482658852392
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.7228195391768644,
+              "y": 0.4437875399480616,
+              "z": 0.867807517388941
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.6569542238745918,
+              "y": -1.2585468228033108,
+              "z": 0.3449912772112726
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.776582421401267,
+              "y": 0.03764321857125342,
+              "z": -0.872053432932748
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.28336857843532215,
+              "y": 1.4853103615537504,
+              "z": -1.2731047710208838
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.3370959481491588,
+              "y": 1.8912157073980465,
+              "z": 0.46574113656304916
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.7477521194675005,
+              "y": 1.1411184024684184,
+              "z": -0.3203768039344062
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 0.3493384778101947,
+              "y": -2.1301206708599496,
+              "z": 0.4864405163988435
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 3,
+              "order": 1.0
+            },
+            {
+              "a": 3,
+              "b": 4,
+              "order": 2.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 6,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 7,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 8,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 9,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 10,
+              "order": 1.0
+            },
+            {
+              "a": 3,
+              "b": 11,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:fe7f1045b04e1d058b137994e354739cdd1fcc2658b6d762c5f78f6324592782",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": -18.45707334575397,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -1.3518881050380118,
+            "y": -0.23816645455597057,
+            "z": 0.09737213228606321
+          },
+          {
+            "charge": 0,
+            "element": "N",
+            "x": 0.09038348581781014,
+            "y": -0.12530974688345486,
+            "z": 0.026459964580106896
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.6554034179800722,
+            "y": 1.1711194721945066,
+            "z": -0.29362801506165337
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 0.9107170619650867,
+            "y": -1.2099761372947597,
+            "z": 0.2543022126361636
+          },
+          {
+            "charge": 0,
+            "element": "O",
+            "x": 2.1341851998655574,
+            "y": -1.208074869736582,
+            "z": 0.2160482658852392
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.7228195391768644,
+            "y": 0.4437875399480616,
+            "z": 0.867807517388941
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.6569542238745918,
+            "y": -1.2585468228033108,
+            "z": 0.3449912772112726
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.776582421401267,
+            "y": 0.03764321857125342,
+            "z": -0.872053432932748
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.28336857843532215,
+            "y": 1.4853103615537504,
+            "z": -1.2731047710208838
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.3370959481491588,
+            "y": 1.8912157073980465,
+            "z": 0.46574113656304916
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.7477521194675005,
+            "y": 1.1411184024684184,
+            "z": -0.3203768039344062
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 0.3493384778101947,
+            "y": -2.1301206708599496,
+            "z": 0.4864405163988435
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "order": 1.0
+          },
+          {
+            "a": 3,
+            "b": 4,
+            "order": 2.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 6,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 7,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 10,
+            "order": 1.0
+          },
+          {
+            "a": 3,
+            "b": 11,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": -18.45707334575397,
+          "id": 4,
+          "rg_angstrom": 1.5522749907214295
+        },
+        {
+          "delta_kcal_mol": 1.1857537174364552e-10,
+          "energy_kcal_mol": -18.457073345635393,
+          "id": 3,
+          "rg_angstrom": 1.5522750893195956
+        },
+        {
+          "delta_kcal_mol": 3.2657609949637845e-10,
+          "energy_kcal_mol": -18.457073345427393,
+          "id": 7,
+          "rg_angstrom": 1.552274998820378
+        },
+        {
+          "delta_kcal_mol": 5.750742104737583e-10,
+          "energy_kcal_mol": -18.457073345178895,
+          "id": 10,
+          "rg_angstrom": 1.5522749715249984
+        },
+        {
+          "delta_kcal_mol": 8.010907492916886e-10,
+          "energy_kcal_mol": -18.457073344952878,
+          "id": 8,
+          "rg_angstrom": 1.5522748383677876
+        },
+        {
+          "delta_kcal_mol": 1.345426881016465e-09,
+          "energy_kcal_mol": -18.457073344408542,
+          "id": 1,
+          "rg_angstrom": 1.5522750691831297
+        },
+        {
+          "delta_kcal_mol": 2.0433006397979625e-09,
+          "energy_kcal_mol": -18.457073343710668,
+          "id": 2,
+          "rg_angstrom": 1.5522748668142976
+        },
+        {
+          "delta_kcal_mol": 3.6135858749730687e-09,
+          "energy_kcal_mol": -18.457073342140383,
+          "id": 6,
+          "rg_angstrom": 1.5522748546498122
+        },
+        {
+          "delta_kcal_mol": 5.396749713781901e-09,
+          "energy_kcal_mol": -18.45707334035722,
+          "id": 11,
+          "rg_angstrom": 1.5522745836901242
+        },
+        {
+          "delta_kcal_mol": 8.952095953418393e-09,
+          "energy_kcal_mol": -18.457073336801873,
+          "id": 9,
+          "rg_angstrom": 1.5522751483224875
+        },
+        {
+          "delta_kcal_mol": 1.0097146230236831e-08,
+          "energy_kcal_mol": -18.457073335656823,
+          "id": 5,
+          "rg_angstrom": 1.5522746738730913
+        },
+        {
+          "delta_kcal_mol": 1.1571025027024007e-08,
+          "energy_kcal_mol": -18.457073334182944,
+          "id": 0,
+          "rg_angstrom": 1.5522757141043566
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    },
+    {
+      "id": "dmso",
+      "name": "Dimetil sülfoksit (DMSO)",
+      "name_en": "Dimethyl sulfoxide",
+      "smiles": "CS(C)=O",
+      "canonical_smiles": "CS(C)=O",
+      "structure_id": "structure-c00939e1ce0240d0821ac3c26171bd97b219ff86403a1af02c3c83c13466620d",
+      "formula": "C2H6OS",
+      "molar_mass_g_mol": 78.136,
+      "net_charge": 0,
+      "model_id": "sha256:b91e6d55ba5c800d6ed09f2da512b1b29375d8ffbc312bc78a1f24553b0d6b12",
+      "energy_record": {
+        "canonical_smiles": "CS(C)=O",
+        "conformers": [
+          {
+            "delta_kcal_mol": 0.0,
+            "energy_kcal_mol": 1.1874893323747213,
+            "id": 11,
+            "rg_angstrom": 1.3106977964221562
+          },
+          {
+            "delta_kcal_mol": 1.7409185204542155e-11,
+            "energy_kcal_mol": 1.1874893323921305,
+            "id": 3,
+            "rg_angstrom": 1.3106978633171593
+          },
+          {
+            "delta_kcal_mol": 1.221909240456398e-10,
+            "energy_kcal_mol": 1.1874893324969122,
+            "id": 4,
+            "rg_angstrom": 1.3106977875949197
+          },
+          {
+            "delta_kcal_mol": 1.5388423868500922e-10,
+            "energy_kcal_mol": 1.1874893325286056,
+            "id": 9,
+            "rg_angstrom": 1.3106977887921119
+          },
+          {
+            "delta_kcal_mol": 1.6901702259985996e-10,
+            "energy_kcal_mol": 1.1874893325437383,
+            "id": 8,
+            "rg_angstrom": 1.3106977525153356
+          },
+          {
+            "delta_kcal_mol": 2.413960142888527e-10,
+            "energy_kcal_mol": 1.1874893326161173,
+            "id": 2,
+            "rg_angstrom": 1.3106978477679718
+          },
+          {
+            "delta_kcal_mol": 3.63985286355728e-10,
+            "energy_kcal_mol": 1.1874893327387066,
+            "id": 5,
+            "rg_angstrom": 1.3106977838055545
+          },
+          {
+            "delta_kcal_mol": 5.226454824480697e-10,
+            "energy_kcal_mol": 1.1874893328973668,
+            "id": 7,
+            "rg_angstrom": 1.3106979362078164
+          },
+          {
+            "delta_kcal_mol": 6.788984929784192e-10,
+            "energy_kcal_mol": 1.1874893330536198,
+            "id": 10,
+            "rg_angstrom": 1.3106977951897116
+          },
+          {
+            "delta_kcal_mol": 6.962559417900138e-10,
+            "energy_kcal_mol": 1.1874893330709773,
+            "id": 0,
+            "rg_angstrom": 1.3106976562851103
+          },
+          {
+            "delta_kcal_mol": 9.025797886863529e-10,
+            "energy_kcal_mol": 1.187489333277301,
+            "id": 1,
+            "rg_angstrom": 1.3106978742156143
+          },
+          {
+            "delta_kcal_mol": 2.453234726473852e-09,
+            "energy_kcal_mol": 1.187489334827956,
+            "id": 6,
+            "rg_angstrom": 1.3106976768042773
+          }
+        ],
+        "converged": 12,
+        "embedded": 12,
+        "lowest_geometry": {
+          "atoms": [
+            {
+              "charge": 0,
+              "element": "C",
+              "x": -1.3423990414777294,
+              "y": -0.19695540944087472,
+              "z": 0.07578978100876549
+            },
+            {
+              "charge": 0,
+              "element": "S",
+              "x": -0.02816962533260544,
+              "y": 0.6853545894749972,
+              "z": -0.8001397882095997
+            },
+            {
+              "charge": 0,
+              "element": "C",
+              "x": 1.3383334004400085,
+              "y": -0.23061987776408574,
+              "z": -0.04742289313513807
+            },
+            {
+              "charge": 0,
+              "element": "O",
+              "x": 0.014246301441269612,
+              "y": 2.0838822574875455,
+              "z": -0.25940933348128603
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.3217066677879927,
+              "y": -1.2528461118003291,
+              "z": -0.20377744135220907
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -1.2075550986456014,
+              "y": -0.09170886331862449,
+              "z": 1.1549324352296364
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": -2.303683919190212,
+              "y": 0.23452900157300366,
+              "z": -0.21301720683155845
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 2.2795878323956478,
+              "y": 0.17697252113653386,
+              "z": -0.4236750274090379
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.3057127961890687,
+              "y": -0.12327024349970243,
+              "z": 1.0394168112932676
+            },
+            {
+              "charge": 0,
+              "element": "H",
+              "x": 1.2656340219681304,
+              "y": -1.285337863848481,
+              "z": -0.3226973371128482
+            }
+          ],
+          "bonds": [
+            {
+              "a": 0,
+              "b": 1,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 2,
+              "order": 1.0
+            },
+            {
+              "a": 1,
+              "b": 3,
+              "order": 2.0
+            },
+            {
+              "a": 0,
+              "b": 4,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 5,
+              "order": 1.0
+            },
+            {
+              "a": 0,
+              "b": 6,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 7,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 8,
+              "order": 1.0
+            },
+            {
+              "a": 2,
+              "b": 9,
+              "order": 1.0
+            }
+          ],
+          "unit": "angstrom"
+        },
+        "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+        "model_id": "sha256:b91e6d55ba5c800d6ed09f2da512b1b29375d8ffbc312bc78a1f24553b0d6b12",
+        "protocol": {
+          "count": 12,
+          "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+          "embedding": "ETKDGv3",
+          "embedding_iterations": 300,
+          "energy_unit": "kcal/mol",
+          "enforce_chirality": true,
+          "environment": "isolated; default MMFF dielectric 1; no solvent",
+          "force_field": "MMFF94s",
+          "hydrogens": "explicit",
+          "nonbonded_threshold": 100.0,
+          "optimization_iterations": 1500,
+          "prune_rms_thresh_angstrom": -1.0,
+          "rdkit_version": "2026.09.2",
+          "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+          "seed": 2403,
+          "threads": 1
+        },
+        "requested": 12,
+        "schema_version": "conformer-energy/1",
+        "status": "ok"
+      },
+      "energy_schema": "conformer-energy/1",
+      "status": "ok",
+      "message": "12/12 aday yakınsama ve yapı kontrolünü geçti. Enerji farkları yalnız bu molekülün örneklenen konformerleri içindir.",
+      "requested": 12,
+      "embedded": 12,
+      "converged": 12,
+      "energy_unit": "kcal/mol",
+      "energy_reference": "Bu tek molekülde aynı protokolle örneklenen konformerler.",
+      "lowest_energy_kcal_mol": 1.1874893323747213,
+      "geometry": {
+        "atoms": [
+          {
+            "charge": 0,
+            "element": "C",
+            "x": -1.3423990414777294,
+            "y": -0.19695540944087472,
+            "z": 0.07578978100876549
+          },
+          {
+            "charge": 0,
+            "element": "S",
+            "x": -0.02816962533260544,
+            "y": 0.6853545894749972,
+            "z": -0.8001397882095997
+          },
+          {
+            "charge": 0,
+            "element": "C",
+            "x": 1.3383334004400085,
+            "y": -0.23061987776408574,
+            "z": -0.04742289313513807
+          },
+          {
+            "charge": 0,
+            "element": "O",
+            "x": 0.014246301441269612,
+            "y": 2.0838822574875455,
+            "z": -0.25940933348128603
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.3217066677879927,
+            "y": -1.2528461118003291,
+            "z": -0.20377744135220907
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -1.2075550986456014,
+            "y": -0.09170886331862449,
+            "z": 1.1549324352296364
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": -2.303683919190212,
+            "y": 0.23452900157300366,
+            "z": -0.21301720683155845
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 2.2795878323956478,
+            "y": 0.17697252113653386,
+            "z": -0.4236750274090379
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.3057127961890687,
+            "y": -0.12327024349970243,
+            "z": 1.0394168112932676
+          },
+          {
+            "charge": 0,
+            "element": "H",
+            "x": 1.2656340219681304,
+            "y": -1.285337863848481,
+            "z": -0.3226973371128482
+          }
+        ],
+        "bonds": [
+          {
+            "a": 0,
+            "b": 1,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 2,
+            "order": 1.0
+          },
+          {
+            "a": 1,
+            "b": 3,
+            "order": 2.0
+          },
+          {
+            "a": 0,
+            "b": 4,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 5,
+            "order": 1.0
+          },
+          {
+            "a": 0,
+            "b": 6,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 7,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 8,
+            "order": 1.0
+          },
+          {
+            "a": 2,
+            "b": 9,
+            "order": 1.0
+          }
+        ],
+        "unit": "angstrom"
+      },
+      "conformers": [
+        {
+          "delta_kcal_mol": 0.0,
+          "energy_kcal_mol": 1.1874893323747213,
+          "id": 11,
+          "rg_angstrom": 1.3106977964221562
+        },
+        {
+          "delta_kcal_mol": 1.7409185204542155e-11,
+          "energy_kcal_mol": 1.1874893323921305,
+          "id": 3,
+          "rg_angstrom": 1.3106978633171593
+        },
+        {
+          "delta_kcal_mol": 1.221909240456398e-10,
+          "energy_kcal_mol": 1.1874893324969122,
+          "id": 4,
+          "rg_angstrom": 1.3106977875949197
+        },
+        {
+          "delta_kcal_mol": 1.5388423868500922e-10,
+          "energy_kcal_mol": 1.1874893325286056,
+          "id": 9,
+          "rg_angstrom": 1.3106977887921119
+        },
+        {
+          "delta_kcal_mol": 1.6901702259985996e-10,
+          "energy_kcal_mol": 1.1874893325437383,
+          "id": 8,
+          "rg_angstrom": 1.3106977525153356
+        },
+        {
+          "delta_kcal_mol": 2.413960142888527e-10,
+          "energy_kcal_mol": 1.1874893326161173,
+          "id": 2,
+          "rg_angstrom": 1.3106978477679718
+        },
+        {
+          "delta_kcal_mol": 3.63985286355728e-10,
+          "energy_kcal_mol": 1.1874893327387066,
+          "id": 5,
+          "rg_angstrom": 1.3106977838055545
+        },
+        {
+          "delta_kcal_mol": 5.226454824480697e-10,
+          "energy_kcal_mol": 1.1874893328973668,
+          "id": 7,
+          "rg_angstrom": 1.3106979362078164
+        },
+        {
+          "delta_kcal_mol": 6.788984929784192e-10,
+          "energy_kcal_mol": 1.1874893330536198,
+          "id": 10,
+          "rg_angstrom": 1.3106977951897116
+        },
+        {
+          "delta_kcal_mol": 6.962559417900138e-10,
+          "energy_kcal_mol": 1.1874893330709773,
+          "id": 0,
+          "rg_angstrom": 1.3106976562851103
+        },
+        {
+          "delta_kcal_mol": 9.025797886863529e-10,
+          "energy_kcal_mol": 1.187489333277301,
+          "id": 1,
+          "rg_angstrom": 1.3106978742156143
+        },
+        {
+          "delta_kcal_mol": 2.453234726473852e-09,
+          "energy_kcal_mol": 1.187489334827956,
+          "id": 6,
+          "rg_angstrom": 1.3106976768042773
+        }
+      ],
+      "protocol": {
+        "count": 12,
+        "duplicates": "unpruned trials; minima may repeat; frequencies are not populations",
+        "embedding": "ETKDGv3",
+        "embedding_iterations": 300,
+        "energy_unit": "kcal/mol",
+        "enforce_chirality": true,
+        "environment": "isolated; default MMFF dielectric 1; no solvent",
+        "force_field": "MMFF94s",
+        "hydrogens": "explicit",
+        "nonbonded_threshold": 100.0,
+        "optimization_iterations": 1500,
+        "prune_rms_thresh_angstrom": -1.0,
+        "rdkit_version": "2026.09.2",
+        "rg": "mass-weighted including explicit H; isolated coordinates; angstrom",
+        "seed": 2403,
+        "threads": 1
+      }
+    }
+  ]
+}
