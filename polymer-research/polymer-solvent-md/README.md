@@ -6,6 +6,12 @@ Polymer Research Studio’nun ikinci bağımsız uygulaması, kullanıcının so
 
 ![PEtOx oligomerinin açık sudaki hidratasyon hesabı](pilot/overview.png)
 
+## Su etkileşimlerini zaman içinde izleme
+
+Yeni sürümde **3B kare → Yörüngeyi aç** ile kendi hesaplanan tek-zincir çalışmanızdaki koşuyu, hidrasyon suyunu ve yönlü H bağlarını zaman boyunca izleyebilirsiniz. PEtOx için ayrıca iki trimerin temasına su girişini izleten film, uzatılmış simülasyonlar ve uç grubu karşılaştırması yer alır. GitHub HTML kaynak kodunu gösterirse dosyayı indirip tarayıcıda açın.
+
+[İki zincir arasındaki suyun etkileşimli filmi](hydration/contact-viewer.html) · [Uç grubu karşılaştırması](hydration/comparison.html) · [Yöntem, veriler ve yeniden üretim](hydration/README.md)
+
 ## Başlatma
 
 Arşivi tamamen açın. Python 3.12 ile proje klasöründe çalıştırın.

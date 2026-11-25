@@ -126,8 +126,18 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if p in ("/", "/index.html"):
                 return self.send(200,(ROOT/"ui.html").read_bytes(),"text/html; charset=utf-8")
+            research_pages = {
+                "/hydration/contact-viewer.html": "contact-viewer.html",
+                "/hydration/comparison.html": "comparison.html",
+            }
+            if p in research_pages:
+                return self.send(200,(ROOT/"hydration"/research_pages[p]).read_bytes(),"text/html; charset=utf-8")
+            if match := re.fullmatch(f"/api/trajectory/({HEX})/([0-9]{{1,10}})",p):
+                from hydration.player import trajectory_frames
+                folder = self.server.studies.get_folder(match[1])
+                return self.send(200,trajectory_frames(folder,read(folder/"study.json"),int(match[2])))
             if p == "/api/status":
-                return self.send(200, {"version": "1.0.0", "engines": {k: bool(importlib.util.find_spec(k))
+                return self.send(200, {"version": "1.1.0", "engines": {k: bool(importlib.util.find_spec(k))
                                      for k in ("rdkit","numpy","openmm")}})
             if p == "/api/pilot":
                 return self.send(200, dict(archived(PILOT), acquisition="bundled"))

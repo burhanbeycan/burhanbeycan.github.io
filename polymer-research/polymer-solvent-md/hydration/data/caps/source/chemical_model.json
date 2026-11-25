@@ -1,0 +1,47 @@
+{
+  "alpha_methyl_c": 5,
+  "canonical_isomeric_smiles": "CCC(=O)N(C)CCN(CCN(CCO)C(=O)CC)C(=O)CC",
+  "charge_e": 0,
+  "dp": 3,
+  "end_groups": {
+    "alpha": "N-methyl",
+    "omega": "2-hydroxyethyl backbone end"
+  },
+  "experimental_end_group_precedent_doi": "10.1039/D2PY00437B",
+  "explicit_atoms": 54,
+  "formula": "C16H31N3O4",
+  "index_base": 0,
+  "model_id": "petox-dp3-alpha-methyl-omega-hydroxyl",
+  "native_atom_order_checked": true,
+  "omega_hydroxyl_h": [
+    43
+  ],
+  "omega_hydroxyl_o": 14,
+  "omega_terminal_c": 13,
+  "ordered_sites_alpha_to_omega": [
+    {
+      "amide_n": 4,
+      "amide_oxygen": 3,
+      "carbonyl_c": 2,
+      "class": "tertiary_amide",
+      "site": "alpha"
+    },
+    {
+      "amide_n": 8,
+      "amide_oxygen": 20,
+      "carbonyl_c": 19,
+      "class": "tertiary_amide",
+      "site": "middle"
+    },
+    {
+      "amide_n": 11,
+      "amide_oxygen": 16,
+      "carbonyl_c": 15,
+      "class": "tertiary_amide",
+      "site": "omega"
+    }
+  ],
+  "parameter_id": "sha256:939944fea0f46aeb9fd48385e17aa1625e0b26893a0a5e202669f4acee0434af",
+  "scope": "Neutral selected model of α-Me/ω-OH PEtOx; the polymerization reaction is not simulated.",
+  "source_id": "954505129bb8afd78b325e5da6b66201d45a898bfb5e3a35dcef79f1ae8ceb48"
+}

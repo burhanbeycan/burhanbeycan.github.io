@@ -1,0 +1,75 @@
+{
+  "schema": "contact-pair/1",
+  "seed": 73111,
+  "temperature_K": 298.15,
+  "pressure_bar": 1,
+  "thermostat": "LangevinMiddle 1/ps",
+  "engine": "OpenMM 8.6.1.dev-b399af4",
+  "ensemble": "NPT",
+  "force_fields": "GAFF2 + AM1-BCC / TIP3P",
+  "parameter_id": "sha256:a3854d3dece6bf80d79d012fa377d650ba1c376bea5f21e9c95dc52975ee8c6d",
+  "native_prmtop_sha256": "7b9ae83c68ebafdb80a6c6b5c80c946ac709d61167187430192b28666030f724",
+  "input_artifact": "3a0d7c69390e57daf17cd7c5f02147b3dced5fc2c697d1ead8c7eab8bb4425bc",
+  "water_molecules": 700,
+  "canonical_smiles": "CCC(=O)NCCN(CCN(CC)C(=O)CC)C(=O)CC",
+  "initial_geometry_b": {
+    "method": "independent ETKDGv3 + MMFF94s starting geometry",
+    "conformer_seed": 73128
+  },
+  "packing": {
+    "generation_trial": 0,
+    "initial_heavy_contacts_045": 13,
+    "target_minimum_heavy_distance_nm": 0.34,
+    "minimum_all_atom_distance_nm": 0.19061854199678321
+  },
+  "system_validation": {
+    "native_term_counts": [
+      [
+        "HarmonicBondForce",
+        "Bond",
+        20
+      ],
+      [
+        "HarmonicAngleForce",
+        "Angle",
+        90
+      ],
+      [
+        "PeriodicTorsionForce",
+        "Torsion",
+        153
+      ],
+      [
+        "NonbondedForce",
+        "Particle",
+        50
+      ],
+      [
+        "NonbondedForce",
+        "Exception",
+        253
+      ]
+    ],
+    "net_pair_charge_e": -1.7999923399014683e-08,
+    "native_atoms": 50,
+    "constraints_per_chain": 29
+  },
+  "condition_ps": 8.0,
+  "condition_restraint_kj_mol_nm2": 1000,
+  "condition": "Periodic heavy-atom Cartesian restraints during minimization and conditioning only",
+  "production_ps": 60.0,
+  "frame_stride_ps": 1.0,
+  "dt_ps": 0.002,
+  "real_space_cutoff_nm": 0.8,
+  "production_frame_zero": "After conditioning, positional restraint strength set to zero; before first free step.",
+  "observables": "All distances minimum-image. Cross-chain heavy pairs at d≤0.45 nm; shared waters are unique Ow within 0.35 nm of a heavy atom on each chain. Water donor H bonds: Ow···carbonyl O≤0.35 nm, Ow–H···O≥150°.",
+  "scope": "Two short chains in finite periodic water. Local contact reorganization, no bulk phase fraction or equilibrium solubility.",
+  "complete": true,
+  "frames": 61,
+  "wall_s": 383.26,
+  "files_sha256": {
+    "topology.json": "4bafa9b25a9f587118c1177153132cbcac48d87e30b527ba6aea952fdc84696a",
+    "trajectory.npz": "7d0baa819b7f821a5f2154ca8a431a56b0bd65f244205f54369da70e94f91f4d",
+    "metrics.csv": "ffc8d8546d64d2ff5b0491bc21c45a5869adaa9f88f558e3df8bd0d900f845f0"
+  }
+}

@@ -63,6 +63,7 @@
 <main class="shell">
   <h1>Polimer–çözücü etkileşimleri</h1>
   <p class="deck">Zincirin çözeltideki boyutunu ve karbonil gruplarının çevresindeki su dağılımını incele.</p>
+  <div class="downloads" style="margin:0 0 1.2rem"><a href="/hydration/contact-viewer.html">İki zincir arasındaki suyu izle</a><a href="/hydration/comparison.html">Örnekleme ve uç grup karşılaştırması</a></div>
   <div class="inputs">
     <form class="sheet" id="study-form"><h2>Zincir ve ortam</h2>
       <div class="tabs mode" aria-label="Zincir giriş yöntemi">
@@ -112,7 +113,12 @@
         <p class="hint">Bağ sayısı, amit azotundan en yakın ikincil amit azotuna kovalent uzaklıktır. O indisleri ham topolojide 0’dan başlar. Bir indise dokunarak karbonili 3B karede bulabilirsin.</p>
       </div>
     </div></section>
-    <section class="panel" id="panel-molecular" hidden><div class="card"><h3>Yörüngeden bir kare</h3><p id="snap-caption"></p>
+    <section class="panel" id="panel-molecular" hidden><div class="card"><h3>Zincir ve suyun hareketi</h3>
+      <div id="movie-controls" hidden><div class="viewer-actions"><label>Koşu <select id="movie-seed"></select></label>
+      <button class="outline" type="button" id="movie-load">Yörüngeyi aç</button>
+      <button class="outline" type="button" id="movie-play" disabled>Oynat</button></div>
+      <label>Kayıtlı kare <input type="range" min="0" max="0" value="0" id="movie-index" disabled></label>
+      <p class="hint" id="movie-note" aria-live="polite"></p></div><p id="snap-caption"></p>
       <div class="viewer-actions"><button type="button" class="outline" id="rotate">90° döndür</button><label><input type="checkbox" id="show-water" checked>Yakın su molekülleri</label><label><input type="checkbox" id="show-H">H atomları</label></div>
       <div class="viewer-actions" id="selected-site" hidden><span id="selected-site-label"></span><button type="button" class="outline" id="clear-site">Vurguyu kaldır</button></div>
       <canvas id="viewer" role="img" aria-label="Gerçek yörünge karesinden zincir ve yakın su moleküllerinin döndürülebilir görünümü"></canvas><p class="hint">Döndürmek için görüntüyü sürükle.</p>
@@ -166,6 +172,7 @@
   }
 
   function clearView() {
+    stopMovie(); movieFrames=[]; movieFrame=null;
     stopRequests();
     study = null;
     $('result').hidden = true;
@@ -218,6 +225,7 @@
   }
 
   function choosePanel(id) {
+    if(id!=='molecular') pauseMovie();
     activePanel=id;
     for (const key of ['chain','water','molecular']) $('panel-'+key).hidden = key!==id;
     for (const b of $('result-tabs').querySelectorAll('button')) b.setAttribute('aria-pressed',String(b.dataset.panel===id));
@@ -321,7 +329,7 @@
 
   const elemColors={C:'#4c606b',N:'#457daf',O:'#cb5c46',H:'#f4f4e8',S:'#b39a2a',F:'#5eaa79',P:'#d58740'};
   function drawMolecule(){
-    const snapshot=study?.viewer, canvas=$('viewer');
+    const snapshot=movieFrame || study?.viewer, canvas=$('viewer');
     if(!snapshot?.atoms?.length || activePanel!=='molecular')return;
     const atoms=snapshot.atoms, bonds=snapshot.bonds||[];
     const w=Math.floor(canvas.getBoundingClientRect().width), h=Math.floor(canvas.getBoundingClientRect().height);
@@ -340,7 +348,7 @@
     // Fit uses the longest radius in three dimensions: toggling hydrogens or rotating
     // the same frame never makes the chain jump to a new scale.
     let radius=.1;for (const p of centered) if(p)radius=Math.max(radius,Math.hypot(...p));
-    const scale=.44*Math.min(w,h)/radius;
+    const scale=.44*Math.min(w,h)/(movieFrame ? movieScale : radius);
     const c=Math.cos(previewAngle),s=Math.sin(previewAngle),ct=Math.cos(previewTilt),st=Math.sin(previewTilt);
     const projected=centered.map(p=>{
       if(!p)return null;
@@ -360,6 +368,18 @@
       const i=link.a, j=link.b;
       if(Number.isInteger(i)&&Number.isInteger(j)&&visible(atoms[i])&&visible(atoms[j]))
         draws.push({z:(projected[i].z+projected[j].z)/2, draw:()=>bondLine(i,j)});
+    }
+    if($('show-water').checked && snapshot.hydrogen_links) {
+      const index=new Map(atoms.map((a,i)=>[a.topology_atom_index,i]));
+      for (const [donor,h,acceptor] of snapshot.hydrogen_links) {
+        const i=index.get($('show-H').checked?h:donor),j=index.get(acceptor);
+        if(i===undefined || j===undefined || !visible(atoms[i]) || !visible(atoms[j]))continue;
+        const a=atoms[i],b=atoms[j];
+        if(Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z)>.351)continue;
+        const p=projected[i],q=projected[j];
+        draws.push({z:(p.z+q.z)/2,draw:()=>{ctx.save();ctx.strokeStyle='#00816a';ctx.lineWidth=2;
+          ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();ctx.restore();}});
+      }
     }
     atoms.forEach((a,i)=>{
       if(!visible(a))return;
@@ -389,6 +409,56 @@
   });
   $('viewer').onpointerup=$('viewer').onpointercancel=()=>{drag=null;};
   window.addEventListener('resize',()=>{if(study){plotResult(study.analysis);drawMolecule();}});
+
+  let movieFrames=[], movieFrame=null, movieScale=1, movieTimer=null, movieGeneration=0;
+  function pauseMovie() {
+    if(movieTimer!==null) clearInterval(movieTimer);
+    movieTimer=null; $('movie-play').textContent='Oynat';
+  }
+  function stopMovie() {pauseMovie(); movieGeneration++;}
+  function showMovieFrame(index) {
+    movieFrame=movieFrames[index]; if(!movieFrame)return;
+    $('movie-index').value=index;
+    $('snap-caption').textContent=number(movieFrame.production_time_ps,2)+' ps · '+movieFrame.selected_water_count+
+      ' yakın su · '+movieFrame.hydrogen_links.length+' su → karbonil H bağı. Kesikli yeşil çizgiler H bağlarını gösterir.';
+    drawMolecule();
+  }
+  function setupMovie(record) {
+    stopMovie(); movieFrame=null; movieFrames=[];
+    $('movie-controls').hidden=offline;
+    $('movie-seed').replaceChildren();
+    for(const seed of record.method?.seeds||[]) $('movie-seed').add(new Option(String(seed),String(seed)));
+    $('movie-index').max=0; $('movie-index').value=0; $('movie-index').disabled=true;
+    $('movie-play').disabled=true; $('movie-load').disabled=false; $('movie-note').textContent='';
+  }
+  $('movie-index').oninput=()=>{pauseMovie();showMovieFrame(Number($('movie-index').value));};
+  $('movie-play').onclick=()=>{
+    if(movieTimer!==null){pauseMovie();return;}
+    $('movie-play').textContent='Duraklat';
+    movieTimer=setInterval(()=>showMovieFrame((Number($('movie-index').value)+1)%movieFrames.length),145);
+  };
+  $('movie-load').onclick=async()=>{
+    if(!study || offline)return;
+    stopMovie(); const token=movieGeneration; const key=study.study_id;
+    $('movie-load').disabled=true; $('movie-note').textContent='Kayıtlı koordinatlar açılıyor…';
+    try {
+      const data=await fetchJSON('/api/trajectory/'+key+'/'+$('movie-seed').value);
+      if(token!==movieGeneration || study?.study_id!==key)return;
+      movieFrames=data.frames; movieScale=.1;
+      for (const f of movieFrames) {
+        const centers=f.atoms.filter(a=>a.group==='polymer'&&a.element!=='H');
+        const ctr=['x','y','z'].map(k=>centers.reduce((v,a)=>v+a[k],0)/centers.length);
+        for(const a of f.atoms) movieScale=Math.max(movieScale,Math.hypot(a.x-ctr[0],a.y-ctr[1],a.z-ctr[2]));
+      }
+      $('movie-index').max=movieFrames.length-1; $('movie-index').disabled=false; $('movie-play').disabled=false;
+      $('movie-note').textContent=data.source_frames+' kayıtlı karenin '+movieFrames.length+' tanesi gösteriliyor. Su O···karbonil O ≤ 0,35 nm, O–H···O ≥ 150°.';
+      showMovieFrame(0);
+    } catch(e) {if(token===movieGeneration)$('movie-note').textContent=e.message;}
+    finally {if(token===movieGeneration)$('movie-load').disabled=false;}
+  };
+  $('movie-seed').onchange=()=>{
+    const seed=$('movie-seed').value;setupMovie(study);$('movie-seed').value=seed;$('movie-load').click();
+  };
 
   function metric(label,value,description) {
     const box=make('div',null,$('metrics'));box.className='metric';
@@ -452,6 +522,7 @@
     return Number.isFinite(value) ? 'Koşu ortalamalarının SS’si '+number(value)+' '+unit : '';
   }
   function render(record) {
+    setupMovie(record);
     if(!record?.analysis?.replicas?.length || !record.analysis.replicas.some(r=>points(r.time_ps,r.rg_nm).length))
       throw Error('Kaydın üretim kareleri ve analiz verileri okunamadı.');
     study=record;

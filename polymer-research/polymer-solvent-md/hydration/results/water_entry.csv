@@ -1,0 +1,3 @@
+seed,time_ps,atom_a,element_a,atom_b,element_b,water_o,element_w,a_b_nm,a_ow_nm,b_ow_nm,a_ow_b_deg,water_donor_h,ow_h_a_deg,satisfies_water_to_a_hbond,pair_open_and_water_interposed
+73111,0.0,3,O,61,C,1243,O,0.4459705948829651,0.7075853943824768,0.7827418446540833,34.355751037597656,1245,121.27046966552734,False,False
+73111,10.0,3,O,61,C,1243,O,0.6119632124900818,0.29217836260795593,0.3326061964035034,156.69546508789062,1245,170.400146484375,True,True

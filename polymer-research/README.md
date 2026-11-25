@@ -25,3 +25,9 @@ LDI–PEG/PCL esaslı üretan zincirlerini, PEtOx hidrolizini ve diziye bağlı 
 [PEtOx’un suda zincir boyutunu ve karbonil çevresindeki su dağılımını incele](polymer-solvent-md/README.md). Bu uygulama sonlu zincirin kaydını yeniden kullanır. Üç bağımsız kısa yörüngeden jirasyon yarıçapını, karbonil oksijeni ile su oksijeni arasındaki radyal dağılımı ve seçilen uzaklık içindeki ortalama su sayısını hesaplar.
 
 [Grafikler](polymer-solvent-md/pilot/overview.png) · [Çevrimdışı etkileşimli raporu indir](https://github.com/burhanbeycan/burhanbeycan.github.io/raw/refs/heads/polymer-research-review-v0.2.0/polymer-research/polymer-solvent-md/pilot-review.html?download=1) · [Uygulama, çevrimdışı rapor ve ham yörüngeler (ZIP)](downloads/polymer-solvent-md-1.0.0.zip)
+
+### PEtOx zincirinin suyla hidratasyonu
+
+Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç gruplarını karşılaştırır ve birbiriyle temas eden iki oligomerin sudaki hareketini gerçek atomistik karelerden izletir. Koşu girdileri, ham koordinatlar ve analizler birlikte sunulur.
+
+[Hidratasyon çalışması ve sonuçları](polymer-solvent-md/hydration/README.md) · [Uygulamayı ve ham verileri indir](downloads/polymer-solvent-md-1.1.0/README.md)
