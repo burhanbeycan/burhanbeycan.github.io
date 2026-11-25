@@ -19,3 +19,9 @@ LDI–PEG/PCL esaslı üretan zincirlerini, PEtOx hidrolizini ve diziye bağlı 
 [Kendi polimerini oluştur ve konformer enerjilerini incele](polymer-structure-energy/README.md). Bu bağımsız uygulama, tanımlanan sonlu zincirin kimyasal kaydını ve izole konformer enerjilerini diğer modüllerin yeniden kullanabileceği biçimde saklar. Çözücü kayıtlarında yöntem ve hesap kapsamı izlenebilir.
 
 [Bağımsız uygulamayı indir](downloads/polymer-structure-energy-1.0.0.zip).
+
+## Polimer–su moleküler dinamiği
+
+[PEtOx’un suda zincir boyutunu ve karbonil çevresindeki su dağılımını incele](polymer-solvent-md/README.md). Bu uygulama sonlu zincirin kaydını yeniden kullanır. Üç bağımsız kısa yörüngeden jirasyon yarıçapını, karbonil oksijeni ile su oksijeni arasındaki radyal dağılımı ve seçilen uzaklık içindeki ortalama su sayısını hesaplar.
+
+[Grafikler](polymer-solvent-md/pilot/overview.png) · [Çevrimdışı etkileşimli raporu indir](https://github.com/burhanbeycan/burhanbeycan.github.io/raw/refs/heads/polymer-research-review-v0.2.0/polymer-research/polymer-solvent-md/pilot-review.html?download=1) · [Uygulama, çevrimdışı rapor ve ham yörüngeler (ZIP)](downloads/polymer-solvent-md-1.0.0.zip)

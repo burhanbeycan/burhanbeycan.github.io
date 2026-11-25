@@ -1,0 +1,6 @@
+source leaprc.gaff2
+loadamberparams solute.frcmod
+POL = loadmol2 solute.mol2
+check POL
+saveamberparm POL solute.prmtop solute.inpcrd
+quit

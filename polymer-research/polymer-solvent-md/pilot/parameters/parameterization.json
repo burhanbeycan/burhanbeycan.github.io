@@ -1,0 +1,90 @@
+{
+  "canonical_smiles": "CCC(=O)NCCN(CCN(CC)C(=O)CC)C(=O)CC",
+  "charge_balance": {
+    "atom_count": 50,
+    "normalized_mol2_net_e": 0.0,
+    "raw_net_e": -0.001998,
+    "uniform_offset_per_atom_e": 3.996e-05
+  },
+  "files_sha256": {
+    "antechamber.log": "4e246590e8f918b1e7225677079ce766d2289ff5263a798d0439c595d34de2d2",
+    "leap.in": "067616af681814bf9c245be5eb545b32876a5d131591b903b9be7c52d183c158",
+    "raw_charge.mol2": "698871e7db62145ad6391216f3644994950cdc75a8304dabb6e516b22849fdca",
+    "solute.frcmod": "0ec5c8b07e130dba06487009cd413ee4afb2c0748c5caedc6744fff2001d13de",
+    "solute.inpcrd": "4fd88ec20e86b4ac33a7b00cf46bbec1477873ce29f4760360cabead0b212e60",
+    "solute.mol2": "e2ac5d33e8af3a095796b82bdcea3d28de8aa8163b4ea04706684db07599bcc2",
+    "solute.prmtop": "7b9ae83c68ebafdb80a6c6b5c80c946ac709d61167187430192b28666030f724",
+    "solute.sdf": "81be06f85ca4959ecbe98f7c884be3e392267104093b6e8d20fbbcd44f9a7503",
+    "sqm.in": "6c2cd7eb4c79d6f9a03dff90a2a14b07fffc21ffcc76fc9dcfd6e4441464c7f4",
+    "sqm.out": "58ddc003cacf487d4614d4d72e505d94f8c9b3bcc22975592b5f87330ac8dcce",
+    "tleap.log": "a369bb7130b3da1f58cf9a718885b30a5da203e4e479c21720d4bea9cb8e9293"
+  },
+  "native_validation": {
+    "force_classes": [
+      "HarmonicBondForce",
+      "HarmonicAngleForce",
+      "PeriodicTorsionForce",
+      "NonbondedForce"
+    ],
+    "native_charge_e": -8.999961699507342e-09,
+    "nonbonded_exceptions": 253,
+    "num_atoms": 50,
+    "num_bonds": 49
+  },
+  "parameter_analogies": {
+    "max_reported_analogy_penalty": 6.0,
+    "policy_penalty_limit": 10,
+    "positive_penalty_rows": 3,
+    "score_is_error_bound": false,
+    "supplementary_rows": {
+      "DIHE": 6,
+      "IMPROPER": 4
+    }
+  },
+  "parameter_id": "sha256:a3854d3dece6bf80d79d012fa377d650ba1c376bea5f21e9c95dc52975ee8c6d",
+  "protocol": {
+    "charge_normalization": "equal offset on each explicit atom after Antechamber output; 10 decimal places",
+    "charges": "Antechamber AM1-BCC, single MMFF94s selected conformer",
+    "force_field": "GAFF2",
+    "formal_charge_e": 0,
+    "formal_charge_policy": "all atoms formally neutral; single closed-shell C/H/N/O molecule; 2–100 heavy atoms; all potential stereo specified",
+    "input_geometry": "Stage 1 lowest converged isolated conformer; canonical-order explicit H; MDL V2000, coordinates in angstrom to four decimals",
+    "multiplicity": 1,
+    "screening": "reject missing/marked parameters, score above 10, unconverged SQM, LEaP warnings/errors or graph/stereo/charge mismatch",
+    "sqm_keywords": "qm_theory=\"AM1\", scfconv=1.d-10, grms_tol=0.0005, maxcyc=9999"
+  },
+  "qualification": "General transferable GAFF2 with single-conformer AM1-BCC. Parameter coverage and native topology checks do not establish property accuracy. No molecule-specific calibration or predictive error bound.",
+  "schema": "polymer-studio/gaff2-parameterization/1",
+  "source_geometry_sha256": "fc028a5be6dafe244934b8474be760365cdd32cb5da7c20b803fa37b28c2a12a",
+  "source_model_id": "sha256:8727019e2ad674d96a7231a8bcb4aaa0c8ccaf3c74fa865f469b9fb0dff0bc33",
+  "sqm_version": "AMBER SQM VERSION 19",
+  "toolchain": {
+    "data_sha256": {
+      "dat/antechamber/APS.DAT": "cd0fb9a9714daf61ccacb09c3d12abb1d17371270816414588c11e07bac24de1",
+      "dat/antechamber/ATOMTYPE_BCC.DEF": "dd5c3c44531f9afcb0d69a5efef876785e6e3c5a70e350221d9438d894d5c0cc",
+      "dat/antechamber/ATOMTYPE_GFF2.DEF": "7a076ac2e667ab87057befc7a5985be4cead83e01ff5d2d3dab9f1d65bff637e",
+      "dat/antechamber/ATOM_EQU.TYPE": "78caca42c66d85cf9849caa86afcdf83ac25af56147473502ac01053e230a214",
+      "dat/antechamber/BCCPARM.DAT": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276",
+      "dat/antechamber/PARMCHK.DAT": "5fc9aa69b118b58dfb377817de7ba0c2b08cd2a50542d63c83b70a62c8385a43",
+      "dat/antechamber/PARM_BLBA_GAFF2.DAT": "a3c1e51a38c8c9c2132278c66785df0df8f88d25bf2a9ab34b5c1c87484fb0e3",
+      "dat/leap/cmd/leaprc.gaff2": "47d749188bf70b2c4b878ce5a66cc3a94a4baaa8c359f725acc795cf35a71900",
+      "dat/leap/parm/gaff2.dat": "2244b58627a85693776d12a0155a292f72b65b4398a03b87958136ad7460c67f"
+    },
+    "executable_sha256": {
+      "bin/am1bcc": "f8fb56f106a38750a5a3d90a7e8cc0e9ecf09b56993fd771c230162e8fd32e18",
+      "bin/antechamber": "59060c69c5fca305794b10f19d950556fbd18db92d6c7af87252389858214c5d",
+      "bin/atomtype": "1e1445c4c00903d77dcf60b41517fb2de4435a190b39f784521167e6c2ac38a4",
+      "bin/bondtype": "c848e305966a1edb9742cbb6f011e95882661a27eb7aa2c2bd7a40775bc630f2",
+      "bin/parmchk2": "c2ef0906b71c64e5277673bcba943512daf75ef334ad9421c0045b6b80b6d7cc",
+      "bin/sqm": "5259dbadd1db14e6da504ffe4a25c04f3a51435dbc31f753b9bd8c82692d07cc",
+      "bin/teLeap": "36c721b8255ca0c76151839bf2c0ed7cf3b09df90c7eacf921d7175402e1b437",
+      "bin/tleap": "f1c526e0a24ad1fefc6c82be1279aa33eff5f9557d577c2236aa81437dfb52ac",
+      "bin/wrapped_progs/am1bcc": "bac172f858e97f93b20f2d330415e74ad9487f9e8b11f72478186ece13090782",
+      "bin/wrapped_progs/antechamber": "d6fcdb517fef3282db7f339d1fab14478d69e2e99b82f2e2a0739a524d1556e1",
+      "bin/wrapped_progs/atomtype": "b4b40b1f77c30c89a82e686495b3a86259f80d58bc09f15ee49603943000fdc0",
+      "bin/wrapped_progs/bondtype": "67f425d90bbcc68c7c71ec5f0d088480ed966efcf52a71dea5f38de93e3282d7",
+      "bin/wrapped_progs/parmchk2": "d3628c23681b449fa1cc242bac26b933484dd1fff92e4dc963b25408284f5500"
+    },
+    "gaff2_version": "AMBER General Force Field for organic molecules (Version 2.2.30, Oct 2025)"
+  }
+}
