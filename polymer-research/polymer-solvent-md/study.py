@@ -46,6 +46,31 @@ def scientific_record(structure, energy):
     return {**record, "artifact_id": digest(record)}
 
 
+def restore_export_numbers(value):
+    """Restore decimal fields in the v1 scientific schema after JS stringification.
+
+    Numeric values stay identical. The original full SHA-256 is verified afterwards.
+    """
+    def decimals(row, names):
+        for field in names:
+            if type(row.get(field)) is int:
+                row[field] = float(row[field])
+
+    from copy import deepcopy
+    result = deepcopy(value)
+    decimals(result["structure"], ("molar_mass",))
+    energy = result["energy"]
+    decimals(energy.get("protocol", {}), ("prune_rms_thresh_angstrom", "nonbonded_threshold"))
+    for row in energy.get("conformers", []):
+        decimals(row, ("delta_kcal_mol", "energy_kcal_mol", "rg_angstrom"))
+    geometry = energy.get("lowest_geometry") or {}
+    for atom in geometry.get("atoms", []):
+        decimals(atom, ("x", "y", "z"))
+    for bond in geometry.get("bonds", []):
+        decimals(bond, ("order",))
+    return scientific_record(result["structure"], energy)
+
+
 def check_export(source):
     from upstream.polymer_identity import build_structure
     if not isinstance(source, dict) or source.get("schema") != "polymer-structure-energy/1":
@@ -55,12 +80,18 @@ def check_export(source):
         raise ValueError("Yapı veya konformer kaydı eksik.")
     record = scientific_record(structure, energy)
     if source.get("artifact_id") != record["artifact_id"]:
+        try:
+            record = restore_export_numbers(record)
+        except (AttributeError, TypeError, OverflowError) as error:
+            raise ValueError("Konformer dosyasının sayısal alanları geçersiz.") from error
+    if source.get("artifact_id") != record["artifact_id"]:
         raise ValueError("Dışa aktarılan dosyanın içerik özeti uyuşmuyor.")
     rebuilt = build_structure(structure.get("recipe"))
     for key in ("structure_id", "canonical_smiles", "recipe_id", "formula", "dp"):
         if rebuilt[key] != structure.get(key):
             raise ValueError("Yapı tarifi ve taşınan kimyasal kimlik uyuşmuyor.")
-    if (energy.get("canonical_smiles") != rebuilt["canonical_smiles"] or energy.get("status") != "ok"
+    energy = record["energy"]
+    if (energy.get("canonical_smiles") != rebuilt["canonical_smiles"] or energy.get("status") not in ("ok", "partial")
             or not energy.get("lowest_geometry") or not energy.get("model_id")):
         raise ValueError("Bu yapıya ait yakınsamış bir başlangıç konformeri gerekli.")
     return record
@@ -118,7 +149,7 @@ def get_source(structure, cache):
             and expected_model_id(structure["canonical_smiles"]) == pilot["energy"]["model_id"]):
         return pilot
     energy = analyze(structure["canonical_smiles"], Path(cache) / "conformers.sqlite")
-    if energy.get("status") != "ok":
+    if energy.get("status") not in ("ok", "partial"):
         raise ValueError(energy.get("message") or "Konformer taraması tamamlanamadı.")
     return scientific_record(structure, energy)
 

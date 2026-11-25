@@ -28,6 +28,21 @@ class TestIdentity(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"özeti"):
             check_export(record)
 
+    def test_existing_browser_exports_recover_exact_upstream_id(self):
+        def browser_numbers(value):
+            if isinstance(value, dict):
+                return {k: browser_numbers(v) for k, v in value.items()}
+            if isinstance(value, list):
+                return [browser_numbers(item) for item in value]
+            if type(value) is float and value.is_integer():
+                return int(value)
+            return value
+        imported = browser_numbers(self.source)
+        self.assertEqual(check_export(imported), self.source)
+        imported["energy"]["lowest_geometry"]["bonds"][0]["order"] += 1
+        with self.assertRaisesRegex(ValueError,"özeti"):
+            check_export(imported)
+
     def test_structure_and_conditions_are_part_of_key(self):
         s,_,t = inputs(self.payload)
         self.assertEqual(s["canonical_smiles"],self.source["structure"]["canonical_smiles"])

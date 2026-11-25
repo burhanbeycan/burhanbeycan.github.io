@@ -145,7 +145,7 @@
   };
   const bundled = window.BUNDLED_STUDY || null;
   const offline = location.protocol === 'file:' || Boolean(bundled && window.STUDY_REVIEW);
-  let inputMode = 'manual', material = null, generation = 0, importedVersion = 0;
+  let inputMode = 'manual', material = null, materialJSON = null, generation = 0, importedVersion = 0;
   let study = null, activePanel = 'chain', pollTimer = null, request = null;
   let previewAngle = .32, previewTilt = -.24, drag = null, highlightedSite = null;
 
@@ -190,17 +190,18 @@
   }
 
   $('material-file').addEventListener('change', async e => {
-    clearView(); material = null;
+    clearView(); material = null; materialJSON = null;
     const token=++importedVersion, file=e.target.files[0];
     if (!file) {status('file-status','Bir yapı kaydı seç.');return;}
     try {
       if (file.size > 5*1024*1024) throw Error('Daha küçük bir yapı kaydı seç (en fazla 5 MB).');
-      const data=JSON.parse(await file.text());
+      const raw=await file.text();
+      const data=JSON.parse(raw);
       if (token!==importedVersion) return;
       const id=data?.structure;
       if (!id || typeof id.canonical_smiles!=='string' || !id.canonical_smiles.trim())
         throw Error('İlk uygulamada JSON olarak indirilen, kimyasal yapı içeren kaydı seç.');
-      material=data;
+      material=data;materialJSON=raw.trim();
       const summary=[id.formula,Number.isFinite(id.molar_mass) ? number(id.molar_mass,2)+' g/mol':'', id.dp ? 'DP '+id.dp:''].filter(Boolean);
       status('file-status',file.name+(summary.length?' · '+summary.join(' · '):''));
     } catch (error) {
@@ -561,10 +562,13 @@
       if(inputMode==='manual'&&!repeat)throw Error('Polimerleşmiş tekrar biriminin SMILES gösterimini gir.');
       if(inputMode==='manual'&&(!Number.isInteger(dp)||dp<1||dp>32))throw Error('Model tekrar sayısı 1–32 arasında bir tam sayı olmalı.');
       if(inputMode==='import'&&!material)throw Error('Önce ilk uygulamadan indirdiğin yapı kaydını seç.');
-      const payload={material:inputMode==='import'?material:null,repeat_smiles:inputMode==='manual'?repeat:'',
+      const payload={repeat_smiles:inputMode==='manual'?repeat:'',
         dp:inputMode==='manual'?dp:material.structure.dp??null,solvent:$('solvent').value,temperature_K:Number((tempC+273.15).toFixed(5))};
       $('run').disabled=true;status('form-status','Yapı ve hesap kapsamı kontrol ediliyor…');request=new AbortController();
-      const response=await fetchJSON('/api/studies',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:request.signal});
+      // Preserve number spelling in the upstream artifact. Its SHA-256 is part of the scientific record.
+      const optionsJSON=JSON.stringify(payload);
+      const body=inputMode==='import' ? optionsJSON.slice(0,-1)+',"material":'+materialJSON+'}' : optionsJSON;
+      const response=await fetchJSON('/api/studies',{method:'POST',headers:{'Content-Type':'application/json'},body,signal:request.signal});
       receive(response,token);
     }catch(error){handleError(error,token,'form-status');}
   };
