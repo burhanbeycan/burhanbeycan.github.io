@@ -1,0 +1,20 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173b36"><title>Zincir genişlemesi ve intrinsik viskozite · Polymer Research Studio</title>
+<link rel="stylesheet" href="activity-view.css"><link rel="stylesheet" href="viscosity-transfer.css">
+<script defer src="viscosity-intrinsic-data.js"></script><script defer src="viscosity-transfer-engine.js"></script><script defer src="viscosity-transfer.js"></script></head><body>
+<header><nav><a href="index.html" class="brand">Polymer Research Studio</a><div><a id="visBack" href="viscosity.html">Çözelti viskozitesi</a></div></nav></header>
+<main><p class="eyebrow">Eşlenmiş ışık saçılması ve kılcal viskozimetri</p><h1>Zincir genişlemesi viskoziteyi ne kadar açıklıyor?</h1>
+<p class="intro">Aynı polistiren fraksiyonunun iki çözücüdeki ölçümlerini karşılaştır. Kaynak koşulun intrinsik viskozitesi ve iki jirasyon yarıçapından hedef koşuldaki [η] değerini hesapla.</p>
+<p id="err" role="alert" hidden>Karşılaştırma yüklenemedi. İki koşulun ölçüm dosyaları gerekir.</p>
+<div id="transferApp" hidden><div class="controls vt-controls">
+<label>Fraksiyon<select id="sample"></select></label><label>Kaynak → hedef<select id="direction"><option value="cyclohexane">Siklohekzan 34,5 °C → Benzen 25 °C</option><option value="benzene">Benzen 25 °C → Siklohekzan 34,5 °C</option></select></label>
+<label>Düzeltmede dışarıda bırak<select id="split"><option value="parent">Seçili ana numunenin tüm fraksiyonları</option><option value="fraction">Yalnız seçili fraksiyon</option></select></label></div>
+<section class="chart">
+<div class="section-head"><h2 id="chartTitle">Hedef koşulda intrinsik viskozite</h2><span id="unit">mL/g</span></div>
+<div id="bars" aria-live="polite"></div>
+<p class="caption" id="reading"></p></section>
+<section class="obs"><h2>Altı fraksiyonda hedef ölçümlere göre sapma</h2><p id="scores"></p><div class="scroll" tabindex="0" aria-label="Tüm fraksiyonların sonuçları"><table><thead><tr><th>Fraksiyon</th><th>Ölçüm (mL/g)</th><th>Rɡ³ ile (mL/g)</th><th>Düzeltilmiş (mL/g)</th><th>Düzeltilmiş sapma</th></tr></thead><tbody id="results"></tbody></table></div><p><button id="save">Bu karşılaştırmayı CSV indir</button></p></section>
+<details open><summary>Hesapta hangi bilgi kullanıldı?</summary><p>Başlangıç modeli [η]<sub>hedef</sub> = [η]<sub>kaynak</sub> × (Rɡ<sub>hedef</sub>/Rɡ<sub>kaynak</sub>)³ bağıntısını kullanır. Flory–Fox bağıntısındaki [η]M/Rɡ³ katsayısının aynı kaldığı varsayılır. Mol kütlesi, aynı fraksiyon için iki koşulda da viskozimetri makalesindeki ortak M𝑤 değeridir.</p>
+<p>Düzeltilmiş model, diğer fraksiyonlarda gözlenen viskozite oranını boyuttan beklenen orana böler ve bu katsayıların geometrik ortalamasını kullanır. Seçili fraksiyonun hedef [η] ölçümü, sonuçla karşılaştırma aşamasında açılır. Her iki model hedef çözücüde ölçülmüş Rɡ gerektirir. Saçılma z-ortalamasına, viskozimetri ise farklı bir dağılım ortalamasına duyarlıdır.</p>
+<p>Altı fraksiyon iki ana polistiren numunesinden gelir. Ana numuneye göre dışarıda bırakma, akraba fraksiyonların düzeltmeye birlikte girmesini engeller. Çözücü ve sıcaklık birlikte değişmiştir.</p>
+<p><a href="https://doi.org/10.1021/ma60066a022">Miyaki ve ark. · ışık saçılması, Tablo I</a> · <a href="https://doi.org/10.1002/pol.1979.180171205">Einaga ve ark. · viskozimetri, Tablo I</a></p></details>
+<div class="vt-links"><a id="backPair" href="chain-solvents.html">Aynı fraksiyonun zincir boyutlarını aç</a><a href="PS_Viskozite_Sinamasi.png">Bağımsız viskozite sınamasının grafiğini aç</a></div></div><noscript>Hesaplama için JavaScript gerekir.</noscript></main></body></html>

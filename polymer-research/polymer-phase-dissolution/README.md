@@ -96,3 +96,30 @@ node tests/test_activity.cjs
 - **solvent-activity.html** basınç uyumuna alınmayan iki ek ozmometri fraksiyonunun 13 damıtma kaydına aktarım sonuçlarını içerir. Bu numuneler saçılma fraksiyonlarıyla eşleştirilmez.
 
 Kaynak izleri, ham saçılma kayıtları, sayısal kontroller ve birimler `chain-inputs/` altında sunulur. `node tests/test-chain.cjs` sayısal kontrolleri çalıştırır. `node scripts/chain-validation.cjs` doğrulama raporunu, `node scripts/check_mass_activity.cjs` önceki özellik uygulamasının damıtma sınamasını üretir. `python scripts/render_chain_rotation.py` MP4'ü yerel Node, Pillow ve FFmpeg ile yeniden oluşturur.
+
+## Çözelti viskozitesi ve makine öğrenmesi
+
+**viscosity.html** ölçülmüş intrinsik viskoziteyi [η] (mL/g), kapiler bağıl viskoziteyi ηᵣ ve koşula özgü saf çözücü korelasyonu mevcutsa çözeltinin dinamik viskozitesini (mPa·s) ayrı gösterir. PS’nin aynı altı fraksiyonu için 34,5 °C siklohekzan ve 25 °C benzen ölçümleri zincir boyutu uygulamasıyla bağlantılıdır. İki çözücü için ayrı Mark–Houwink uyumları, aynı çalışmanın ek üç fraksiyonunda ve farklı çalışmadan gelen altı tam sıcaklık eşleşmesinde sınanır. [η]c ≈ 1 operasyonel bir derişim ölçeğidir. Huggins katsayısı bulunmayan bir numunede seyreltik ikinci mertebe tahmini üretilmez. Genel bir yapıyla girişte kullanıcıya kendi ölçümünü aktarma olanağı sunulur.
+
+**viscosity-transfer.html** aynı fraksiyonun ölçülen iki Rg değeri ve kaynak [η] ile hedef [η] tahminini hesaplar. Siklohekzandan benzene aktarımda yalnız Rg³ yaklaşımı altı fraksiyonda ortalama %34,96 mutlak sapma verir. Tüm bir ana numunenin fraksiyonları saklanıp kalan ana numuneden öğrenilen düzeltme kullanıldığında bu değer %3,86 olur. İki ana numune aynı kaynak serisindendir. Ölçülmüş hedef Rg, her iki tahminde de girdi olarak kullanılır.
+
+**viscosity-ai.html** bir Huggins ortalama fonksiyonu ile u = c[η] üzerinde Gauss süreci düzeltmesini yan yana çalıştırır. Dört polistiren kapiler serisinde 20 ölçüm vardır. Her bölmede eğitim ve saklı gözlemler kimlikle ayrılır. PS–siklohekzan için bütün bir mol kütlesi dışarıda bırakıldığında, her iki numunenin [η] değeri bağımsız Einaga serisindeki kuvvet yasasından ekstrapole edilir. İki yönlü sınamada bağıl RMSE fiziksel modelde %0,604/%0,585, Gauss süreci eklendiğinde %0,411/%0,382 olur. Buna karşılık iki toluen serisinin en yüksek derişiminde AI ilavesi hatayı artırır. Dokuz çekirdek seçiminin sonradan yapılan duyarlılık karşılaştırması ayrı JSON dosyasındadır. Arayüzdeki tekil RMSE boyutsuz ηᵣ birimindedir. CSV'deki GP standart sapmaları sabit hiperparametreler altında gizli fonksiyona koşulludur.
+
+**viscosity-formulation.html** tuzlu suda %5 mol hidrolizli HPAM'ın 24 °C'deki görünür viskozitesini polimer derişimi (kaynağın ppm birimi), NaCl (g/L) ve kayma hızı (s⁻¹) ile hesaplar. Akbari ve arkadaşlarının 20 deneyi 15 benzersiz durumu ve 9 reçeteyi kapsar. Her turda aynı derişim ve tuz miktarındaki bütün hızlar ve tekrarlar birlikte ayrılır. Test ölçütleri benzersiz durum başına eşit ağırlıkla fiziksel mPa·s cinsinden hesaplanır. Kullanıcıya gösterilen son modelin çalışma alanı ölçüm durumlarının üç boyutlu dışbükey zarfıyla sınırlandırılır. Kimyalar arası viskozite aktarımı için bağımsız polimer ailelerinden ölçüm gerekir.
+
+Birincil kaynaklar ve birimler `viscosity-inputs/` altındadır. Fizik, AI ve aktarım testleri ile grafikler aşağıdaki komutlarla yeniden üretilebilir. Sitedeki `dist` dizini GitHub Pages ve çevrimdışı paketin ana dizinine karşılık gelir. Bu düzenlerde komutlardaki `dist` yerine `.` kullanılır.
+
+```sh
+node tests/test-viscosity.cjs
+node tests/test-viscosity-gp.cjs
+node tests/test-formulation.cjs
+node tests/test-viscosity-transfer.cjs
+node scripts/viscosity-validation.cjs
+node scripts/viscosity-gp-validation.cjs
+node scripts/viscosity-gp-sensitivity.cjs
+python scripts/train-formulation.py dist/viscosity-inputs/hpam-akbari.csv dist/formulation-model.js
+python scripts/plot-viscosity.py --dist dist --output dist/PS_Viskozite_Sinamasi.png
+python scripts/plot-viscosity-ai.py --dist dist --output dist/PS_HPAM_AI_Sinamasi.png
+```
+
+Dokuz HPAM formülasyonu sırayla ayrıldığında, koşul başına RMSE kuvvet yasasında 1,781 mPa·s, ikinci derece Ridge modelinde 0,855 mPa·s ve aynı özniteliklerle cezasız ikinci derece modelde 0,685 mPa·s olur. Üç katsayı kümesi ve her katın hatası arayüzde karşılaştırılır.

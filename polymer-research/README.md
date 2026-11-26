@@ -47,3 +47,9 @@ Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç g
 ## Zincir boyutu ve örtüşme
 
 [Zincir boyutunu ve örtüşme derişimini incele](polymer-phase-dissolution/chain.html). Jirasyon yarıçapını ve çözeltinin derişimini birlikte değerlendir. [İki çözücüde aynı zincirin boyutunu karşılaştır](polymer-phase-dissolution/chain-solvents.html).
+
+## Çözelti viskozitesi
+
+[Çözelti viskozitesi uygulamasını aç](polymer-phase-dissolution/viscosity.html). Polistiren numunesinin intrinsik viskozitesini ve derişimin viskozite üzerindeki etkisini yayımlanmış ölçümlerle incele.
+
+[PS için Huggins ve Gauss süreci modelini karşılaştır](polymer-phase-dissolution/viscosity-ai.html) · [HPAM derişim ve kayma hızı ölçümlerini incele](polymer-phase-dissolution/viscosity-formulation.html) · [Viskozite modelinin farklı numunelere aktarımını incele](polymer-phase-dissolution/viscosity-transfer.html).

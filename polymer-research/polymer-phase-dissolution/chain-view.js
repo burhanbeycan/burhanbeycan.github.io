@@ -136,6 +136,14 @@
     const pair=new URLSearchParams();if(rec&&rows.includes(rec))pair.set('sample',rec.id);
     if(c>=0&&Number.isFinite(c))pair.set('c',String(c));
     $('pairLink').href='chain-solvents.html?'+pair;
+    const handoff=new URLSearchParams({source:'chain',system:mode==='custom'?'custom':'ps'});
+    if(mode!=='custom'){handoff.set('solvent','cyclohexane');handoff.set('T',String(catalog.T_K));}
+    if(rec)handoff.set('sample',rec.id);
+    if(Number.isFinite(mw)&&mw>0)handoff.set('Mw',String(mw));
+    if(Number.isFinite(c)&&c>=0)handoff.set('c',String(c));
+    if(mode==='custom'&&query.has('name'))handoff.set('name',query.get('name'));
+    if(query.has('phaseCount'))handoff.set('phaseCount',query.get('phaseCount'));
+    $('viscosityLink').href='viscosity.html?'+handoff;
     if(bad){stop();if(redrawBench)updateEvidence();return;}
     const estimate=phys.overlap(mw,rg,c);
     if (![estimate.cstar_g_L,estimate.ratio].every(Number.isFinite)||estimate.cstar_g_L<=0){

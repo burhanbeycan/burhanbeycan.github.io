@@ -34,6 +34,9 @@
     }
     const back='chain.html?'+new URLSearchParams({source:'pair',system:'ps',sample:pair.theta.id,T:'307.65',c:String(c)});
     $('chainTop').href=back;$('chainFromPair').href=back;
+    for(const [link,solvent,T,key] of [['visTheta','cyclohexane',307.65,'theta'],['visBenzene','benzene',298.15,'benzene']]){
+      $(link).href='viscosity.html?'+new URLSearchParams({source:'pair',system:'ps',sample:pair.theta.id,solvent,T:String(T),Mw:String(pair[key].Mw_g_mol),c:String(c)});
+    }
   }
   $('pairSample').onchange=update;$('pairC').oninput=update;
   $('pairCsv').onclick=()=>{

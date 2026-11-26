@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153c34"><title>Çözelti viskozitesi · Polymer Research Studio</title>
+<link rel="stylesheet" href="viscosity.css">
+<script defer src="viscosity-engine.js"></script><script defer src="viscosity-intrinsic-data.js"></script><script defer src="viscosity-external-data.js"></script><script defer src="viscosity-finite-data.js"></script><script defer src="viscosity-solvent-data.js"></script><script defer src="viscosity-ui.js"></script>
+</head><body>
+<header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="chain.html">Zincir boyutu</a><a href="chain-solvents.html">İki çözücü</a></div></nav></header>
+<main><p class="overline">Polimer çözeltileri</p><h1>Çözelti viskozitesi</h1>
+<p class="intro">Bir polimer zinciri seyreltik çözeltinin akış direncini ne kadar artırır? Fraksiyon ve çözücü seçerek intrinsik viskoziteyi incele, belirli bir derişimdeki öngörüyü kapiler viskozimetriyle sına.</p>
+<p id="error" role="alert" class="notice" hidden></p><noscript>Grafikleri ve hesaplamaları kullanmak için JavaScript gerekir.</noscript>
+<div id="app" hidden>
+<div class="tabbar" role="group" aria-label="Viskozite görünümü"><button id="sampleTab" aria-pressed="true" type="button">Numune hesabı</button><button id="finiteTab" aria-pressed="false" type="button">Kapiler ölçüm sınaması</button></div>
+<section id="sampleView" aria-label="Numunemin viskozitesi">
+<p class="notice" id="handoff" hidden></p>
+<div class="controlbox"><div><label for="mode">Veri kaynağı</label><select id="mode"><option value="measured">Ölçülmüş PS fraksiyonu</option><option value="mh">Mol kütlesinden tahmin</option><option value="custom">Kendi numunemin ölçümü</option></select></div>
+<div id="solventField"><label for="solvent">Çözücü ve sıcaklık</label><select id="solvent"><option value="cyclohexane">Siklohekzan · 34,5 °C</option><option value="benzene">Benzen · 25 °C</option></select></div>
+<div id="gradeField"><label for="grade">Polistiren fraksiyonu</label><select id="grade"></select></div>
+<div id="massField" hidden><label for="mass">M𝑤 (kg/mol)</label><input id="mass" type="number" min="0" step="any" inputmode="decimal"></div>
+<div id="customEtaField" hidden><label for="customEta">Ölçülen [η] (mL/g)</label><input id="customEta" type="number" step="any" min="0" inputmode="decimal"></div>
+<div id="customKField" hidden><label for="customK">Ölçülen k<sub>H</sub> (varsa)</label><input id="customK" type="number" step="any" inputmode="decimal"></div>
+<div><label for="concentration">Polimer derişimi (g/L)</label><input id="concentration" type="number" min="0" step="any" inputmode="decimal" value="0.1"></div>
+</div><p id="invalid" class="notice" role="status" hidden></p>
+<div id="sampleResults"><div class="metrics" aria-live="polite">
+<section><h2>İntrinsik viskozite [η]</h2><strong id="eta"></strong><p id="etaFrom"></p></section>
+<section><h2>İndirgenmiş derişim [η]c</h2><strong id="u"></strong><p id="ceta"></p></section>
+<section class="relative"><h2>Bağıl viskozite η<sub>r</sub></h2><strong id="relative"></strong><p id="relativeLabel"></p></section></div>
+<p class="reading" id="interpretation"></p><p class="reading" id="dynamic" hidden></p></div>
+<section class="panel"><div class="heading"><div><p class="overline" id="mhSolvent"></p><h2>Mol kütlesi ve intrinsik viskozite</h2></div><button class="quiet" id="intrinsicCsv" type="button">Sınama verisini indir</button></div>
+<div class="compare"><div class="graph"><svg role="img" aria-label="Ölçülen ve Mark–Houwink modeliyle hesaplanan intrinsik viskoziteler" id="mhPlot" viewBox="0 0 610 300"></svg><div class="key"><span><i class="fit"></i>Mark–Houwink uyumu</span><span><i class="pt"></i>Uyum ölçümü</span><span id="extraKey" hidden><i class="extra"></i>Seçili ek ölçüm</span><span id="extKey" hidden><i class="ext"></i>Dış yayın</span></div></div>
+<aside><label for="split">Öngörü nasıl sınansın?</label><select id="split"><option value="external">Farklı yayının numuneleri</option><option value="loo">Bir fraksiyonu dışarıda bırak</option></select>
+<dl><div><dt>Ölçekleme üssü a</dt><dd id="exponent"></dd></div><div><dt>Bağıl RMSE</dt><dd id="rms"></dd></div><div><dt>Ortalama mutlak hata</dt><dd id="mae"></dd></div></dl><p id="splitNote"></p></aside></div>
+<details><summary>Sınanan numuneler ve kaynakları</summary><div class="scroll" tabindex="0"><table><thead><tr><th>Numune</th><th>M𝑤 (kg/mol)</th><th>Ölçüm (mL/g)</th><th>Tahmin (mL/g)</th><th>Uyum aralığı</th></tr></thead><tbody id="fitRows"></tbody></table></div><p id="intrinsicSources"></p></details></section>
+<div class="linkrow"><button type="button" id="sampleCsv">Seçili hesabı indir · CSV</button><a id="ai" href="viscosity-ai.html">Fizik ve AI modellerini karşılaştır</a><a href="viscosity-formulation.html">HPAM’da tuzluluk ve kayma</a><a id="transfer" href="viscosity-transfer.html">Zincir boyutu–viskozite ilişkisi</a><a id="chainReturn" href="chain.html">Zincir boyutunu incele</a></div>
+</section>
+<section id="finiteView" aria-label="Kapiler ölçüm sınaması" hidden>
+<div class="controlbox finite"><div><label for="series">Yayımlanmış ölçüm serisi</label><select id="series"></select></div><div><label for="finiteSplit">Derişim sınaması</label><select id="finiteSplit"><option value="highest">En yüksek derişimi dışarıda bırak</option><option value="upperTwo">İki yüksek derişimi dışarıda bırak</option><option value="lowInterpolation">Düşük derişimde ara nokta</option></select></div><div><label for="ordinate">Grafikte göster</label><select id="ordinate"><option value="rel">Bağıl viskozite ηᵣ</option><option value="red">İndirgenmiş viskozite ηₛₚ/c</option><option value="inh">Logaritmik viskozite ln(ηᵣ)/c</option></select></div></div>
+<p id="finiteError" class="notice" role="status" hidden></p><div id="finiteResults">
+<section class="panel"><div class="heading"><div><p class="overline" id="finiteCondition"></p><h2 id="finiteTitle">Derişim serisinde dışarıda bırakılan ölçüm</h2></div><a id="finiteAi" href="viscosity-ai.html">Bu deneyde AI modelini sına</a><button class="quiet" id="finiteCsv" type="button">Ölçüm ve tahminleri indir</button></div>
+<div class="compare"><div class="graph"><svg id="finitePlot" viewBox="0 0 610 300" role="img" aria-label="Seçilen derişim serisinde kapiler ölçüm ve seyreltik çözelti modelleri"></svg><div class="key"><span><i class="fit"></i>Huggins</span><span><i class="dotted"></i>Kraemer</span><span><i class="pt"></i>Uyum ölçümü</span><span><i class="ext"></i>Sınama ölçümü</span></div></div>
+<aside><h3 id="heldTitle">Tutulan derişim</h3><dl><div><dt>Ölçülen ηᵣ</dt><dd id="finiteObs"></dd></div><div><dt>Huggins tahmini</dt><dd id="finitePred"></dd></div><div><dt>Kraemer tahmini</dt><dd id="finiteK"></dd></div></dl><p id="finiteNote"></p></aside></div>
+<p class="reading" id="finiteMethod"></p><div class="scroll" tabindex="0"><table><thead><tr><th>c (g/L)</th><th>ηᵣ ölçümü</th><th>ηᵣ Huggins</th><th>ηᵣ Kraemer</th><th>Ölçülen η (mPa·s)</th><th>Kullanım</th></tr></thead><tbody id="finiteRows"></tbody></table></div><p id="finiteSource"></p><p class="reading" id="finiteDynamic" hidden></p></section></div></section>
+<details class="definitions"><summary>Viskozite büyüklükleri ve model varsayımları</summary><p>ηᵣ = η/η₀ ve ηₛₚ = ηᵣ − 1. İntrinsik viskozite [η], c sıfıra yaklaşırken ηₛₚ/c ve ln(ηᵣ)/c oranlarının ortak limitidir. [η] birim kütle başına hacimdir. Dinamik viskozite η (mPa·s) için aynı sıcaklık ve basınçtaki saf çözücünün viskozitesi η₀ gerekir.</p>
+<p>Mark–Houwink uyumu, seçili çözücü ve sıcaklıkta [η] = K M𝑤ᵃ biçiminde deneysel bir ilişkidir. Dar dağılımlı fraksiyonlarda kaynakta bildirilen kütle türü kullanılır. Huggins açılımında ηᵣ ≈ 1 + u + k<sub>H</sub>u² ve u = [η]c. Burada c g/mL’dir. [η]c = 1 koşulundaki cη = 1/[η], viskozimetrik bir derişim ölçeğidir. Önceki uygulamadaki c* ise ölçülen R<sub>g</sub> ile geometrik küre hacminden elde edilir.</p>
+<p>Kraemer çizgisinde ln(ηᵣ)/c ile c arasındaki doğrunun eğimi işaretli katsayıyla yazılır. Seyreltik açılımın ikinci mertebesinde bu işaretli katsayı k<sub>H</sub> − ½ olur. Kapiler sınamada iki doğru ayrı ayrı ölçümlere uydurulur. Her iki grafik aynı deney satırlarından türetilir.</p></details>
+</div></main></body></html>
