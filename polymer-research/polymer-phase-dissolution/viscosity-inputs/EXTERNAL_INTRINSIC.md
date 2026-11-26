@@ -1,0 +1,19 @@
+# İntrinsik viskozitenin bağımsız numunelerde sınanması
+
+Aynı çözücü ve sıcaklıkta elde edilen altı gözlem, Einaga ve arkadaşlarının uyum verisinden ayrı tutulur. Her iki kaynaktaki deneysel gözlenebilir, sonsuz seyreltmedeki intrinsik viskozitedir. Sıcaklığın eşleşmediği iki ek gözlem veri dosyasında ayrı etiketlenmiştir.
+
+## Siklohekzan, 34,5 °C
+
+B. M. Baysal ve N. Uyanık, *Polymer* **33** (1992), 4798–4804. Tablo 1, s. 4800, ticari Polysciences PS numunelerinin M𝑤 ve dispersite değerlerini, Tablo 2 aynı çözücüde farklı sıcaklıklardaki intrinsik viskoziteleri verir. Tablo 1'deki dL/g değerlerini 100 ile çarparak mL/g birimine çevirdik. Karşılaştırmaya giren beş numunede bildirilen değerler 0,207; 0,248; 0,700; 1,310 ve 2,110 dL/g'dır. PS3 için 600.000 g/mol değeri dergi özetinde ve Tablo 2'nin sütun başlığında doğrulanır. Bazı OCR aktarımlarında Tablo 1'de bu mol kütlesinin üssü yanlış okunur. [Birincil yayın](https://doi.org/10.1016/0032-3861(92)90695-S) · [Makalede Tablo 1 ve 2](https://cpsm.kpi.ua/polymer/1992/22/4798-4804.pdf)
+
+Cannon 50K–319 kılcal viskozimetreyle 34,5 °C'de beş derişimde indirgenmiş viskoziteyi ölçüp sıfır derişime en küçük karelerle ekstrapole ettiler. Bildirilen derişim aralığı 0,1–4 g/L, makale genelindeki [η] hassasiyeti yaklaşık ±%1'dir. Her satır için deneysel bir standart sapma raporlanmamıştır. Kullanılan ticari numunelerin Mw tayin yöntemi ayrıca belirtilmiyor. Çalışmada her seri için değişken kayma hızından sıfır kaymaya ikinci bir ekstrapolasyon belgelenmemiştir. Özellikle en yüksek M𝑤'deki sapma dağılım genişliği, ölçüm protokolü ve örnekler arası değişkenlikten etkilenebilir. Tek başına kayma incelmesi miktarını bu beş gözlemden çıkarmak mümkün değildir. Yazarlar yüksek kütleli fraksiyonlarda 20 °C'de tek seyreltik çözeltiden kullanılan yaklaşımı ayrıca belirtir. Bu sıcaklık seçili beş kaydın dışındadır.
+
+## Benzen, 25 °C
+
+ABD National Bureau of Standards tarafından 28 Kasım 1978'de yayımlanan SRM 705 sertifikasının ilk sayfası esas alındı. Işık saçılması M𝑤 = 179.300 g/mol (ortalamanın standart sapması 740 g/mol), benzen 25 °C ölçümü [η] = 74,3 mL/g (ortalamanın standart sapması 0,18 mL/g) verir. Deneysel kütle ortalamasını ışık saçılmasından seçtik. Aynı sertifikada sedimantasyon dengesi ile ayrı bir M𝑤 = 189.800 g/mol (ortalamanın standart sapması 2.100 g/mol) bildirilir; iki yöntem sonuçlarını ortalamadık. Fraksiyonlamaya dayalı dağılım oranı Mz:Mw:Mn = 1,12:1,07:1 olarak verilir. Aynı lot için raporlanan 35 °C'deki siklohekzan (35,4 ± 0,24 mL/g) ve benzen (74,5 ± 0,23 mL/g) değerleri ayrı saklanır. Bu ikisini 34,5 °C siklohekzan veya 25 °C benzen puanına almadık. Sertifikadaki ± değerleri ortalamaların standart sapmalarıdır. Bu belirsizlikler Baysal–Uyanık'ın deney geneli hassasiyet beyanıyla aynı değildir. [NBS SRM 705, 28 Kasım 1978](https://tsapps.nist.gov/srmext/certificates/archives/705_COA_1978-11-28.pdf)
+
+Tek benzen lotu yaklaşımın genel hata dağılımını tahmin etmek için yetersizdir. Birim ve sıcaklık eşleştirmesiyle elde edilen sonuçlar aynı solventte, belirtilen numunelerde ve belirtilen mol kütlelerinde değerlendirilir. Molekül ağırlığı ve kaynak grupları birlikte değişebilir.
+
+## Kalibrasyon aralığı ile karşılaştırma
+
+Einaga'nın altı ana fraksiyonuna her çözücü için ayrı ayrı, logaritmik ölçekte ve ağırlıksız olarak uydurulan [η] = K M𝑤ᵃ bağıntısının kalibrasyon aralığı 8,76–56,8 milyon g/mol'dür. Siklohekzanda Baysal–Uyanık PS5 bu aralığa girer. Modelin 281,9 mL/g tahmini, 211,0 mL/g ölçümünden %33,6 yüksektir. Diğer dört siklohekzan gözlemi ve benzen SRM 705 kalibrasyonun altındadır. SRM 705 için model 72,4 mL/g verir, ölçüm 74,3 mL/g'dır. Bu %−2,6 fark, düşük mol kütlesine ekstrapolasyona aittir. Bu iki fark, her iki sıcaklıktaki bütün polistirenlerin hata payı olarak yorumlanamaz.

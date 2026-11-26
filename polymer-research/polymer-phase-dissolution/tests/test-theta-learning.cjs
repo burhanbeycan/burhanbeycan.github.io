@@ -1,0 +1,48 @@
+'use strict';
+const assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs');
+const root=path.resolve(__dirname,'..');
+const web=[process.argv[2],path.join(root,'dist'),root,__dirname].find(d=>d && fs.existsSync(path.join(d,'family-intrinsic-data.js')));
+const engine=require(fs.existsSync(path.join(web,'theta-transfer-ai.js'))?path.join(path.resolve(web),'theta-transfer-ai.js'):'./theta-transfer-ai.js');
+const baseline=require(path.join(path.resolve(web),'family-engine.js'));
+const {rows}=require(path.join(path.resolve(web),'family-intrinsic-data.js'));
+const approx=(a,b,tol=1e-9)=>assert.ok(Math.abs(a-b)<tol,a+' vs '+b);
+const family='vinylaromatic',target=rows.find(r=>r.chemistry==='PS');
+const original=engine.makeModel(rows,family), old=baseline.fitForFamily(rows,family);
+const predictions=engine.predict(original,target);
+approx(predictions.baseline,baseline.predict(old,target.mass_g_mol,target.chemistry).ridge);
+const poisoned=rows.map(r=>r.family===family?{...r,eta_mL_g:Infinity}:r);
+assert.deepEqual(engine.makeModel(poisoned,family), original);
+const reference=engine.chooseReference(target,poisoned);
+assert.equal(reference.id,'baysal1992-PS-PS2'); // No viscosity needed to choose.
+const ref=rows.find(r=>r.id===reference.id);
+assert.equal(ref.mass_g_mol,90000);assert.equal(ref.eta_mL_g,24.8);
+const check=engine.predict(original,{...target,eta_mL_g:NaN},ref);
+approx(check.control,24.8*Math.sqrt(target.mass_g_mol/90000));
+const other={...target,source_ref:'new-source',id:'external',mass_g_mol:360000};
+approx(engine.predictFromLibrary(rows,other).predictions.control,49.6);
+const live=engine.predictFromLibrary(rows,ref);
+assert.notEqual(live.reference.id,ref.id);
+assert.throws(()=>engine.predict(original,ref,ref));
+assert.throws(()=>engine.predict(original,target,{...ref,solvent:'toluene'}));
+assert.throws(()=>engine.predict(original,target,{...ref,T_C:50}));
+assert.throws(()=>engine.predict(original,target,{...ref,mass_basis:'Mn'}));
+assert.throws(()=>engine.predict(original,target,{...ref,eta_mL_g:0}));
+assert.throws(()=>engine.predict(original,{...target,mass_g_mol:Infinity}));
+assert.equal(engine.chooseReference({...target,T_C:50},rows),null);
+assert.throws(()=>engine.predictFromLibrary(rows,{...target,T_C:50}));
+const data=engine.benchmark(rows);
+const all=new Map(rows.map(r=>[r.id,r]));
+assert.equal(data.zeroShot.n,56);assert.equal(data.oneReference.n,51);assert.equal(data.externalPS.n,12);
+approx(data.zeroShot.scores.baseline,12.711683264334106);approx(data.zeroShot.scores.candidate,12.99572718991377);
+approx(data.oneReference.scores.control,2.784465686714839);approx(data.oneReference.scores.candidate,3.1042715430626266);
+approx(data.externalPS.scores.candidate,5.576537385294712);
+const hold=data.oneReference.points;
+const anchors=new Set(hold.map(r=>r.referenceId));
+assert.equal(anchors.size,5);assert.ok(hold.every(r=>!anchors.has(r.id)));
+for(const r of data.externalPS.points)assert.notEqual(all.get(r.id).source_ref,all.get(r.referenceId).source_ref);
+for(const r of data.zeroShot.points) {
+  const id=r.family,t=data.zeroShot.trainDetails[id];
+  assert.ok(t.trainedIds.every(k=>all.get(k).family!==r.family));
+  assert.ok([0,0.25,0.5,0.75,1].includes(t.tuning.selected));
+}
+console.log('PASS 56 zero-reference / 51 one-reference / 12 cross-study targets, nested fit, metadata guards, prospective anchor and leakage invariance');

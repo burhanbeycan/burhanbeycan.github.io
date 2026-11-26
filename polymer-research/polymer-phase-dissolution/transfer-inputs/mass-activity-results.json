@@ -1,0 +1,392 @@
+{
+  "method": "Same-study transfer from pressure-fit fraction II to additional fractions I and III. No refit. Model phase counts are predictions.",
+  "source_doi": "10.1021/ja01517a022",
+  "table": "III",
+  "page": 1864,
+  "pressure_fit_n": 8,
+  "D": {
+    "baseline": 0,
+    "extended": -0.07436820760846778,
+    "guarded": -0.030414872335394222
+  },
+  "scores": {
+    "I": {
+      "n": 4,
+      "baseline": {
+        "mae_minus_ln_a": 0.01237754969971305,
+        "mae_activity": 0.011596021561046499
+      },
+      "extended": {
+        "mae_minus_ln_a": 0.009971144482236464,
+        "mae_activity": 0.00926918935233928
+      },
+      "guarded": {
+        "mae_minus_ln_a": 0.01132743302109563,
+        "mae_activity": 0.01057948932119443
+      }
+    },
+    "III": {
+      "n": 9,
+      "baseline": {
+        "mae_minus_ln_a": 0.008567879739326057,
+        "mae_activity": 0.008231852188987329
+      },
+      "extended": {
+        "mae_minus_ln_a": 0.007040944881298827,
+        "mae_activity": 0.0067411020178353865
+      },
+      "guarded": {
+        "mae_minus_ln_a": 0.007807775441965148,
+        "mae_activity": 0.007490129849176704
+      }
+    },
+    "pooled": {
+      "n": 13,
+      "baseline": {
+        "mae_minus_ln_a": 0.009740085880983594,
+        "mae_activity": 0.009266981226543996
+      },
+      "extended": {
+        "mae_minus_ln_a": 0.007942544758510407,
+        "mae_activity": 0.007518975043836584
+      },
+      "guarded": {
+        "mae_minus_ln_a": 0.008890747004774527,
+        "mae_activity": 0.008440701994412927
+      }
+    }
+  },
+  "fraction_I_sensitivity": {
+    "alternative_Mn_g_mol": 25900,
+    "max_model_activity_change": 0.00008056450264626314,
+    "scores": {
+      "n": 4,
+      "baseline": {
+        "mae_minus_ln_a": 0.012319936134378491,
+        "mae_activity": 0.011540999438446331
+      },
+      "extended": {
+        "mae_minus_ln_a": 0.009931181521229234,
+        "mae_activity": 0.009231637218330563
+      },
+      "guarded": {
+        "mae_minus_ln_a": 0.011269819455761075,
+        "mae_activity": 0.01052440608018182
+      }
+    }
+  },
+  "rows": [
+    {
+      "fraction": "I",
+      "Mn_g_mol": 25100,
+      "T_K": 307.15,
+      "phi": 0.248,
+      "reference_100x_TPM": 0.21,
+      "observed_minus_ln_a": 0.0021,
+      "observed_a": 0.99790220345731,
+      "baseline": {
+        "minus_ln_a": 0.003202202506397425,
+        "a": 0.996802919075809,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.0017774743857103142,
+        "a": 0.9982241043863381,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.002619521744054962,
+        "a": 0.9973839062091762,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "I",
+      "Mn_g_mol": 25100,
+      "T_K": 307.15,
+      "phi": 0.3,
+      "reference_100x_TPM": 0.316,
+      "observed_minus_ln_a": 0.00316,
+      "observed_a": 0.9968449875450693,
+      "baseline": {
+        "minus_ln_a": 0.005625033576511264,
+        "a": 0.9943907573029078,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.0034162978105397703,
+        "a": 0.9965895310951768,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.004721711868150054,
+        "a": 0.9952894178892732,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "I",
+      "Mn_g_mol": 25100,
+      "T_K": 307.15,
+      "phi": 0.446,
+      "reference_100x_TPM": 1.4,
+      "observed_minus_ln_a": 0.014,
+      "observed_a": 0.9860975442628619,
+      "baseline": {
+        "minus_ln_a": 0.02284697468239392,
+        "a": 0.9774120411179792,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.01847930405627443,
+        "a": 0.9816903913906493,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.021060698681285222,
+        "a": 0.9791595290734671,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "I",
+      "Mn_g_mol": 25100,
+      "T_K": 317.15,
+      "phi": 0.625,
+      "reference_100x_TPM": 7.64,
+      "observed_minus_ln_a": 0.0644,
+      "observed_a": 0.9376298725613128,
+      "baseline": {
+        "minus_ln_a": 0.10149598803354959,
+        "a": 0.903484804085672,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.09922645044784197,
+        "a": 0.905537625403089,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.10056779979089228,
+        "a": 0.9043237973698598,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 307.15,
+      "phi": 0.285,
+      "reference_100x_TPM": 0.23,
+      "observed_minus_ln_a": 0.0023,
+      "observed_a": 0.9977026429733321,
+      "baseline": {
+        "minus_ln_a": 0.0035594093455762893,
+        "a": 0.9964469178426246,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.001588224366198534,
+        "a": 0.9984130361946807,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.0027532404002002997,
+        "a": 0.9972505462901302,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 307.15,
+      "phi": 0.348,
+      "reference_100x_TPM": 0.406,
+      "observed_minus_ln_a": 0.00406,
+      "observed_a": 0.9959482306574093,
+      "baseline": {
+        "minus_ln_a": 0.007665072866172517,
+        "a": 0.9923642288903526,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.004668789118911865,
+        "a": 0.9953420927353921,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.006439662296465943,
+        "a": 0.9935810278923475,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 307.15,
+      "phi": 0.4,
+      "reference_100x_TPM": 0.77,
+      "observed_minus_ln_a": 0.0075,
+      "observed_a": 0.9925280548191384,
+      "baseline": {
+        "minus_ln_a": 0.01335752564777781,
+        "a": 0.9867312902047974,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.009549873418224261,
+        "a": 0.9904955818106206,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.011800284184205628,
+        "a": 0.9882690661167552,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 307.15,
+      "phi": 0.554,
+      "reference_100x_TPM": 3.9,
+      "observed_minus_ln_a": 0.0346,
+      "observed_a": 0.9659917356828036,
+      "baseline": {
+        "minus_ln_a": 0.053534613773533114,
+        "a": 0.9478731309700734,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.04926062567095649,
+        "a": 0.9519329991886999,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.051786651752083766,
+        "a": 0.9495314261003899,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 307.15,
+      "phi": 0.6,
+      "reference_100x_TPM": 5.97,
+      "observed_minus_ln_a": 0.0509,
+      "observed_a": 0.9503737031510319,
+      "baseline": {
+        "minus_ln_a": 0.07728838669601462,
+        "a": 0.9256228777887276,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.0740756801273288,
+        "a": 0.9286014145086586,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.0759744642111256,
+        "a": 0.9268398738445385,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 317.15,
+      "phi": 0.355,
+      "reference_100x_TPM": 0.466,
+      "observed_minus_ln_a": 0.00466,
+      "observed_a": 0.9953508409538476,
+      "baseline": {
+        "minus_ln_a": 0.00988745075758668,
+        "a": 0.9901612693787881,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.006776565559788395,
+        "a": 0.9932463435829589,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.00861517085218354,
+        "a": 0.9914218333900185,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 317.15,
+      "phi": 0.409,
+      "reference_100x_TPM": 1.16,
+      "observed_minus_ln_a": 0.0112,
+      "observed_a": 0.9888624864995005,
+      "baseline": {
+        "minus_ln_a": 0.016744127642297754,
+        "a": 0.983395276113737,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.01281101185008339,
+        "a": 0.9872706998534931,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.015135574491059754,
+        "a": 0.9849783926062017,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 317.15,
+      "phi": 0.48,
+      "reference_100x_TPM": 4.62,
+      "observed_minus_ln_a": 0.0412,
+      "observed_a": 0.9596371833171122,
+      "baseline": {
+        "minus_ln_a": 0.031445758449445665,
+        "a": 0.969043517451173,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.026840022312577694,
+        "a": 0.9735169700609958,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.029562119175108755,
+        "a": 0.9708705660892589,
+        "model_phase_count": 1
+      }
+    },
+    {
+      "fraction": "III",
+      "Mn_g_mol": 440000,
+      "T_K": 317.15,
+      "phi": 0.517,
+      "reference_100x_TPM": 4.8,
+      "observed_minus_ln_a": 0.0422,
+      "observed_a": 0.9586780257924873,
+      "baseline": {
+        "minus_ln_a": 0.0427400893744214,
+        "a": 0.9581603937736247,
+        "model_phase_count": 1
+      },
+      "extended": {
+        "minus_ln_a": 0.03812579513482755,
+        "a": 0.9625918439038655,
+        "model_phase_count": 1
+      },
+      "guarded": {
+        "minus_ln_a": 0.04085295003452944,
+        "a": 0.959970283166249,
+        "model_phase_count": 1
+      }
+    }
+  ]
+}

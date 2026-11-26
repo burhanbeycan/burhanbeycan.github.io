@@ -1,0 +1,118 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PEtOx · Zincirler arasında su</title>
+<style>
+:root{--ink:#163335;--muted:#4c6666;--line:#cad6ce;--paper:#f5f5ef;--white:#fffffa;--teal:#006960;--amber:#9f581e;--violet:#805488}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px}body{margin:0}button,select,input{font:inherit}button,select{color:var(--ink)}button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #39a8af;outline-offset:3px}header{background:#173c3a;color:#f7f9ec}.brand{max-width:1250px;margin:0 auto;min-height:47px;display:flex;align-items:center;gap:12px;padding:0 27px;font-weight:640;letter-spacing:.03em;font-size:.8rem}.logo{height:17px;width:21px;border:2px solid #b4d3b0;border-radius:50%;transform:skew(-16deg) rotate(-24deg);position:relative}.logo:after{content:"";position:absolute;inset:2px -7px;border-top:2px solid #b4d3b0;top:6px}.brand .sep{height:15px;border-left:1px solid #90afa6}.brand .tool{color:#c3d8ce;font-weight:460;letter-spacing:0}.wrap{max-width:1250px;margin:0 auto;padding:24px 27px 40px}.headline{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin:0 0 20px}.headline h1{font:normal clamp(33px,4.2vw,58px)/1.04 Georgia,serif;letter-spacing:-.045em;margin:0}.headline p{margin:10px 0 0;color:var(--muted);font-size:1rem;line-height:1.45}.run-box{display:flex;flex-direction:column;align-items:flex-start;gap:4px;color:var(--muted);font-size:.78rem;font-weight:650}.run-box select{min-width:160px;font-size:.91rem;border:1px solid var(--line);border-radius:5px;padding:7px 10px;background:var(--white);font-weight:570}.grid{display:grid;grid-template-columns:minmax(0,1.67fr) minmax(0,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden}.scene-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:15px 18px 0}.scene-head h2,.metrics-head h2{margin:0;font-size:1.08rem;font-weight:650;letter-spacing:-.02em}.sub{margin:3px 0 0;font-size:.82rem;color:var(--muted);line-height:1.4}.time{font-size:1.06rem;font-variant-numeric:tabular-nums;font-weight:650;color:var(--teal);white-space:nowrap;background:#e1efe7;border-radius:4px;padding:4px 9px}.scene-wrap{margin:9px 11px 0;border:1px solid #d6dfd8;border-radius:6px;overflow:hidden;background:#f4f6ed;position:relative}#mol{width:100%;height:clamp(325px,33vw,460px);display:block;touch-action:none;cursor:grab}#mol:active{cursor:grabbing}.scene-help{padding:7px 8px;text-align:center;font-size:.73rem;color:var(--muted)}.legend{display:flex;flex-wrap:wrap;gap:7px 15px;align-items:center;margin:10px 17px 12px;font-size:.78rem;line-height:1.35}.key{display:flex;align-items:center;gap:5px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--key)}.dash{width:18px;border-top:2px dashed #995884}.ring{width:13px;height:13px;border:2px solid #238c78;border-radius:50%}.playbar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:13px 16px;border-top:1px solid var(--line);background:#eff3ea}.btn{border:1px solid var(--line);border-radius:5px;padding:8px 10px;font-weight:570;background:var(--white);font-size:.88rem}.primary{background:var(--teal);border-color:var(--teal);color:white;min-width:104px}.primary span{margin:0 3px}.timebox{display:flex;flex-direction:column;gap:3px}.timebox input{width:100%;margin:3px 0;accent-color:var(--teal);cursor:pointer}.ends{display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted)}#speed{border:1px solid var(--line);background:var(--white);border-radius:4px;padding:7px 4px;font-size:.79rem}.tools{display:flex;align-items:center;gap:9px 17px;flex-wrap:wrap;padding:11px 16px;font-size:.81rem}.tools label{display:flex;align-items:center;gap:4px;cursor:pointer}.tools input{accent-color:var(--teal)}.tools button{font-size:.76rem;padding:5px 8px;margin-left:auto}.metrics{padding:15px 17px}.metrics-head{display:flex;align-items:center;justify-content:space-between}.axis-hint{font-size:.74rem;color:var(--muted)}.metric{padding:12px 0 7px;border-bottom:1px solid var(--line)}.metric:last-of-type{border-bottom:0}.mtop{display:flex;align-items:baseline;justify-content:space-between;gap:6px}.mtop b{font-size:.93rem}.mtop output{color:var(--accent);font-variant-numeric:tabular-nums;font:600 1.35rem/1.1 system-ui}.metric svg{width:100%;height:80px;display:block;overflow:visible}.metric p{margin:2px 0 1px;font-size:.75rem;color:var(--muted);line-height:1.35}.readme{margin:14px 0 0;background:#e8eee4;border-left:3px solid #649077;border-radius:3px;padding:10px 12px;color:#35534c;font-size:.85rem;line-height:1.5}.eventwidth{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-top:9px}.eventwidth p{margin:0;color:var(--muted);font-size:.81rem;line-height:1.4}.eventwidth button{white-space:nowrap}.movie .eventwidth button{display:none}.movie .eventwidth{display:flex}.method{margin-top:16px;padding:13px 16px}.method summary{cursor:pointer;font-weight:620}.method .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}.method p{line-height:1.55;color:var(--muted);font-size:.89rem}.hash{overflow-wrap:anywhere;font: .73rem/1.4 monospace;color:var(--muted)}.movie .run-box,.movie .scene-help,.movie .playbar,.movie .tools,.movie .method,.movie .axis-hint{display:none}.movie .wrap{max-width:none;padding:18px 35px 17px}.movie .headline{margin-bottom:14px}.movie .brand{max-width:none;padding-left:35px}.movie .headline h1{font-size:48px}.movie .grid{gap:14px;grid-template-columns:1.68fr 1fr}.movie .scene-head,.movie .metrics{padding-top:14px}.movie #mol{height:440px}.movie .metric svg{height:87px}.movie .legend{font-size:.86rem}.movie .readme{margin-top:11px}.movie .headline p{font-size:1.07rem}
+@media(max-width:820px){.brand{padding:0 15px}.wrap{padding:18px 13px 30px}.headline{align-items:flex-start;flex-direction:column;gap:11px;margin-bottom:13px}.headline p{font-size:.9rem}.run-box{flex-direction:row;align-items:center;gap:8px}.run-box select{min-width:0;font-size:.83rem}.grid{grid-template-columns:1fr}.scene-head{padding:12px 13px 0}.playbar{gap:8px;padding:11px}.primary{min-width:83px;font-size:.8rem}.legend{margin:9px 12px;font-size:.74rem;gap:5px 10px}.method .cols{grid-template-columns:1fr;gap:0}.metric svg{height:81px}.metrics{padding:13px 14px}.tools{padding:10px;font-size:.76rem}.tools button{margin-left:0}.scene-wrap{margin:7px 7px 0}}
+</style></head><body>
+<header><div class="brand"><span class="logo" aria-hidden="true"></span>Polymer Research Studio <span class="sep"></span><span class="tool">Moleküler dinamik</span></div></header>
+<main class="wrap"><div class="headline"><div><h1>Zincirler arasında su</h1><p id="conditions"></p></div><label class="run-box">Yörünge <select id="runs" aria-label="Yörünge seçimi"></select></label></div>
+<div class="grid"><section class="card"><div class="scene-head"><div><h2>PEtOx temas çifti</h2><p class="sub">Suda iki H/H uçlu trimer ve yakın su molekülleri</p></div><output id="time" class="time"></output></div>
+<div class="scene-wrap"><canvas id="mol" aria-label="Gerçek atom koordinatları ve su–karbonil hidrojen bağları"></canvas></div>
+<div class="legend"><span class="key"><i class="dot" style="--key:#176f75"></i>C · zincir A</span><span class="key"><i class="dot" style="--key:#b47930"></i>C · zincir B</span><span class="key"><i class="dot" style="--key:#c95c54"></i>O</span><span class="key"><i class="dot" style="--key:#6868a2"></i>N</span><span class="key"><i class="dot" style="--key:#cbd3ce"></i>H</span><span class="key"><i class="dash"></i>H bağı</span><span class="key"><i class="ring"></i>Ortak su</span></div>
+<div class="scene-help">Görünümü döndürmek için sürükleyin.</div>
+<div class="playbar"><button class="btn primary" id="play">▶ Oynat</button><div class="timebox"><input id="frame" aria-label="Simülasyon zamanı" type="range" min="0" step="1"><div class="ends"><span id="first"></span><span id="last"></span></div></div><select id="speed" aria-label="Oynatma hızı"><option value="180">1× hız</option><option value="85">2×</option><option value="350">½×</option></select></div>
+<div class="tools"><label><input type="checkbox" id="waters" checked> Yakın sular</label><label><input type="checkbox" id="hb" checked> H bağları</label><label><input type="checkbox" id="hs"> Zincir H atomları</label><label><input type="checkbox" id="track" checked> Olay suyunu izle</label><label>Yakınlaştır <input id="zoom" aria-label="Molekülü yakınlaştır" style="width:66px" type="range" min="75" max="175" step="5" value="100"></label><button class="btn" id="reset">Görünümü sıfırla</button></div></section>
+<section class="card metrics"><div class="metrics-head"><h2>Etkileşimler</h2><span class="axis-hint">Grafiğe dokunarak kare seçin</span></div>
+<div class="metric" style="--accent:#176c70"><div class="mtop"><b>Zincirler arası temas</b><output id="valc"></output></div><p>Birbirine en çok 0,45 nm uzaklıktaki A–B ağır atom çiftleri</p><svg id="chartc" role="img" aria-label="Zamana göre ağır atom temas sayısı"></svg></div>
+<div class="metric" style="--accent:#428466"><div class="mtop"><b>İki zincire komşu su</b><output id="vals"></output></div><p>Her iki zincirin de bir ağır atomuna 0,35 nm içindeki su oksijenleri</p><svg id="charts" role="img" aria-label="Zamana göre iki zincire komşu su sayısı"></svg></div>
+<div class="metric" style="--accent:#935b80"><div class="mtop"><b>Su → karbonil H bağları</b><output id="valh"></output></div><p>O···O ≤ 0,35 nm ve O–H···O ≥ 150° olan donör–akseptör geometrileri</p><svg id="charth" role="img" aria-label="Zamana göre yönlü hidrojen bağı sayısı"></svg></div>
+<div class="readme" id="readme"></div><div class="eventwidth" id="eventbox"><p id="eventtext"></p><button class="btn" id="event">Kareye git</button></div></section></div>
+<details class="card method"><summary>Karelerin ve etkileşimlerin hesabı</summary><div class="cols"><p>Temas hâlindeki iki zincir açık su içinde hazırlanır. Ağır zincir atomları için 1000 kJ mol⁻¹ nm⁻² konum kısıtıyla 8 ps NPT hazırlık yapılır. Üretim zamanı kısıtlar kaldırılınca başlar. Zincir GAFF2/AM1-BCC, su TIP3P ve motor OpenMM’dir. Oynatıcı kaydedilen koordinatları sırayla gösterir. Kütlesel çözünme, denge çözünürlüğü veya çözünme hızı için ek sistemler ve örnekleme gerekir.</p><p>Bağ grafı boyunca moleküller bütünlenir ve zincirler yakın periyodik görüntülerine taşınır. Su, karbonil O’ya en çok 0,35 nm uzaktaysa veya her iki zincire komşuysa çizilir. Yeşil halkalar iki zincire komşu su oksijenlerini gösterir. Ayrı araya girme ölçütünde, ilk karede temas eden iki ağır atom sonradan 0,45 nm’den fazla uzaklaşmalı, su O her ikisine 0,35 nm içinde olmalı ve A···Ow···B açısı en az 120° olmalıdır. İlk araya girme olayındaki su, kalıcı W kimliğiyle işaretlenir. İzleme açıkken bu su, hidratasyon kabuğunun dışında da görünür. Zincirlerin hidrojenleri başlangıçta gizlidir. Gösterim koordinatları 1 pm hassasiyete yuvarlanır. Sayımlar yörüngenin tam saklama hassasiyetini kullanır.</p></div><p id="origin" class="hash"></p></details>
+</main><script id="data" type="application/json">"__STUDY_JSON__"</script><script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('data').textContent), $=id=>document.getElementById(id), keys=['c','s','h'], col={c:'#176c70',s:'#428466',h:'#935b80'};
+const num=x=>Number(x).toLocaleString('tr-TR',{maximumFractionDigits:2}),dist=x=>Number(x).toLocaleString('tr-TR',{minimumFractionDigits:3,maximumFractionDigits:3}), svgNS='http://www.w3.org/2000/svg';
+let run=null, ix=0, yaw=-.35,pitch=.46,drag=null,timer=null,eventSelection=null;
+const chartInfo={};
+for (let i=0;i<DATA.runs.length;i++) {let o=document.createElement('option');o.value=i;o.textContent='Koşu '+(i+1)+' · '+DATA.runs[i].seed;$('runs').append(o);}
+function el(parent,tag,attr,text=''){const node=document.createElementNS(svgNS,tag);for(const [k,v] of Object.entries(attr))node.setAttribute(k,v);node.textContent=text;parent.appendChild(node);return node;}
+function buildCharts(){for(const key of keys){
+ const host=$('chart'+key);host.replaceChildren();const W=400,H=83,l=27,r=9,b=17,t=6;
+ const ys=run.frames.map(f=>key==='h'?f.hb.length:f[key]),times=run.frames.map(f=>f.t);
+ const max=Math.max(1,...ys), y=x=>H-b-(H-b-t)*x/max, x=v=>l+(W-r-l)*(v-times[0])/Math.max(1e-9,times.at(-1)-times[0]);
+ host.setAttribute('viewBox','0 0 '+W+' '+H);host.setAttribute('preserveAspectRatio','none');
+ function txt(X,Y,msg,anchor){el(host,'text',{x:X,y:Y,fill:'#49615e','font-size':10,'text-anchor':anchor},msg)}
+ for(const j of [0,max]){el(host,'line',{x1:l,x2:W-r,y1:y(j),y2:y(j),stroke:'#d1ddd2'});txt(l-4,y(j)+4,String(j),'end')}
+ for(const ts of [times[0],(times[0]+times.at(-1))/2,times.at(-1)])txt(x(ts),H-3,num(ts)+(ts===times.at(-1)?' ps':''),ts===times[0]?'start':ts===times.at(-1)?'end':'middle');
+ const line=ys.map((v,i)=>(i?'L':'M')+x(times[i]).toFixed(2)+','+y(v).toFixed(2)).join(' ');
+ el(host,'path',{d:line,fill:'none',stroke:col[key],'stroke-width':1.8,'stroke-linejoin':'round'});
+ const cursor=el(host,'line',{y1:t,y2:H-b,stroke:'#253d38','stroke-width':1,'stroke-dasharray':'2,3'});
+ const mark=el(host,'circle',{r:3.5,fill:col[key],stroke:'#fff','stroke-width':1.2});
+ chartInfo[key]={x,y,ys,times,cursor,mark,l,r,W};
+ host.onclick=e=>{const box=host.getBoundingClientRect(),ratio=((e.clientX-box.left)/box.width*W-l)/(W-l-r);pause();show(Math.round(Math.max(0,Math.min(1,ratio))*(run.frames.length-1)))};
+}}
+function xyz(a,j){return [a[j],a[j+1],a[j+2]];}
+function renderScene(){
+ const cv=$('mol'),size=cv.getBoundingClientRect(),w=size.width,h=size.height,dpr=Math.min(2,devicePixelRatio||1);
+ if(!w||!h)return;
+ cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);const g=cv.getContext('2d');g.scale(dpr,dpr);
+ const bg=g.createLinearGradient(0,0,w,h);bg.addColorStop(0,'#f7f9ef');bg.addColorStop(1,'#e9efe5');g.fillStyle=bg;g.fillRect(0,0,w,h);
+ const f=run.frames[ix];
+ const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ const spans=run.screen_bounds;const sx=Math.abs(cy)*spans[0]+Math.abs(sy)*spans[2], syy=Math.abs(cp)*spans[1]+Math.abs(sp*sy)*spans[0]+Math.abs(sp*cy)*spans[2];
+ // Use one fixed zoom throughout a run, so conformational changes retain their scale.
+ const scale=Math.min((w-40)/(2*Math.min(run.radius_pm,sx)),(h-40)/(2*Math.min(run.radius_pm,syy)))*1.05*(+$('zoom').value/100);
+ function project(p){let x=cy*p[0]+sy*p[2],z=-sy*p[0]+cy*p[2];return [w*.5+x*scale,h*.5-(cp*p[1]-sp*z)*scale,(sp*p[1]+cp*z)]}
+ const q=Array.from({length:run.atoms.length},(_,i)=>project(xyz(f.p,i*3))),shapes=[];
+ const colors={A:'#23777a',B:'#b37b31',O:'#c65c53',N:'#6667a0',H:'#e3e9e2'};
+ const heavy=i=>run.atoms[i]!=='H'||$('hs').checked,atomColor=i=>run.atoms[i]==='C'?colors[i<run.chain_a_n?'A':'B']:colors[run.atoms[i]];
+ function sphere(p,color,r,ring=false){
+  shapes.push([p[2]+.1,()=>{if(ring){g.strokeStyle='#248976';g.lineWidth=1.7;g.beginPath();g.arc(p[0],p[1],r+3,0,Math.PI*2);g.stroke()}
+  const grad=g.createRadialGradient(p[0]-.38*r,p[1]-.4*r,.04*r,p[0],p[1],r);grad.addColorStop(0,'#ffffff');grad.addColorStop(.41,color);grad.addColorStop(1,color);
+  g.beginPath();g.arc(p[0],p[1],r,0,Math.PI*2);g.fillStyle=grad;g.fill();g.strokeStyle=color===colors.H?'#99a8a0':'rgba(28,47,46,.6)';g.lineWidth=.7;g.stroke()}]);}
+ function stroke(a,b,color,thick,dash=false){shapes.push([(a[2]+b[2])/2,()=>{g.beginPath();g.strokeStyle=color;g.lineWidth=thick;g.lineCap='round';g.setLineDash(dash?[3,3]:[]);g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.stroke();g.setLineDash([])}]);}
+ for(const [a,b] of run.bonds){if(!heavy(a)||!heavy(b))continue;const light=run.atoms[a]==='H'||run.atoms[b]==='H';stroke(q[a],q[b],a<run.chain_a_n?'#507571':'#92774e',Math.max(1.15,scale*(light?18:28)))}
+ for(let i=0;i<q.length;i++)if(heavy(i))sphere(q[i],atomColor(i),Math.max(2.2,scale*(run.atoms[i]==='H'?25:55)));
+ if($('waters').checked){
+ const points=new Map(), event=run.events[0], tracking=$('track').checked&&event&&f.tracked;
+ const shown=f.w.slice();
+ if(tracking&&!shown.some(v=>v[0]===event.w))shown.push([event.w,0,...f.tracked.xyz]);
+ for(const v of shown){const p=[2,5,8].map(j=>project(xyz(v,j)));points.set(v[0],p);
+ for(let j=1;j<=2;j++)stroke(p[0],p[j],'#819a94',Math.max(1.0,scale*15));
+ sphere(p[0],colors.O,Math.max(2.7,scale*43),!!v[1]);sphere(p[1],colors.H,Math.max(1.8,scale*24));sphere(p[2],colors.H,Math.max(1.8,scale*24));}
+ if(tracking && points.has(event.w)){
+  const o=points.get(event.w)[0];
+  shapes.push([Infinity,()=>{g.strokeStyle='#124839';g.lineWidth=1.6;g.beginPath();g.arc(o[0],o[1],Math.max(4,scale*45)+5,0,2*Math.PI);g.stroke();g.font='bold 12px system-ui';g.lineWidth=3;g.strokeStyle='#f9fbf0';g.fillStyle='#205d50';const label='W'+event.w;g.strokeText(label,o[0]+9,o[1]-8);g.fillText(label,o[0]+9,o[1]-8);}]);}
+ if(eventSelection && eventSelection.t===f.t && points.has(eventSelection.w)){
+  const o=points.get(eventSelection.w)[0];
+  for(const idx of [eventSelection.a,eventSelection.b]){const p=q[idx];if(Math.hypot(p[0]-o[0],p[1]-o[1])<=360*scale)stroke(p,o,'#1d7661',2,true);}
+  shapes.push([Infinity,()=>{g.lineWidth=2;for(const idx of [eventSelection.a,eventSelection.b]){const p=q[idx];g.beginPath();g.strokeStyle='#263b38';g.arc(p[0],p[1],Math.max(4,60*scale)+3,0,2*Math.PI);g.stroke();
+  const xoff=p[0]>=o[0]?10:-10,yoff=p[1]>=o[1]?14:-12;
+  g.textAlign=xoff<0?'right':'left';g.font='bold 12px system-ui';g.lineWidth=3;g.strokeStyle='#f7f9ed';g.fillStyle='#23443e';
+  const label=(idx<run.chain_a_n?'A · ':'B · ')+run.atoms[idx]+idx;g.strokeText(label,p[0]+xoff,p[1]+yoff);g.fillText(label,p[0]+xoff,p[1]+yoff);g.textAlign='left';}
+  }]);}
+ if($('hb').checked)for(const v of f.hb){const p=points.get(v[0]);if(p)stroke(p[v[1]],v.length>3?project(v.slice(3)):q[v[2]],'#a04a83',Math.max(1.4,scale*12),true)}
+ }
+ shapes.sort((a,b)=>a[0]-b[0]);for(const s of shapes)s[1]();
+ g.fillStyle='#3c5952';g.strokeStyle='#3c5952';g.lineWidth=1.4;const y=h-19;
+ g.beginPath();g.moveTo(15,y-3);g.lineTo(15,y+3);g.moveTo(15,y);g.lineTo(15+500*scale,y);g.lineTo(15+500*scale,y-3);g.moveTo(15+500*scale,y);g.lineTo(15+500*scale,y+3);g.stroke();
+ g.font='12px system-ui';g.textAlign='left';g.fillText('0,5 nm',15,h-29);
+}
+function show(i){ix=Math.max(0,Math.min(run.frames.length-1,i));$('frame').value=ix;const f=run.frames[ix];$('time').textContent=num(f.t)+' ps';
+ for(const k of keys){const c=chartInfo[k],X=c.x(f.t),Y=c.y(c.ys[ix]);c.cursor.setAttribute('x1',X);c.cursor.setAttribute('x2',X);c.mark.setAttribute('cx',X);c.mark.setAttribute('cy',Y);$('val'+k).textContent=num(c.ys[ix]);}
+ const e=run.events[0];
+ if(e&&f.tracked){
+ const active=Math.abs(e.t-f.t)<1e-7;eventSelection=active&&$('track').checked?e:null;
+ $('eventtext').textContent='W'+e.w+' · A···Ow '+dist(f.tracked.da)+' nm / B···Ow '+dist(f.tracked.db)+' nm. '+(active?'Bu karede su, ilk temas çiftinin arasındadır ('+num(e.angle)+'°).':'İlk araya girme karesi '+num(e.t)+' ps.');
+ }
+ renderScene();
+}
+function pause(){if(timer!==null)clearInterval(timer);timer=null;$('play').textContent='▶ Oynat';$('play').setAttribute('aria-pressed','false');}
+function start(){if(ix===run.frames.length-1)show(0);$('play').textContent='Ⅱ Duraklat';$('play').setAttribute('aria-pressed','true');timer=setInterval(()=>{if(ix>=run.frames.length-1){pause();return}show(ix+1);},+$('speed').value)}
+function load(i){pause();eventSelection=null;run=DATA.runs[i];
+ run.screen_bounds=[0,0,0];for(const fr of run.frames){const pos=[...fr.p,...fr.w.flatMap(v=>v.slice(2))];for(let j=0;j<pos.length;j++)run.screen_bounds[j%3]=Math.max(run.screen_bounds[j%3],Math.abs(pos[j]));}
+ $('track').disabled=!run.events.length;
+$('frame').max=run.frames.length-1;$('first').textContent=num(run.frames[0].t)+' ps';$('last').textContent=num(run.frames.at(-1).t)+' ps';
+ $('conditions').textContent='PEtOx · DP 3  /  '+run.nwater+' TIP3P su  /  '+num(DATA.temperature)+' K  /  '+num(DATA.pressure)+' bar';
+ $('readme').textContent='Koşu '+(Number(i)+1)+' · '+run.frames.length+' gerçek MD karesi. Zaman, temas çiftinin serbest bırakılmasından itibaren ölçülür.';
+ const event=run.events[0];$('eventbox').hidden=false;$('event').hidden=!event;
+ $('eventtext').textContent=event?'Önceden temas eden bir atom çiftinin arasındaki suyu göster · '+num(event.t)+' ps.':'Bu koşuda başlangıçtaki atom çifti için seçilen su araya girme ölçütü gözlenmedi.';
+ $('event').onclick=()=>{if(!event)return;pause();eventSelection=event;$('track').checked=true;$('waters').checked=true;$('hb').disabled=false;show(run.frames.findIndex(f=>Math.abs(f.t-event.t)<1e-7));};
+ $('origin').textContent='Yörünge SHA-256  '+run.trajectory_sha256+'  ·  Topoloji SHA-256  '+run.topology_sha256;buildCharts();show(0)}
+$('runs').onchange=e=>load(+e.target.value);$('play').onclick=()=>timer===null?start():pause();$('speed').onchange=()=>{if(timer!==null){pause();start()}};
+$('frame').oninput=e=>{pause();show(+e.target.value)};for(const id of ['waters','hb','hs','track']) $(id).onchange=()=>{if(id==='waters')$('hb').disabled=!$('waters').checked;show(ix)};
+$('zoom').oninput=renderScene;$('reset').onclick=()=>{yaw=-.35;pitch=.46;$('zoom').value=100;renderScene()};$('mol').onpointerdown=e=>{drag=[e.clientX,e.clientY];$('mol').setPointerCapture(e.pointerId)};
+$('mol').onpointermove=e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.012;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.011));drag=[e.clientX,e.clientY];renderScene()};
+$('mol').onpointerup=$('mol').onpointercancel=()=>{drag=null};window.addEventListener('resize',()=>{if(run)renderScene()});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
+if(new URLSearchParams(location.search).get('mode')==='movie')document.body.classList.add('movie');load(0);
+</script></body></html>

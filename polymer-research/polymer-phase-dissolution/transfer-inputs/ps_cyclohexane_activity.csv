@@ -1,0 +1,6 @@
+doi,table,printed_page,fraction,Mn_g_mol,method,T_C,T_K,polymer_volume_fraction,reference_TPM_mole_percent,minus_ln_solvent_activity,split
+10.1021/ja01517a022,III,1864,II,72000,isothermal_distillation,34,307.15,0.341,0.392,0.00392,held_out_method_and_composition
+10.1021/ja01517a022,III,1864,II,72000,isothermal_distillation,34,307.15,0.51,2.42,0.0225,held_out_method_and_composition
+10.1021/ja01517a022,III,1864,II,72000,isothermal_distillation,34,307.15,0.546,3.10,0.0284,held_out_method_and_composition
+10.1021/ja01517a022,III,1864,II,72000,isothermal_distillation,44,317.15,0.372,0.82,0.0080,held_out_method_and_composition
+10.1021/ja01517a022,III,1864,II,72000,isothermal_distillation,44,317.15,0.660,11.2,0.087,held_out_method_and_composition

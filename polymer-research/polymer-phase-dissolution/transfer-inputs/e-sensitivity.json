@@ -1,0 +1,60 @@
+{
+  "status": "post-hoc structural sensitivity; pressure and third virial coefficient examined before this model family was chosen",
+  "chi_term": "E*phi^3",
+  "A3": 0.00045876296728140307,
+  "units_A3": "mL² mol g⁻³",
+  "algorithm": "Global convex envelope on 4001 and 8001 uniform nodes with an additional log grid at low phi; 65 E grid samples on [-1,1] and local loss refinement.",
+  "folds": [
+    {
+      "id": "hold24",
+      "E": -0.2186227356307382,
+      "mae_kPa": 2.5492665017727334,
+      "rmse_kPa": 2.991603997890298,
+      "held_kPa": [
+        0.8487729315606,
+        0.8487729315606,
+        0.8487729315606
+      ],
+      "max_pressure_difference_from_coarse_kPa": 1.9313727098735356e-06,
+      "E_difference_from_coarse": 0.0
+    },
+    {
+      "id": "hold34",
+      "E": -0.17418607885064402,
+      "mae_kPa": 1.9082033163195724,
+      "rmse_kPa": 3.3035794662438698,
+      "held_kPa": [
+        0.2867782751931564,
+        0.7147691007753476,
+        4.013755087753846,
+        10.46563642526963,
+        24.32338003415658
+      ],
+      "max_pressure_difference_from_coarse_kPa": 2.7292178472748674e-05,
+      "E_difference_from_coarse": 1.70491982892651e-07
+    },
+    {
+      "id": "high",
+      "E": -0.20252610997234838,
+      "mae_kPa": 3.3518099497755967,
+      "rmse_kPa": 3.4370568977414844,
+      "held_kPa": [
+        1.4545457748375787,
+        19.78673746438877
+      ],
+      "max_pressure_difference_from_coarse_kPa": 5.298005163467678e-07,
+      "E_difference_from_coarse": 3.3096200502402695e-09
+    },
+    {
+      "id": "hold44",
+      "E": -0.21557271017230434,
+      "mae_kPa": 4.141289924296954,
+      "rmse_kPa": 4.141289924296954,
+      "held_kPa": [
+        17.330695494296954
+      ],
+      "max_pressure_difference_from_coarse_kPa": 0.0007296534617644568,
+      "E_difference_from_coarse": 1.675842131143579e-05
+    }
+  ]
+}

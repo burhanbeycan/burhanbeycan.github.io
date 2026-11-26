@@ -1,0 +1,23 @@
+.petox-panel{color:#193b33;max-width:65rem;font:1rem/1.5 system-ui,-apple-system,sans-serif}
+.petox-panel h2,.petox-panel h3{color:#163d33;margin:0 0 .45rem;line-height:1.23}
+.petox-panel h2{font:500 clamp(1.65rem,3.4vw,2.4rem) Georgia,serif}
+.petox-panel h3{font-size:1.13rem}
+.petox-panel p{margin:.4rem 0 .75rem;max-width:83ch}
+.petox-panel .px-tabs,.petox-panel .px-links{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.petox-panel .px-tabs button{font:inherit;font-weight:600;color:#174d43;border:1px solid #aebfb6;background:white;padding:.5rem .8rem;border-radius:.42rem;cursor:pointer}
+.petox-panel .px-tabs button[aria-pressed=true]{background:#174d43;border-color:#174d43;color:white}
+.petox-panel .px-tabs button:focus-visible,.petox-panel input:focus-visible,.petox-panel a:focus-visible,.petox-panel summary:focus-visible{outline:3px solid #287d9c;outline-offset:3px}
+.petox-panel .px-chart{margin:1rem 0;padding:clamp(6px,1.7vw,18px);background:#f5f8f3;border:1px solid #cfdbcf;border-radius:.75rem}
+.petox-panel .px-chart svg{display:block;width:100%;max-width:46rem;height:auto;margin:auto}
+.petox-panel .px-chart figcaption{font-size:.88rem;color:#3c584d;margin:.4rem .3rem}
+.petox-panel .px-control{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}
+.petox-panel .px-control input{max-width:6.5rem;background:#fff;color:#193b33;padding:.5rem;border:1px solid #97b1a6;border-radius:.32rem;font:inherit}
+.petox-panel .px-value{display:block;color:#174f42;font-size:1.18rem;font-weight:650;min-height:1.8rem}
+.petox-panel .px-scroll{overflow-x:auto;margin:.5rem 0 1rem}
+.petox-panel .px-scroll table{border-collapse:collapse;width:100%;max-width:48rem;font-size:.94rem;font-variant-numeric:tabular-nums}
+.petox-panel th,.petox-panel td{padding:.4rem .55rem;text-align:left;border-bottom:1px solid #d7e0d7;vertical-align:top}
+.petox-panel th{color:#34564a;background:#edf3ec;font-weight:650}
+.petox-panel .px-links a{color:#165d51;text-decoration:underline;text-underline-offset:.15em}
+.petox-panel details{padding:.55rem 0;border-top:1px solid #ccd9cf}.petox-panel summary{font-weight:600;color:#31554a;cursor:pointer}
+.petox-panel [hidden]{display:none!important}
+@media(max-width:480px){.petox-panel .px-tabs{gap:.3rem}.petox-panel .px-tabs button{padding:.4rem .5rem;font-size:.92rem}.petox-panel th,.petox-panel td{padding:.35rem .27rem}.petox-panel .px-chart{margin:.5rem 0}}

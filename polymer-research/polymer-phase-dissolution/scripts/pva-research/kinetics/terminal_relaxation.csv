@@ -1,0 +1,9 @@
+study_doi,source_location,protocol,material_id,nominal_mass_g_mol,mass_average_type,hydrolysis_percent,solvent,wt_percent,temperature_K,terminal_eta0_cP,tau_d_ms,relaxation_rate_s_inv
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA88,166000,unspecified,88,water,7,288.15,2560,3.2,313
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA88,166000,unspecified,88,water,7,293.15,2020,2.6,385
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA88,166000,unspecified,88,water,7,298.15,1620,2.0,500
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA88,166000,unspecified,88,water,7,303.15,1250,1.5,667
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA98,166000,unspecified,98,water,7,288.15,2150,2.1,476
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA98,166000,unspecified,98,water,7,293.15,1160,1.5,667
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA98,166000,unspecified,98,water,7,298.15,910,1.2,833
+10.1021/acs.macromol.5c00703,Table 1,SAOS terminal extrapolation,PVA98,166000,unspecified,98,water,7,303.15,730,1.0,1000

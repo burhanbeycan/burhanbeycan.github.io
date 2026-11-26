@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#163447" />
+    <title>Zincir ve konformer enerjisi · Polymer Research Studio</title>
+    <link rel="stylesheet" href="/assets/editor.css" />
+    <style>
+      :root {
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        color: #1b3440;
+        background: #f3f6f5;
+        line-height: 1.45;
+        --ink: #193446;
+        --muted: #4d646d;
+        --line: #cedbda;
+        --green: #086a59;
+        --pale: #e5f2eb;
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:disabled {
+        cursor: default;
+        opacity: 0.55;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible,
+      summary:focus-visible,
+      canvas:focus-visible {
+        outline: 3px solid #bc702b;
+        outline-offset: 3px;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      a {
+        color: var(--green);
+      }
+      header {
+        background: #173447;
+        color: #fff;
+        border-bottom: 3px solid #a9d8c2;
+      }
+      .top,
+      .wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 0 clamp(16px, 3.8vw, 52px);
+      }
+      .top {
+        min-height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.26rem;
+        font-weight: 650;
+        letter-spacing: -0.04em;
+      }
+      .brand svg {
+        width: 34px;
+        height: 35px;
+      }
+      .top small {
+        color: #e6f1eb;
+        font-size: 0.83rem;
+      }
+      .bar {
+        border-bottom: 1px solid var(--line);
+        background: #fbfdfc;
+      }
+      .tabs {
+        display: flex;
+        gap: clamp(8px, 4vw, 34px);
+      }
+      .tabs button {
+        min-height: 51px;
+        background: none;
+        border: none;
+        border-bottom: 3px solid transparent;
+        color: #52676c;
+        padding: 8px 2px 5px;
+        font-weight: 615;
+      }
+      .tabs button[aria-pressed="true"] {
+        color: var(--green);
+        border-color: var(--green);
+      }
+      main {
+        padding-block: 24px 28px;
+      }
+      .headline {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 22px;
+      }
+      .headline h1 {
+        font:
+          500 clamp(32px, 5vw, 54px) / 1.09 Georgia,
+          serif;
+        letter-spacing: -0.047em;
+        margin: 0 0 6px;
+      }
+      .headline p,
+      .note {
+        color: var(--muted);
+        margin: 0;
+        font-size: 0.96rem;
+      }
+      .sheet {
+        display: grid;
+        grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr);
+        align-items: start;
+        gap: 18px;
+      }
+      .stack {
+        display: grid;
+        gap: 15px;
+        min-width: 0;
+      }
+      .panel {
+        min-width: 0;
+        background: #fff;
+        padding: clamp(15px, 2vw, 23px);
+        border: 1px solid var(--line);
+        border-radius: 11px;
+      }
+      .panel h2 {
+        font:
+          500 clamp(22px, 2.2vw, 28px) / 1.1 Georgia,
+          serif;
+        margin: 0 0 14px;
+        letter-spacing: -0.025em;
+      }
+      .panel h3 {
+        font-size: 1.03rem;
+        margin: 14px 0 6px;
+      }
+      .tabset {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .tabset > button,
+      .soft,
+      .export,
+      .turn {
+        color: var(--ink);
+        background: #f7faf9;
+        border: 1px solid #bacac8;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        min-height: 39px;
+        padding: 7px 11px;
+      }
+      .tabset button[aria-pressed="true"] {
+        background: var(--pale);
+        color: #115344;
+        border-color: #569b82;
+      }
+      .formgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 12px 0;
+      }
+      .field {
+        display: grid;
+        gap: 5px;
+        min-width: 0;
+        font-size: 0.89rem;
+        font-weight: 600;
+      }
+      .field input,
+      .field select,
+      .field textarea {
+        display: block;
+        min-width: 0;
+        width: 100%;
+        padding: 9px 10px;
+        background: #fff;
+        border: 1px solid #aabfbe;
+        border-radius: 6px;
+        color: var(--ink);
+        line-height: 1.3;
+        font-size: 1rem;
+      }
+      .field textarea {
+        resize: vertical;
+        min-height: 61px;
+        font:
+          14px/1.5 ui-monospace,
+          monospace;
+      }
+      .guide {
+        font-size: 0.84rem;
+        color: var(--muted);
+        margin: 6px 0 10px;
+      }
+      .helper {
+        margin: 12px 0;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .mode-sect {
+        margin-top: 12px;
+      }
+      .cta {
+        min-height: 44px;
+        border: 0;
+        border-radius: 7px;
+        background: var(--green);
+        font-weight: 650;
+        color: white;
+        padding: 10px 16px;
+      }
+      .cta:hover {
+        background: #0e574c;
+      }
+      .actions,
+      .tagline {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .result-id {
+        border-radius: 8px;
+        background: #f5f8f7;
+        padding: 11px 13px;
+        margin-bottom: 12px;
+      }
+      .result-id b {
+        color: var(--green);
+      }
+      .result-id .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+      .result-id small {
+        display: block;
+        color: var(--muted);
+      }
+      #feedback {
+        margin: 10px 0 0;
+        color: #155646;
+        font-size: 0.92rem;
+      }
+      #feedback:empty {
+        display: none;
+      }
+      .error {
+        color: #9b3d23 !important;
+      }
+      .scope {
+        padding: 10px 12px;
+        border-radius: 6px;
+        background: #edf4f1;
+        color: #335a51;
+        font-size: 0.89rem;
+      }
+      .micro {
+        font-size: 0.81rem;
+        color: var(--muted);
+      }
+      .result-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .result-head h2 {
+        margin: 0;
+      }
+      .badge {
+        font-size: 0.78rem;
+        padding: 4px 9px;
+        border-radius: 30px;
+        background: var(--pale);
+        color: #225b47;
+        font-weight: 650;
+      }
+      .viewer {
+        position: relative;
+        height: clamp(215px, 24vw, 296px);
+        margin: 12px 0 9px;
+        background: radial-gradient(ellipse at 45% 32%, #f8fcfb, #e7efee);
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        overflow: hidden;
+      }
+      .viewer canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        touch-action: none;
+      }
+      .empty {
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        padding: 20px;
+        text-align: center;
+        color: #51666d;
+        font-size: 0.94rem;
+      }
+      .rot-tools {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .rot-tools label {
+        font-size: 0.88rem;
+      }
+      .turn {
+        min-height: 34px;
+      }
+      .chart {
+        margin: 13px 0 6px;
+        overflow: hidden;
+      }
+      .chart svg {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+      .chart-empty {
+        background: #f4f7f6;
+        border-radius: 7px;
+        color: var(--muted);
+        padding: 16px;
+        font-size: 0.91rem;
+      }
+      .num {
+        font-variant-numeric: tabular-nums;
+      }
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 10px 0;
+        font-size: 0.88rem;
+      }
+      .table th,
+      .table td {
+        text-align: right;
+        padding: 6px 4px;
+        border-bottom: 1px solid var(--line);
+      }
+      .table th:first-child,
+      .table td:first-child {
+        text-align: left;
+      }
+      .table th {
+        color: #456068;
+        font-weight: 600;
+        font-size: 0.81rem;
+      }
+      .dl {
+        display: grid;
+        grid-template-columns: minmax(88px, 0.45fr) 1fr;
+        gap: 5px 12px;
+        font-size: 0.9rem;
+      }
+      .dl dt {
+        color: var(--muted);
+      }
+      .dl dd {
+        margin: 0;
+        overflow-wrap: anywhere;
+      }
+      .dl code {
+        font-size: 0.83rem;
+      }
+      details {
+        margin-top: 13px;
+      }
+      summary {
+        cursor: pointer;
+        color: #175b4c;
+        font-weight: 630;
+        font-size: 0.9rem;
+      }
+      .sol-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(266px, 100%), 1fr));
+        gap: 12px;
+        margin-top: 15px;
+      }
+      .sol-grid h2 {
+        font-size: 21px;
+      }
+      .sol-grid .panel {
+        padding: 14px 16px;
+      }
+      .sol-val {
+        display: flex;
+        gap: 14px;
+        color: #194357;
+        font-weight: 600;
+      }
+      .sol-val small {
+        font-weight: 400;
+      }
+      .foot {
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        margin-top: 24px;
+        padding: 13px 0;
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .copy {
+        margin: 0 0 12px;
+      }
+      .smi {
+        font:
+          14px/1.5 ui-monospace,
+          monospace;
+        overflow-wrap: anywhere;
+      }
+      .page-note {
+        margin: 0 0 9px;
+      }
+      .ps-editor .ps-switch,
+      .ps-editor .ps-sample,
+      .ps-editor .ps-example {
+        display: none !important;
+      }
+      .ps-editor {
+        margin-top: 7px;
+      }
+      .ps-editor button,
+      .ps-editor select {
+        min-height: 36px;
+      }
+      .ps-editor .ps-empty-circle {
+        font-size: 17px;
+      }
+      .ps-editor .ps-svg {
+        height: 205px;
+      }
+      #sketch-note {
+        padding-top: 4px;
+      }
+      .inline-warning {
+        border-left: 3px solid #bb713e;
+        padding: 6px 10px;
+        background: #fbf3e9;
+        font-size: 0.88rem;
+      }
+      input[type="checkbox"] {
+        accent-color: var(--green);
+      }
+      .pill-row {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      .pill-row span {
+        background: #eef3f2;
+        color: #3e575d;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        padding: 3px 6px;
+      }
+      .spar {
+        margin-top: 1rem;
+      }
+      .hidden-link {
+        position: absolute;
+        left: -10000px;
+      }
+      .hidden-link:focus {
+        left: 5px;
+        z-index: 10;
+        background: #fff;
+        padding: 8px;
+      }
+      @media (max-width: 750px) {
+        .sheet {
+          grid-template-columns: 1fr;
+        }
+        .top {
+          min-height: 52px;
+        }
+        .top small {
+          max-width: 98px;
+          text-align: right;
+          font-size: 0.75rem;
+        }
+        .brand {
+          font-size: 1.05rem;
+          gap: 6px;
+        }
+        .brand svg {
+          width: 29px;
+        }
+        .headline {
+          align-items: start;
+          margin-bottom: 15px;
+        }
+        .wrap {
+          padding-inline: 14px;
+        }
+        main {
+          padding-block: 17px;
+        }
+        .result-head {
+          align-items: flex-start;
+        }
+        .viewer {
+          height: 230px;
+        }
+        .formgrid {
+          gap: 10px;
+        }
+      }
+      @media (max-width: 390px) {
+        .formgrid {
+          grid-template-columns: 1fr;
+        }
+        .top small {
+          max-width: 84px;
+        }
+        .tabs {
+          gap: 14px;
+        }
+        .tabs button {
+          font-size: 0.9rem;
+        }
+        .panel {
+          padding: 13px;
+        }
+        .wrap {
+          padding-inline: 11px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="hidden-link" href="#main">İçeriğe geç</a>
+    <header>
+      <div class="top">
+        <div class="brand">
+          <svg viewBox="0 0 36 33" fill="none" aria-hidden="true">
+            <path d="M3 23l9-14 10 14 10-14" stroke="#a4d9c6" stroke-width="2.4" />
+            <g fill="#173447" stroke="#fff" stroke-width="2">
+              <circle cx="3" cy="23" r="2.5" />
+              <circle cx="12" cy="9" r="3" />
+              <circle cx="22" cy="23" r="3" />
+              <circle cx="32" cy="9" r="2.5" />
+            </g></svg
+          >Polymer Research Studio
+        </div>
+        <small id="service">Yerel hesaplama</small>
+      </div>
+    </header>
+    <nav class="bar" aria-label="Çalışma alanları">
+      <div class="wrap tabs">
+        <button type="button" id="tab-chain" aria-pressed="true">Zincir hesabı</button
+        ><button type="button" id="tab-sol" aria-pressed="false">Çözücü kayıtları</button>
+      </div>
+    </nav>
+    <div class="wrap">
+      <main id="main">
+        <section id="chain-pane">
+          <div class="headline">
+            <div>
+              <h1>Zincir ve konformer enerjisi</h1>
+              <p>
+                Kendi kimyasal yapınızdan sonlu bir zincir kurun, üç boyutlu konformerleri ve bağıl
+                potansiyel enerjilerini inceleyin.
+              </p>
+            </div>
+          </div>
+          <div class="sheet">
+            <div class="stack">
+              <section class="panel">
+                <h2>Kimyasal yapı</h2>
+                <div class="tabset" aria-label="Yapı giriş yöntemi">
+                  <button id="source-smiles" aria-pressed="true" type="button">SMILES gir</button
+                  ><button id="source-sketch" aria-pressed="false" type="button">
+                    Atom atom çiz
+                  </button>
+                </div>
+                <form id="molecule-form" novalidate>
+                  <div id="raw-pane">
+                    <label class="field" for="smiles" id="raw-label"
+                      >Yapı veya A tekrar birimi</label
+                    ><label class="field">
+                      <textarea
+                        id="smiles"
+                        rows="2"
+                        aria-labelledby="raw-label"
+                        placeholder="Kendi SMILES dizinizi yazın"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                      ></textarea>
+                    </label>
+                    <p class="guide">
+                      Doğrusal birimlerde büyüme uçlarını <code>[*:1]</code> ve
+                      <code>[*:2]</code> ile belirtin.
+                    </p>
+                  </div>
+                  <div id="draw-pane" hidden>
+                    <div id="sketch"></div>
+                    <p class="guide" id="sketch-note">
+                      Çizim, zincir tanımındaki A birimini veya sonlu molekülü oluşturur.
+                    </p>
+                  </div>
+                  <div class="formgrid">
+                    <label class="field"
+                      >Zincir tanımı<select id="mode">
+                        <option value="auto">Girdiden tanı</option>
+                        <option value="finite">Tanımlı sonlu yapı / dallı zincir</option>
+                        <option value="repeat">Tek birimden doğrusal zincir</option>
+                        <option value="sequence">A/B dizili doğrusal zincir</option>
+                        <option value="star">Aynı kollardan yıldız mimarisi</option>
+                      </select></label
+                    >
+                    <label class="field" id="dp-row"
+                      >Model tekrar sayısı<input
+                        type="number"
+                        id="dp"
+                        min="1"
+                        max="32"
+                        value="3"
+                        step="1"
+                        inputmode="numeric"
+                    /></label>
+                  </div>
+                  <div id="seq-fields" class="mode-sect" hidden>
+                    <label class="field"
+                      >B tekrar birimi<textarea
+                        id="repeat-b"
+                        rows="2"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        placeholder="İki bağlantı noktalı B birimi"
+                      ></textarea></label
+                    ><label class="field spar"
+                      >Birim sırası<input
+                        id="sequence"
+                        maxlength="32"
+                        placeholder="Örn. AABBA"
+                        autocapitalize="characters"
+                        autocomplete="off"
+                        spellcheck="false"
+                    /></label>
+                  </div>
+                  <div id="star-fields" class="mode-sect" hidden>
+                    <label class="field"
+                      >Yıldız çekirdeği<textarea
+                        id="core-smiles"
+                        spellcheck="false"
+                        rows="2"
+                        autocapitalize="off"
+                        placeholder="Çekirdeği ve numaralı 3–6 bağlantı noktasını girin"
+                      ></textarea>
+                    </label>
+                    <p class="guide">
+                      A biriminin baş ucu çekirdeğe bağlanır. Tekrar sayısı her kol içindir.
+                    </p>
+                  </div>
+                  <label id="tactic-row" class="field mode-sect"
+                    >Birimlerin göreli stereodizilimi<select id="tacticity">
+                      <option value="as_drawn">Çizildiği gibi</option>
+                      <option value="isotactic">İzotaktik</option>
+                      <option value="syndiotactic">Sindiyotaktik</option>
+                      <option value="atactic">Ataktik · tek örnek dizi</option>
+                    </select></label
+                  >
+                  <p id="mode-note" class="helper"></p>
+                  <div class="actions">
+                    <button id="calculate" class="cta" type="submit">
+                      Yapıyı ve enerjiyi hesapla
+                    </button>
+                  </div>
+                  <p id="feedback" role="status" aria-live="polite"></p>
+                </form>
+              </section>
+              <section class="panel" id="identity-panel" hidden>
+                <div class="result-head">
+                  <h2>Kimyasal kimlik</h2>
+                  <button class="export" type="button" id="download">JSON indir</button>
+                </div>
+                <dl class="dl" id="identity"></dl>
+                <details>
+                  <summary>Kimlik ve hesap kaydı</summary>
+                  <dl id="record" class="dl"></dl>
+                </details>
+              </section>
+            </div>
+            <div class="stack" id="results" tabindex="-1">
+              <section class="panel">
+                <div class="result-head">
+                  <h2>3B konformer</h2>
+                  <span class="badge" id="view-state">Yapı bekleniyor</span>
+                </div>
+                <div class="viewer" id="viewer">
+                  <canvas
+                    id="canvas"
+                    tabindex="0"
+                    aria-label="Hesaplanan konformeri döndürmek için ok tuşlarını kullanın"
+                    hidden
+                  ></canvas>
+                  <div class="empty" id="viewer-empty">
+                    Hesaplanan atom koordinatları burada görünecek.
+                  </div>
+                </div>
+                <div id="rotate-tools" class="rot-tools" hidden>
+                  <button class="turn" id="rotate" type="button">90° döndür</button
+                  ><label><input id="show-h" type="checkbox" /> H atomlarını göster</label>
+                </div>
+                <p id="view-explain" class="guide"></p>
+              </section>
+              <section class="panel">
+                <div class="result-head"><h2>Bağıl potansiyel enerji</h2></div>
+                <p class="note">Aynı kimyasal yapının yakınsayan konformerleri.</p>
+                <div id="energy-chart" class="chart chart-empty">
+                  Enerji hesabı tamamlandığında grafik açılır.
+                </div>
+                <p id="energy-summary" class="guide"></p>
+                <details id="energies" hidden>
+                  <summary>Sayısal değerler ve hesap yöntemi</summary>
+                  <div id="energy-table"></div>
+                  <div id="energy-method" class="scope"></div>
+                </details>
+              </section>
+            </div>
+          </div>
+        </section>
+        <section id="sol-pane" hidden>
+          <div class="headline">
+            <div>
+              <h1>Çözücü kayıtları</h1>
+              <p>
+                Önceden hesaplanan tek molekül kayıtları, sonraki işlere başlangıç yapısı sağlar.
+              </p>
+            </div>
+          </div>
+          <p class="scope">
+            Bu kayıtlar izole moleküllere aittir. Sıvı yoğunluğu, sıvının denge yapısı ve
+            polimer–çözücü etkileşimi kendi sistem ve koşullarında hesaplanır.
+          </p>
+          <p id="sol-state" role="status"></p>
+          <div id="sol-list" class="sol-grid"></div>
+          <section class="panel spar" id="liquid" hidden>
+            <div class="result-head">
+              <h2>Saf sıvı su</h2>
+              <span class="badge">Kısa MD pilotu</span>
+            </div>
+            <div id="liquid-data"></div>
+            <div class="chart" id="liquid-chart"></div>
+          </section>
+        </section>
+      </main>
+      <footer class="foot">
+        <span>Polymer Research Studio</span><span>Konformer hesabı</span>
+      </footer>
+    </div>
+    <script src="/assets/ocl-vendor.js"></script>
+    <script src="/assets/editor.js"></script>
+    <script>
+      "use strict";
+      const $ = (id) => document.getElementById(id);
+      const element = (tag, content, cl) => {
+        const n = document.createElement(tag);
+        n.textContent = content;
+        if (cl) n.className = cl;
+        return n;
+      };
+      const nf = (v, digits = 3) =>
+        typeof v === "number" && Number.isFinite(v)
+          ? v.toLocaleString("tr-TR", { maximumFractionDigits: digits })
+          : "—";
+      const addRow = (node, key, value, code = false) => {
+        if (value === undefined || value === null || value === "") return;
+        const dt = element("dt", key),
+          dd = document.createElement("dd");
+        if (code) dd.append(element("code", value));
+        else dd.textContent = value;
+        node.append(dt, dd);
+      };
+      const tabChain = $("tab-chain"),
+        tabSol = $("tab-sol"),
+        fields = $("molecule-form");
+      let inputMode = "smiles",
+        sketch = null,
+        graph = null,
+        result = null,
+        generation = 0,
+        request = null,
+        loadedSolvents = false;
+      let geometry = null,
+        yaw = -0.08,
+        pitch = 0.15,
+        drag = null;
+      const tacticNames = {
+        as_drawn: "Çizildiği gibi",
+        isotactic: "İzotaktik",
+        syndiotactic: "Sindiyotaktik",
+        atactic: "Ataktik · tek örnek dizi",
+      };
+      function notice(message = "", error = false) {
+        $("feedback").textContent = message;
+        $("feedback").classList.toggle("error", error);
+      }
+      function clearOutput() {
+        generation++;
+        if (request) {
+          request.abort();
+          request = null;
+        }
+        result = null;
+        geometry = null;
+        $("identity-panel").hidden = true;
+        $("view-state").textContent = "Yapı bekleniyor";
+        $("canvas").hidden = true;
+        $("viewer-empty").hidden = false;
+        $("viewer-empty").textContent = "Hesaplanan atom koordinatları burada görünecek.";
+        $("rotate-tools").hidden = true;
+        $("view-explain").textContent = "";
+        $("energy-chart").replaceChildren();
+        $("energy-chart").className = "chart chart-empty";
+        $("energy-chart").textContent = "Enerji hesabı tamamlandığında grafik açılır.";
+        $("energy-summary").textContent = "";
+        $("energies").hidden = true;
+        $("calculate").disabled = false;
+        $("calculate").textContent = "Yapıyı ve enerjiyi hesapla";
+        notice();
+      }
+      const rawInput = () =>
+        inputMode === "draw" ? graph?.smiles || "" : $("smiles").value.trim();
+      function chosenMode() {
+        const mode = $("mode").value;
+        return mode === "auto" ? (rawInput().includes("*") ? "repeat" : "finite") : mode;
+      }
+      function reflectMode() {
+        const mode = chosenMode(),
+          blank = !rawInput();
+        $("dp-row").hidden = mode !== "repeat" && mode !== "star";
+        $("seq-fields").hidden = mode !== "sequence";
+        $("star-fields").hidden = mode !== "star";
+        $("tactic-row").hidden = mode !== "repeat";
+        $("mode-note").textContent =
+          blank && $("mode").value === "auto"
+            ? "Tam molekül veya polimerleşmiş tekrar birimi girebilirsiniz."
+            : {
+                finite:
+                  "Sonlu yapı, gösterilen uçları ve dallarıyla hesaplanır. Stereomerler SMILES üzerinde tanımlanabilir.",
+                repeat:
+                  "Doğrusal zincirin iki model ucu H ile kapatılır. Otomatik taktisite tek sübstitüentli vinil birimlerine uygulanır.",
+                sequence:
+                  "A ve B birimleri verilen sırayla baş–kuyruk bağlanır. Zincirin iki model ucu H ile kapatılır.",
+                star: "Özdeş kollar numaralı çekirdek noktalarına bağlanır. Her kolun dış ucu H ile kapatılır.",
+              }[mode];
+      }
+      $("source-smiles").onclick = () => switchSource("smiles");
+      $("source-sketch").onclick = () => switchSource("draw");
+      function switchSource(mode) {
+        if (mode === inputMode) return;
+        if (mode === "draw" && !window.PolySketch) {
+          notice("Çizim bileşeni yüklenemedi. SMILES ile devam edebilirsiniz.", true);
+          return;
+        }
+        const before = rawInput();
+        if (mode === "draw" && before && sketch && !sketch.loadSmiles(before)) {
+          notice(
+            "Bu SMILES çizim editöründe düzenlenemiyor. Doğrudan SMILES hesabını kullanabilirsiniz.",
+            true,
+          );
+          return;
+        }
+        if (mode === "draw" && !before && sketch?.getGraph()?.smiles)
+          $("sketch").querySelector('[data-action="clear"]')?.click();
+        if (mode === "smiles") $("smiles").value = before;
+        inputMode = mode;
+        $("source-smiles").setAttribute("aria-pressed", String(mode === "smiles"));
+        $("source-sketch").setAttribute("aria-pressed", String(mode === "draw"));
+        $("raw-pane").hidden = mode !== "smiles";
+        $("draw-pane").hidden = mode !== "draw";
+        if (mode === "draw") graph = sketch.getGraph();
+        if (before !== rawInput()) clearOutput();
+        reflectMode();
+      }
+      window.addEventListener("polymer-graph-change", (e) => {
+        graph = e.detail;
+        if (inputMode === "draw") {
+          clearOutput();
+          reflectMode();
+        }
+      });
+      if (window.PolySketch) sketch = window.PolySketch.mount($("sketch"));
+      function specFromForm() {
+        const mode = chosenMode(),
+          smiles = rawInput();
+        if (!smiles) throw Error("Önce kimyasal yapınızı girin veya çizin.");
+        const spec = {
+          mode,
+          smiles,
+          tacticity: mode === "repeat" ? $("tacticity").value : "as_drawn",
+        };
+        if (mode === "repeat" || mode === "star") {
+          spec.dp = Number($("dp").value);
+          if (!Number.isInteger(spec.dp) || spec.dp < 1 || spec.dp > 32)
+            throw Error("Model tekrar sayısı 1–32 arasında bir tam sayı olmalı.");
+        }
+        if (mode === "star") {
+          spec.core_smiles = $("core-smiles").value.trim();
+          if (!spec.core_smiles)
+            throw Error("Yıldız çekirdeğinin numaralı bağlantı noktalarını girin.");
+        }
+        if (mode === "sequence") {
+          spec.repeat_b = $("repeat-b").value.trim();
+          spec.sequence = $("sequence").value.trim().toUpperCase();
+          if (
+            !spec.repeat_b ||
+            !/^[AB]{2,32}$/.test(spec.sequence) ||
+            !spec.sequence.includes("A") ||
+            !spec.sequence.includes("B")
+          )
+            throw Error("B birimini ve hem A hem B içeren 2–32 birimlik diziyi girin.");
+        }
+        return spec;
+      }
+      fields.addEventListener("input", (e) => {
+        if (!e.target.closest("#sketch")) {
+          clearOutput();
+          reflectMode();
+        }
+      });
+      fields.addEventListener("change", (e) => {
+        if (!e.target.closest("#sketch")) {
+          clearOutput();
+          reflectMode();
+        }
+      });
+      function setPanel(id) {
+        const solvent = id === "sol";
+        $("sol-pane").hidden = !solvent;
+        $("chain-pane").hidden = solvent;
+        tabSol.setAttribute("aria-pressed", String(solvent));
+        tabChain.setAttribute("aria-pressed", String(!solvent));
+        if (solvent) {
+          solvents();
+          liquidReference();
+        } else drawGeometry();
+      }
+      tabSol.onclick = () => setPanel("sol");
+      tabChain.onclick = () => setPanel("chain");
+      async function json(url, options) {
+        const response = await fetch(url, options);
+        let body;
+        try {
+          body = await response.json();
+        } catch {
+          throw Error("Yerel hesaplama sunucusuna ulaşılamadı.");
+        }
+        if (!response.ok)
+          throw Error(
+            typeof body.error === "string"
+              ? body.error
+              : body.message || "Hesaplama isteği yerine getirilemedi.",
+          );
+        return body;
+      }
+      fields.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let spec;
+        try {
+          spec = specFromForm();
+        } catch (error) {
+          notice(error.message, true);
+          return;
+        }
+        clearOutput();
+        const token = generation;
+        request = new AbortController();
+        $("calculate").disabled = true;
+        $("calculate").textContent = "Hesaplanıyor…";
+        $("view-state").textContent = "Hesaplanıyor";
+        notice("Zincir kimliği ve izole konformer enerjileri işleniyor…");
+        try {
+          const data = await json("/api/analyze", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(spec),
+            signal: request.signal,
+          });
+          if (generation !== token) return;
+          if (!data.structure) throw Error("Yanıtın kimyasal yapı kaydı eksik.");
+          result = data;
+          renderResult(data, spec);
+          if (window.matchMedia("(max-width:750px)").matches)
+            $("results").scrollIntoView({ block: "start" });
+        } catch (error) {
+          if (generation !== token || error.name === "AbortError") return;
+          notice(error.message, true);
+          $("view-state").textContent = "Hesaplanamadı";
+        } finally {
+          if (generation === token) {
+            request = null;
+            $("calculate").disabled = false;
+            $("calculate").textContent = "Yapıyı ve enerjiyi hesapla";
+          }
+        }
+      });
+      function renderResult(data, spec) {
+        const s = data.structure,
+          en = data.energy || {},
+          rows = Array.isArray(en.conformers) ? en.conformers : [],
+          hasEnergy = rows.length > 0;
+        const identity = $("identity"),
+          rec = $("record");
+        identity.replaceChildren();
+        rec.replaceChildren();
+        $("identity-panel").hidden = false;
+        addRow(identity, "Formül", s.formula);
+        if (Number.isFinite(s.molar_mass))
+          addRow(identity, "Molar kütle", nf(s.molar_mass, 4) + " g/mol");
+        addRow(identity, "Net yük", s.net_charge);
+        const architectures = {
+          linear_backbone: "Doğrusal ana zincir",
+          star: "Yıldız · ortak çekirdek",
+          explicit_graph: "Girilen sonlu bağ grafiği",
+        };
+        const compositions = {
+          homopolymer_repeats: "Tek tekrar türü",
+          copolymer: "Kopolimer",
+          unspecified: "Sonlu yapıdan atanmadı",
+        };
+        addRow(identity, "Mimari", architectures[s.architecture] || s.architecture);
+        addRow(
+          identity,
+          "Birim bileşimi",
+          compositions[s.composition_class] || s.composition_class,
+        );
+        addRow(identity, "Kol sayısı", s.arm_count);
+        addRow(identity, s.architecture === "star" ? "Her kolda DP" : "Sonlu zincir DP", s.dp);
+        addRow(identity, "Birim dizisi", s.sequence);
+        addRow(identity, "Taktisite", tacticNames[spec.tacticity]);
+        if (s.stereo_pattern) {
+          addRow(identity, "Korunan diyadlar", s.stereo_pattern.dyads || "Diyad yok");
+          addRow(
+            identity,
+            "Meso / rasemo",
+            s.stereo_pattern.meso_dyads + " / " + s.stereo_pattern.racemo_dyads,
+          );
+        }
+        addRow(identity, "Tanımsız stereo ögesi", s.unspecified_stereo_count);
+        addRow(rec, "Sonlu SMILES", s.canonical_smiles, true);
+        addRow(rec, "Yapı kimliği", s.structure_id, true);
+        addRow(rec, "Kurma tarifi", s.recipe_id, true);
+        addRow(rec, "Enerji hesabı kimliği", en.model_id, true);
+        addRow(rec, "Aktarım kaydı", data.artifact_id, true);
+        addRow(rec, "RDKit", en.protocol?.rdkit_version);
+        addRow(rec, "Örnekleme tohumu", en.protocol?.seed);
+        const sourceLabel = {
+          bundled_solvent_registry: "Paket içindeki çözücü hesabı · tam yapı ve protokol eşleşmesi",
+          sqlite: "Yerel veritabanı · tam yapı ve protokol eşleşmesi",
+          computed: "Bu istekte hesaplandı",
+        };
+        if (en.cache_source || typeof en.cache_hit === "boolean")
+          addRow(
+            rec,
+            "Hesap kaynağı",
+            sourceLabel[en.cache_source] ||
+              (en.cache_hit ? "Aynı yapı ve protokolün kayıtlı hesabı" : "Bu istekte hesaplandı"),
+          );
+        if (hasEnergy) {
+          energyChart(rows);
+          const min = rows.reduce(
+            (lowest, r) => (r.energy_kcal_mol < lowest.energy_kcal_mol ? r : lowest),
+            rows[0],
+          );
+          $("energy-summary").textContent =
+            "İstenen " +
+            nf(en.requested, 0) +
+            " · Üretilen " +
+            nf(en.embedded, 0) +
+            " · Yakınsayan " +
+            nf(en.converged, 0) +
+            ". Referans, bu örneklemede bulunan en düşük potansiyel enerjidir.";
+          const t = document.createElement("table");
+          t.className = "table num";
+          const head = t.createTHead().insertRow();
+          ["Sıra", "E (kcal/mol)", "ΔE (kcal/mol)", "Rg (Å)"].forEach((label) =>
+            head.append(element("th", label)),
+          );
+          const body = t.createTBody();
+          rows.forEach((r, i) => {
+            const tr = body.insertRow();
+            [
+              String(i + 1),
+              nf(r.energy_kcal_mol, 4),
+              nf(r.delta_kcal_mol, 4),
+              nf(r.rg_angstrom, 3),
+            ].forEach((v) => tr.append(element("td", v)));
+          });
+          $("energy-table").replaceChildren(t);
+          $("energies").hidden = false;
+          $("energy-method").textContent =
+            (en.protocol?.embedding || "ETKDGv3") +
+            " / " +
+            (en.protocol?.force_field || "MMFF94s") +
+            ". Farklar yalnız bu sonlu yapının aynı protokoldeki denemelerine aittir. Rg tek, izole konformerin kütle ağırlıklı jirasyon yarıçapıdır. Aynı minimuma yaklaşan denemeler olabilir.";
+          $("view-explain").textContent =
+            "Bu örneklemedeki en düşük enerjili konformer · " +
+            nf(min.energy_kcal_mol, 3) +
+            " kcal/mol. Molekülü sürükleyerek döndürün.";
+        } else {
+          $("energy-chart").textContent =
+            "Bu yapı için yayımlanabilir konformer enerjisi elde edilmedi.";
+          $("energy-summary").textContent =
+            en.message || "Yöntem ve stereokimya kapsamını kontrol edin.";
+        }
+        const geo = en.lowest_geometry;
+        geometry = geo?.atoms?.length ? geo : null;
+        $("canvas").hidden = !geometry;
+        $("viewer-empty").hidden = !!geometry;
+        $("rotate-tools").hidden = !geometry;
+        $("show-h").checked = false;
+        yaw = -0.08;
+        pitch = 0.15;
+        if (!geometry)
+          $("viewer-empty").textContent = "Bu hesap için uygun konformer koordinatı bulunmuyor.";
+        $("view-state").textContent =
+          en.status === "partial" ? "Kısmi örnekleme" : hasEnergy ? "Hesaplandı" : "Kimlik hazır";
+        notice(
+          en.message ||
+            (hasEnergy ? "Konformer hesabı tamamlandı." : "Kimyasal kimlik kaydedildi."),
+          !hasEnergy,
+        );
+        drawGeometry();
+      }
+      function energyChart(rows) {
+        const holder = $("energy-chart");
+        holder.className = "chart";
+        holder.replaceChildren();
+        const ns = "http://www.w3.org/2000/svg",
+          svg = document.createElementNS(ns, "svg");
+        svg.setAttribute("viewBox", "0 0 480 167");
+        svg.setAttribute("role", "img");
+        const values = rows.map((r) => r.delta_kcal_mol);
+        if (values.some((v) => !Number.isFinite(v))) return;
+        svg.setAttribute(
+          "aria-label",
+          "Yakınsayan " +
+            rows.length +
+            " konformer denemesinin bağıl potansiyel enerjileri; sayısal karşılığı aşağıdaki tabloda.",
+        );
+        function art(tag, attrs, content) {
+          const n = document.createElementNS(ns, tag);
+          for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, String(v));
+          if (content !== undefined) n.textContent = content;
+          svg.append(n);
+        }
+        const top = 22,
+          bottom = 134,
+          left = 58,
+          right = 452,
+          max = Math.max(0.00001, ...values),
+          xx = (i) =>
+            rows.length === 1
+              ? (left + right) / 2
+              : left + ((right - left) * i) / (rows.length - 1),
+          yy = (v) => bottom - (v / max) * (bottom - top);
+        const label = (x, y, str, align = "start") =>
+          art("text", { x, y, "text-anchor": align, "font-size": 11, fill: "#46606b" }, str);
+        label(9, 13, "ΔE (kcal/mol)");
+        for (const q of [0, 0.5, 1]) {
+          if (Math.max(...values) === 0 && q > 0) continue;
+          const y = yy(q * max);
+          art("line", { x1: left, x2: right, y1: y, y2: y, stroke: "#cfdcda" });
+          label(left - 5, y + 4, nf(q * max, max < 0.01 ? 5 : 2), "end");
+        }
+        values.forEach((v, i) => {
+          art("line", {
+            x1: xx(i),
+            x2: xx(i),
+            y1: bottom,
+            y2: yy(v),
+            stroke: "#aed4c8",
+            "stroke-width": 2,
+          });
+          art("circle", { cx: xx(i), cy: yy(v), r: 3.8, fill: i ? "#117261" : "#a35731" });
+        });
+        label(xx(0), 149, "1", "middle");
+        if (rows.length > 1) label(xx(rows.length - 1), 149, String(rows.length), "middle");
+        label((left + right) / 2, 163, "Enerji sırasına göre konformer denemesi", "middle");
+        holder.append(svg);
+      }
+      function drawGeometry() {
+        if (!geometry || $("canvas").hidden || $("chain-pane").hidden) return;
+        const canvas = $("canvas"),
+          w = $("viewer").clientWidth,
+          h = $("viewer").clientHeight;
+        if (!w || !h) return;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(w * dpr);
+        canvas.height = Math.round(h * dpr);
+        const c = canvas.getContext("2d");
+        if (!c) return;
+        c.scale(dpr, dpr);
+        const atoms = geometry.atoms.map((a, i) => ({ ...a, i }));
+        let shown = atoms.filter((a) => $("show-h").checked || a.element !== "H");
+        if (!shown.length) shown = atoms;
+        const center = ["x", "y", "z"].map(
+          (k) => shown.reduce((sum, a) => sum + a[k], 0) / shown.length,
+        );
+        const radius = Math.max(
+          1.1,
+          ...shown.map((a) => Math.hypot(a.x - center[0], a.y - center[1], a.z - center[2])),
+        );
+        const scale = Math.min((w - 25) / (2 * radius + 1), (h - 22) / (2 * radius + 1), 51),
+          sy = Math.sin(yaw),
+          cy = Math.cos(yaw),
+          sp = Math.sin(pitch),
+          cp = Math.cos(pitch);
+        const points = new Map(),
+          shapes = [],
+          colors = {
+            H: "#d6d9d1",
+            C: "#465d67",
+            N: "#377ab5",
+            O: "#cb5646",
+            F: "#71a27a",
+            Cl: "#4b9874",
+            Br: "#9f6451",
+            S: "#c8a14f",
+            I: "#8b75aa",
+            P: "#c7823d",
+            Si: "#a4795b",
+          };
+        shown.forEach((a) => {
+          const x = a.x - center[0],
+            y = a.y - center[1],
+            z = a.z - center[2],
+            t = z * cy + x * sy;
+          points.set(a.i, {
+            a,
+            x: w / 2 + (x * cy - z * sy) * scale,
+            y: h / 2 - (y * cp - t * sp) * scale,
+            depth: t * cp + y * sp,
+          });
+        });
+        for (const b of geometry.bonds || []) {
+          const a = points.get(b.a),
+            d = points.get(b.b);
+          if (!a || !d) continue;
+          shapes.push({
+            z: (a.depth + d.depth) / 2 - 0.03,
+            draw: () => {
+              const dx = d.x - a.x,
+                dy = d.y - a.y,
+                len = Math.hypot(dx, dy) || 1;
+              const order = b.order === 2 || b.order === 3 ? b.order : 1;
+              for (let k = 0; k < order; k++) {
+                const o = (k - (order - 1) / 2) * Math.min(3, scale * 0.09);
+                c.beginPath();
+                c.moveTo(a.x - (dy / len) * o, a.y + (dx / len) * o);
+                c.lineTo(d.x - (dy / len) * o, d.y + (dx / len) * o);
+                c.lineWidth = Math.max(1.2, Math.min(4, scale * (order === 1 ? 0.1 : 0.065)));
+                c.lineCap = "round";
+                c.strokeStyle = "#80948e";
+                c.stroke();
+              }
+            },
+          });
+        }
+        for (const v of points.values())
+          shapes.push({
+            z: v.depth,
+            draw: () => {
+              const r = Math.max(2, Math.min(11, scale * (v.a.element === "H" ? 0.15 : 0.24))),
+                color = colors[v.a.element] || "#937b98";
+              const grad = c.createRadialGradient(v.x - r * 0.32, v.y - r * 0.34, 0, v.x, v.y, r);
+              grad.addColorStop(0, "#f6fbf9");
+              grad.addColorStop(0.5, color);
+              grad.addColorStop(1, color);
+              c.beginPath();
+              c.arc(v.x, v.y, r, 0, 2 * Math.PI);
+              c.fillStyle = grad;
+              c.fill();
+              c.lineWidth = 0.6;
+              c.strokeStyle = "#3e5a5770";
+              c.stroke();
+            },
+          });
+        shapes.sort((a, b) => a.z - b.z).forEach((v) => v.draw());
+      }
+      const cv = $("canvas");
+      cv.onpointerdown = (e) => {
+        drag = { x: e.clientX, y: e.clientY };
+        cv.setPointerCapture?.(e.pointerId);
+      };
+      cv.onpointermove = (e) => {
+        if (!drag) return;
+        yaw += (e.clientX - drag.x) * 0.012;
+        pitch += (e.clientY - drag.y) * 0.012;
+        drag = { x: e.clientX, y: e.clientY };
+        drawGeometry();
+      };
+      cv.onpointerup =
+        cv.onpointercancel =
+        cv.onlostpointercapture =
+          () => {
+            drag = null;
+          };
+      cv.onkeydown = (e) => {
+        const delta = {
+          ArrowLeft: [-0.18, 0],
+          ArrowRight: [0.18, 0],
+          ArrowUp: [0, -0.18],
+          ArrowDown: [0, 0.18],
+        }[e.key];
+        if (delta) {
+          e.preventDefault();
+          yaw += delta[0];
+          pitch += delta[1];
+          drawGeometry();
+        }
+      };
+      $("rotate").onclick = () => {
+        yaw += Math.PI / 2;
+        drawGeometry();
+      };
+      $("show-h").onchange = drawGeometry;
+      window.addEventListener("resize", drawGeometry);
+      $("download").onclick = () => {
+        if (!result) return;
+        const portable = { ...result, energy: { ...result.energy } };
+        delete portable.energy.cache_hit;
+        delete portable.energy.cache_source;
+        const blob = new Blob([JSON.stringify(portable, null, 2)], { type: "application/json" }),
+          url = URL.createObjectURL(blob),
+          a = document.createElement("a");
+        a.href = url;
+        const sid = String(result.structure.structure_id || "zincir").replace(/[^a-z0-9_-]/gi, "");
+        a.download = "konformer-" + sid.slice(-12) + ".json";
+        document.body.append(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      };
+      async function solvents() {
+        if (loadedSolvents) return;
+        loadedSolvents = true;
+        $("sol-state").textContent = "Hesap kayıtları okunuyor…";
+        try {
+          const records = await json("/api/solvents");
+          const comps = records.components || [];
+          $("sol-state").textContent = comps.length
+            ? nf(comps.length, 0) + " hesaplı bileşen"
+            : "Henüz kayıtlı çözücü hesabı yok.";
+          const box = $("sol-list");
+          box.replaceChildren();
+          for (const s of comps) {
+            const item = element("article", "", "panel");
+            item.append(element("h2", s.name || s.name_en || s.id));
+            const vals = element("div", "", "sol-val");
+            vals.append(element("span", s.formula || ""));
+            if (Number.isFinite(s.molar_mass_g_mol))
+              vals.append(element("span", nf(s.molar_mass_g_mol, 3) + " g/mol"));
+            item.append(vals);
+            const details = element("details", "");
+            details.append(element("summary", "Tek molekül hesabını incele"));
+            const list = element("dl", "", "dl");
+            addRow(list, "SMILES", s.canonical_smiles || s.smiles, true);
+            addRow(list, "Yöntem", s.protocol?.force_field || s.energy_reference);
+            addRow(list, "Koordinat", s.geometry ? "İzole konformer kaydı var" : null);
+            addRow(list, "Yakınsayan", s.converged);
+            if (Number.isFinite(s.lowest_energy_kcal_mol))
+              addRow(list, "Örneklenen minimum", nf(s.lowest_energy_kcal_mol, 5) + " kcal/mol");
+            addRow(list, "Kayıt kimliği", s.model_id, true);
+            details.append(list);
+            item.append(details);
+            box.append(item);
+          }
+        } catch (error) {
+          loadedSolvents = false;
+          $("sol-state").textContent = error.message;
+        }
+      }
+      let liquidChecked = false;
+      function densityPlot(runs) {
+        const holder = $("liquid-chart");
+        holder.replaceChildren();
+        const pairs = runs.flatMap((run) => run.points);
+        if (pairs.length < 2) return;
+        const ns = "http://www.w3.org/2000/svg",
+          svg = document.createElementNS(ns, "svg");
+        svg.setAttribute("viewBox", "0 0 665 202");
+        svg.setAttribute("role", "img");
+        svg.setAttribute("aria-label", "Üretim yörüngesinde zamana göre sıvı su yoğunluğu");
+        const times = pairs.map((p) => p[0]),
+          values = pairs.map((p) => p[1]);
+        const xmin = Math.min(...times),
+          xmax = Math.max(...times),
+          smallest = Math.min(...values),
+          largest = Math.max(...values),
+          pad = Math.max(0.0001, (largest - smallest) * 0.09);
+        if (xmax === xmin) return;
+        const lo = smallest - pad,
+          hi = largest + pad;
+        const xx = (t) => 67 + ((t - xmin) / (xmax - xmin)) * 565,
+          yy = (r) => 157 - ((r - lo) / (hi - lo)) * 125;
+        function part(tag, attrs, word) {
+          const n = document.createElementNS(ns, tag);
+          Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+          if (word !== undefined) n.textContent = word;
+          svg.append(n);
+        }
+        const txt = (x, y, str, anchor = "start") =>
+          part("text", { x, y, "text-anchor": anchor, "font-size": 12, fill: "#41606a" }, str);
+        txt(5, 15, "Yoğunluk (g/mL)");
+        for (const frac of [0, 0.5, 1]) {
+          const y = lo + (hi - lo) * frac;
+          part("line", { x1: 67, x2: 632, y1: yy(y), y2: yy(y), stroke: "#cfdcda" });
+          txt(61, yy(y) + 4, nf(y, 3), "end");
+          const t = xmin + (xmax - xmin) * frac;
+          txt(xx(t), 176, nf(t, 2), "middle");
+        }
+        runs.forEach((run, i) => {
+          const color = ["#117763", "#396ea5", "#b46732", "#835288"][i % 4];
+          part("polyline", {
+            fill: "none",
+            stroke: color,
+            "stroke-width": 1.8,
+            points: run.points.map(([t, r]) => xx(t) + "," + yy(r)).join(" "),
+          });
+          const start = 330 + i * 89;
+          part("line", {
+            x1: start,
+            x2: start + 15,
+            y1: 12,
+            y2: 12,
+            stroke: color,
+            "stroke-width": 2,
+          });
+          txt(start + 19, 16, "Koşu " + (i + 1));
+        });
+        txt(350, 198, "Üretim zamanı (ps)", "middle");
+        holder.append(svg);
+      }
+      async function liquidReference() {
+        if (liquidChecked) return;
+        liquidChecked = true;
+        try {
+          const r = await fetch("/api/liquid-reference");
+          if (!r.ok) return;
+          const ref = await r.json();
+          const runs = (ref.replicates || [])
+            .map((rep) => ({
+              rep,
+              points: (rep.density_timeseries || [])
+                .map((v) => [v.time_ps, v.density_g_ml])
+                .filter((v) => v.every(Number.isFinite)),
+            }))
+            .filter((run) => run.points.length >= 2);
+          if (ref.phase !== "pure_liquid" || !runs.length) return;
+          const data = $("liquid-data");
+          data.replaceChildren();
+          const list = element("dl", "", "dl");
+          addRow(list, "Su modeli", ref.water_model);
+          addRow(list, "Motor", [ref.engine, ref.engine_version].filter(Boolean).join(" "));
+          addRow(list, "Bağımsız koşu", runs.length);
+          if (Number.isFinite(ref.temperature_K))
+            addRow(list, "Hedef sıcaklık", nf(ref.temperature_K, 2) + " K");
+          if (Number.isFinite(ref.pressure_bar))
+            addRow(list, "Hedef basınç", nf(ref.pressure_bar, 4) + " bar");
+          const steps = runs.map(({ rep }) => rep.production_ps);
+          if (steps.every(Number.isFinite))
+            addRow(
+              list,
+              "Koşu başına üretim",
+              steps.every((x) => x === steps[0])
+                ? nf(steps[0], 3) + " ps"
+                : steps.map((x) => nf(x, 3) + " ps").join(" / "),
+            );
+          if (Number.isFinite(ref.density_mean_g_ml))
+            addRow(list, "Koşuların ortalama yoğunluğu", nf(ref.density_mean_g_ml, 5) + " g/mL");
+          if (Number.isFinite(ref.replica_mean_sd_g_ml))
+            addRow(
+              list,
+              "Koşu ortalamalarının standart sapması",
+              nf(ref.replica_mean_sd_g_ml, 5) + " g/mL",
+            );
+          if (Number.isFinite(ref.potential_energy_per_water_kj_mol))
+            addRow(
+              list,
+              "Su başına ortalama potansiyel enerji",
+              nf(ref.potential_energy_per_water_kj_mol, 3) + " kJ/mol H₂O",
+            );
+          data.append(
+            list,
+            element(
+              "p",
+              "Dengeleme bölümü atıldı. Bu kısa üretim yörüngeleri, seçili modelin saf su koşusunu gösterir.",
+              "guide",
+            ),
+          );
+          const provenance = element("details", "");
+          provenance.append(element("summary", "Koşu ortalamaları ve tohumlar"));
+          const samples = element("dl", "", "dl");
+          runs.forEach(({ rep }, i) => {
+            if (Number.isFinite(rep.density_mean_g_ml)) {
+              addRow(
+                samples,
+                "Koşu " + (i + 1) + " · tohum " + rep.seed,
+                nf(rep.density_mean_g_ml, 5) + " g/mL",
+              );
+            }
+          });
+          provenance.append(samples);
+          if (Number.isFinite(ref.potential_energy_per_water_kj_mol)) {
+            provenance.append(
+              element(
+                "p",
+                "Potansiyel enerji, periyodik kutunun üretim ortalamasının su molekülü sayısına bölünmesiyle hesaplanır. Karışma veya solvatasyon serbest enerjisi ayrı bir hesap gerektirir.",
+                "guide",
+              ),
+            );
+          }
+          data.append(provenance);
+          densityPlot(runs);
+          $("liquid").hidden = false;
+        } catch {
+          /* The pure-liquid record is optional. */
+        }
+      }
+      json("/api/status")
+        .then((info) => {
+          const version = info.rdkit_version || info.rdkit;
+          if (typeof version === "string") $("service").textContent = "RDKit " + version;
+        })
+        .catch(() => {});
+      reflectMode();
+    </script>
+  </body>
+</html>

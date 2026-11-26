@@ -1,0 +1,9 @@
+id,family,backbone,solvent,T_K,mass_basis,M_g_mol,eta_mL_g,table,original_ref,source_doi
+PB-Colby-C18,pbd,diene,cyclohexane,298.15,M_table,20000,39.3,2,26,10.1021/ma00175a030
+PB-Colby-CDS30,pbd,diene,cyclohexane,298.15,M_table,46000,69.2,2,26,10.1021/ma00175a030
+PB-Colby-B1,pbd,diene,cyclohexane,298.15,M_table,70900,92.6,2,26,10.1021/ma00175a030
+PB-Colby-B2,pbd,diene,cyclohexane,298.15,M_table,130000,142.4,2,26,10.1021/ma00175a030
+PB-Colby-B3,pbd,diene,cyclohexane,298.15,M_table,355000,296,2,26,10.1021/ma00175a030
+PB-Colby-C25,pbd,diene,cyclohexane,298.15,M_table,548000,385,2,26,10.1021/ma00175a030
+PB-Colby-B4,pbd,diene,cyclohexane,298.15,M_table,925000,567,2,26,10.1021/ma00175a030
+PB-Colby-B6,pbd,diene,cyclohexane,298.15,M_table,3740000,1450,2,26,10.1021/ma00175a030

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#163c38">
+<title>Ozmotik Basınç ve Çözelti Etkileşimleri · Polymer Research Studio</title>
+<link rel="stylesheet" href="osmotic.css">
+<script defer src="measurements.js"></script><script defer src="phase-engine.js"></script><script defer src="transfer-results.js"></script><script defer src="osmotic-pressure-data.js"></script><script defer src="osmotic-engine.js"></script><script defer src="osmotic.js"></script>
+</head><body>
+<header><nav><a href="index.html">Polymer Research Studio</a><div><a href="ideal-osmotic.html">Kendi numunem</a><a href="phase.html?system=ps">Faz dengesi</a><a href="dense.html">Derişik çözeltide basınç</a><a href="solvent-activity.html">Çözücü aktivitesi</a><a href="transfer.html">Deneysel sınama</a></div></nav></header>
+<main>
+<div class="mast"><p class="systemname">Polistiren / siklohekzan</p><h1>Ozmotik basınç ve çözelti etkileşimleri</h1><p>Çözeltiyi saf çözücüden ayıran bir zar yalnız çözücüyü geçiriyorsa, net çözücü akışını durdurmak için çözelti tarafına ne kadar basınç uygulamak gerekir? Numuneyi, sıcaklığı ve derişimi değiştirdikçe ozmotik izoterm yeniden hesaplanır.</p></div>
+<div id="unavailable" role="alert" hidden></div>
+<form id="controls" onsubmit="return false">
+<label>Polistiren numunesi<select id="sample"></select></label>
+<label>Modelin dayandığı veri<select id="model"></select></label>
+<label>Sıcaklık (K)<input id="temperature" type="number" min="278" max="318.15" step="any" required></label>
+<label>Polimer derişimi (g/L)<input id="concentration" type="number" min="0" step="any" required></label>
+<label class="scrub"><span>Derişimi değiştir</span><input type="range" id="scan" aria-label="Derişimi g/L cinsinden değiştir" min="0" max="30" step="any"></label>
+</form>
+<p id="inputError" class="error" role="alert" hidden></p>
+<section id="results" aria-label="Hesaplanan fizikokimyasal büyüklükler">
+<div class="values" aria-live="polite">
+<div><span>Denge ozmotik basıncı Π</span><strong id="pi">—</strong><small id="phase"></small></div>
+<div><span>İdeal zincir katkısı</span><strong id="ideal">—</strong><small>van ’t Hoff · RTc / M<sub>n</sub></small></div>
+<div><span>İkinci ozmotik virial A₂</span><strong id="a2">—</strong><small>mL mol g⁻² · sonsuz seyreltme sınırı</small></div>
+</div>
+<div class="bodygrid"><section class="card graph">
+<div class="chart-head"><div><h2>Ozmotik izoterm</h2><p id="plotCondition"></p></div><label>Düşey eksen<select id="axis"><option value="pressure">Π</option><option value="reduced">Π / c</option></select></label></div>
+<svg id="plot" viewBox="0 0 640 295" role="img" aria-label="Seçilen sıcaklıkta derişime göre hesaplanan denge ozmotik basıncı"></svg>
+<div class="legend"><span><i></i>Denge modeli</span><span><i class="dash"></i>İdeal katkı</span><span><i class="marker"></i>Seçim</span><span id="pointKey" hidden><i class="observation"></i>Membran osmometrisi</span><span id="band" hidden><i class="coex"></i>İki faz</span></div>
+<p id="figureNote"></p>
+<div class="links"><button id="csv" type="button">İzotermi CSV indir</button><a id="phaseLink" href="phase.html?system=ps">Faz diyagramında incele</a></div>
+</section><aside class="card note">
+<h2>Seçili koşul</h2><dl><dt>Polimer hacim kesri φ</dt><dd id="phi"></dd><dt>Numunenin M<sub>n</sub> değeri</dt><dd id="mn"></dd><dt>Numunenin Đ değeri</dt><dd id="disp"></dd></dl>
+<p id="domain"></p><p id="regime"></p><p><a id="chainLink" href="chain.html">Bu numunenin zincir boyutu ve örtüşmesi</a></p><a href="transfer.html?view=osmotic">A₂ ölçümlerini ve model sınamasını aç</a>
+</aside></div>
+</section>
+<section class="card challenge" aria-labelledby="check-title" id="external">
+<h2 id="check-title">Model sekiz basınç ölçümünü açıklıyor mu?</h2>
+<p>Krigbaum ve Geymer’in Fraksiyon II numunesi için iki sıcaklıkta ölçtüğü basınçları, katsayıların belirlenmesinde kullanılmayan bir sınama olarak inceleyin. Model numunenin ölçülmüş Mₙ = 72 kg/mol değerini kullanır.</p>
+<div class="external-controls"><label>Ölçüm serisi<select id="externalT"><option value="all">İki sıcaklığın tamamı</option><option value="297.15">297,15 K · 24 °C</option><option value="307.15">307,15 K · 34 °C</option></select></label><button id="showSeries" type="button">Seriyi izotermde göster</button></div>
+<p id="score" class="score"></p>
+<div class="scroll"><table><thead><tr><th scope="col">T (K)</th><th scope="col">c (g/L)</th><th scope="col">Ölçüm (kPa)</th><th scope="col">Bulutlanma (kPa)</th><th scope="col">Bulutlanma + A₂ (kPa)</th><th scope="col">Model faz sayısı¹</th></tr></thead><tbody id="externalRows"></tbody></table></div>
+<p class="small">¹ Sırasıyla yalnız bulutlanma ve bulutlanma + A₂ uyumları. Basınç, iki fazlı tahminlerde ortak teğetten hesaplanır. Kaynakta her basınç satırı için deneysel faz sayısı bildirilmemiştir. Bildirilen çalışma geneli hata yaklaşık %3’tür. Her nokta için ayrı bir standart sapma verilmemiştir.</p>
+<details><summary>Ölçülen basınç ve birim dönüşümü</summary><p>Kaynak, çözeltinin g/mL cinsinden derişimini ve indirgenmiş basıncı Q = 10⁶ Π/(RTc) biçiminde verir. Tablodaki kPa değerleri yuvarlanmış Q ile c çiftlerinden Π = 10⁻³ RTcQ üzerinden geri hesaplandı. Molar kütle dağılımı bu karşılaştırmada bilinmiyor. Dış numune tek etkin bileşenle temsil ediliyor.</p></details>
+<div class="links"><a href="https://doi.org/10.1021/ja01517a022">Krigbaum ve Geymer · Tablo I, s. 1862</a><a href="dense.html">Derişik bölgede model hatasını incele</a><button id="externalCsv" type="button">Ölçüm ve tahminleri indir</button></div>
+</section>
+<details><summary>Basınç ve ikinci virial nasıl hesaplandı?</summary><p>İkili, sıkıştırılamaz çözeltide saf siklohekzan referans alınır. Ortak teğetin seçtiği fazda Δμ<sub>s</sub>/RT = f − φf′ ve Π = −Δμ<sub>s</sub>/V<sub>s</sub> kullanılır. Denge iki fazlıysa her iki fazda çözücünün kimyasal potansiyeli aynıdır. Toplam derişim faz oranlarını değiştirirken Π sabit kalır.</p>
+<p>İntegral etkileşim parametresi χ = A + B/T + Cφ olarak tanımlanır. c, g/mL olduğunda Π/(RT) = c/M<sub>n</sub> + A₂c² + … ifadesinin ikinci katsayısı A₂ = (v̄²/V<sub>s</sub>)(½ − A − B/T + C) olur. Her dar dağılımlı numune Mₙ kullanılarak tek etkin polimer bileşeni olarak temsil edilir. Ekrandaki derişim g/L cinsinden alınır.</p>
+<p id="volume"></p><p>Bu ekrandaki basınçlar termodinamik model çıktısıdır. Deneysel karşılaştırma bulutlanma ölçümleri, seyreltik çözeltideki A₂ verileri ve erişilebilir bağımsız faz bileşimleri düzeyinde yürütülür. Zarın akış hızı ve dengelenme süresi ek taşınım verileri gerektirir.</p>
+<div class="links"><a href="https://zeus.plmsc.psu.edu/~manias/PlmSe406/chapter10-1.pdf">Flory–Huggins virial açılımı</a><a href="https://pppdb.uchicago.edu/cloud_points">PS–siklohekzan numune verileri</a></div></details>
+</main></body></html>

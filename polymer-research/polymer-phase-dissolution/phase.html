@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153b38">
+<title>Faz dengesi · Polymer Research Studio</title>
+<link rel="stylesheet" href="phase.css"><link rel="stylesheet" href="petox-panel.css">
+<script defer src="measurements.js"></script><script defer src="petox-data.js"></script><script defer src="petox-panel.js"></script><script defer src="phase-engine.js"></script><script defer src="phase.js"></script>
+</head><body>
+<header><div class="headin"><a class="wordmark" href="index.html">Polymer Research Studio</a><nav aria-label="Uygulama"><a href="index.html">Genel bakış</a> <a href="kinetics.html">Zaman evrimi</a> <a href="contact.html">Moleküler film</a></nav></div></header>
+<main>
+<div class="intro"><p class="eyebrow">Faz dengesi ve çözünme</p><h1>Faz dengesi</h1><p>Bir bileşim seçin. Dengedeki fazları, homojen karışımın yerel kararlılığını ve öngörünün dayandığı ölçümleri birlikte inceleyin.</p></div>
+<section class="controls" aria-label="Sistem ve koşullar">
+<label class="field">Polimer ve çözücü<select id="system"><option value="ps">Polistiren · Siklohekzan</option><option value="petox">PEtOx · Su</option><option value="theory">Flory–Huggins doğrulama sistemi</option></select></label>
+<label class="field" id="sampleField">Numune<select id="sample"></select></label>
+<label class="field" id="fitField">Etkileşim modeli<select id="fit"></select></label>
+<div class="sliders" id="sliders">
+<div class="slider"><div><label id="tLabel" for="temp">Sıcaklık</label><output id="tUnit">K</output></div><input id="temp" type="range"></div>
+<div class="slider"><div><label for="phi">Polimer hacim kesri φ</label><input id="phiValue" aria-label="Hacim kesrini sayıyla girin" type="number" min=".00001" max=".99999" step="any" value=".02"></div><input id="phi" aria-label="Polimer hacim kesri" type="range" min="0.00001" max=".99999" step=".00001" value=".02"></div>
+</div></section>
+<section class="card message" id="unavailable" hidden><h2>Bu yapı için doğrulanmış faz modeli bulunmuyor</h2><p id="unknownText"></p><p>Ölçüm kayıtlarını incelemek için yukarıdaki listeden bir referans sistem seçebilirsiniz.</p></section>
+<div id="petoxPanel" hidden></div>
+<div id="phasePanel">
+<section class="answers" aria-label="Seçili noktada model sonuçları" aria-live="polite"><div><span>Denge</span><strong id="phaseCount"></strong><small id="phaseDetail"></small></div><div><span>Küçük bir dalgalanma</span><strong id="local"></strong><small id="curvature"></small></div><div><span>Polimerce zengin faz</span><strong id="lever"></strong><small id="leverNote"></small></div></section>
+<p id="stateNote" class="state"></p>
+<div class="plots"><section class="card plot"><h2 id="diagramTitle">Faz diyagramı</h2><p id="diagramSub"></p><svg id="diagram" role="img" aria-label="Denge ve spinodal eğrileri ile seçili bileşim"></svg>
+<ul class="legend"><li><i class="line bin"></i>Binodal</li><li><i class="line spin"></i>Spinodal</li><li><i class="dot" style="background:#242e29"></i>Model kritik noktası</li><li id="obsLegend"><i class="dot obs"></i>Bulutlanma ölçümü</li><li><i class="dot sel"></i>Seçim</li></ul>
+</section><section class="card plot"><h2>Serbest enerji ve ortak teğet</h2><p>Doğrusal referans çıkarılmıştır. Eğrilik ve eşfaz bileşimleri korunur.</p><svg id="energy" role="img" aria-label="Yerel serbest enerji ve denge dışbükey zarfı"></svg>
+<ul class="legend"><li><i class="line free"></i>Homojen f − ℓ</li><li><i class="line hull"></i>Alt dışbükey zarf</li><li><i class="dot sel"></i>Seçim</li></ul></section></div>
+<div class="below"><section class="card"><h2>Bu öngörü neye dayanıyor?</h2><div id="basis"></div><div id="sources"></div></section><section class="card"><h2>Seçili koşulda zaman evrimi</h2><p id="transferText"></p><a class="button" id="transfer" href="kinetics.html">Zaman evrimini aç</a> <a class="button" id="chainTransfer" href="chain.html" hidden>Seçili koşulda zincir boyutu</a> <a class="button" id="osmoticTransfer" href="osmotic.html" hidden>Bu koşulda ozmotik basıncı aç</a><details><summary>Termodinamik tanım</summary><p>Serbest enerji, çözücü kafes hücresi başına k<sub>B</sub>T birimindedir. φ polimer hacim kesri, N zincir hacminin bir çözücü kafes hücresi hacmine oranıdır. Yerel eğrilik homojen f üzerinden hesaplanır. Ortak teğetin iki uçta aynı eğime ve eksen kesişimine sahip olması iki bileşenin kimyasal potansiyellerini eşitler. Faz hacimleri kaldıraç kuralıyla hesaplanır.</p></details></section></div>
+<details class="card" id="pointDetails"><summary>Seçili numuneye ait ölçüm kayıtları</summary><div id="pointTable"></div></details>
+</div></main></body></html>

@@ -1,0 +1,421 @@
+{
+  "calibrationDOI": "10.1021/ma60066a022",
+  "externalDOI": "10.1007/s002890050075",
+  "condition": {
+    "polymer": "Lineer polistiren",
+    "solvent": "Siklohekzan",
+    "T_K": 307.65
+  },
+  "freeFit": {
+    "nu": 0.5099546090688206,
+    "Rg_ref_nm": 147.50934879098133,
+    "Mref_g_mol": 24431390.34492068,
+    "minMw": 8790000,
+    "maxMw": 55700000,
+    "n": 6
+  },
+  "thetaFit": {
+    "nu": 0.5,
+    "Rg_ref_nm": 147.50934879098133,
+    "Mref_g_mol": 24431390.34492068,
+    "minMw": 8790000,
+    "maxMw": 55700000,
+    "n": 6
+  },
+  "withinStudy": {
+    "folds": [
+      {
+        "id": "BK2500-4",
+        "Mw_g_mol": 8790000,
+        "observed_nm": 87.9,
+        "free_nm": 87.02831296746993,
+        "theta_nm": 88.59518010852462,
+        "domain": "extrapolation",
+        "train_ids": [
+          "BK2500-3",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 15200000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "BK2500-3",
+        "Mw_g_mol": 15200000,
+        "observed_nm": 116,
+        "free_nm": 115.72934698842164,
+        "theta_nm": 116.42040352600954,
+        "domain": "interpolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "BK2500-2",
+        "Mw_g_mol": 23500000,
+        "observed_nm": 145,
+        "free_nm": 144.5369489477622,
+        "theta_nm": 144.60445142790948,
+        "domain": "interpolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-1",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "BK2500-1",
+        "Mw_g_mol": 32000000,
+        "observed_nm": 167,
+        "free_nm": 169.8439684022656,
+        "theta_nm": 169.18475940332547,
+        "domain": "interpolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-2",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "IK1500-2",
+        "Mw_g_mol": 38000000,
+        "observed_nm": 183,
+        "free_nm": 185.3873268328351,
+        "theta_nm": 184.15965189451035,
+        "domain": "interpolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "IK1500-1",
+        "Mw_g_mol": 55700000,
+        "observed_nm": 228,
+        "free_nm": 221.5230402244587,
+        "theta_nm": 221.68723825493677,
+        "domain": "extrapolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-2"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 38000000
+      }
+    ],
+    "metrics": {
+      "free": {
+        "n": 6,
+        "mae_nm": 2.218941017831374,
+        "rmse_nm": 3.076415696503962,
+        "rmse_pct": 1.5172239121330622,
+        "rmse_log": 0.015268112665910688
+      },
+      "theta": {
+        "n": 6,
+        "mae_nm": 1.861384208253952,
+        "rmse_nm": 2.7924123441225097,
+        "rmse_pct": 1.3298059878452004,
+        "rmse_log": 0.013415318185731601
+      }
+    }
+  },
+  "withinStudyByParent": {
+    "BK2500": {
+      "fitOn": [
+        "IK1500-2",
+        "IK1500-1"
+      ],
+      "nu": 0.5749553692487537,
+      "folds": [
+        {
+          "id": "BK2500-4",
+          "Mw_g_mol": 8790000,
+          "observed_nm": 87.9,
+          "free_nm": 78.867395831325,
+          "theta_nm": 89.28483655792851,
+          "domain": "extrapolation",
+          "train_ids": [
+            "IK1500-2",
+            "IK1500-1"
+          ],
+          "training_min_Mw": 38000000,
+          "training_max_Mw": 55700000
+        },
+        {
+          "id": "BK2500-3",
+          "Mw_g_mol": 15200000,
+          "observed_nm": 116,
+          "free_nm": 108.05710925445797,
+          "theta_nm": 117.40999360315335,
+          "domain": "extrapolation",
+          "train_ids": [
+            "IK1500-2",
+            "IK1500-1"
+          ],
+          "training_min_Mw": 38000000,
+          "training_max_Mw": 55700000
+        },
+        {
+          "id": "BK2500-2",
+          "Mw_g_mol": 23500000,
+          "observed_nm": 145,
+          "free_nm": 138.8189827517535,
+          "theta_nm": 145.98801434456195,
+          "domain": "extrapolation",
+          "train_ids": [
+            "IK1500-2",
+            "IK1500-1"
+          ],
+          "training_min_Mw": 38000000,
+          "training_max_Mw": 55700000
+        },
+        {
+          "id": "BK2500-1",
+          "Mw_g_mol": 32000000,
+          "observed_nm": 167,
+          "free_nm": 165.78303657883748,
+          "theta_nm": 170.35632376931258,
+          "domain": "extrapolation",
+          "train_ids": [
+            "IK1500-2",
+            "IK1500-1"
+          ],
+          "training_min_Mw": 38000000,
+          "training_max_Mw": 55700000
+        }
+      ],
+      "metrics": {
+        "free": {
+          "n": 4,
+          "mae_nm": 6.0933688959065115,
+          "rmse_nm": 6.789024702693873,
+          "rmse_pct": 6.541869227578319,
+          "rmse_log": 0.06844670984866064
+        },
+        "theta": {
+          "n": 4,
+          "mae_nm": 1.7847920687390975,
+          "rmse_nm": 2.009162502301733,
+          "rmse_pct": 1.4545664717931377,
+          "rmse_log": 0.01442557770059518
+        }
+      }
+    },
+    "IK1500": {
+      "fitOn": [
+        "BK2500-4",
+        "BK2500-3",
+        "BK2500-2",
+        "BK2500-1"
+      ],
+      "nu": 0.4993551407447324,
+      "folds": [
+        {
+          "id": "IK1500-2",
+          "Mw_g_mol": 38000000,
+          "observed_nm": 183,
+          "free_nm": 183.04421647039422,
+          "theta_nm": 183.13373157394582,
+          "domain": "extrapolation",
+          "train_ids": [
+            "BK2500-4",
+            "BK2500-3",
+            "BK2500-2",
+            "BK2500-1"
+          ],
+          "training_min_Mw": 8790000,
+          "training_max_Mw": 32000000
+        },
+        {
+          "id": "IK1500-1",
+          "Mw_g_mol": 55700000,
+          "observed_nm": 228,
+          "free_nm": 221.5566132263828,
+          "theta_nm": 221.71962942555655,
+          "domain": "extrapolation",
+          "train_ids": [
+            "BK2500-4",
+            "BK2500-3",
+            "BK2500-2",
+            "BK2500-1"
+          ],
+          "training_min_Mw": 8790000,
+          "training_max_Mw": 32000000
+        }
+      ],
+      "metrics": {
+        "free": {
+          "n": 2,
+          "mae_nm": 3.243801622005705,
+          "rmse_nm": 4.556269757744766,
+          "rmse_pct": 1.9983899132662937,
+          "rmse_log": 0.020271690690849605
+        },
+        "theta": {
+          "n": 2,
+          "mae_nm": 3.207051074194638,
+          "rmse_nm": 4.441899294570128,
+          "rmse_pct": 1.9484452425436123,
+          "rmse_log": 0.019757642955606725
+        }
+      }
+    }
+  },
+  "externalStudy": {
+    "folds": [
+      {
+        "id": "nakamura1997-F1-B",
+        "Mw_g_mol": 10300,
+        "observed_nm": 2.8,
+        "free_nm": 2.803277922174147,
+        "theta_nm": 3.028754460958335,
+        "domain": "extrapolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      },
+      {
+        "id": "nakamura1997-2b-B",
+        "Mw_g_mol": 19800,
+        "observed_nm": 4,
+        "free_nm": 3.912060259883476,
+        "theta_nm": 4.199311096744011,
+        "domain": "extrapolation",
+        "train_ids": [
+          "BK2500-4",
+          "BK2500-3",
+          "BK2500-2",
+          "BK2500-1",
+          "IK1500-2",
+          "IK1500-1"
+        ],
+        "training_min_Mw": 8790000,
+        "training_max_Mw": 55700000
+      }
+    ],
+    "metrics": {
+      "free": {
+        "n": 2,
+        "mae_nm": 0.04560883114533554,
+        "rmse_nm": 0.06222596992229834,
+        "rmse_pct": 1.5567721013282192,
+        "rmse_log": 0.015740885105929785
+      },
+      "theta": {
+        "n": 2,
+        "mae_nm": 0.2140327788511729,
+        "rmse_nm": 0.21453847754381827,
+        "rmse_pct": 6.766599530635357,
+        "rmse_log": 0.06531379194753739
+      }
+    }
+  },
+  "measured": [
+    {
+      "id": "BK2500-4",
+      "Mw_g_mol": 8790000,
+      "Rg_nm": 87.9,
+      "cstar_g_L": 5.130772261721598,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 4.795901868492183,
+        "high_g_L": 5.497558657847362
+      }
+    },
+    {
+      "id": "BK2500-3",
+      "Mw_g_mol": 15200000,
+      "Rg_nm": 116,
+      "cstar_g_L": 3.860380458931687,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 3.6673980889140525,
+        "high_g_L": 4.0671437478904675
+      }
+    },
+    {
+      "id": "BK2500-2",
+      "Mw_g_mol": 23500000,
+      "Rg_nm": 145,
+      "cstar_g_L": 3.055795900122767,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 2.873711754490038,
+        "high_g_L": 3.2535936922907407
+      }
+    },
+    {
+      "id": "BK2500-1",
+      "Mw_g_mol": 32000000,
+      "Rg_nm": 167,
+      "cstar_g_L": 2.7237111782574077,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 2.537009745272806,
+        "high_g_L": 2.9291907459429707
+      }
+    },
+    {
+      "id": "IK1500-2",
+      "Mw_g_mol": 38000000,
+      "Rg_nm": 183,
+      "cstar_g_L": 2.458050582804791,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 2.303664688504331,
+        "high_g_L": 2.6265458836978226
+      }
+    },
+    {
+      "id": "IK1500-1",
+      "Mw_g_mol": 55700000,
+      "Rg_nm": 228,
+      "cstar_g_L": 1.8629926542557484,
+      "radiusSensitivity_g_L": {
+        "low_g_L": 1.7456128105096282,
+        "high_g_L": 1.9911367785282716
+      }
+    },
+    {
+      "id": "nakamura1997-F1-B",
+      "Mw_g_mol": 10300,
+      "Rg_nm": 2.8,
+      "cstar_g_L": 186.0045718568196,
+      "radiusSensitivity_g_L": null
+    },
+    {
+      "id": "nakamura1997-2b-B",
+      "Mw_g_mol": 19800,
+      "Rg_nm": 4,
+      "cstar_g_L": 122.64383002994218,
+      "radiusSensitivity_g_L": null
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#153c34">
+  <title>Referans numuneden viskozite · Polymer Research Studio</title>
+  <link rel="stylesheet" href="viscosity.css">
+  <link rel="stylesheet" href="viscosity-improvement.css">
+  <script defer src="hydro-stack-results.js"></script>
+  <script defer src="hydro-reference-live.js"></script>
+  <script defer src="good-reference-ui.js"></script>
+</head>
+<body>
+<header><nav aria-label="Ana menü"><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="viscosity-improvement.html">Hata karşılaştırması</a><a href="repeat-viscosity.html">θ koşulunda tahmin</a></div></nav></header>
+<main>
+  <p class="overline">İyi çözücü · siklohekzan · nominal 25 °C</p>
+  <h1>Referans numuneden intrinsik viskozite</h1>
+  <p class="intro">Polimeri seç. Uygulama aynı kimyanın yayımlanmış bir referans fraksiyonunu ve diğer iki polimerden öğrendiği kütle üssünü kullanarak [η] değerini hesaplar.</p>
+  <noscript>Referans seçimi ve hesaplama için JavaScript gerekir.</noscript>
+  <p class="notice" id="loadIssue" role="alert" hidden>Referans tablosu veya katsayılar yüklenemedi.</p>
+  <div id="refApp" hidden>
+    <div class="controlbox">
+      <div><label for="polymer">Doğrusal polimer</label><select id="polymer"></select></div>
+      <div><label for="mode">Mol kütlesi</label><select id="mode"><option value="record">Yayımlanmış bir numuneyi sına</option><option value="custom">Kendi değerimle hesapla</option></select></div>
+      <div id="knownField"><label for="target">Saklı ölçüm</label><select id="target"></select></div>
+      <div id="customField" hidden><label for="mass">Mol kütlesi (kg/mol)</label><input id="mass" type="number" step="any" inputmode="decimal" aria-describedby="massHint"></div>
+    </div>
+    <p class="reading" id="massHint"></p>
+    <p id="entryIssue" class="notice" role="status" hidden></p>
+    <div id="prediction" hidden>
+      <div class="metrics" aria-live="polite" aria-atomic="true">
+        <section class="reference-result"><h2>Tahmini [η]</h2><strong id="etaHat"></strong><p>mL/g · sonsuz seyreltme</p></section>
+        <section><h2 id="comparisonHeader">Ölçülen [η]</h2><strong id="comparisonValue"></strong><p id="comparisonNote"></p></section>
+        <section><h2>Öğrenilen kütle üssü <i>a</i></h2><strong id="exponent"></strong><p id="training"></p></section>
+      </div>
+      <p class="reading" id="domainInfo"></p>
+      <section class="panel">
+        <h2>Bir referans ölçümünden yeni mol kütlesine</h2>
+        <div class="compare residual-section">
+          <figure>
+            <svg id="massDiagram" viewBox="0 0 560 320" role="img" aria-label="Seçili referans üzerinden hesaplanan viskozitenin mol kütlesine bağımlılığı"></svg>
+            <div class="key"><span><i class="ref-anchor-mark" aria-hidden="true"></i>Referans ölçümü</span><span><i class="new-mark" aria-hidden="true"></i>Tahmin</span><span id="observedKey"><i class="base-mark" aria-hidden="true"></i>Saklı ölçüm</span></div>
+            <figcaption class="reading">Her iki eksen logaritmiktir. Çizgi, seçili referans için [η] = [η]<sub>ref</sub> (M/M<sub>ref</sub>)<sup>a</sup> bağıntısını gösterir.</figcaption>
+          </figure>
+          <aside>
+            <h3>Seçilen referans</h3>
+            <dl><div><dt>Numune</dt><dd id="anchorId"></dd></div><div><dt>Mol kütlesi</dt><dd id="anchorM"></dd></div><div><dt>Ölçülen [η]</dt><dd id="anchorEta"></dd></div><div><dt>Hedef / referans kütlesi</dt><dd id="ratio"></dd></div></dl>
+            <p id="anchorSource"></p><p id="targetSource"></p>
+          </aside>
+        </div>
+      </section>
+    </div>
+    <details class="definitions" open>
+      <summary>Numune seçimi ve geçerlilik alanı</summary>
+      <p>Uygulama aynı kimya, çözücü, nominal sıcaklık ve mol kütlesi tanımına sahip referanslar arasında logaritmik mol kütlesi en yakın fraksiyonu seçer. Saklı bir numunede hedef yayının bütün fraksiyonları referans listesinden çıkarılır. Böylece hedefin ölçülmüş [η] değeri yalnız son karşılaştırmada kullanılır.</p>
+      <p>Referans serileri doğrusal, dar dağılımlı fraksiyonlardan gelir. Poliizobütilende ağırlık ortalamalı mol kütlesi (M𝑤), iki polidiende ise derlemenin M sütunu kullanılır. Tablolar yakın sıcaklıklardaki deneyleri bir araya getirir. Polidienlerin 1,4-bağlanma oranı ve cis/trans dağılımı değiştiğinde zincir boyutu ve viskozite de değişebilir. Uygulama tanımlı bir taktisiteye, farklı mikroyapıya veya geniş mol kütlesi dağılımına özel katsayı içermez.</p>
+      <div class="linkrow"><a href="https://doi.org/10.1063/1.555949">Fetters ve ark. · deneysel veri derlemesi</a><a href="viscosity-improvement.html">Tahmin hatalarını incele</a></div>
+    </details>
+  </div>
+</main>
+</body>
+</html>

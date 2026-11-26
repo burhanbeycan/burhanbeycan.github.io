@@ -1,0 +1,9 @@
+source_doi,source_table,printed_page,fraction,Mn_g_mol,T_C,T_K,c_g_per_mL_solution,Q_1e6_Pi_over_RTc_mol_per_g,Pi_kPa_from_rounded_Q,reported_study_error_percent,point_sigma_kPa,split
+10.1021/ja01517a022,I,1862,II,72000,24,297.15,0.0976,8.0,1.92907772,3,,external
+10.1021/ja01517a022,I,1862,II,72000,24,297.15,0.182,6.0,2.69794168,3,,external
+10.1021/ja01517a022,I,1862,II,72000,24,297.15,0.259,8.7,5.5670989,3,,external
+10.1021/ja01517a022,I,1862,II,72000,34,307.15,0.0081,13.3,0.27511949,3,,external
+10.1021/ja01517a022,I,1862,II,72000,34,307.15,0.0201,14.2,0.72890194,3,,external
+10.1021/ja01517a022,I,1862,II,72000,34,307.15,0.0964,14.2,3.49582821,3,,external
+10.1021/ja01517a022,I,1862,II,72000,34,307.15,0.18,18.7,8.59604769,3,,external
+10.1021/ja01517a022,I,1862,II,72000,34,307.15,0.257,26.2,17.19567069,3,,external

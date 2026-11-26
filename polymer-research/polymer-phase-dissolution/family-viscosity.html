@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#153c34">
+  <title>Yeni polimer ailesinde intrinsik viskozite · Polymer Research Studio</title>
+  <link rel="stylesheet" href="viscosity.css">
+  <link rel="stylesheet" href="family-viscosity-ui.css">
+  <script defer src="theta-family-benchmark.js"></script>
+  <script defer src="hydro-family-benchmark.js"></script>
+  <script defer src="family-viscosity-ui.js"></script>
+</head>
+<body>
+<header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="viscosity-ai.html">Çözelti viskozitesi ve AI</a><a href="pvoh-viscosity.html">PVOH ölçümleri</a></div></nav></header>
+<main>
+  <p class="overline">Seyreltik çözeltiler · aile dışı sınama</p>
+  <h1>Yeni bir polimer ailesinde intrinsik viskozite</h1>
+  <p class="intro">Bir ailenin viskozite ölçümlerini eğitimden çıkar. Kalan polimerlerden öğrenilen modeli, ayrılan ailenin deneysel [η] değerleriyle karşılaştır.</p>
+  <div class="linkrow"><a class="repeat-link" href="repeat-viscosity.html">Kendi tekrar birimim ve mol kütlemle [η] tahmini yap</a></div>
+  <noscript>Ölçümleri ve hesaplanan eğrileri görmek için JavaScript gerekir.</noscript>
+  <p id="familyError" class="notice" role="alert" hidden></p>
+  <div id="familyStudio" hidden>
+    <div class="tabbar" role="group" aria-label="Deney koşulu">
+      <button id="tabTheta" type="button" aria-pressed="true">Teta koşulunda</button>
+      <button id="tabHydro" type="button" aria-pressed="false">Ölçülen zincir boyutuyla</button>
+    </div>
+    <div class="controlbox family-controls">
+      <div id="protocolField" hidden><label for="familyProtocol">Sınamanın türü</label><select id="familyProtocol"></select></div>
+      <div><label for="familyFold">Eğitim dışında tutulan grup</label><select id="familyFold"></select></div>
+      <div><label for="familyMethod">Grafikteki model</label><select id="familyMethod"></select></div>
+    </div>
+    <p id="familyStudy" class="reading family-study"></p>
+    <section class="panel">
+      <div class="heading"><div><p class="overline" id="familyScope"></p><h2>Öngörü ölçüme ne kadar yakın?</h2></div><button id="familyCsv" type="button">Sınamayı indir · CSV</button></div>
+      <div class="family-compare">
+        <div>
+          <svg id="familyParity" viewBox="0 0 570 365" role="img" aria-label="Deneysel ve tahmini intrinsik viskozitenin karşılaştırması"></svg>
+          <div id="familyLegend" class="family-legend"></div>
+          <p class="reading">Her işaret bir saklı ölçümdür. Kesikli çizgi bire bir uyumu gösterir. Üstündeki noktalar yüksek, altındakiler düşük tahminlerdir. İki eksen de logaritmiktir.</p>
+        </div>
+        <aside class="family-specimen">
+          <label for="familyRecord">Bir ölçümü incele</label><select id="familyRecord"></select>
+          <p id="familyCondition"></p>
+          <dl><div><dt>Mol kütlesi</dt><dd id="familyMass"></dd></div><div id="familyRgRow"><dt>Ölçülen R<sub>g</sub></dt><dd id="familyRg"></dd></div><div><dt>Ölçülen [η]</dt><dd id="familyObs"></dd></div><div><dt>Model [η]</dt><dd id="familyPred"></dd></div><div><dt>Bağıl sapma</dt><dd id="familyBias"></dd></div></dl>
+          <p id="familyDomain"></p><p id="familyReference"></p>
+        </aside>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Gruplar arasında hata</h2>
+      <p id="familyErrorIntro" class="reading"></p>
+      <div class="scroll" tabindex="0" role="region" aria-label="Aynı saklı ölçümler için iki modelin hata tablosu">
+        <table><thead><tr><th scope="col">Sınama</th><th scope="col">Ölçüm</th><th id="familyMethodA" scope="col"></th><th id="familyMethodB" scope="col"></th></tr></thead><tbody id="familyScores"></tbody></table>
+      </div>
+      <p class="reading">MAPE, ölçüm başına mutlak yüzde sapmanın ortalamasıdır. Yüksek ve düşük yöndeki sapmalar birbirini götürmez. Küçük değer daha iyi uyum gösterir.</p>
+    </section>
+    <section class="panel">
+      <details><summary>Ölçüm ve tahminleri satır satır incele</summary><p class="reading">Seçilen gruptaki her satır, o grubun bütün hedef ölçümleri saklanarak hesaplandı. Bir satıra dokunarak grafikte karşılığını görebilirsin.</p>
+        <div class="scroll" tabindex="0" role="region" aria-label="Ölçüm ve tahminlerin sayısal dökümü"><table><thead><tr><th>Ölçüm</th><th>Polimer</th><th>M (kg/mol)</th><th>Ölçülen [η]</th><th id="detailA"></th><th id="detailB"></th></tr></thead><tbody id="familyRows"></tbody></table></div>
+      </details>
+      <details open><summary>Fiziksel varsayımlar ve aktarım sınırı</summary><p id="familyPhysics"></p><p id="familyLimits"></p><p id="familyFitInfo" class="reading"></p><p id="familySensitivity">Yaklaşık sıcaklıklı 19 kayıt ayrıldığında ailelere eşit ağırlık veren MAPE, mol kütlesi modelinde %41,59 ve Ridge modelinde %20,50 olur. Ortak 63–854 kg/mol aralığındaki karşılıkları %32,80 ve %14,25’tir. Polidienlerde kaynağın verdiği mutlak mol kütlesi kullanılır. <a href="family-inputs/theta-sensitivity.json">Duyarlılık sonuçları (JSON)</a></p></details>
+      <div class="linkrow"><a href="Aileler_Arasi_Viskozite.png">Sınama grafiğini indir</a><a href="https://doi.org/10.1063/1.555949">Fetters ve ark. · ölçüm derlemesi</a><a href="family-inputs/THETA_MODEL.md">Teta sınamasının yöntemi</a><a href="family-inputs/HYDRO_FAMILY.md">Zincir boyutlu sınamanın yöntemi</a><a href="pvoh-viscosity.html">Suda ve DMSO’da PVOH numunelerini aç</a></div>
+    </section>
+  </div>
+<p class="linkrow"><a href="viscosity-improvement.html">Viskozite modellerinin saklı numunelerdeki hatalarını incele</a></p></main>
+</body>
+</html>

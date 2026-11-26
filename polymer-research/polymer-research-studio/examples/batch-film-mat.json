@@ -1,0 +1,161 @@
+{
+  "schema": "polymer-session/1.0",
+  "material": {
+    "schema": "polymer-material/1.0",
+    "sample_id": "PVA-demo-film",
+    "name": "Illustrative cast film",
+    "chemistry": {
+      "repeat_unit": "Vinyl alcohol",
+      "architecture": "linear",
+      "tacticity": "unspecified",
+      "sequence": "unspecified",
+      "end_groups": "unspecified",
+      "repeat_smiles": "",
+      "stereochemistry_source": "unspecified",
+      "branch_topology": "unspecified",
+      "functional_groups": "unspecified",
+      "synthesis_route": "unspecified",
+      "conversion_basis": "unspecified",
+      "notes": "Illustrative workflow, batch microstructure unspecified."
+    },
+    "conditions": {
+      "temperature_K": null,
+      "state": "unspecified",
+      "solvent": "unspecified",
+      "notes": "Record preparation and measurement conditions for this specimen."
+    },
+    "parameters": [],
+    "history": [],
+    "lineage": {
+      "form": "cast_film",
+      "process": "Solution casting",
+      "ancestors": [
+        "PVA-demo-batch"
+      ]
+    },
+    "evidence": [
+      {
+        "quantity": "Dry film thickness",
+        "value": "100",
+        "unit": "µm",
+        "origin": "illustrative",
+        "conditions": "Illustrative fixed-geometry model input",
+        "locator": "This example session"
+      }
+    ]
+  },
+  "runs": [],
+  "samples": [
+    {
+      "schema": "polymer-material/1.0",
+      "sample_id": "PVA-demo-batch",
+      "name": "PVA batch (illustrative)",
+      "chemistry": {
+        "repeat_unit": "Vinyl alcohol",
+        "architecture": "linear",
+        "tacticity": "unspecified",
+        "sequence": "unspecified",
+        "end_groups": "unspecified",
+        "repeat_smiles": "",
+        "stereochemistry_source": "unspecified",
+        "branch_topology": "unspecified",
+        "functional_groups": "unspecified",
+        "synthesis_route": "unspecified",
+        "conversion_basis": "unspecified",
+        "notes": "Illustrative workflow, batch microstructure unspecified."
+      },
+      "conditions": {
+        "temperature_K": 298.15,
+        "state": "unspecified",
+        "solvent": "unspecified",
+        "notes": "Each calculation records its own model conditions."
+      },
+      "parameters": [],
+      "history": [],
+      "lineage": {
+        "form": "batch",
+        "process": "Demonstration batch registration",
+        "ancestors": []
+      }
+    },
+    {
+      "schema": "polymer-material/1.0",
+      "sample_id": "PVA-demo-film",
+      "name": "Illustrative cast film",
+      "chemistry": {
+        "repeat_unit": "Vinyl alcohol",
+        "architecture": "linear",
+        "tacticity": "unspecified",
+        "sequence": "unspecified",
+        "end_groups": "unspecified",
+        "repeat_smiles": "",
+        "stereochemistry_source": "unspecified",
+        "branch_topology": "unspecified",
+        "functional_groups": "unspecified",
+        "synthesis_route": "unspecified",
+        "conversion_basis": "unspecified",
+        "notes": "Illustrative workflow, batch microstructure unspecified."
+      },
+      "conditions": {
+        "temperature_K": null,
+        "state": "unspecified",
+        "solvent": "unspecified",
+        "notes": "Record preparation and measurement conditions for this specimen."
+      },
+      "parameters": [],
+      "history": [],
+      "lineage": {
+        "form": "cast_film",
+        "process": "Solution casting",
+        "ancestors": [
+          "PVA-demo-batch"
+        ]
+      },
+      "evidence": [
+        {
+          "quantity": "Dry film thickness",
+          "value": "100",
+          "unit": "µm",
+          "origin": "illustrative",
+          "conditions": "Illustrative fixed-geometry model input",
+          "locator": "This example session"
+        }
+      ]
+    },
+    {
+      "schema": "polymer-material/1.0",
+      "sample_id": "PVA-demo-mat",
+      "name": "Illustrative fibre mat",
+      "chemistry": {
+        "repeat_unit": "Vinyl alcohol",
+        "architecture": "linear",
+        "tacticity": "unspecified",
+        "sequence": "unspecified",
+        "end_groups": "unspecified",
+        "repeat_smiles": "",
+        "stereochemistry_source": "unspecified",
+        "branch_topology": "unspecified",
+        "functional_groups": "unspecified",
+        "synthesis_route": "unspecified",
+        "conversion_basis": "unspecified",
+        "notes": "Illustrative workflow, batch microstructure unspecified."
+      },
+      "conditions": {
+        "temperature_K": null,
+        "state": "unspecified",
+        "solvent": "unspecified",
+        "notes": "Record preparation and measurement conditions for this specimen."
+      },
+      "parameters": [],
+      "history": [],
+      "lineage": {
+        "form": "electrospun_mat",
+        "process": "Electrospinning",
+        "ancestors": [
+          "PVA-demo-batch"
+        ]
+      },
+      "evidence": []
+    }
+  ]
+}

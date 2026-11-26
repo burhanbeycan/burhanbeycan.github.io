@@ -1,0 +1,13 @@
+{
+  "PVA": {"name":"Poly(vinyl alcohol), alcohol motif", "psmiles":"[*]CC(O)[*]", "semantic":"Hydrolysed vinyl alcohol repeat. Residual acetate amount and arrangement are sample attributes."},
+  "PVAc": {"name":"Poly(vinyl acetate), acetate motif", "psmiles":"[*]CC(OC(=O)C)[*]", "semantic":"Unhydrolysed vinyl acetate repeat in partially hydrolysed PVA."},
+  "HPAM": {"name":"Polyacrylamide, parent motif of HPAM", "psmiles":"[*]CC(C(=O)N)[*]", "semantic":"Parent repeat only. Supply hydrolysis, charge state, counterion, and ionic medium independently."},
+  "AA_anion": {"name":"Deprotonated acrylate motif", "psmiles":"[*]CC(C(=O)[O-])[*]", "semantic":"Covalent anion only. Counterion mass is included separately for a specified dry salt."},
+  "PAN": {"name":"Polyacrylonitrile", "psmiles":"[*]CC(C#N)[*]", "semantic":"Homopolymer repeat. Comonomer composition must be supplied for copolymers."},
+  "PVDF": {"name":"Poly(vinylidene fluoride)", "psmiles":"[*]CC(F)(F)[*]", "semantic":"Ideal head-to-tail homopolymer repeat. Manufacturing defects are not encoded."},
+  "PEO": {"name":"Poly(ethylene oxide)", "psmiles":"[*]CCO[*]", "semantic":"PEG and PEO share this backbone. Separate Mn and end groups are important for PEG oligomers."},
+  "PVP": {"name":"Poly(N-vinylpyrrolidone)", "psmiles":"[*]CC(N1CCCC1=O)[*]", "semantic":"Homopolymer repeat with stereochemical sequence unspecified."},
+  "CMC": {"name":"Cellulose, parent motif of NaCMC", "psmiles":"[*]O[C@@H]1O[C@H](CO)[C@@H]([*])[C@H](O)[C@H]1O", "semantic":"1→4 beta-D-glucopyranosyl backbone, without carboxymethyl groups. Record degree of substitution and counterion separately. Statistical substitution sites are not known."},
+  "ALG_M": {"name":"Alginate mannuronate motif", "psmiles":"[*]O[C@@H]1O[C@H](C(=O)[O-])[C@@H]([*])[C@H](O)[C@@H]1O", "semantic":"1→4 beta-D-mannuronate. No sodium mass or information about M/G diads in embedding."},
+  "ALG_G": {"name":"Alginate guluronate motif", "psmiles":"[*]O[C@@H]1O[C@@H](C(=O)[O-])[C@@H]([*])[C@H](O)[C@@H]1O", "semantic":"1→4 alpha-L-guluronate, the C5 epimer of M. No sodium mass or M/G diad information in embedding."}
+}

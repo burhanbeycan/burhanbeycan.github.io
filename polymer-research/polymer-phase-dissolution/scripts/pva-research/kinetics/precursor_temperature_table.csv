@@ -1,0 +1,8 @@
+polymerization_temperature_C,method,reported_dp_index,storage_temperature_C,K_per_hour_wt_percent_squared
+-6,photopolymerization,1720,30,0.000330
+20,photopolymerization,1466,30,0.000144
+60,Fig2_reference,,30,0.0000405
+100,thermal_polymerization,1360,30,0.0000152
+120,thermal_polymerization,1571,30,0.0000097
+140,thermal_polymerization,1121,30,0.0000057
+160,thermal_polymerization,811,30,0.0000040

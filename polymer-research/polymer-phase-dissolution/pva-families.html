@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123f40">
+  <meta name="description" content="PVA'dan farklı polimer–çözücü sistemlerine viskozite aktarımını sınamak için deney kaynakları ve kimyasal gruplar.">
+  <title>Polimer aileleri · Polymer Research Studio</title>
+  <link rel="stylesheet" href="pva-families.css">
+  <script defer src="pva-catalog.js"></script>
+  <script defer src="pva-families.js"></script>
+</head>
+<body>
+  <a class="skip" href="#systems">İçeriğe geç</a>
+  <header class="bar"><nav class="wrap" aria-label="Gezinme"><a href="index.html" class="brand">Polymer Research Studio</a><a href="pva-inverse.html" class="back">Viskozite modülü</a></nav></header>
+  <main>
+    <section class="intro wrap" aria-labelledby="title">
+      <div><h1 id="title">Polimer aileleri</h1><p>PVA çözeltisinden öğrenilen viskozite davranışını hangi polimer–çözücü çiftlerinde sınayabiliriz? Kaynak deneyleri, ölçüm türünü ve ailelerin kör testte nasıl gruplanacağını inceleyin.</p></div>
+      <a class="download" href="pva-catalog.csv" download>Listeyi indir <small>CSV</small></a>
+    </section>
+    <section id="systems" class="wrap" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Polimer ve çözücü seçimi</h2>
+      <form id="filters" class="filters" role="search">
+        <label class="search">Katalogda ara<input id="query" type="search" placeholder="Polimer, çözücü veya grup" autocomplete="off"></label>
+        <label>Ölçüm dayanağı<select id="evidence"><option value="">Tümü</option></select></label>
+        <label>Aktarım yolu<select id="track"><option value="">Tümü</option></select></label>
+        <button type="reset" id="reset" class="reset">Temizle</button>
+      </form>
+      <p id="status" aria-live="polite" aria-atomic="true"></p>
+      <div id="entries"></div>
+      <noscript><p>Arama için JavaScript gerekir. <a href="pva-catalog.csv" download>Kataloğun tamamını CSV olarak indir.</a></p></noscript>
+    </section>
+    <aside class="method wrap" aria-labelledby="method-title"><h2 id="method-title">Kör test nasıl okunur?</h2><div>
+      <p><strong>Kimyasal grup.</strong> Aynı omurgayı veya yakından ilişkili türevleri paylaşan satırlar birlikte dışarıda tutulur. Örneğin PEG ve PEO aynı etilen oksit tekrar birimine sahiptir. PVA kaynak olarak eğitimde kaldığı için PVAc sonucu yakın kimyaya aktarım olarak raporlanır.</p>
+      <p><strong>Ölçüm dayanağı.</strong> Bir akış eğrisi farklı kayma hızlarındaki görünür viskoziteyi sınar. İntrinsik viskozite [η] seyreltik sınırdaki hidrodinamik hacmi kısıtlar. Katalogdaki her kaynak, yalnızca kaydedilen gözlem için kanıt sağlar.</p>
+      <p><strong>Doğrulama.</strong> İleriye dönük kör testte hedef grubun ölçümleri, model ve parametre seçimi tamamlandıktan sonra açılır. Daha önce incelenmiş serilerde sonuçlar geriye dönük karşılaştırma olarak kaydedilir. 25 °C kayıtları 298,15 K olarak, ölçümün kendi sıcaklığında değerlendirilir.</p>
+    </div></aside>
+  </main>
+</body>
+</html>

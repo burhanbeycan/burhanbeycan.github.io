@@ -1,0 +1,32 @@
+{
+  "id": "ps-kg-fr2-44",
+  "sourceDOI": "10.1021/ja01517a022",
+  "sourceTable": "I",
+  "sourcePage": 1862,
+  "secondary": "P. C. Hiemenz & R. Rajagopalan, Principles of Colloid and Surface Chemistry, third edition, chapter 3 exercise 9, p. 143 (citing Krigbaum and Geymer)",
+  "Mn_g_mol": 72000,
+  "role": "same-study temperature block held out of parameter estimation",
+  "observations": [
+    {
+      "T_K": 317.15,
+      "c_g_L": 95.9,
+      "Q1e6": 18.6,
+      "Pi_kPa": 4.70360076,
+      "source_tier": "secondary_concentration"
+    },
+    {
+      "T_K": 317.15,
+      "c_g_L": 178.0,
+      "Q1e6": 28.1,
+      "Pi_kPa": 13.18940557,
+      "source_tier": "cross_checked"
+    },
+    {
+      "T_K": 317.15,
+      "c_g_L": 255.0,
+      "Q1e6": 40.0,
+      "Pi_kPa": 26.89670456,
+      "source_tier": "secondary_concentration"
+    }
+  ]
+}

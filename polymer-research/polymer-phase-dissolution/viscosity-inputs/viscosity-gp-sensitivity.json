@@ -1,0 +1,735 @@
+{
+  "protocol": "Post-hoc, exploratory sensitivity on the same frozen splits. All nine equally reported combinations were specified before executing this grid. Validation, training data and fixed baseline are identical across settings. No setting selection or update to the reference GP.",
+  "grid": {
+    "length_u": [
+      0.25,
+      0.5,
+      1
+    ],
+    "amplitudeCoefficient": [
+      0.125,
+      0.25,
+      0.5
+    ],
+    "regularizationSD_eta_rel": 0.02
+  },
+  "reference": {
+    "length_u": 0.5,
+    "amplitudeCoefficient": 0.25,
+    "regularizationSD_eta_rel": 0.02
+  },
+  "cases": {
+    "copenhaver-ps-toluene-30/highest": {
+      "seriesId": "copenhaver-ps-toluene-30",
+      "strategy": "highest",
+      "n": 1,
+      "trainIds": [
+        "copenhaver-ps-toluene-30/team-1",
+        "copenhaver-ps-toluene-30/team-2",
+        "copenhaver-ps-toluene-30/team-3",
+        "copenhaver-ps-toluene-30/team-4"
+      ],
+      "testIds": [
+        "copenhaver-ps-toluene-30/team-5"
+      ],
+      "baseline": {
+        "n": 1,
+        "mae": 0.2688216016599858,
+        "rmse": 0.2688216016599858,
+        "rmse_pct": 7.405553764737902
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.340436347573569,
+            "rmse": 0.340436347573569,
+            "rmse_pct": 9.3784117788862
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.46816681761693335,
+            "rmse": 0.46816681761693335,
+            "rmse_pct": 12.897157510108356
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.5578297565572949,
+            "rmse": 0.5578297565572949,
+            "rmse_pct": 15.367210924443386
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.16003405945983618,
+            "rmse": 0.16003405945983618,
+            "rmse_pct": 4.4086517757530626
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.37184590916519555,
+            "rmse": 0.37184590916519555,
+            "rmse_pct": 10.243688957718886
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.797657676783138,
+            "rmse": 0.797657676783138,
+            "rmse_pct": 21.974040682731076
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.044390028781736035,
+            "rmse": 0.044390028781736035,
+            "rmse_pct": 1.222865806659395
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.035650654896561385,
+            "rmse": 0.035650654896561385,
+            "rmse_pct": 0.9821117051394321
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.10885001253132653,
+            "rmse": 0.10885001253132653,
+            "rmse_pct": 2.9986229347472877
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        0.9821117051394321,
+        21.974040682731076
+      ],
+      "nSmallerError": 4
+    },
+    "phywe-ps-toluene-25/highest": {
+      "seriesId": "phywe-ps-toluene-25",
+      "strategy": "highest",
+      "n": 1,
+      "trainIds": [
+        "phywe-ps-toluene-25/c-4",
+        "phywe-ps-toluene-25/c-8",
+        "phywe-ps-toluene-25/c-12",
+        "phywe-ps-toluene-25/c-16"
+      ],
+      "testIds": [
+        "phywe-ps-toluene-25/c-20"
+      ],
+      "baseline": {
+        "n": 1,
+        "mae": 0.04441666666666633,
+        "rmse": 0.04441666666666633,
+        "rmse_pct": 1.5374408676589246
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.0494686589976272,
+            "rmse": 0.0494686589976272,
+            "rmse_pct": 1.712310799502499
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.050536472999301196,
+            "rmse": 0.050536472999301196,
+            "rmse_pct": 1.749272170276954
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.051115349316241065,
+            "rmse": 0.051115349316241065,
+            "rmse_pct": 1.7693094259688842
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.05147848838433111,
+            "rmse": 0.05147848838433111,
+            "rmse_pct": 1.7818791410291146
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.05614049069632232,
+            "rmse": 0.05614049069632232,
+            "rmse_pct": 1.9432499375674046
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.06124462792977958,
+            "rmse": 0.06124462792977958,
+            "rmse_pct": 2.119924815845607
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.048569096346605445,
+            "rmse": 0.048569096346605445,
+            "rmse_pct": 1.6811732899482674
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.05110730861747603,
+            "rmse": 0.05110730861747603,
+            "rmse_pct": 1.7690311047932168
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.05485427436457835,
+            "rmse": 0.05485427436457835,
+            "rmse_pct": 1.8987287768978314
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        1.6811732899482674,
+        2.119924815845607
+      ],
+      "nSmallerError": 0
+    },
+    "luh1967-ps-cyclohexane-633000/highest": {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "highest",
+      "n": 1,
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "baseline": {
+        "n": 1,
+        "mae": 0.0034558289104176243,
+        "rmse": 0.0034558289104176243,
+        "rmse_pct": 0.18035744013452454
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.0035020169944302015,
+            "rmse": 0.0035020169944302015,
+            "rmse_pct": 0.18276796589062166
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.0036145881073712527,
+            "rmse": 0.0036145881073712527,
+            "rmse_pct": 0.18864297830860877
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.00393025240398881,
+            "rmse": 0.00393025240398881,
+            "rmse_pct": 0.20511729053748814
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.0034747185299845995,
+            "rmse": 0.0034747185299845995,
+            "rmse_pct": 0.18134327696803923
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.003514735738654018,
+            "rmse": 0.003514735738654018,
+            "rmse_pct": 0.18343174879463586
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.003628309306819233,
+            "rmse": 0.003628309306819233,
+            "rmse_pct": 0.18935907869209503
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.003465771632437331,
+            "rmse": 0.003465771632437331,
+            "rmse_pct": 0.18087634426373003
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.003478507890560145,
+            "rmse": 0.003478507890560145,
+            "rmse_pct": 0.1815410412066252
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.0035184955186209343,
+            "rmse": 0.0035184955186209343,
+            "rmse_pct": 0.18362796924069383
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        0.18087634426373003,
+        0.20511729053748814
+      ],
+      "nSmallerError": 0
+    },
+    "luh1967-ps-cyclohexane-1770000/highest": {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "highest",
+      "n": 1,
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "baseline": {
+        "n": 1,
+        "mae": 0.00045950333269950683,
+        "rmse": 0.00045950333269950683,
+        "rmse_pct": 0.027317242298288264
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.0003453110691638006,
+            "rmse": 0.0003453110691638006,
+            "rmse_pct": 0.020528569595374867
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.00029706619471103757,
+            "rmse": 0.00029706619471103757,
+            "rmse_pct": 0.017660436044886606
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.0003449790138299047,
+            "rmse": 0.0003449790138299047,
+            "rmse_pct": 0.020508829072582172
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.00035010224791909295,
+            "rmse": 0.00035010224791909295,
+            "rmse_pct": 0.02081340276553671
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.00029131316257147155,
+            "rmse": 0.00029131316257147155,
+            "rmse_pct": 0.017318421174215063
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.0002192549676409694,
+            "rmse": 0.0002192549676409694,
+            "rmse_pct": 0.013034597683905203
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 1,
+            "mae": 0.0003572291007696293,
+            "rmse": 0.0003572291007696293,
+            "rmse_pct": 0.021237090587339
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 1,
+            "mae": 0.0003134734181695631,
+            "rmse": 0.0003134734181695631,
+            "rmse_pct": 0.01863583723735587
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 1,
+            "mae": 0.00027327245035957404,
+            "rmse": 0.00027327245035957404,
+            "rmse_pct": 0.016245909895938056
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        0.013034597683905203,
+        0.021237090587339
+      ],
+      "nSmallerError": 9
+    },
+    "luh1967-ps-cyclohexane-1770000/wholeGrade": {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "wholeGrade",
+      "n": 5,
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4",
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4",
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "baseline": {
+        "n": 5,
+        "mae": 0.008055901238195906,
+        "rmse": 0.008187808762413845,
+        "rmse_pct": 0.5846916714605588
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.005829281089153459,
+            "rmse": 0.0058500426780714035,
+            "rmse_pct": 0.428253943136775
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.004925933645895775,
+            "rmse": 0.004960335214951901,
+            "rmse_pct": 0.3641969790585399
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.004656045196863712,
+            "rmse": 0.004788311203114968,
+            "rmse_pct": 0.33963297065960285
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.006556149435496606,
+            "rmse": 0.006609475586630974,
+            "rmse_pct": 0.4765908537003657
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.005192905866568953,
+            "rmse": 0.005210681936635369,
+            "rmse_pct": 0.3816660519460213
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.0044143255631935215,
+            "rmse": 0.004439776343595389,
+            "rmse_pct": 0.3271663798219296
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.007459230159257891,
+            "rmse": 0.007559945605540126,
+            "rmse_pct": 0.5411895255995313
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.006355391307194491,
+            "rmse": 0.006407469284645867,
+            "rmse_pct": 0.46199672454642565
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.005001022124670573,
+            "rmse": 0.005020002127310702,
+            "rmse_pct": 0.36688275483671495
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        0.3271663798219296,
+        0.5411895255995313
+      ],
+      "nSmallerError": 9
+    },
+    "luh1967-ps-cyclohexane-633000/wholeGrade": {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "wholeGrade",
+      "n": 5,
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4",
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4",
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "baseline": {
+        "n": 5,
+        "mae": 0.006855163569176525,
+        "rmse": 0.01132428646017815,
+        "rmse_pct": 0.6041000754755271
+      },
+      "grid": [
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.005670660446948616,
+            "rmse": 0.008923528005149704,
+            "rmse_pct": 0.47660070152948425
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.004820131903189173,
+            "rmse": 0.00703620615887107,
+            "rmse_pct": 0.3826848526860231
+          }
+        },
+        {
+          "length_u": 0.25,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.005188078929746487,
+            "rmse": 0.007046405623369239,
+            "rmse_pct": 0.39138310846476687
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.006210991057154169,
+            "rmse": 0.010002490285593219,
+            "rmse_pct": 0.5339797863018848
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.005055760290995526,
+            "rmse": 0.007653540200984067,
+            "rmse_pct": 0.4114393594903542
+          }
+        },
+        {
+          "length_u": 0.5,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.0037846858941628534,
+            "rmse": 0.004822721261881723,
+            "rmse_pct": 0.2771400385671923
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.125,
+          "gp": {
+            "n": 5,
+            "mae": 0.006650089048589614,
+            "rmse": 0.01090192165886804,
+            "rmse_pct": 0.581691783670553
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.25,
+          "gp": {
+            "n": 5,
+            "mae": 0.006151269705542051,
+            "rmse": 0.009860680521927798,
+            "rmse_pct": 0.5265382208927906
+          }
+        },
+        {
+          "length_u": 1,
+          "amplitudeCoefficient": 0.5,
+          "gp": {
+            "n": 5,
+            "mae": 0.004820256584997118,
+            "rmse": 0.007173163060845587,
+            "rmse_pct": 0.3870757632388437
+          }
+        }
+      ],
+      "range_rmse_pct": [
+        0.2771400385671923,
+        0.581691783670553
+      ],
+      "nSmallerError": 9
+    }
+  }
+}

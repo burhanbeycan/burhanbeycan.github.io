@@ -1,0 +1,5 @@
+record_id,material_id,temperature_K,branch,aw,w_g_g
+example-equilibrium,synthetic-PVA-A,298.15,sorption,0,0
+example-equilibrium,synthetic-PVA-A,298.15,sorption,0.4,0.04
+example-equilibrium,synthetic-PVA-A,298.15,sorption,0.7,0.10
+example-equilibrium,synthetic-PVA-A,298.15,sorption,0.85,0.16

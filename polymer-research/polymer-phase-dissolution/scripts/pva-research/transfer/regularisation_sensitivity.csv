@@ -1,0 +1,13 @@
+ridge_penalty,split,mode,model,scopes,test_conditions,macro_mean_abs_log10,macro_within10_pct
+0.03,group,zero_reference,condition_power_law,3,286,1.600157,0
+0.03,group,zero_reference,explicit_chemistry,3,286,1.147666,0
+0.03,group,zero_reference,explicit_plus_polybert,3,286,1.060715,0
+0.03,group,zero_reference,polybert_parent,3,286,1.256013,0
+0.1,group,zero_reference,condition_power_law,3,286,1.351126,0
+0.1,group,zero_reference,explicit_chemistry,3,286,1.068068,0
+0.1,group,zero_reference,explicit_plus_polybert,3,286,1.00105,0.273224
+0.1,group,zero_reference,polybert_parent,3,286,1.166807,0
+0.3,group,zero_reference,condition_power_law,3,286,1.107829,0.136612
+0.3,group,zero_reference,explicit_chemistry,3,286,0.9681011,0.8196721
+0.3,group,zero_reference,explicit_plus_polybert,3,286,0.930298,0.9562842
+0.3,group,zero_reference,polybert_parent,3,286,1.025729,0.273224

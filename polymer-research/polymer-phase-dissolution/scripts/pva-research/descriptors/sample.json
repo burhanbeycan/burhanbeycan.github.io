@@ -1,0 +1,13 @@
+{
+  "sample_id": "Parisi/48k-88",
+  "family": "PVA",
+  "hydrolysis_mol_percent": 88,
+  "Mn_g_mol": 30000,
+  "Mn_origin": "Supplier-reported nominal, Parisi et al. Table I",
+  "Mw_g_mol": 48100,
+  "dispersity": 1.61,
+  "solvent": "water",
+  "temperature_K": 298.15,
+  "concentration": {"value": 0.25, "unit": "g/dL"},
+  "intrinsic_viscosity": {"sample_id":"Parisi/48k-88","solvent":"water","temperature_K":298.15,"value":0.42,"unit":"dL/g","provenance":"Parisi et al., DOI 10.1122/8.0000435, Table III"}
+}

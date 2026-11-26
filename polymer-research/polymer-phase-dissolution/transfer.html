@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f39">
+<title>Ozmotik veri ve eşfaz sınaması · Polymer Research Studio</title>
+<link rel="stylesheet" href="transfer.css">
+<script defer src="transfer-results.js"></script><script defer src="transfer.js"></script>
+</head><body>
+<header><div class="bar"><a href="index.html" class="brand">Polymer Research Studio</a><nav aria-label="Uygulama"><a href="phase.html">Faz dengesi</a><a href="osmotic.html">Ozmotik basınç</a></nav></div></header>
+<main>
+<section class="intro"><div><p class="system">PS · Siklohekzan</p><h1>Ozmotik veri ve<br class="large"> eşfaz sınaması</h1></div><p>Bulutlanma sıcaklıklarıyla kurulan model, seyreltik çözeltinin ozmotik verisini de kullandığında başka bir numunenin iki faz bileşimini daha iyi öngörüyor mu?</p></section>
+<div id="missing" class="notice" hidden>Hesap sonuçları yüklenemedi. Uygulamayı, sonuç dosyasıyla aynı dizinden açın.</div>
+<section id="study" hidden>
+<div class="views" role="group" aria-label="Ölçüm türü"><button type="button" data-view="coex" aria-pressed="true">Eşfaz bileşimleri</button><button type="button" data-view="osmotic" aria-pressed="false">Ozmotik virial</button><button type="button" data-view="cloud" aria-pressed="false">Bulutlanma</button></div>
+<div class="headingrow"><div><h2 id="viewTitle"></h2><p id="viewSub"></p></div><div class="controls"><label for="sample">Numune<select id="sample"></select></label><label for="tempUnit">Sıcaklık<select id="tempUnit"><option value="C">°C</option><option value="K">K</option></select></label></div></div>
+<p class="finding" id="finding" hidden></p>
+<div class="report-grid"><section class="chartcard" aria-label="Ölçüm ve tahmin karşılaştırması">
+<div id="plotHeader" class="plotHeader"><h3 id="plotTitle"></h3><label class="modelLabel">Göster<select id="model"><option value="all">İki model</option><option value="cloud">Bulutlanma modeli</option><option value="combined">Birleşik model</option></select></label></div>
+<div id="plots" class="plots"></div><div id="plotEmpty" hidden class="empty"></div>
+<div id="legend" class="legend" aria-label="Grafik açıklaması"></div><p id="figNote" class="caption"></p></section>
+<aside class="reading" aria-live="polite" aria-atomic="true"><h3>Seçili ölçüm</h3><label for="observation">Kayıt<select id="observation"></select></label><div id="readout"></div></aside></div>
+<section class="sectionBox" aria-labelledby="scoreTitle"><h3 id="scoreTitle">Model başarısı</h3><div id="scores"></div><p id="scoreNote" class="caption"></p></section>
+<section class="sectionBox"><details id="methods"><summary>Model ve ölçüm kaynakları</summary><div id="methodDetail"></div></details></section>
+<footer><div class="exports"><button type="button" id="download">Seçili veriyi indir · CSV</button><button type="button" id="downloadAll">Hesap kaydını indir · JSON</button></div><a href="index.html">Çalışma alanına dön</a></footer>
+</section><noscript><p>Grafikler ve model karşılaştırması için JavaScript gerekiyor.</p></noscript>
+<p style="margin:1rem 0"><a href="PS_Siklohekzan_Dis_Sinama.png" download>Karşılaştırma grafiğini indir (PNG)</a> · <a href="transfer-inputs/tie_lines.csv" download>20 deneysel eşfaz çiftini indir (CSV)</a></p></main></body></html>

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polymer-chain-lab"
+version = "0.4.0"
+description = "Molar-mass distributions, Gaussian/WLC chain dimensions and a finite-chain RIS model."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Burhan Beycan"}]
+dependencies = ["numpy>=1.24,<3", "scipy>=1.11,<2", "polymer-research-workbench==0.4.0"]
+
+[project.optional-dependencies]
+md = ["rdkit>=2024.3,<2027"]
+
+[project.scripts]
+polymer-petox-md = "polymer_chain_lab.md_workflow:main"
+polymer-chain-lab = "polymer_chain_lab.cli:main"
+
+[project.urls]
+Repository = "https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-chain-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+polymer_chain_lab = ["data/*.csv"]

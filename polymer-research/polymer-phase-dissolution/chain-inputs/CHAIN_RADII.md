@@ -1,0 +1,16 @@
+# Polistirenin siklohekzandaki zincir boyutu
+
+**Numune ve ölçüm.** Miyaki, Einaga ve Fujita, 1978'de iki yüksek mol kütleli polistiren örneğinden fraksiyonlama ile elde ettikleri altı doğrusal polistiren fraksiyonunu seyreltilmiş çözeltilerde ışık saçılmasıyla ölçtü. Birincil Tablo I'in (s. 1183) siklohekzan, 34,5 °C sütunları kullanıldı. Molar kütle ağırlıkça ortalama M_w, zincir boyutu da z-ağırlıklı ortalama kare jirasyon yarıçapının karekökü √⟨Rg²⟩z olarak verilmiştir. Tabloda yarıçapın birimi nanometredir. Aynı fraksiyonlar için yayımlanan benzendeki (25 °C) değerler bu seriye dahil edilmedi. Yarıçap için basılı ± değerlerin varyans yorumu verilmediği için bunlar bir standart sapma ya da %95 güven aralığı olarak kullanılmamalıdır.
+
+**Sayısal çapraz kontrol.** Birincil makalenin elektronik taramasında alt indisli son basamaklar metin aktarımında kısmen kaybolur. Merkezi M_w ve Rg değerleri Fetters ve arkadaşlarının değerlendirilmiş yeniden dizgisiyle karşılaştırıldı. Bu derlemede Tablo 7 s. 627'de kaynak 41'den gelen altı satır için kütle sütunundaki sayı 10⁵ g/mol ile çarpılır. Derleme ve birincil çalışma aynı altı ölçümü verir; yeniden dizgi ikinci bir deney kümesi oluşturmaz. Basılı örnek adları ve saçılma yöntemini birincil çalışma verir. Veri dosyasında düşükten yüksek kütleye sıralandı.
+
+**Kapsam.** M_w aralığı 8,79–55,7 milyon g/mol. Aynı dar fraksiyonda dahi M_w, M_n ve M_z farklı ortalamalardır. M_w ile ölçülmüş Rg birlikte kullanıldığında bulunan örtüşme derişimi, eşdeğer tek kütleli ve tek yarıçaplı zincir kabulüne dayalı geometrik bir kestirimdir. Taktisiteye ait bir sayısal indeks veya başka mol kütlesi ortalamaları tabloya eklenmedi. Bu fraksiyonlarla yapılan iç sınamada bir fraksiyon dışarıda bırakılmış olsa bile diğer fraksiyonlar aynı laboratuvardan ve iki ana örnekten gelir.
+
+- Miyaki, Y.; Einaga, Y.; Fujita, H. *Macromolecules* **1978**, 11, 1180–1186. [Birincil yayın](https://doi.org/10.1021/ma60066a022) · [Tablo I'in yer aldığı tarama](https://electronicsandbooks.com/edt/manual/Magazine/M/Macromolecules/1978%20%28Vol%2011%29/No06%281063-1298%29/1180.pdf).
+- Fetters, L. J.; Hadjichristidis, N.; Lindner, J. S.; Mays, J. W. *J. Phys. Chem. Ref. Data* **1994**, 23, 619–640. [DOI](https://doi.org/10.1063/1.555949) · [NIST Tablo 7](https://www.nist.gov/system/files/documents/srd/jpcrd479.pdf).
+
+### Orta mol kütlelerindeki kaynak kaydı
+
+Fetters ve arkadaşlarının Tablo 7'deki 42 numaralı kaynağı Akihiko Yamamoto, Motoharu Fujii, Genzo Tanaka ve Hiromi Yamakawa'nın 1971 çalışmasıdır. Birincil makale özeti, THF içinde anyonik hazırlanmış PS için siklohekzanda 32,2–60,1 °C aralığında ışık saçılması ölçümlerini tanımlar. Fetters'in 34,5 °C'lik siklohekzan derlemesinde bu kaynağa atanmış iki tam M–Rg çifti 765.000 g/mol ve 25,7 nm ile 2.880.000 g/mol ve 48,9 nm'dir. Aynı kaynağın üç diğer satırında Rg sütunu boştur. Derleme, mol kütlesi sütununu M olarak basar ve numune başına ortalama tanımını belirtmez. Bu nedenle iki değer bir kaynak izi olarak saklandı. Uygulamanın açıkça M_w gerektiren sayısal doğrulaması, asıl tablodan aktarılmış bağımsız SAXS çiftlerine dayanır.
+
+[Yamamoto ve ark., özgün çalışma](https://doi.org/10.1295/polymj.2.799) · [Fetters ve ark., Tablo 7 s. 627](https://srd.nist.gov/jpcrdreprint/1.555949.pdf).

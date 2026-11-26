@@ -1,0 +1,287 @@
+id,material,group,grade,curve,T_K,shear_s_inv,conc_value,conc_basis,NaCl_g_L,carboxy_sites_per_repeat,eta_cP,replicates,source_doi,source_locator
+PVA-0001,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,4.63,4.0,wt_percent,0,0,215.9827213822894,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0002,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,4.47,4.0,wt_percent,0,0,223.7136465324385,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0003,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,6.61,4.0,wt_percent,0,0,151.285930408472,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0004,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,6.91,4.0,wt_percent,0,0,144.7178002894356,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0005,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,12.8,4.0,wt_percent,0,0,117.1875,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0006,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,10.6,4.0,wt_percent,0,0,141.50943396226415,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0007,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,15.7,4.0,wt_percent,0,0,95.54140127388536,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0008,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,17.4,4.0,wt_percent,0,0,86.20689655172414,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0009,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,23.3,4.0,wt_percent,0,0,85.4077253218884,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0010,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,21.4,4.0,wt_percent,0,0,92.99065420560748,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0011,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,28.8,4.0,wt_percent,0,0,69.09722222222221,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0012,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,30.8,4.0,wt_percent,0,0,64.6103896103896,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0013,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,36.7,4.0,wt_percent,0,0,67.84741144414168,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0014,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,34.5,4.0,wt_percent,0,0,72.17391304347827,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0015,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,44.5,4.0,wt_percent,0,0,55.95505617977528,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0016,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,46.7,4.0,wt_percent,0,0,53.319057815845824,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0017,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,52.6,4.0,wt_percent,0,0,56.844106463878326,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0018,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,50.5,4.0,wt_percent,0,0,59.20792079207921,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0019,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,62.8,4.0,wt_percent,0,0,47.611464968152866,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0020,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,65.5,4.0,wt_percent,0,0,45.64885496183206,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0021,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,70.8,4.0,wt_percent,0,0,49.293785310734464,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0022,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,69.2,4.0,wt_percent,0,0,50.433526011560694,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0023,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/303.15K,303.15,84.1,4.0,wt_percent,0,0,41.498216409036864,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0024,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/308.15K,308.15,86.9,4.0,wt_percent,0,0,40.16110471806674,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0025,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/293.15K,293.15,91.4,4.0,wt_percent,0,0,43.544857768052516,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0026,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/4wt_percent/0gL/298.15K,298.15,91.2,4.0,wt_percent,0,0,43.64035087719298,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0027,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,3.23,6.0,wt_percent,0,0,309.59752321981426,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0028,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,6.41,6.0,wt_percent,0,0,156.00624024961,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0029,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,5.32,6.0,wt_percent,0,0,187.96992481203006,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0030,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,5.99,6.0,wt_percent,0,0,166.9449081803005,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0031,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,12.5,6.0,wt_percent,0,0,120.0,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0032,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,15.6,6.0,wt_percent,0,0,96.15384615384616,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0033,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,15.7,6.0,wt_percent,0,0,95.54140127388536,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0034,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,14.6,6.0,wt_percent,0,0,102.73972602739727,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0035,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,22.5,6.0,wt_percent,0,0,88.44444444444444,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0036,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,27.1,6.0,wt_percent,0,0,73.43173431734317,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0037,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,28.4,6.0,wt_percent,0,0,70.07042253521126,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0038,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,25.1,6.0,wt_percent,0,0,79.2828685258964,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0039,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,34.9,6.0,wt_percent,0,0,71.34670487106017,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0040,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,40.2,6.0,wt_percent,0,0,61.940298507462686,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0041,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,43.0,6.0,wt_percent,0,0,57.906976744186046,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0042,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,37.4,6.0,wt_percent,0,0,66.57754010695187,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0043,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,48.8,6.0,wt_percent,0,0,61.270491803278695,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0044,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,54.5,6.0,wt_percent,0,0,54.862385321100916,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0045,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,58.8,6.0,wt_percent,0,0,50.85034013605443,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0046,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,52.2,6.0,wt_percent,0,0,57.279693486590034,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0047,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,64.5,6.0,wt_percent,0,0,54.10852713178294,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0048,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,70.7,6.0,wt_percent,0,0,49.36350777934936,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0049,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,75.7,6.0,wt_percent,0,0,46.10303830911493,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0050,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,69.0,6.0,wt_percent,0,0,50.57971014492754,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0051,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,81.3,6.0,wt_percent,0,0,48.95448954489545,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0052,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/298.15K,298.15,87.8,6.0,wt_percent,0,0,45.33029612756265,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0053,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/303.15K,303.15,93.5,6.0,wt_percent,0,0,42.5668449197861,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0054,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/308.15K,308.15,88.1,6.0,wt_percent,0,0,45.17593643586834,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0055,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/6wt_percent/0gL/293.15K,293.15,99.9,6.0,wt_percent,0,0,44.84484484484484,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0056,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,2.78,8.0,wt_percent,0,0,359.7122302158274,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0057,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,3.88,8.0,wt_percent,0,0,257.7319587628866,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0058,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,3.75,8.0,wt_percent,0,0,266.6666666666667,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0059,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,3.48,8.0,wt_percent,0,0,287.35632183908046,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0060,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,6.45,8.0,wt_percent,0,0,270.5426356589147,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0061,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,6.49,8.0,wt_percent,0,0,231.12480739599383,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0062,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,7.51,8.0,wt_percent,0,0,199.73368841544607,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0063,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,9.45,8.0,wt_percent,0,0,158.73015873015873,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0064,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,12.1,8.0,wt_percent,0,0,205.78512396694217,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0065,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,12.4,8.0,wt_percent,0,0,160.48387096774192,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0066,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,14.1,8.0,wt_percent,0,0,141.13475177304966,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0067,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,16.4,8.0,wt_percent,0,0,121.34146341463416,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0068,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,16.7,8.0,wt_percent,0,0,179.04191616766468,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0069,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,17.8,8.0,wt_percent,0,0,139.8876404494382,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0070,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,20.2,8.0,wt_percent,0,0,123.26732673267327,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0071,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,23.8,8.0,wt_percent,0,0,104.62184873949579,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0072,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,21.5,8.0,wt_percent,0,0,162.32558139534885,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0073,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,23.6,8.0,wt_percent,0,0,126.69491525423729,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0074,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,26.4,8.0,wt_percent,0,0,113.25757575757576,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0075,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,31.1,8.0,wt_percent,0,0,96.14147909967845,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0076,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,26.5,8.0,wt_percent,0,0,150.18867924528303,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0077,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,29.5,8.0,wt_percent,0,0,118.30508474576271,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0078,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,33.1,8.0,wt_percent,0,0,105.4380664652568,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0079,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,38.6,8.0,wt_percent,0,0,90.41450777202073,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0080,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,31.8,8.0,wt_percent,0,0,140.88050314465409,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0081,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,35.6,8.0,wt_percent,0,0,111.79775280898876,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0082,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,40.3,8.0,wt_percent,0,0,98.75930521091811,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0083,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,46.6,8.0,wt_percent,0,0,85.4077253218884,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0084,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,37.0,8.0,wt_percent,0,0,134.59459459459458,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0085,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,41.9,8.0,wt_percent,0,0,106.92124105011933,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0086,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,47.1,8.0,wt_percent,0,0,95.11677282377919,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0087,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,54.7,8.0,wt_percent,0,0,81.90127970749542,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0088,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,42.6,8.0,wt_percent,0,0,128.63849765258215,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0089,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,48.8,8.0,wt_percent,0,0,102.04918032786885,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0090,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,53.9,8.0,wt_percent,0,0,92.39332096474953,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0091,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,62.9,8.0,wt_percent,0,0,79.17329093799682,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0092,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,48.3,8.0,wt_percent,0,0,123.6024844720497,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0093,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,55.6,8.0,wt_percent,0,0,98.56115107913669,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0094,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,61.2,8.0,wt_percent,0,0,89.54248366013071,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0095,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,71.0,8.0,wt_percent,0,0,77.1830985915493,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0096,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,54.1,8.0,wt_percent,0,0,119.59334565619223,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0097,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,61.9,8.0,wt_percent,0,0,96.4458804523425,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0098,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,68.5,8.0,wt_percent,0,0,87.15328467153284,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0099,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,79.5,8.0,wt_percent,0,0,75.09433962264151,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0100,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,60.3,8.0,wt_percent,0,0,115.58872305140963,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0101,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,68.4,8.0,wt_percent,0,0,94.59064327485379,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0102,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,76.0,8.0,wt_percent,0,0,85.13157894736842,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0103,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,87.7,8.0,wt_percent,0,0,73.77423033067275,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0104,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,66.9,8.0,wt_percent,0,0,111.6591928251121,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0105,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,75.4,8.0,wt_percent,0,0,92.44031830238725,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0106,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,83.6,8.0,wt_percent,0,0,83.3732057416268,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0107,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/308.15K,308.15,96.0,8.0,wt_percent,0,0,72.60416666666667,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0108,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,73.4,8.0,wt_percent,0,0,108.44686648501362,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0109,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,82.1,8.0,wt_percent,0,0,90.98660170523752,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0110,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,91.4,8.0,wt_percent,0,0,81.72866520787746,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0111,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,80.1,8.0,wt_percent,0,0,105.6179775280899,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0112,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,88.8,8.0,wt_percent,0,0,89.63963963963964,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0113,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/303.15K,303.15,99.1,8.0,wt_percent,0,0,80.3229061553986,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0114,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,86.9,8.0,wt_percent,0,0,103.10701956271576,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0115,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/298.15K,298.15,95.9,8.0,wt_percent,0,0,88.21689259645464,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0116,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/8wt_percent/0gL/293.15K,293.15,93.7,8.0,wt_percent,0,0,100.96051227321237,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0117,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,2.7,10.0,wt_percent,0,0,370.3703703703703,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0118,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,1.94,10.0,wt_percent,0,0,515.4639175257732,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0119,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,2.07,10.0,wt_percent,0,0,483.09178743961354,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0120,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,4.5,10.0,wt_percent,0,0,222.22222222222223,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0121,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,7.1,10.0,wt_percent,0,0,245.77464788732397,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0122,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,4.78,10.0,wt_percent,0,0,313.8075313807531,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0123,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,5.43,10.0,wt_percent,0,0,276.24309392265195,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0124,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,7.01,10.0,wt_percent,0,0,213.98002853067047,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0125,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,10.9,10.0,wt_percent,0,0,228.44036697247705,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0126,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,8.2,10.0,wt_percent,0,0,242.68292682926833,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0127,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,9.13,10.0,wt_percent,0,0,217.9627601314348,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0128,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,10.4,10.0,wt_percent,0,0,191.34615384615384,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0129,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,13.3,10.0,wt_percent,0,0,224.81203007518795,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0130,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,10.4,10.0,wt_percent,0,0,239.4230769230769,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0131,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,12.0,10.0,wt_percent,0,0,207.5,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0132,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,13.0,10.0,wt_percent,0,0,191.53846153846155,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0133,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,15.7,10.0,wt_percent,0,0,222.29299363057325,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0134,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,12.3,10.0,wt_percent,0,0,243.08943089430892,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0135,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,14.5,10.0,wt_percent,0,0,206.20689655172413,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0136,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,16.7,10.0,wt_percent,0,0,179.04191616766468,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0137,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,18.1,10.0,wt_percent,0,0,219.8895027624309,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0138,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,15.1,10.0,wt_percent,0,0,231.12582781456953,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0139,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,17.2,10.0,wt_percent,0,0,202.90697674418607,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0140,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,19.9,10.0,wt_percent,0,0,175.37688442211058,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0141,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,20.9,10.0,wt_percent,0,0,214.35406698564594,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0142,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,18.1,10.0,wt_percent,0,0,219.8895027624309,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0143,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,20.2,10.0,wt_percent,0,0,197.02970297029702,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0144,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,23.3,10.0,wt_percent,0,0,170.8154506437768,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0145,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,23.7,10.0,wt_percent,0,0,210.126582278481,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0146,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,20.7,10.0,wt_percent,0,0,216.42512077294685,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0147,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,23.4,10.0,wt_percent,0,0,191.45299145299145,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0148,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,26.9,10.0,wt_percent,0,0,166.54275092936803,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0149,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,26.4,10.0,wt_percent,0,0,207.5757575757576,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0150,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,23.4,10.0,wt_percent,0,0,212.82051282051285,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0151,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,26.2,10.0,wt_percent,0,0,190.0763358778626,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0152,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,30.7,10.0,wt_percent,0,0,162.21498371335505,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0153,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,29.0,10.0,wt_percent,0,0,205.86206896551724,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0154,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,26.0,10.0,wt_percent,0,0,210.76923076923077,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0155,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,29.3,10.0,wt_percent,0,0,187.0307167235495,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0156,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,34.3,10.0,wt_percent,0,0,159.76676384839652,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0157,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,31.7,10.0,wt_percent,0,0,204.10094637223975,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0158,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,28.6,10.0,wt_percent,0,0,208.74125874125872,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0159,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,32.6,10.0,wt_percent,0,0,183.12883435582822,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0160,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,37.3,10.0,wt_percent,0,0,160.05361930294907,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0161,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,34.4,10.0,wt_percent,0,0,202.61627906976744,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0162,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,31.2,10.0,wt_percent,0,0,207.3717948717949,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0163,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,35.9,10.0,wt_percent,0,0,180.22284122562675,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0164,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,40.8,10.0,wt_percent,0,0,158.57843137254903,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0165,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,37.1,10.0,wt_percent,0,0,201.3477088948787,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0166,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,34.0,10.0,wt_percent,0,0,205.0,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0167,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,39.2,10.0,wt_percent,0,0,177.80612244897958,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0168,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,44.9,10.0,wt_percent,0,0,155.23385300668153,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0169,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,39.7,10.0,wt_percent,0,0,200.5037783375315,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0170,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,36.8,10.0,wt_percent,0,0,202.98913043478262,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0171,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,42.3,10.0,wt_percent,0,0,176.59574468085108,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0172,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,48.6,10.0,wt_percent,0,0,153.7037037037037,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0173,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,42.3,10.0,wt_percent,0,0,200.0,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0174,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,39.5,10.0,wt_percent,0,0,201.51898734177215,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0175,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,45.7,10.0,wt_percent,0,0,174.17943107221006,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0176,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,52.7,10.0,wt_percent,0,0,151.0436432637571,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0177,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,45.0,10.0,wt_percent,0,0,199.11111111111111,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0178,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,42.7,10.0,wt_percent,0,0,198.12646370023418,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0179,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,49.0,10.0,wt_percent,0,0,172.6530612244898,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0180,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,55.8,10.0,wt_percent,0,0,151.61290322580646,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0181,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,47.7,10.0,wt_percent,0,0,198.3228511530398,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0182,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,45.5,10.0,wt_percent,0,0,196.92307692307693,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0183,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,52.4,10.0,wt_percent,0,0,170.99236641221376,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0184,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,59.8,10.0,wt_percent,0,0,149.83277591973246,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0185,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,50.1,10.0,wt_percent,0,0,198.60279441117763,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0186,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,48.1,10.0,wt_percent,0,0,196.67359667359668,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0187,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,55.6,10.0,wt_percent,0,0,170.14388489208633,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0188,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,64.3,10.0,wt_percent,0,0,147.12286158631417,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0189,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,52.8,10.0,wt_percent,0,0,198.86363636363637,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0190,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,51.1,10.0,wt_percent,0,0,194.71624266144815,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0191,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,58.9,10.0,wt_percent,0,0,168.93039049235995,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0192,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,67.7,10.0,wt_percent,0,0,146.97193500738553,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0193,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,55.5,10.0,wt_percent,0,0,196.3963963963964,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0194,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,53.7,10.0,wt_percent,0,0,195.53072625698323,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0195,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,62.2,10.0,wt_percent,0,0,168.81028938906752,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0196,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,71.5,10.0,wt_percent,0,0,146.85314685314685,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0197,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,58.3,10.0,wt_percent,0,0,195.54030874785593,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0198,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,56.9,10.0,wt_percent,0,0,191.56414762741653,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0199,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,65.4,10.0,wt_percent,0,0,166.66666666666666,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0200,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,76.1,10.0,wt_percent,0,0,143.23258869908017,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0201,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,60.9,10.0,wt_percent,0,0,195.4022988505747,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0202,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,59.5,10.0,wt_percent,0,0,191.5966386554622,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0203,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,68.7,10.0,wt_percent,0,0,165.93886462882097,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0204,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,79.4,10.0,wt_percent,0,0,143.57682619647355,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0205,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,63.7,10.0,wt_percent,0,0,194.66248037676607,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0206,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,62.5,10.0,wt_percent,0,0,190.4,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0207,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,72.1,10.0,wt_percent,0,0,165.0485436893204,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0208,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,83.3,10.0,wt_percent,0,0,142.85714285714286,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0209,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,66.4,10.0,wt_percent,0,0,194.27710843373492,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0210,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,65.6,10.0,wt_percent,0,0,189.02439024390245,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0211,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,75.5,10.0,wt_percent,0,0,164.23841059602648,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0212,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,87.6,10.0,wt_percent,0,0,141.55251141552512,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0213,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,69.1,10.0,wt_percent,0,0,193.92185238784373,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0214,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,68.4,10.0,wt_percent,0,0,188.59649122807016,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0215,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,78.9,10.0,wt_percent,0,0,163.49809885931558,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0216,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,90.8,10.0,wt_percent,0,0,142.0704845814978,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0217,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,71.8,10.0,wt_percent,0,0,193.5933147632312,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0218,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,71.2,10.0,wt_percent,0,0,188.20224719101122,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0219,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,82.4,10.0,wt_percent,0,0,162.62135922330097,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0220,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,95.2,10.0,wt_percent,0,0,140.7563025210084,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0221,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,74.8,10.0,wt_percent,0,0,192.51336898395724,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0222,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,74.4,10.0,wt_percent,0,0,186.8279569892473,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0223,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,85.8,10.0,wt_percent,0,0,162.004662004662,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0224,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/308.15K,308.15,98.9,10.0,wt_percent,0,0,140.54600606673407,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0225,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,77.5,10.0,wt_percent,0,0,192.25806451612902,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0226,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,77.1,10.0,wt_percent,0,0,186.77042801556422,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0227,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,89.2,10.0,wt_percent,0,0,161.43497757847533,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0228,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,80.4,10.0,wt_percent,0,0,191.5422885572139,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0229,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,79.9,10.0,wt_percent,0,0,186.4831038798498,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0230,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,92.5,10.0,wt_percent,0,0,161.0810810810811,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0231,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,83.3,10.0,wt_percent,0,0,190.8763505402161,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0232,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,82.9,10.0,wt_percent,0,0,185.76598311218333,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0233,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,95.8,10.0,wt_percent,0,0,160.7515657620042,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0234,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,86.0,10.0,wt_percent,0,0,190.69767441860466,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0235,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,85.7,10.0,wt_percent,0,0,185.53092182030338,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0236,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/303.15K,303.15,99.3,10.0,wt_percent,0,0,160.12084592145015,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0237,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,88.9,10.0,wt_percent,0,0,190.1012373453318,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0238,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,88.8,10.0,wt_percent,0,0,184.6846846846847,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0239,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,91.7,10.0,wt_percent,0,0,189.74918211559432,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0240,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,91.9,10.0,wt_percent,0,0,183.8955386289445,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0241,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,94.5,10.0,wt_percent,0,0,189.41798941798942,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0242,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,94.9,10.0,wt_percent,0,0,183.35089567966278,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0243,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/293.15K,293.15,97.3,10.0,wt_percent,0,0,189.10585817060638,1,10.3390/polym15071743,Table 2; reported stress/rate
+PVA-0244,PVA,vinyl_alcohol,Merck-141351,PVA/Merck-141351/10wt_percent/0gL/298.15K,298.15,98.0,10.0,wt_percent,0,0,182.6530612244898,1,10.3390/polym15071743,Table 2; reported stress/rate
+HPAM-0245,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/2000ppm_reported/22.25gL/297.15K,297.15,30.0,2000.0,ppm_reported,22.25,0.05,5.495,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0246,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/2000ppm_reported/12.5gL/297.15K,297.15,4.0,2000.0,ppm_reported,12.5,0.05,7.776,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0247,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/2000ppm_reported/12.5gL/297.15K,297.15,30.0,2000.0,ppm_reported,12.5,0.05,6.999998333333333,6,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0248,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/1000ppm_reported/5.0gL/297.15K,297.15,50.0,1000.0,ppm_reported,5.0,0.05,3.7,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0249,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/1000ppm_reported/20.0gL/297.15K,297.15,50.0,1000.0,ppm_reported,20.0,0.05,3.1,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0250,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/3000ppm_reported/5.0gL/297.15K,297.15,50.0,3000.0,ppm_reported,5.0,0.05,12.90001,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0251,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/1000ppm_reported/20.0gL/297.15K,297.15,10.0,1000.0,ppm_reported,20.0,0.05,3.2,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0252,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/3000ppm_reported/20.0gL/297.15K,297.15,10.0,3000.0,ppm_reported,20.0,0.05,11.29999,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0253,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/3000ppm_reported/20.0gL/297.15K,297.15,50.0,3000.0,ppm_reported,20.0,0.05,9.4,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0254,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/3000ppm_reported/5.0gL/297.15K,297.15,10.0,3000.0,ppm_reported,5.0,0.05,19.69999,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0255,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/3300ppm_reported/12.5gL/297.15K,297.15,30.0,3300.0,ppm_reported,12.5,0.05,14.80001,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0256,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/2000ppm_reported/12.5gL/297.15K,297.15,56.0,2000.0,ppm_reported,12.5,0.05,6.532,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0257,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/1000ppm_reported/5.0gL/297.15K,297.15,10.0,1000.0,ppm_reported,5.0,0.05,4.3,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0258,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/2000ppm_reported/2.75gL/297.15K,297.15,30.0,2000.0,ppm_reported,2.75,0.05,9.12399,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+HPAM-0259,HPAM,acrylamide,SNF-05mol-percent,HPAM/SNF-05mol-percent/700ppm_reported/12.5gL/297.15K,297.15,30.0,700.0,ppm_reported,12.5,0.05,2.629,1,10.1007/s13202-017-0375-6,"Table 1+2; 10^log10(eta), replicate mean"
+CMC-0260,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,170,4,g_per_100mL,0,0.43,46.19,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0261,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,170,4,g_per_100mL,0,0.88,274.46,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0262,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,170,4,g_per_100mL,0,1.23,1201,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0263,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,200,4,g_per_100mL,0,0.43,49.53,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0264,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,200,4,g_per_100mL,0,0.88,269.46,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0265,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,200,4,g_per_100mL,0,1.23,1108,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0266,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,300,4,g_per_100mL,0,0.43,46.89,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0267,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,300,4,g_per_100mL,0,0.88,240.38,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0268,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,300,4,g_per_100mL,0,1.23,903.03,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0269,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,500,4,g_per_100mL,0,0.43,43.16,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0270,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,500,4,g_per_100mL,0,0.88,201.42,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0271,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,500,4,g_per_100mL,0,1.23,694.57,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0272,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,700,4,g_per_100mL,0,0.43,45.67,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0273,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,700,4,g_per_100mL,0,0.88,174.04,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0274,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,700,4,g_per_100mL,0,1.23,585.02,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0275,CMC,polysaccharides,CMC-DS0.43,CMC/CMC-DS0.43/4g_per_100mL/0gL/298.15K,298.15,1000,4,g_per_100mL,0,0.43,36.66,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0276,CMC,polysaccharides,CMC-DS0.88,CMC/CMC-DS0.88/4g_per_100mL/0gL/298.15K,298.15,1000,4,g_per_100mL,0,0.88,138.05,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+CMC-0277,CMC,polysaccharides,CMC-DS1.23,CMC/CMC-DS1.23/4g_per_100mL/0gL/298.15K,298.15,1000,4,g_per_100mL,0,1.23,476.93,1,10.35812/cellulosechemtechnol.2020.54.24,Table 4 CMC; room temperature (25 ± 1 °C in Methods)
+ALG-0278,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/1wt_percent/0gL/298.15K,298.15,100,1,wt_percent,0,1,116.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0279,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/1wt_percent/0gL/313.15K,313.15,100,1,wt_percent,0,1,85.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0280,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/1wt_percent/0gL/328.15K,328.15,100,1,wt_percent,0,1,57.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0281,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/2wt_percent/0gL/298.15K,298.15,100,2,wt_percent,0,1,396.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0282,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/2wt_percent/0gL/313.15K,313.15,100,2,wt_percent,0,1,303.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0283,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/2wt_percent/0gL/328.15K,328.15,100,2,wt_percent,0,1,225.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0284,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/3wt_percent/0gL/298.15K,298.15,100,3,wt_percent,0,1,1225.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0285,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/3wt_percent/0gL/313.15K,313.15,100,3,wt_percent,0,1,950.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s
+ALG-0286,ALG,polysaccharides,sodium-alginate,ALG/sodium-alginate/3wt_percent/0gL/328.15K,328.15,100,3,wt_percent,0,1,672.0,1,10.1111/j.1365-2621.2009.02088.x,Table 1 apparent viscosity at 100/s

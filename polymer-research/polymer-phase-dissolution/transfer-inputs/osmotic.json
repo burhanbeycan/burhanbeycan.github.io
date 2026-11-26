@@ -1,0 +1,91 @@
+{
+  "kind": "membrane_osmometry",
+  "label": "PS / siklohekzan · Ozmometri",
+  "points": [
+    {
+      "T_K": 308.15,
+      "A2_mol_ml_g2": -7e-06,
+      "Mn_g_mol": 144000.0,
+      "series": "B-V-2",
+      "source": "10.1021/ja01523a003"
+    },
+    {
+      "T_K": 313.15,
+      "A2_mol_ml_g2": 1.9e-05,
+      "Mn_g_mol": 139200.0,
+      "series": "B-V-2",
+      "source": "10.1021/ja01523a003"
+    },
+    {
+      "T_K": 308.15,
+      "A2_mol_ml_g2": 4e-06,
+      "Mn_g_mol": 208800.0,
+      "series": "B-V-1",
+      "source": "10.1021/ja01523a003"
+    },
+    {
+      "T_K": 313.15,
+      "A2_mol_ml_g2": 7.4e-05,
+      "Mn_g_mol": 196500.0,
+      "series": "B-V-1",
+      "source": "10.1021/ja01523a003"
+    },
+    {
+      "T_K": 308.15,
+      "A2_mol_ml_g2": 0.0,
+      "Mn_g_mol": 519000.0,
+      "series": "B-II-3",
+      "source": "10.1021/ja01523a003"
+    }
+  ],
+  "holdoutPoints": [
+    {
+      "T_K": 296.45,
+      "A2_mol_ml_g2": -0.00028700000000000004,
+      "reported_halfwidth_mol_ml_g2": 2.0000000000000003e-06,
+      "Mn_g_mol": 55000.0,
+      "source": "10.1021/ma000348e",
+      "series": "LPSLM"
+    },
+    {
+      "T_K": 300.95,
+      "A2_mol_ml_g2": -0.00011000000000000002,
+      "reported_halfwidth_mol_ml_g2": 2.5e-05,
+      "Mn_g_mol": 73000.0,
+      "source": "10.1021/ma000348e",
+      "series": "LPSLM"
+    },
+    {
+      "T_K": 306.95,
+      "A2_mol_ml_g2": -1.2e-05,
+      "reported_halfwidth_mol_ml_g2": 1.0000000000000002e-06,
+      "Mn_g_mol": 77000.0,
+      "source": "10.1021/ma000348e",
+      "series": "LPSLM"
+    }
+  ],
+  "thetaHoldout": {
+    "T_K": 307.65,
+    "reported_halfwidth_K": 0.3,
+    "source": "10.1021/ma00017a029",
+    "method": "light scattering",
+    "Mw_lower_g_mol": 50000
+  },
+  "sources": [
+    {
+      "title": "McIntyre, O’Mara ve Konouck (1959) · Tablo III",
+      "url": "https://doi.org/10.1021/ja01523a003",
+      "id": "10.1021/ja01523a003"
+    },
+    {
+      "title": "Striolo, Prausnitz ve Bertucco (2000) · Tablo 3",
+      "url": "https://doi.org/10.1021/ma000348e",
+      "id": "10.1021/ma000348e"
+    },
+    {
+      "title": "Nakamura, Norisuye ve Teramoto (1991) · Işık saçılması",
+      "url": "https://doi.org/10.1021/ma00017a029",
+      "id": "10.1021/ma00017a029"
+    }
+  ]
+}

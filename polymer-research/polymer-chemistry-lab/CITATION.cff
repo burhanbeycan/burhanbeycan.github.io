@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite this software and the RDKit and chemical identity references used in your calculation."
+title: "Polymer Chemistry Lab"
+version: 0.4.0
+type: software
+authors:
+  - family-names: Beycan
+    given-names: Burhan
+license: MIT
+repository-code: "https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-chemistry-lab"

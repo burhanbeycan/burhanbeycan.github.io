@@ -1,0 +1,958 @@
+{
+  "settings": {
+    "length_u": 0.5,
+    "amplitudeCoefficient": 0.25,
+    "regularizationSD_eta_rel": 0.02
+  },
+  "within": [
+    {
+      "seriesId": "copenhaver-ps-toluene-30",
+      "trainSeriesId": "copenhaver-ps-toluene-30",
+      "testSeriesId": "copenhaver-ps-toluene-30",
+      "strategy": "highest",
+      "trainIds": [
+        "copenhaver-ps-toluene-30/team-1",
+        "copenhaver-ps-toluene-30/team-2",
+        "copenhaver-ps-toluene-30/team-3",
+        "copenhaver-ps-toluene-30/team-4"
+      ],
+      "testIds": [
+        "copenhaver-ps-toluene-30/team-5"
+      ],
+      "etaPrior_mL_g": 68.22131661278776,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5417614679734287,
+      "trainRange_u": [
+        0.29301055485192345,
+        1.174771072072205
+      ],
+      "folds": [
+        {
+          "id": "team-5",
+          "key": "copenhaver-ps-toluene-30/team-5",
+          "observed": 3.63,
+          "c_g_L": 19.93,
+          "u": 1.35965084009286,
+          "baseline": 3.361178398340014,
+          "gp": 3.2581540908348043,
+          "gpConditionalSD": 0.11334753210089063,
+          "slope_dEtaRel_du": 0.791871084056869,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.2688216016599858,
+          "rmse": 0.2688216016599858,
+          "rmse_pct": 7.405553764737902
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.37184590916519555,
+          "rmse": 0.37184590916519555,
+          "rmse_pct": 10.243688957718886
+        }
+      }
+    },
+    {
+      "seriesId": "copenhaver-ps-toluene-30",
+      "trainSeriesId": "copenhaver-ps-toluene-30",
+      "testSeriesId": "copenhaver-ps-toluene-30",
+      "strategy": "upperTwo",
+      "trainIds": [
+        "copenhaver-ps-toluene-30/team-1",
+        "copenhaver-ps-toluene-30/team-2",
+        "copenhaver-ps-toluene-30/team-3"
+      ],
+      "testIds": [
+        "copenhaver-ps-toluene-30/team-4",
+        "copenhaver-ps-toluene-30/team-5"
+      ],
+      "etaPrior_mL_g": 81.75761886141623,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.1022539135404426,
+      "trainRange_u": [
+        0.35114897300978276,
+        0.9532938359241133
+      ],
+      "folds": [
+        {
+          "id": "team-4",
+          "key": "copenhaver-ps-toluene-30/team-4",
+          "observed": 3.025,
+          "c_g_L": 17.22,
+          "u": 1.4078661967935875,
+          "baseline": 2.6105423728426858,
+          "gp": 3.96961436383786,
+          "gpConditionalSD": 0.2994899199379431,
+          "slope_dEtaRel_du": 3.2486726093513845,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        },
+        {
+          "id": "team-5",
+          "key": "copenhaver-ps-toluene-30/team-5",
+          "observed": 3.63,
+          "c_g_L": 19.93,
+          "u": 1.6294293439080254,
+          "baseline": 2.9009175731635186,
+          "gp": 4.4338935584917225,
+          "gpConditionalSD": 0.5530296991928948,
+          "slope_dEtaRel_du": 0.9130024343349517,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 2,
+          "mae": 0.5717700269968977,
+          "rmse": 0.5930161506361544,
+          "rmse_pct": 17.191907668521484
+        },
+        "gp": {
+          "n": 2,
+          "mae": 0.8742539611647913,
+          "rmse": 0.8770807117230687,
+          "rmse_pct": 27.069893820492823
+        }
+      }
+    },
+    {
+      "seriesId": "copenhaver-ps-toluene-30",
+      "trainSeriesId": "copenhaver-ps-toluene-30",
+      "testSeriesId": "copenhaver-ps-toluene-30",
+      "strategy": "lowInterpolation",
+      "trainIds": [
+        "copenhaver-ps-toluene-30/team-1",
+        "copenhaver-ps-toluene-30/team-3"
+      ],
+      "testIds": [
+        "copenhaver-ps-toluene-30/team-2"
+      ],
+      "etaPrior_mL_g": 83.35246400672489,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.23408572377224215,
+      "trainRange_u": [
+        0.3579988329088834,
+        0.9718897303184122
+      ],
+      "folds": [
+        {
+          "id": "team-2",
+          "key": "copenhaver-ps-toluene-30/team-2",
+          "observed": 1.656,
+          "c_g_L": 9.38,
+          "u": 0.7818461123830796,
+          "baseline": 1.9249388162641459,
+          "gp": 1.9249388162641459,
+          "gpConditionalSD": 0.04358347729949332,
+          "slope_dEtaRel_du": 1.366038026191414,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": true,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.26893881626414595,
+          "rmse": 0.26893881626414595,
+          "rmse_pct": 16.24026668261751
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.26893881626414595,
+          "rmse": 0.26893881626414595,
+          "rmse_pct": 16.24026668261751
+        }
+      }
+    },
+    {
+      "seriesId": "phywe-ps-toluene-25",
+      "trainSeriesId": "phywe-ps-toluene-25",
+      "testSeriesId": "phywe-ps-toluene-25",
+      "strategy": "highest",
+      "trainIds": [
+        "phywe-ps-toluene-25/c-4",
+        "phywe-ps-toluene-25/c-8",
+        "phywe-ps-toluene-25/c-12",
+        "phywe-ps-toluene-25/c-16"
+      ],
+      "testIds": [
+        "phywe-ps-toluene-25/c-20"
+      ],
+      "etaPrior_mL_g": 65.09375,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.32020485735710996,
+      "trainRange_u": [
+        0.260375,
+        1.0415
+      ],
+      "folds": [
+        {
+          "id": "c-20",
+          "key": "phywe-ps-toluene-25/c-20",
+          "observed": 2.889,
+          "c_g_L": 20,
+          "u": 1.3018750000000001,
+          "baseline": 2.8445833333333335,
+          "gp": 2.8328595093036775,
+          "gpConditionalSD": 0.1418461631571448,
+          "slope_dEtaRel_du": 1.7893816448234705,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.04441666666666633,
+          "rmse": 0.04441666666666633,
+          "rmse_pct": 1.5374408676589246
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.05614049069632232,
+          "rmse": 0.05614049069632232,
+          "rmse_pct": 1.9432499375674046
+        }
+      }
+    },
+    {
+      "seriesId": "phywe-ps-toluene-25",
+      "trainSeriesId": "phywe-ps-toluene-25",
+      "testSeriesId": "phywe-ps-toluene-25",
+      "strategy": "upperTwo",
+      "trainIds": [
+        "phywe-ps-toluene-25/c-4",
+        "phywe-ps-toluene-25/c-8",
+        "phywe-ps-toluene-25/c-12"
+      ],
+      "testIds": [
+        "phywe-ps-toluene-25/c-16",
+        "phywe-ps-toluene-25/c-20"
+      ],
+      "etaPrior_mL_g": 64.90277777777777,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.32889240057519115,
+      "trainRange_u": [
+        0.25961111111111107,
+        0.7788333333333333
+      ],
+      "folds": [
+        {
+          "id": "c-16",
+          "key": "phywe-ps-toluene-25/c-16",
+          "observed": 2.387,
+          "c_g_L": 16,
+          "u": 1.0384444444444443,
+          "baseline": 2.393111111111111,
+          "gp": 2.3963091662057434,
+          "gpConditionalSD": 0.10987173895746911,
+          "slope_dEtaRel_du": 1.6943686216967846,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        },
+        {
+          "id": "c-20",
+          "key": "phywe-ps-toluene-25/c-20",
+          "observed": 2.889,
+          "c_g_L": 20,
+          "u": 1.2980555555555555,
+          "baseline": 2.8522222222222227,
+          "gp": 2.8576466063168526,
+          "gpConditionalSD": 0.31030583219266905,
+          "slope_dEtaRel_du": 1.8582225200318523,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 2,
+          "mae": 0.021444444444444155,
+          "rmse": 0.02636238435047088,
+          "rmse_pct": 0.9181896801680076
+        },
+        "gp": {
+          "n": 2,
+          "mae": 0.02033127994444528,
+          "rmse": 0.023126779616891833,
+          "rmse_pct": 0.8154453835938081
+        }
+      }
+    },
+    {
+      "seriesId": "phywe-ps-toluene-25",
+      "trainSeriesId": "phywe-ps-toluene-25",
+      "testSeriesId": "phywe-ps-toluene-25",
+      "strategy": "lowInterpolation",
+      "trainIds": [
+        "phywe-ps-toluene-25/c-4",
+        "phywe-ps-toluene-25/c-12"
+      ],
+      "testIds": [
+        "phywe-ps-toluene-25/c-8"
+      ],
+      "etaPrior_mL_g": 64.95833333333333,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.3283300712904157,
+      "trainRange_u": [
+        0.2598333333333333,
+        0.7795
+      ],
+      "folds": [
+        {
+          "id": "c-8",
+          "key": "phywe-ps-toluene-25/c-8",
+          "observed": 1.607,
+          "c_g_L": 8,
+          "u": 0.5196666666666666,
+          "baseline": 1.6083333333333334,
+          "gp": 1.6083333333333334,
+          "gpConditionalSD": 0.02883125266018389,
+          "slope_dEtaRel_du": 1.3412443874278384,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": true,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.0013333333333334085,
+          "rmse": 0.0013333333333334085,
+          "rmse_pct": 0.08297033810413246
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.0013333333333334085,
+          "rmse": 0.0013333333333334085,
+          "rmse_pct": 0.08297033810413246
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-633000",
+      "testSeriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "highest",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "etaPrior_mL_g": 66.46980792955165,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5728374828655284,
+      "trainRange_u": [
+        0.2240697225305186,
+        0.43497842309098594
+      ],
+      "folds": [
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-633000/c-5",
+          "observed": 1.9161,
+          "c_g_L": 9.956,
+          "u": 0.6617734077466162,
+          "baseline": 1.9126441710895823,
+          "gp": 1.912585264261346,
+          "gpConditionalSD": 0.05953130282020251,
+          "slope_dEtaRel_du": 1.7578445525092443,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.0034558289104176243,
+          "rmse": 0.0034558289104176243,
+          "rmse_pct": 0.18035744013452454
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.003514735738654018,
+          "rmse": 0.003514735738654018,
+          "rmse_pct": 0.18343174879463586
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-633000",
+      "testSeriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "upperTwo",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-4",
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "etaPrior_mL_g": 66.37705187089655,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5796238652630175,
+      "trainRange_u": [
+        0.22375704185679227,
+        0.3663349492754781
+      ],
+      "folds": [
+        {
+          "id": "c-4",
+          "key": "luh1967-ps-cyclohexane-633000/c-4",
+          "observed": 1.5432,
+          "c_g_L": 6.544,
+          "u": 0.434371427443147,
+          "baseline": 1.5437340103390844,
+          "gp": 1.543772276895024,
+          "gpConditionalSD": 0.022091705800951416,
+          "slope_dEtaRel_du": 1.5038414297175098,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        },
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-633000/c-5",
+          "observed": 1.9161,
+          "c_g_L": 9.956,
+          "u": 0.660849928426646,
+          "baseline": 1.9139847860587378,
+          "gp": 1.9141176830798816,
+          "gpConditionalSD": 0.07397779380083823,
+          "slope_dEtaRel_du": 1.76658575471101,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 2,
+          "mae": 0.0013246121401733202,
+          "rmse": 0.0015426109456954501,
+          "rmse_pct": 0.0818038941099582
+        },
+        "gp": {
+          "n": 2,
+          "mae": 0.0012772969075711682,
+          "rmse": 0.0014589518868635886,
+          "rmse_pct": 0.07771200980031613
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-633000",
+      "testSeriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "lowInterpolation",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-3"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-2"
+      ],
+      "etaPrior_mL_g": 66.41981778054782,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5784516658937308,
+      "trainRange_u": [
+        0.2239012057382267,
+        0.36657097433084346
+      ],
+      "folds": [
+        {
+          "id": "c-2",
+          "key": "luh1967-ps-cyclohexane-633000/c-2",
+          "observed": 1.3396,
+          "c_g_L": 4.382,
+          "u": 0.2910516415143605,
+          "baseline": 1.3400528941503955,
+          "gp": 1.3400528941503955,
+          "gpConditionalSD": 0.010566757033663188,
+          "slope_dEtaRel_du": 1.3367186137901736,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": true,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.00045289415039562186,
+          "rmse": 0.00045289415039562186,
+          "rmse_pct": 0.03380816291397595
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.00045289415039562186,
+          "rmse": 0.00045289415039562186,
+          "rmse_pct": 0.03380816291397595
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "testSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "highest",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "etaPrior_mL_g": 110.85212558981351,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5925197060895322,
+      "trainRange_u": [
+        0.12825590930741423,
+        0.4289977260325783
+      ],
+      "folds": [
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-1770000/c-5",
+          "observed": 1.6821,
+          "c_g_L": 4.704,
+          "u": 0.5214483987744828,
+          "baseline": 1.6825595033326994,
+          "gp": 1.6823913131625714,
+          "gpConditionalSD": 0.02809274693459383,
+          "slope_dEtaRel_du": 1.6171744920616524,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.00045950333269950683,
+          "rmse": 0.00045950333269950683,
+          "rmse_pct": 0.027317242298288264
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.00029131316257147155,
+          "rmse": 0.00029131316257147155,
+          "rmse_pct": 0.017318421174215063
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "testSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "upperTwo",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-4",
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "etaPrior_mL_g": 110.82709317778395,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.5939782855147605,
+      "trainRange_u": [
+        0.12822694680669602,
+        0.3188495470724844
+      ],
+      "folds": [
+        {
+          "id": "c-4",
+          "key": "luh1967-ps-cyclohexane-1770000/c-4",
+          "observed": 1.538,
+          "c_g_L": 3.87,
+          "u": 0.4289008505980239,
+          "baseline": 1.5381666842378505,
+          "gp": 1.537896206445883,
+          "gpConditionalSD": 0.028430441296916607,
+          "slope_dEtaRel_du": 1.508019494081464,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        },
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-1770000/c-5",
+          "observed": 1.6821,
+          "c_g_L": 4.704,
+          "u": 0.5213306463082957,
+          "baseline": 1.682765416434421,
+          "gp": 1.6823433751254921,
+          "gpConditionalSD": 0.04586099212773027,
+          "slope_dEtaRel_du": 1.6175637081855598,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 2,
+          "mae": 0.000416050336135787,
+          "rmse": 0.0004850580719591562,
+          "rmse_pct": 0.029002973226050485
+        },
+        "gp": {
+          "n": 2,
+          "mae": 0.00017358433980463328,
+          "rmse": 0.00018708895422312017,
+          "rmse_pct": 0.011288977091691625
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "testSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "lowInterpolation",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-3"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-2"
+      ],
+      "etaPrior_mL_g": 110.52858441853068,
+      "etaPriorSource": "Huggins · yalnız eğitim derişimleri",
+      "etaPriorDomain": "within-study-fit",
+      "kH": 0.6003797261990985,
+      "trainRange_u": [
+        0.12788157217224,
+        0.31799073737211275
+      ],
+      "folds": [
+        {
+          "id": "c-2",
+          "key": "luh1967-ps-cyclohexane-1770000/c-2",
+          "observed": 1.2358,
+          "c_g_L": 1.886,
+          "u": 0.20845691021334886,
+          "baseline": 1.2345459809926427,
+          "gp": 1.2345459809926427,
+          "gpConditionalSD": 0.006924262344187794,
+          "slope_dEtaRel_du": 1.250306605356401,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": true,
+          "etaPriorDomain": "within-study-fit"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 1,
+          "mae": 0.001254019007357332,
+          "rmse": 0.001254019007357332,
+          "rmse_pct": 0.10147426827620426
+        },
+        "gp": {
+          "n": 1,
+          "mae": 0.001254019007357332,
+          "rmse": 0.001254019007357332,
+          "rmse_pct": 0.10147426827620426
+        }
+      }
+    }
+  ],
+  "transfer": [
+    {
+      "seriesId": "luh1967-ps-cyclohexane-1770000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-633000",
+      "testSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "strategy": "wholeGrade",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4",
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4",
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "etaPrior_mL_g": 116.72667756660965,
+      "etaPriorSource": "Einaga 1979 · altı ayrı PS fraksiyonu · Mark–Houwink",
+      "etaPriorDomain": "extrapolation",
+      "kH": 0.46821479643473524,
+      "trainRange_u": [
+        0.2330890983713994,
+        0.6884114694113476
+      ],
+      "folds": [
+        {
+          "id": "c-1",
+          "key": "luh1967-ps-cyclohexane-1770000/c-1",
+          "observed": 1.1377,
+          "c_g_L": 1.157,
+          "u": 0.13505276594456736,
+          "baseline": 1.1435926524781335,
+          "gp": 1.142668717128774,
+          "gpConditionalSD": 0.0022578453090372876,
+          "slope_dEtaRel_du": 1.1134444284512093,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-2",
+          "key": "luh1967-ps-cyclohexane-1770000/c-2",
+          "observed": 1.2358,
+          "c_g_L": 1.886,
+          "u": 0.22014651389062578,
+          "baseline": 1.2428383040763644,
+          "gp": 1.2405999829868748,
+          "gpConditionalSD": 0.00496056854108112,
+          "slope_dEtaRel_du": 1.189146763517486,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-3",
+          "key": "luh1967-ps-cyclohexane-1770000/c-3",
+          "observed": 1.3787,
+          "c_g_L": 2.877,
+          "u": 0.33582265135913597,
+          "baseline": 1.3886264427067485,
+          "gp": 1.3845762523531517,
+          "gpConditionalSD": 0.008720956383366493,
+          "slope_dEtaRel_du": 1.3024381781739607,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-4",
+          "key": "luh1967-ps-cyclohexane-1770000/c-4",
+          "observed": 1.538,
+          "c_g_L": 3.87,
+          "u": 0.45173224218277935,
+          "baseline": 1.5472770986945066,
+          "gp": 1.5428056206755485,
+          "gpConditionalSD": 0.011734471665151498,
+          "slope_dEtaRel_du": 1.4300510625305856,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-1770000/c-5",
+          "observed": 1.6821,
+          "c_g_L": 4.704,
+          "u": 0.5490822912733317,
+          "baseline": 1.6902450082352265,
+          "gp": 1.6876139561884957,
+          "gpConditionalSD": 0.013364018903383495,
+          "slope_dEtaRel_du": 1.5458877550333732,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 5,
+          "mae": 0.008055901238195906,
+          "rmse": 0.008187808762413845,
+          "rmse_pct": 0.5846916714605588
+        },
+        "gp": {
+          "n": 5,
+          "mae": 0.005192905866568953,
+          "rmse": 0.005210681936635369,
+          "rmse_pct": 0.3816660519460213
+        }
+      }
+    },
+    {
+      "seriesId": "luh1967-ps-cyclohexane-633000",
+      "trainSeriesId": "luh1967-ps-cyclohexane-1770000",
+      "testSeriesId": "luh1967-ps-cyclohexane-633000",
+      "strategy": "wholeGrade",
+      "trainIds": [
+        "luh1967-ps-cyclohexane-1770000/c-1",
+        "luh1967-ps-cyclohexane-1770000/c-2",
+        "luh1967-ps-cyclohexane-1770000/c-3",
+        "luh1967-ps-cyclohexane-1770000/c-4",
+        "luh1967-ps-cyclohexane-1770000/c-5"
+      ],
+      "testIds": [
+        "luh1967-ps-cyclohexane-633000/c-1",
+        "luh1967-ps-cyclohexane-633000/c-2",
+        "luh1967-ps-cyclohexane-633000/c-3",
+        "luh1967-ps-cyclohexane-633000/c-4",
+        "luh1967-ps-cyclohexane-633000/c-5"
+      ],
+      "etaPrior_mL_g": 69.14538664236115,
+      "etaPriorSource": "Einaga 1979 · altı ayrı PS fraksiyonu · Mark–Houwink",
+      "etaPriorDomain": "extrapolation",
+      "kH": 0.4282197061325376,
+      "trainRange_u": [
+        0.13505276594456736,
+        0.5490822912733317
+      ],
+      "folds": [
+        {
+          "id": "c-1",
+          "key": "luh1967-ps-cyclohexane-633000/c-1",
+          "observed": 1.2529,
+          "c_g_L": 3.371,
+          "u": 0.2330890983713994,
+          "baseline": 1.2563545010112018,
+          "gp": 1.2549570824096112,
+          "gpConditionalSD": 0.00601834827739264,
+          "slope_dEtaRel_du": 1.1920862978324553,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-2",
+          "key": "luh1967-ps-cyclohexane-633000/c-2",
+          "observed": 1.3396,
+          "c_g_L": 4.382,
+          "u": 0.30299508426682653,
+          "baseline": 1.3423082316391244,
+          "gp": 1.3405173497482943,
+          "gpConditionalSD": 0.00828797968113042,
+          "slope_dEtaRel_du": 1.2564056391705218,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-3",
+          "key": "luh1967-ps-cyclohexane-633000/c-3",
+          "observed": 1.4443,
+          "c_g_L": 5.519,
+          "u": 0.3816133888791912,
+          "baseline": 1.4439745016436738,
+          "gp": 1.4422788979360022,
+          "gpConditionalSD": 0.010025252118100507,
+          "slope_dEtaRel_du": 1.3330571247157508,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-4",
+          "key": "luh1967-ps-cyclohexane-633000/c-4",
+          "observed": 1.5432,
+          "c_g_L": 6.544,
+          "u": 0.4524874101876113,
+          "baseline": 1.5401631924180719,
+          "gp": 1.5393041630124975,
+          "gpConditionalSD": 0.011237574723578812,
+          "slope_dEtaRel_du": 1.4053030248034222,
+          "domain": "interpolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        },
+        {
+          "id": "c-5",
+          "key": "luh1967-ps-cyclohexane-633000/c-5",
+          "observed": 1.9161,
+          "c_g_L": 9.956,
+          "u": 0.6884114694113476,
+          "baseline": 1.8913492207426978,
+          "gp": 1.8997125697544281,
+          "gpConditionalSD": 0.04263170395699835,
+          "slope_dEtaRel_du": 1.6474899687308817,
+          "domain": "extrapolation",
+          "physicallyAdmissible": true,
+          "eligible": false,
+          "etaPriorDomain": "extrapolation"
+        }
+      ],
+      "metrics": {
+        "baseline": {
+          "n": 5,
+          "mae": 0.006855163569176525,
+          "rmse": 0.01132428646017815,
+          "rmse_pct": 0.6041000754755271
+        },
+        "gp": {
+          "n": 5,
+          "mae": 0.005055760290995526,
+          "rmse": 0.007653540200984067,
+          "rmse_pct": 0.4114393594903542
+        }
+      }
+    }
+  ],
+  "assumptions": {
+    "target": "Boyutsuz bağıl viskozite ηᵣ",
+    "feature": "u = c[η]",
+    "mean": "1 + u + kH u²",
+    "kernel": "σ² u² v² exp(−(u−v)² / (2 ℓ²))",
+    "conditionalSD": "Sabit Huggins ortalaması ve sabit çekirdek altında gizli GP düzeltmesinin standart sapması. Ölçüm, mol kütlesi ve model belirsizliği ayrıca değerlendirilir.",
+    "transfer": "Aynı çalışma ve çözücü/sıcaklıkta, diğer fraksiyonun yalnız mol kütlesi ve derişimleri kullanılır. Kapiler verilerden türetilen numuneye ait [η] sınama girdisi olarak kullanılmaz.",
+    "scope": "Seyreltik, nötr, lineer PS çözeltileri. Derişim ve harici mol kütlesi interpolasyonunda, u < 1 için nicel değerlendirme; mutlak geçerlilik eşiği deneyle belirlenir."
+  }
+}

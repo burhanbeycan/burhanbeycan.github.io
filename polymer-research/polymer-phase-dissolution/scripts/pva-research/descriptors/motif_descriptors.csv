@@ -1,0 +1,12 @@
+motif,psmiles,covalent_repeat_g_mol,CH2_per_repeat,alcoholic_or_phenolic_OH_per_repeat,acetate_ester_per_repeat,HBD_per_repeat,HBA_per_repeat,formal_charge,scope,rdkit
+PVA,[*]CC(O)[*],44.053,1,1,0,1,1,0,Hydrolysed vinyl alcohol repeat. Residual acetate amount and arrangement are sample attributes.,2025.03.5
+PVAc,[*]CC(OC(=O)C)[*],86.09,1,0,1,0,2,0,Unhydrolysed vinyl acetate repeat in partially hydrolysed PVA.,2025.03.5
+HPAM,[*]CC(C(=O)N)[*],71.079,1,0,0,1,1,0,"Parent repeat only. Supply hydrolysis, charge state, counterion, and ionic medium independently.",2025.03.5
+AA_anion,[*]CC(C(=O)[O-])[*],71.055,1,0,0,0,2,-1,Covalent anion only. Counterion mass is included separately for a specified dry salt.,2025.03.5
+PAN,[*]CC(C#N)[*],53.064,1,0,0,0,1,0,Homopolymer repeat. Comonomer composition must be supplied for copolymers.,2025.03.5
+PVDF,[*]CC(F)(F)[*],64.034,1,0,0,0,0,0,Ideal head-to-tail homopolymer repeat. Manufacturing defects are not encoded.,2025.03.5
+PEO,[*]CCO[*],44.053,2,0,0,0,1,0,PEG and PEO share this backbone. Separate Mn and end groups are important for PEG oligomers.,2025.03.5
+PVP,[*]CC(N1CCCC1=O)[*],111.144,4,0,0,0,1,0,Homopolymer repeat with stereochemical sequence unspecified.,2025.03.5
+CMC,[*]O[C@@H]1O[C@H](CO)[C@@H]([*])[C@H](O)[C@H]1O,162.141,1,3,0,3,5,0,"1→4 beta-D-glucopyranosyl backbone, without carboxymethyl groups. Record degree of substitution and counterion separately. Statistical substitution sites are not known.",2025.03.5
+ALG_M,[*]O[C@@H]1O[C@H](C(=O)[O-])[C@@H]([*])[C@H](O)[C@@H]1O,175.116,0,2,0,2,6,-1,1→4 beta-D-mannuronate. No sodium mass or information about M/G diads in embedding.,2025.03.5
+ALG_G,[*]O[C@@H]1O[C@@H](C(=O)[O-])[C@@H]([*])[C@H](O)[C@@H]1O,175.116,0,2,0,2,6,-1,"1→4 alpha-L-guluronate, the C5 epimer of M. No sodium mass or M/G diad information in embedding.",2025.03.5

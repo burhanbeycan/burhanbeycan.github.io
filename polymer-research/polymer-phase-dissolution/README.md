@@ -1,0 +1,196 @@
+# Faz Dengesi ve Çözünme
+
+Polymer Research Studio’nun polimer–çözücü uygulaması. Tarayıcıda hesaplar. Ana sayfada faz diyagramı, ara yüz dinamiği, atomistik film ve yapı aktarımı açılır.
+
+## Çalıştırma
+
+`index.html` ile aynı dizinde `python -m http.server 8000` çalıştırıp tarayıcıda `http://localhost:8000` adresini açın. Sites sürümünde web dosyaları `dist/` içindedir. GitHub Pages inceleme sürümünde doğrudan proje dizinindedir.
+
+## Model ve gözlenebilir
+
+| Ekran | Gözlenebilir ve kapsam |
+| --- | --- |
+| PS–siklohekzan | Bulutlanma sıcaklığına uyarlanan sıkıştırılamaz, ikili Flory–Huggins modeli. İki model karşılaştırılır. χ = A + B/T ve χ = A + B/T + Cφ. Bileşim polimer hacim kesridir. 0,10 MPa. Dar dağılımlar için tek etkin zincir uzunluğu kullanılır. Denge fazları ortak teğetle, spinodal türevle belirlenir. |
+| PEtOx–su | Numuneye özgü optik bulutlanma ölçümleri ve sınırlı derişim aralığında interpolasyon. Kalorimetrik geçiş, optik bulutlanma ve moleküler hidratasyon ayrı gözlenebilirlerdir. |
+| İki boyutlu alan | Korunumlu Cahn–Hilliard dinamiği, periyodik sınırlar, sabit hareketlilik ve gradyan katsayısı. Zaman ile mesafe indirgenmiştir. Homojen sıçrama ve çözücüyle temas eden tabaka ayrı başlangıç koşullarıdır. |
+| Atomistik film | 298,15 K ve 1 bar’da 700 TIP3P su molekülü içindeki iki H/H uçlu PEtOx trimeri. 8 ps kısıtlı hazırlığın ardından iki ayrı 60 ps yörünge. Film, ilk yerel su girişi etrafındaki kareleri gösterir. Etkileşimli oynatıcıda her iki yörüngenin tamamı vardır. |
+| Yapı aktarımı | Önceki modülün yerel JSON çıktısını veya kimyasal editörü kullanır. Tek bir oligomerin formülü, stereokimyası, uçları, koordinatları ve mol kütlesi bir deneysel numunenin mol kütlesi dağılımından ayrı tutulur. |
+
+## Denetim ve sonuç
+
+- N = 100, χ = 0,65 ve φ = 0,020 kontrolü pozitif eğrilik ve metastabil homojen durum verir. Denge bileşimleri 0,009768 ve 0,271968, polimerce zengin fazın hacim payı %3,90’dır.
+- PS verisi 3PDB’de birincil yayın kimliğiyle süzülür. Siporska ve arkadaşlarının 73 değeriyle uyarlanan bileşime bağlı model, Saeki ve arkadaşlarının ayrı 24 bulutlanma noktasında 0,77 K RMSE verir. Aynı sınama kümesinde bileşimden bağımsız model 2,45 K RMSE verir. Üç yeni mol kütlesini ayrı seçmek mümkündür.
+- Özgün yayın, numune, kompozisyon temeli ve model tahmini her bulutlanma kaydıyla birlikte görüntülenebilir. Eşfaz bileşimlerinin ve spinodalin bağımsız deneysel sınaması açık araştırma sorusudur.
+- PEtOx eğrisinde Aquazol 50'nin deneysel derişim birimi g/L olarak korunur. Farklı laboratuvarların ısıtma hızları ve geçiş tanımları gösterilir. Kalorimetrik büküm noktaları ayrı tabloda kalır.
+- Kayıtlı yörüngeler OpenMM GAFF2/AM1-BCC ve TIP3P hesaplarından gelir. Filmin oynatma süresi ile MD saati ayrıdır. Yerel su girişi ve hidrojen bağı geometrisi bu iki kısa koşudan okunabilir. Filmden kütlesel çözünme süresi türetilemez.
+
+## Kaynaklar
+
+- [3PDB bulutlanma kayıtları](https://pppdb.uchicago.edu/cloud_points)
+- [Siporska ve ark.](https://doi.org/10.1039/B301190A) ve [Saeki ve ark.](https://doi.org/10.1021/ma60032a020)
+- [Hacioglu ve ark., PEtOx ölçümleri](https://doi.org/10.1021/acs.macromol.4c01341) ve [Zhang, Tablo 2-2](https://backoffice.biblio.ugent.be/download/5878271/5878291)
+- [Gauche ve Felisberti, kalorimetrik geçişler](https://doi.org/10.1021/acsomega.9b01269)
+- [Orijinal atomistik yörüngeler ve protokoller](https://github.com/burhanbeycan/burhanbeycan.github.io/tree/ca4c599eb76017723de36b225b0c793d32e7deb6/polymer-research/polymer-solvent-md/hydration/data/pair)
+
+## Yeniden üretim
+
+`node scripts/test_phase.cjs`, `node tests/kinetics.test.cjs` ve `python tests/check_distribution.py` dağıtım ile sayısal sonuçları sınar. PS uyumunu yeniden kuran `scripts/fit_ps.py` için Python, NumPy ve SciPy gerekir. `python scripts/render_contact.py --output ./film` komşu `polymer-solvent-md/hydration/data/pair` dizinindeki yörüngeleri okur. Özel konum ve seçenekler `--help` ile listelenir. Çizim için NumPy, Pillow, FFmpeg (libx264) ve DejaVu Sans gerekir. OpenChemLib JS sürümü ve BSD lisansı dağıtılan dosyanın başında bulunur.
+
+## Ozmotik Basınç ve Çözelti Etkileşimleri
+
+Bağımsız giriş `osmotic.html` üzerinden açılır. PS–siklohekzan faz ekranı numuneyi, integral χ modelini, sıcaklığı ve polimer hacim kesrini bu uygulamaya aktarır. Kütlesel derişim çözeltinin litresi başına gramdır. Saf çözücünün referans molar hacmi 108,04 mL/mol, PS özgül hacmi 0,934 mL/g olarak sabit alınır. Dengedeki iki faz için çözücünün kimyasal potansiyeli her iki uçta aynıdır; toplam bileşim bu aralıkta değişirken hesaplanan basınç bir plato verir. Bu sıkıştırılamaz model sabit referans hacmi yaklaşımını kullanır.
+
+`ideal-osmotic.html` nötr ve moleküler olarak çözünmüş başka bir numune için seyreltik limitte RT/Mₙ eğimini ve seçilen derişimdeki ideal katkıyı hesaplar. Kullanıcı ölçülmüş Mₙ veya M𝑤 ve Đ girebilir. Yapı atölyesinden gelen sonlu molekülün mol kütlesi ancak kullanıcı bunu tek bir moleküler tür olarak seçerse hesaba girer.
+
+### Deneysel karşılaştırma
+
+`transfer.html` aynı χ = A + B/T + Cφ serbest enerji modelinin iki uyumunu karşılaştırır. Hacim kesrine bağlı χ için seyreltik ikinci virial katsayısı A₂ = (v̄²/Vₛ)(½ − A − B/T + C) olur. 73 bulutlanma sıcaklığı her iki uyumda ortaktır. Birleşik uyuma üç PS fraksiyonundan beş A₂ değeri eklenir. İki veri grubunun ortalama kare hataları kendi ölçeklerinde normalize edilir (1 K ve 10⁻⁵ mL mol/g²); ana karşılaştırmada göreli ağırlık λ=1, duyarlılık incelemesinde λ=0,25 ve 4 kullanılır. Ölçekler ve ağırlıklar modelleme tercihleridir, deneysel standart hatalar değildir.
+
+| Dış sınama | Yalnız bulutlanma | Bulutlanma + ozmometri |
+| --- | ---: | ---: |
+| 20 ölçülmüş eşfaz çiftinde iki fazı veren koşul | 4/20 | 20/20 |
+| Tüm 20 koşulda eşfaz genişliği MAE (hacim kesri) | 0,05157 | 0,02666 |
+| İki modelin de eşfaz verdiği aynı 4 koşulda iki uç bileşimin RMSE’si | 0,04197 | 0,04547 |
+| Bağımsız yayındaki 24 bulutlanma sıcaklığında RMSE | 0,774 K | 1,449 K |
+| 8 membran ozmometrisi noktasında basınç MAE | 7,636 kPa | 10,063 kPa |
+
+20 eşfaz çifti bir tek numuneye aittir (M𝑤 = 1,560 MDa, Mₙ = 1,515 MDa, toplam φ = 0,0324); 20 bağımsız polimer değildir. Tüm koşullarda deneyde iki faz bulunduğu için yanlış pozitif oranı ölçülmez. Tek faz öngörülen bir noktada genişlik sıfır alınır, var olmayan uç bileşimleri için sayısal değer atanmaz. Bulutlanma ve ozmometri, tek bir evrensel performans ölçütünde birleştirilmemiştir. Sonlu derişimdeki sekiz basınç ve üç dış A₂ ölçümü farklı numune ve yayınlardan gelir. Dış basınç ölçümleriyle uyum yapılmamıştır.
+
+- [McIntyre ve ark. · kalibrasyon ozmometrisi](https://doi.org/10.1021/ja01523a003)
+- [Nakata ve ark. · eşfaz eğrisi](https://doi.org/10.1103/PhysRevA.18.2683), [Wohlfarth derlemesi, 1978NAK kaydı](https://www.routledge.com/CRC-Handbook-of-Liquid-Liquid-Equilibrium-Data-of-Polymer-Solutions/Wohlfarth/p/book/9781032099675)
+- [Striolo ve ark. · bağımsız A₂](https://doi.org/10.1021/ma000348e), [Nakamura ve ark. · bağımsız teta sıcaklığı](https://doi.org/10.1021/ma00017a029)
+- [Krigbaum ve Geymer · bağımsız sonlu derişim basınçları](https://doi.org/10.1021/ja01517a022)
+
+### Hesabı tekrarlama
+
+Aşağıdaki komutlar Sites kaynağının ana dizininde çalışır. Düz GitHub Pages dağıtımı için dosya yollarındaki `dist/` ön ekini kaldırın. NumPy ve SciPy fizik modelini yeniden uyarlar; şekil için ayrıca Matplotlib gerekir.
+
+```sh
+python scripts/fit_transfer.py --cloud dist/ps-cloud-points.csv --osmotic dist/transfer-inputs/osmotic.json --coexist dist/transfer-inputs/coexist.json --out dist/transfer-results.js
+python tests/test_transfer.py
+node tests/test_osmotic.cjs
+python scripts/plot_transfer.py dist/transfer-results.js dist/PS_Siklohekzan_Dis_Sinama.png
+```
+
+## Derişik çözeltide basınç ve çözücü aktivitesi
+
+`dense.html` PS–siklohekzan için Mₙ = 72 kg/mol numunesinin basınç izotermlerini açar. Temel modelin A, B, C katsayıları önceki sürümdeki bulutlanma ve A₂ uyumundan alınır. İntegral χ'ye eklenen Dφ² terimi her veri bölmesinde yalnız eğitim basınçlarına uydurulur. 24 °C serisi, 34 °C serisi veya iki izotermin en yüksek derişimleri sırayla dışarıda bırakılır. Sekiz noktanın tamamına uydurulan katsayı ayrıca 44 °C'de sınanır. Bu seride iki kaynakta doğrulanan bir derişim ana sonuçtur. Kalan iki derişimin ikincil kaynağa dayandığı duyarlılık görünümünde belirtilir.
+
+`solvent-activity.html` aynı fraksiyonda izotermal damıtma ile elde edilen, eğitimde kullanılmamış beş aktiviteyi inceler. Saf siklohekzan referanslı aₛ, −ln aₛ ve Δμₛ arasında geçiş yapılabilir. Bu karşılaştırmada ölçüm yöntemi ve bileşim aralığı birlikte değişir. Kaynak kayıtları ve belirsiz basamaklar `transfer-inputs/ACTIVITY.md` ile `transfer-inputs/PRESSURE44.md` dosyalarında açıklanır.
+
+Aday modelin bağımsız θ bölgesi verisiyle çelişen negatif üçüncü virial katsayısı nedeniyle önceki uygulamanın varsayılanı korunur. A₃ ≥ 0 işaret kısıtı çoğu uydurmada A₃ = 0 sınırına gelir. Bu sınır da ölçülen pozitif büyüklüğün yeniden üretildiğini göstermez. İzoterm eğrileri denge serbest enerjisinden hesaplanır. Modelin iki fazlı bölgesinde ortak teğet platosu oluşur. Basınç noktalarının deneysel faz sayısı bilinmiyor.
+
+```sh
+node scripts/fit-dense.cjs
+node tests/test-dense.cjs
+node tests/test_activity.cjs
+```
+
+İsteğe bağlı Eφ³ duyarlılık hesabı `python scripts/probe-e.py` komutuyla yeniden üretilebilir (NumPy ve SciPy). Bu model, Dφ² sonuçları incelendikten sonra tasarlandı.
+
+## Zincir boyutu ve örtüşme
+
+- **chain.html** altı lineer PS fraksiyonunun siklohekzanda 34,5 °C ölçülmüş seyreltik Rg verisini kullanır. Bir çalışma içinde fraksiyon dışarıda bırakma sınaması, ayrı yayından düşük kütleli iki SAXS ölçümü ve indirilebilir ebeveyn-seri sınaması ayrı raporlanır. Model seçenekleri logaritmik uyum ve sabit θ üssüdür. İstenilen başka bir numunede ölçülmüş Mw ile aynı koşuldaki Rg verilirse geometrik örtüşme hesabı yapılır. Sıcaklık, numune ve mol kütlesi türü önceki uygulamalardan aktarılır.
+- **chain-solvents.html** aynı altı fraksiyonun benzendeki 25 °C ve siklohekzandaki 34,5 °C ölçümlerini kimlik üzerinden eşler. Her iki ortamdaki Rg, Mw, geometrik c* ve seçilen derişimdeki c/c* gösterilir. Kaynaklar Miyaki, Einaga ve Fujita'nın Tablo I'i ile sayıları yeniden basan Fetters ve arkadaşlarının Tablo 7 ve 8'idir. Karşılaştırma çözücü ile birlikte sıcaklığın da değiştiği bu koşullara aittir.
+- **chain-rotation.mp4** 64 adımlı tek bir θ Gauss konformasyonunun 8 saniyelik rijit dönüşüdür. Uzunluk ölçeği IK1500-1'in ölçülen kareli-ortalama Rg değeridir. Hesap, tek tek konformasyonların boyutunu sonradan bu değere eşitlemez. Tarayıcıdaki etkileşimli zincir görünümü farklı tohumlardan yeni bağımsız örnekler oluşturur. Zaman ölçeği veya kinetik parametre uydurulmaz.
+- **solvent-activity.html** basınç uyumuna alınmayan iki ek ozmometri fraksiyonunun 13 damıtma kaydına aktarım sonuçlarını içerir. Bu numuneler saçılma fraksiyonlarıyla eşleştirilmez.
+
+Kaynak izleri, ham saçılma kayıtları, sayısal kontroller ve birimler `chain-inputs/` altında sunulur. `node tests/test-chain.cjs` sayısal kontrolleri çalıştırır. `node scripts/chain-validation.cjs` doğrulama raporunu, `node scripts/check_mass_activity.cjs` önceki özellik uygulamasının damıtma sınamasını üretir. `python scripts/render_chain_rotation.py` MP4'ü yerel Node, Pillow ve FFmpeg ile yeniden oluşturur.
+
+## Çözelti viskozitesi ve makine öğrenmesi
+
+**viscosity.html** ölçülmüş intrinsik viskoziteyi [η] (mL/g), kapiler bağıl viskoziteyi ηᵣ ve koşula özgü saf çözücü korelasyonu mevcutsa çözeltinin dinamik viskozitesini (mPa·s) ayrı gösterir. PS’nin aynı altı fraksiyonu için 34,5 °C siklohekzan ve 25 °C benzen ölçümleri zincir boyutu uygulamasıyla bağlantılıdır. İki çözücü için ayrı Mark–Houwink uyumları, aynı çalışmanın ek üç fraksiyonunda ve farklı çalışmadan gelen altı tam sıcaklık eşleşmesinde sınanır. [η]c ≈ 1 operasyonel bir derişim ölçeğidir. Huggins katsayısı bulunmayan bir numunede seyreltik ikinci mertebe tahmini üretilmez. Genel bir yapıyla girişte kullanıcıya kendi ölçümünü aktarma olanağı sunulur.
+
+**viscosity-transfer.html** aynı fraksiyonun ölçülen iki Rg değeri ve kaynak [η] ile hedef [η] tahminini hesaplar. Siklohekzandan benzene aktarımda yalnız Rg³ yaklaşımı altı fraksiyonda ortalama %34,96 mutlak sapma verir. Tüm bir ana numunenin fraksiyonları saklanıp kalan ana numuneden öğrenilen düzeltme kullanıldığında bu değer %3,86 olur. İki ana numune aynı kaynak serisindendir. Ölçülmüş hedef Rg, her iki tahminde de girdi olarak kullanılır.
+
+**viscosity-ai.html** bir Huggins ortalama fonksiyonu ile u = c[η] üzerinde Gauss süreci düzeltmesini yan yana çalıştırır. Dört polistiren kapiler serisinde 20 ölçüm vardır. Her bölmede eğitim ve saklı gözlemler kimlikle ayrılır. PS–siklohekzan için bütün bir mol kütlesi dışarıda bırakıldığında, her iki numunenin [η] değeri bağımsız Einaga serisindeki kuvvet yasasından ekstrapole edilir. İki yönlü sınamada bağıl RMSE fiziksel modelde %0,604/%0,585, Gauss süreci eklendiğinde %0,411/%0,382 olur. Buna karşılık iki toluen serisinin en yüksek derişiminde AI ilavesi hatayı artırır. Dokuz çekirdek seçiminin sonradan yapılan duyarlılık karşılaştırması ayrı JSON dosyasındadır. Arayüzdeki tekil RMSE boyutsuz ηᵣ birimindedir. CSV'deki GP standart sapmaları sabit hiperparametreler altında gizli fonksiyona koşulludur.
+
+**viscosity-formulation.html** tuzlu suda %5 mol hidrolizli HPAM'ın 24 °C'deki görünür viskozitesini polimer derişimi (kaynağın ppm birimi), NaCl (g/L) ve kayma hızı (s⁻¹) ile hesaplar. Akbari ve arkadaşlarının 20 deneyi 15 benzersiz durumu ve 9 reçeteyi kapsar. Her turda aynı derişim ve tuz miktarındaki bütün hızlar ve tekrarlar birlikte ayrılır. Test ölçütleri benzersiz durum başına eşit ağırlıkla fiziksel mPa·s cinsinden hesaplanır. Kullanıcıya gösterilen son modelin çalışma alanı ölçüm durumlarının üç boyutlu dışbükey zarfıyla sınırlandırılır. Kimyalar arası viskozite aktarımı için bağımsız polimer ailelerinden ölçüm gerekir.
+
+Birincil kaynaklar ve birimler `viscosity-inputs/` altındadır. Fizik, AI ve aktarım testleri ile grafikler aşağıdaki komutlarla yeniden üretilebilir. Sitedeki `dist` dizini GitHub Pages ve çevrimdışı paketin ana dizinine karşılık gelir. Bu düzenlerde komutlardaki `dist` yerine `.` kullanılır.
+
+```sh
+node tests/test-viscosity.cjs
+node tests/test-viscosity-gp.cjs
+node tests/test-formulation.cjs
+node tests/test-viscosity-transfer.cjs
+node scripts/viscosity-validation.cjs
+node scripts/viscosity-gp-validation.cjs
+node scripts/viscosity-gp-sensitivity.cjs
+python scripts/train-formulation.py dist/viscosity-inputs/hpam-akbari.csv dist/formulation-model.js
+python scripts/plot-viscosity.py --dist dist --output dist/PS_Viskozite_Sinamasi.png
+python scripts/plot-viscosity-ai.py --dist dist --output dist/PS_HPAM_AI_Sinamasi.png
+```
+
+Dokuz HPAM formülasyonu sırayla ayrıldığında, koşul başına RMSE kuvvet yasasında 1,781 mPa·s, ikinci derece Ridge modelinde 0,855 mPa·s ve aynı özniteliklerle cezasız ikinci derece modelde 0,685 mPa·s olur. Üç katsayı kümesi ve her katın hatası arayüzde karşılaştırılır.
+
+## Görülmemiş polimer ailelerinde intrinsik viskozite
+
+**family-viscosity.html** her saklı numune için deneysel [η] değerini, fiziksel modeli, ilave bilginin katkısını ve kaynak yayını gösterir. Bu ekranın hedefi sonsuz seyreltmedeki [η] (mL/g) değeridir. Sonlu derişimdeki dinamik viskozite ve kesme hızı için ayrı uygulamalar kullanılır.
+
+| Sınama | Eğitim dışında kalan | Varsayım ve sonuç |
+| --- | --- | --- |
+| Teta veya tetaya yakın koşullarda yapısal aktarım | Her turda bir omurga grubunun tüm kimyaları ve ölçümleri. 56 ölçüm, 5 kimya, 3 omurga grubu. | Her iki model [η] ∝ M^0,5 sınırını kullanır. İkinci model, tekrar birimindeki omurga bağ sayısının tekrar birimi mol kütlesine oranından öğrenilen düzenlileştirilmiş bir düzeltme kullanır. Her aile eşit ağırlık aldığında ortalama mutlak yüzde hata %30,06 ve %12,71 olur. Poliizobütilen grubunda hata %2,69'dan %3,54'e çıkar. |
+| İyi çözücüde aynı fraksiyonun zincir boyutu | Siklohekzandaki üç kimya ve iki geniş omurga grubu ayrı ayrı ayrılır. Ayrıca benzen içindeki polistiren (6) ve sulu pullulan (7), 22 eğitim ölçümünden bağımsızdır. | Mol kütlesi modeli ile ölçülmüş Rg kullanan [η] ∝ Rg³/M modeli aynı ölçümler üzerinde sınanır. Pullulanda MAPE %138,92'den %20,32'ye iner. Poliizopreni tek başına saklayınca %8,68'den %49,57'ye çıkar. |
+| PVOH'da hidroliz derecesi | Su ve DMSO'daki aynı ticari numune birlikte saklanır. 5 numune, 10 ortam–numune eşleşmesi, 25 °C. | Hidroliz yüzdesinin ortak bir terim olarak eklenmesiyle RMSE suda 13,87'den 6,34 mL/g'a iner, DMSO'da 13,41'den 18,03 mL/g'a çıkar. |
+
+56 ölçümün 28'inde derlemenin bildirdiği mutlak mol kütlesi kullanılmıştır. 19 poliizopren ölçümünde teta sıcaklığı yaklaşık verilir. Tüm ailelerin ortak 63–854 kg/mol bölgesinde yeniden uyum yapıldığında aile dengeli hata %32,80 ve %14,25'tir. Bu kontroller ve yalnız açıkça Mw olarak verilen gözlemleri seçmenin etkisi arayüzdeki duyarlılık dosyasında bulunur. Pullulanın yedi kaydı aynı araştırma grubunun tek deney serisidir. Ayrı bir çözücüyle birlikte bir polisakkarit omurgasına geçişi sınar. Boyutla koşullandırılan model her saklı fraksiyonun o ortamdaki bağımsız Rg ölçümünü gerektirir. Kayda ait [η]'den türetilen bir yarıçap girdi olarak kullanılamaz.
+
+Yeni ekranlar ve kaynaklar:
+
+- `repeat-viscosity.html` desteklenen kimyaların tekrar birimi ile teta kestirimini açar.
+- `pvoh-viscosity.html` Parisi ve arkadaşlarının numunelerindeki hidroliz derecesi, çözücü, M𝑤, [η] ve Huggins ölçümlerini karşılaştırır.
+- `family-inputs/` kaynak tabloları, birimler, veri seçimleri ve kat bazında model sonuçlarını içerir.
+
+```sh
+node scripts/validate-theta-families.cjs
+node scripts/theta-sensitivity.cjs
+node scripts/build-hydro-family.cjs dist
+node tests/test-theta-families.cjs
+node tests/test-hydro-family.cjs
+node tests/test-pvoh.cjs
+node tests/test-repeat-viscosity.cjs
+python scripts/plot-family-viscosity.py --dist dist --output dist/Aileler_Arasi_Viskozite.png
+```
+
+GitHub Pages ile çevrimdışı paketin düz dosya düzeninde `dist` yerine `.` kullanılabilir. Ölçüm derlemesi [Fetters ve ark.](https://doi.org/10.1063/1.555949) tarafından hazırlanmıştır. Birincil deneyler [Kato ve ark.](https://doi.org/10.1021/ma00139a016) ve [Parisi ve ark.](https://doi.org/10.1122/8.0000435) ile kaynak notlarında listelenen özgün saçılma ve viskozimetri yayınlarıdır.
+
+## Viskozite modelinde hata azaltma
+
+`viscosity-improvement.html` ekranında her ölçüm için hedef değer, iki tahmin, kaynak ve değerlendirme protokolü birlikte gösterilir. Uygulama paketindeki HTML dosyaları aynı klasörden açılabilir. Sayfaların tarayıcıda yeniden hesaplama yapan üç girişi vardır.
+
+- **Tekrar birimi ve θ koşulu** ekranı, seçilen kimya ve çözücü için kaynakta kayıtlı θ veya yaklaşık θ sıcaklığını kullanır. Kayıtlı bir referans varsa farklı kütledeki hedefe hem fiziksel ölçekleme hem de kaynak ailelerden öğrenilmiş bir düzeltme uygular. Hedef numunenin viskozitesi hesaplara girmez.
+- **İyi çözücüde referansla tahmin** ekranında siklohekzan içindeki bir polimeri seçin. Uygulama diğer kimyalardan eğitilmiş kütle üssünü ve hedef kimyadaki bir literatür fraksiyonunu kullanır. Katalogda kayıtlı sınama numunesinin bütün kaynak makalesi referans seçiminden çıkarılır.
+- **PVOH için çözücüye özgü öğrenme** ekranı, mol kütlesi ve hidroliz derecesi bilindiğinde 25 °C'de su ve DMSO için modelleri karşılaştırır. Beş ticari derecenin her biri iki ortamıyla birlikte dışarıda tutulur. Diğer kaynaklardan gelen sulu ölçümler ayrı değerlendirilir.
+
+| Soru | Sınama birimi | Sonuç |
+| --- | --- | --- |
+| Referans bulunursa θ ölçeklemesi ne kadar yardımcı oluyor? | 5 kimyadan birer referans ayrıldı, kalan 51 numune aynı modellerle karşılaştırıldı. Üç aileye eşit ağırlık verildi. | Yapı temelli Ridge ile %12,36 MAPE, referansın fiziksel ölçeklemesiyle %2,78, öğrenilmiş referans ağırlığıyla %3,10. Referans genellikle aynı yayından gelir. |
+| Referans hiç yoksa Ridge ayarı yeterli mi? | 56 numune, 3 dış omurga katı, katsayı seçimi yalnız iç katlarda. | Eski sabit model %12,71, yeni iç seçim %13,00 MAPE. |
+| Bir yayından diğerine iyi çözücü aktarımı nasıl değişiyor? | Poliizopren ve poliizobütilende 18 fraksiyon, farklı DOI'den referans, kimyalara eşit ağırlık. | Mol kütlesi modeli %18,26, öğrenilmiş kütle üssü ve bir referans %7,41. Ayrı bir polibütadien serisinin 8 fraksiyonunda %27,57 ve %4,61. |
+| PVOH'da hidroliz derecesi ve kütle etkisi çözücüye göre değişiyor mu? | 5 ticari derece, 10 ölçüm, her derece iki ortamıyla birlikte saklandı. | Birleşik RMSE 13,51 → 10,21 mL/g. Su grubunun hatası 6,34 → 7,67 mL/g. DMSO grubunda 18,03 → 12,24 mL/g, eski yalnız kütle modelinde 13,41 mL/g. |
+| HPAM–NaCl çözeltisinin görünür viskozitesinde eğim kısıtları yararlı mı? | 24 °C'de dokuz bileşim, 15 ayrı polimer–tuz–kayma koşulu. | Kısıtsız yüzeyin RMSE'si 0,685, kısıtlı yüzeyinki 0,741 mPa·s. |
+
+Ayrı bir PS sınaması için PS2 standardını (90 kg/mol ve 24,8 mL/g) ve model katsayılarını yeni yayınların sonuçları değerlendirilmeden sabitledik. 34,5 °C, saf siklohekzan ve M𝑤 koşullarını karşılayan Miyaki çalışmasındaki aynı stoktan hazırlanmış iki yeni fraksiyonda yapı modeli %8,86, referansla θ ölçeklemesi %7,86 ve öğrenilmiş düzeltme %7,74 MAPE verdi. Bu iki gözlem başlangıç modelinin kütle aralığının üstündedir. Üretici kütlesiyle verilen beş fraksiyon ve 34,8 °C'de ölçülen 16 fraksiyon ayrı duyarlılık karşılaştırmalarında bulunur. [Miyaki ve ark.](https://doi.org/10.1021/ma60075a021)
+
+Mol kütlesi ve derişimden bağımsız yapısal eşleşme, taktisite ve cis/trans dağılımı hakkında sınırlı bilgi verir. Modelin güçlü sonuçları belirli kaynak, çözücü, kimya ve sıcaklıklarla sınırlıdır. Karşılaştırmalar örtüşen altkümeler içerir. Satırlar farklı çalışmalar arasında birleştirilerek tek bir başarı oranı üretilmez.
+
+### Yöntemlerin dayanağı
+
+Fetters ve arkadaşlarının eleştirel deney derlemesiyle birincil makalelerdeki numune, mol kütlesi tanımı, sıcaklık ve viskozite birimleri birlikte izlendi. [Fetters ve ark.](https://doi.org/10.1063/1.555949) · [Colby ve ark., seyreltik çözelti ölçümleri](https://doi.org/10.1021/ma00175a030) · [Parisi ve ark.](https://doi.org/10.1122/8.0000435) · [Gebben ve ark.](https://doi.org/10.1016/0032-3861(85)90295-2)
+
+Polimer çözeltilerindeki önceki makine öğrenmesi çalışmaları farklı deney hedeflerini kullanıyor. Gharagheizi yapı ve çözücü tanımlayıcılarıyla intrinsik viskoziteyi modelledi. Pérez ve arkadaşları tek kayma hızında ölçülmüş bir HPAM viskozitesinden akış eğrisi parametrelerine geçti. Bu çalışmadaki benzerlik ölçümle koşullandırılmış tahmindir. Bizim θ ve siklohekzan modellerimizde referans bir başka fraksiyonun seyreltik-limit ölçümüdür. Akbari'nin reolojik ölçümlerinden elde edilen kısıtlı regresyon karşılaştırmasında birim mPa·s, intrinsik viskozite katmanında mL/g'dır. [Gharagheizi](https://doi.org/10.1016/j.commatsci.2006.11.010) · [Pérez ve ark.](https://doi.org/10.1016/j.petrol.2022.110793) · [Akbari ve ark.](https://doi.org/10.1007/s13202-017-0375-6)
+
+### Sayısal sonuçları yeniden oluşturma
+
+GitHub Pages ve çevrimdışı ZIP içinde içerik kökü düz dizindir. Aşağıdaki komutlarda bu durumda `dist` yerine `.` kullanılır ve `dist/` ön ekleri kaldırılır. Node.js katmanında ek paket gerekmez. HPAM için NumPy ve SciPy, şekil için Matplotlib gerekir.
+
+```sh
+node scripts/build-theta-learning.cjs dist
+node scripts/build-hydro-stack.cjs dist
+node scripts/build-pvoh-transfer.cjs dist
+node scripts/build-external-theta.cjs dist dist/family-inputs/external-theta-ps.json dist/family-inputs/theta-ps-frozen.json dist/family-inputs
+python scripts/train-constrained-hpam.py dist/viscosity-inputs/hpam-akbari.csv dist/family-inputs/hpam-shape.json
+node scripts/build-viscosity-improvement.cjs dist
+python scripts/plot-viscosity-improvement.py --dist dist --output dist/Viskozite_Hata_Karsilastirmasi.png
+```

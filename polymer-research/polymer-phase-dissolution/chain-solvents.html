@@ -1,0 +1,23 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153c37">
+<title>Aynı zincir, iki çözücü · Polymer Research Studio</title><link rel="stylesheet" href="activity-view.css"><link rel="stylesheet" href="chain-pair.css">
+<script defer src="chain-data.js"></script><script defer src="chain-pair-data.js"></script><script defer src="chain-engine.js"></script><script defer src="chain-pair.js"></script></head><body>
+<header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a id="chainTop" href="chain.html">Zincir boyutu ve örtüşme</a></div></nav></header>
+<main><p class="eyebrow">Lineer polistiren · altı eşlenmiş fraksiyon</p><h1>Aynı zincir, iki çözücü</h1>
+<p class="intro">Aynı polistiren fraksiyonunun siklohekzanda θ koşulunda ve benzende iyi çözücü koşulunda ölçülen bobin boyutunu karşılaştır. İki çözeltide aynı kütle derişiminin geometrik örtüşme eşiğine ne kadar yakın olduğunu görebilirsin.</p>
+<p role="alert" id="pairError" hidden>Karşılaştırma için gereken ölçüm ve hesap dosyaları yüklenemedi.</p><div id="pairApp" hidden>
+<section class="controls pair-controls"><label for="pairSample">Polistiren fraksiyonu<select id="pairSample"></select></label><label for="pairC">İki çözeltide ortak derişim (g/L)<input id="pairC" required type="number" min="0" step="any" value="1"></label></section>
+<p id="pairInvalid" hidden role="alert">Derişim için sıfır veya pozitif, sonlu bir değer gir.</p>
+<div id="pairResults"><div class="pair-grid"><section class="chart"><h2>Ölçülen zincir boyutları</h2>
+<svg viewBox="0 0 500 235" aria-labelledby="pairSvgTitle" role="img"><title id="pairSvgTitle">İki Rg uzunluğunun aynı nanometre ölçeğinde şematik karşılaştırması</title>
+<line x1="18" y1="198" x2="482" y2="198" stroke="#b3c6bb"/><circle id="ringC" stroke="#43718c" fill="#cfe2ed" stroke-width="2"/><circle id="ringB" stroke="#a7562c" fill="#f3d9c2" stroke-width="2"/>
+<line id="radC" stroke="#385966" stroke-dasharray="3 3"/><line id="radB" stroke="#815333" stroke-dasharray="3 3"/>
+<g font-family="system-ui,sans-serif" font-size="16" text-anchor="middle" fill="#264439"><text x="130" y="222">Siklohekzan · 34,5 °C</text><text x="365" y="222">Benzen · 25 °C</text></g></svg>
+<p class="caption">Çember yarıçapları ölçülmüş seyreltik çözelti Rɡ değerleriyle orantılıdır. Kesikli çizgiler merkezden bir Rɡ uzunluğunu gösterir.</p></section>
+<aside><h2>Bobin genişlemesi</h2><dl><div><dt>Rɡ(benzen) / Rɡ(θ)</dt><dd id="alpha"></dd></div><div><dt>Aynı tanımla bobin hacmi oranı</dt><dd id="volumeRatio"></dd></div></dl><p id="reading"></p><a id="chainFromPair" href="chain.html">Bu fraksiyonu θ zincir görünümünde aç</a><p><a id="visTheta" href="viscosity.html">Siklohekzanda viskoziteyi aç</a></p><a id="visBenzene" href="viscosity.html">Benzende viskoziteyi aç</a></aside></div>
+<section class="obs"><div class="section-head"><h2>Boyut ve örtüşme derişimi</h2><button type="button" id="pairCsv">Altı fraksiyonu CSV indir</button></div><div class="scroll" tabindex="0" role="region" aria-label="İki çözücünün moleküler boyut ve derişim değerleri"><table><thead><tr><th>Koşul</th><th>M𝑤 (MDa)</th><th>Rɡ (nm)</th><th>c* (g/L)</th><th>c/c*</th></tr></thead><tbody id="pairBody"></tbody></table></div></section>
+</div><details><summary>Ölçüm, hesap ve fiziksel yorum</summary>
+<p>Miyaki, Einaga ve Fujita her fraksiyon için statik ışık saçılmasıyla ağırlık ortalamalı mol kütlesini ve z-ortalamalı kareli jirasyon yarıçapının karekökünü ölçtü. Kod iki tablodaki satırları fraksiyon kimliğiyle eşler. Aynı numunenin iki ortamda ölçülen M𝑤 değerleri arasındaki küçük fark ölçüme aittir.</p>
+<p>c* = 3M𝑤/(4πNₐRɡ³) seyreltik bobinler için kullanılan küre hacmi tanımıdır. Her koşulda o ortamdaki saçılma ölçümlerini kullandık. Hacim oranı α³ olup gerçek çözücü hacmi veya zincirin kapladığı katı hacim anlamına gelmez. c/c* ≈ 1, iki derişim rejimi arasındaki yaklaşık geçiş ölçeğidir. Dolaşıklık veya jel oluşumu için ayrıca reoloji verisi gerekir.</p>
+<p>İki deney arasında çözücüyle birlikte sıcaklık da değişir. Bulgular bu iki deneysel koşulun toplam farkını gösterir. Çemberler fiziksel yoğunluk profili veya atom konumları içermez.</p>
+<a href="https://doi.org/10.1021/ma60066a022">Miyaki ve ark., Tablo I (1978)</a> · <a href="https://doi.org/10.1063/1.555949">Fetters ve ark., Tablolar 7 ve 8, kaynak 41 (1994)</a></details>
+</div><noscript>Karşılaştırma için JavaScript gerekir.</noscript></main></body></html>

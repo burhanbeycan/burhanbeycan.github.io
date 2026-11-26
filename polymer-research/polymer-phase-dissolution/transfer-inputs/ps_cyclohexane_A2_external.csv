@@ -1,0 +1,4 @@
+source_doi,source_table,polymer_fraction,architecture,method,supplier_SEC_total_mass_g_mol,mass_type_as_table_1,dispersity,Mn_osmometry_g_mol,Mn_reported_plusminus_g_mol,T_C,T_K,A2_mol_cm3_g-2,A2_reported_plusminus_mol_cm3_g-2,split
+10.1021/ma000348e,3,LPSLM,linear,membrane osmometry,73000,total molecular weight by SEC,1.04,55000,200,23.3,296.45,-0.000287,0.000002,external
+10.1021/ma000348e,3,LPSLM,linear,membrane osmometry,73000,total molecular weight by SEC,1.04,73000,3500,27.8,300.95,-0.000110,0.000025,external
+10.1021/ma000348e,3,LPSLM,linear,membrane osmometry,73000,total molecular weight by SEC,1.04,77000,3000,33.8,306.95,-0.000012,0.000001,external

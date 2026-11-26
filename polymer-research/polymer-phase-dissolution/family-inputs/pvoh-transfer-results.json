@@ -1,0 +1,524 @@
+{
+  "folds": [
+    {
+      "grade": "171k-80",
+      "solvent": "water",
+      "Mw_g_mol": 171000,
+      "DH_pct": 80,
+      "measured": 78,
+      "mass": 94.33901407667193,
+      "sharedDH": 73.32830584585582,
+      "partialDH": 72.33928651872777,
+      "partialBoth": 67.52857732737577,
+      "sourceTransfer": 71.4811716246658,
+      "trainingGrades": [
+        "144k-88",
+        "49k-75",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          144500
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "171k-80",
+      "solvent": "dmso",
+      "Mw_g_mol": 171000,
+      "DH_pct": 80,
+      "measured": 170,
+      "mass": 173.5960431252077,
+      "sharedDH": 134.93361011352076,
+      "partialDH": 136.77841609245286,
+      "partialBoth": 146.52245646049676,
+      "sourceTransfer": 146.52245646049676,
+      "trainingGrades": [
+        "144k-88",
+        "49k-75",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          144500
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "144k-88",
+      "solvent": "water",
+      "Mw_g_mol": 144500,
+      "DH_pct": 88,
+      "measured": 89,
+      "mass": 71.07435039898448,
+      "sharedDH": 86.83314715654281,
+      "partialDH": 91.52222910157776,
+      "partialBoth": 88.4205626661274,
+      "sourceTransfer": 80.22280552082714,
+      "trainingGrades": [
+        "171k-80",
+        "49k-75",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "144k-88",
+      "solvent": "dmso",
+      "Mw_g_mol": 144500,
+      "DH_pct": 88,
+      "measured": 163,
+      "mass": 136.59995866177258,
+      "sharedDH": 166.8872700977208,
+      "partialDH": 158.3369092427326,
+      "partialBoth": 163.8911407708166,
+      "sourceTransfer": 163.8911407708166,
+      "trainingGrades": [
+        "171k-80",
+        "49k-75",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "49k-75",
+      "solvent": "water",
+      "Mw_g_mol": 49500,
+      "DH_pct": 75,
+      "measured": 24,
+      "mass": 39.50703766270111,
+      "sharedDH": 34.98477617467182,
+      "partialDH": 34.19610938998665,
+      "partialBoth": 34.33525788457076,
+      "sourceTransfer": 35.439759197195045,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          80,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "49k-75",
+      "solvent": "dmso",
+      "Mw_g_mol": 49500,
+      "DH_pct": 75,
+      "measured": 58,
+      "mass": 70.84469693212506,
+      "sharedDH": 62.73530013800075,
+      "partialDH": 64.18216787613544,
+      "partialBoth": 63.922060552371335,
+      "sourceTransfer": 63.922060552371335,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "48k-88",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          80,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "48k-88",
+      "solvent": "water",
+      "Mw_g_mol": 48100,
+      "DH_pct": 88,
+      "measured": 42,
+      "mass": 32.64273819176128,
+      "sharedDH": 43.56391742903758,
+      "partialDH": 45.06695387967716,
+      "partialBoth": 47.097358297317825,
+      "sourceTransfer": 42.288624286476754,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "49k-75",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "48k-88",
+      "solvent": "dmso",
+      "Mw_g_mol": 48100,
+      "DH_pct": 88,
+      "measured": 68,
+      "mass": 64.70066502037892,
+      "sharedDH": 86.34736497880564,
+      "partialDH": 83.4675777776043,
+      "partialBoth": 79.86922439269557,
+      "sourceTransfer": 79.86922439269557,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "49k-75",
+        "24k-80"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          24500,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "24k-80",
+      "solvent": "water",
+      "Mw_g_mol": 24500,
+      "DH_pct": 80,
+      "measured": 25,
+      "mass": 18.239506600401995,
+      "sharedDH": 17.822766880750798,
+      "partialDH": 17.498877335397058,
+      "partialBoth": 17.849464379973377,
+      "sourceTransfer": 20.20413258526299,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "49k-75",
+        "48k-88"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          48100,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    },
+    {
+      "grade": "24k-80",
+      "solvent": "dmso",
+      "Mw_g_mol": 24500,
+      "DH_pct": 80,
+      "measured": 40,
+      "mass": 36.25936203515865,
+      "sharedDH": 35.43090122751101,
+      "partialDH": 36.08669749775736,
+      "partialBoth": 35.37790711867726,
+      "sourceTransfer": 35.37790711867726,
+      "trainingGrades": [
+        "171k-80",
+        "144k-88",
+        "49k-75",
+        "48k-88"
+      ],
+      "trainRange": {
+        "Mw_g_mol": [
+          48100,
+          171000
+        ],
+        "DH_pct": [
+          75,
+          88
+        ]
+      }
+    }
+  ],
+  "scores": {
+    "all": {
+      "mass": {
+        "n": 10,
+        "rmse": 13.644709828467626,
+        "mae": 11.57702108882479,
+        "mape": 20.968370975471352
+      },
+      "sharedDH": {
+        "n": 10,
+        "rmse": 13.512334732510212,
+        "mae": 9.316989759405539,
+        "mape": 15.620705677678087
+      },
+      "partialDH": {
+        "n": 10,
+        "rmse": 12.7523964882907,
+        "mae": 9.239485133791367,
+        "mape": 15.547334553575679
+      },
+      "partialBoth": {
+        "n": 10,
+        "rmse": 10.213811390534335,
+        "mae": 8.041607394512155,
+        "mape": 15.14556934641351
+      },
+      "sourceTransfer": {
+        "n": 10,
+        "rmse": 10.113299259079316,
+        "mae": 7.860233588962538,
+        "mape": 13.933327725143688
+      }
+    },
+    "water": {
+      "mass": {
+        "n": 5,
+        "rmse": 13.870999468260628,
+        "mae": 13.177891309645057,
+        "mape": 31.0044917158538
+      },
+      "sharedDH": {
+        "n": 5,
+        "rmse": 6.342614572801917,
+        "mae": 5.312894744111995,
+        "mape": 17.325292745398414
+      },
+      "partialDH": {
+        "n": 5,
+        "rmse": 6.450411006749316,
+        "mae": 5.7894257034233485,
+        "mape": 17.97636823682126
+      },
+      "partialBoth": {
+        "n": 5,
+        "rmse": 7.667036157704235,
+        "mae": 6.726802361682408,
+        "mape": 19.57564768403657
+      },
+      "sourceTransfer": {
+        "n": 5,
+        "rmse": 7.3957556076519175,
+        "mae": 6.364054750583174,
+        "mape": 17.15116444149692
+      }
+    },
+    "dmso": {
+      "mass": {
+        "n": 5,
+        "rmse": 13.41460347373993,
+        "mae": 9.976150868004522,
+        "mape": 10.932250235088896
+      },
+      "sharedDH": {
+        "n": 5,
+        "rmse": 18.02602619069673,
+        "mae": 13.321084774699084,
+        "mape": 13.916118609957758
+      },
+      "partialDH": {
+        "n": 5,
+        "rmse": 16.84159820899267,
+        "mae": 12.689544564159387,
+        "mape": 13.118300870330094
+      },
+      "partialBoth": {
+        "n": 5,
+        "rmse": 12.241749989248829,
+        "mae": 9.3564124273419,
+        "mape": 10.715491008790453
+      },
+      "sourceTransfer": {
+        "n": 5,
+        "rmse": 12.241749989248829,
+        "mae": 9.3564124273419,
+        "mape": 10.715491008790453
+      }
+    }
+  },
+  "external": {
+    "gebben": {
+      "records": [
+        {
+          "grade": "PVA-96-88",
+          "Mw_g_mol": 82500,
+          "DH_pct": 89,
+          "eta_mL_g": 79.5,
+          "dispersity": 2.06,
+          "conditionNote": "25 °C Şekil 1 başlangıç noktasıyla uyumlu. Tablo 1 sıcaklığı ayrı bildirmiyor.",
+          "solvent": "water",
+          "study": "Gebben 1985",
+          "measured": 79.5,
+          "mass": 51.38648402476462,
+          "sharedDH": 60.98593895961817,
+          "partialDH": 63.27933097041639,
+          "partialBoth": 63.42034090899937,
+          "sourceTransfer": 58.7918800988283
+        },
+        {
+          "grade": "PVA-126-98",
+          "Mw_g_mol": 101000,
+          "DH_pct": 97.7,
+          "eta_mL_g": 105.1,
+          "dispersity": 1.6,
+          "conditionNote": "25 °C Tablo 2 ile ayrıca doğrulanıyor.",
+          "solvent": "water",
+          "study": "Gebben 1985",
+          "measured": 105.1,
+          "mass": 59.62811727082371,
+          "sharedDH": 88.30475615483462,
+          "partialDH": 96.05677445709908,
+          "partialBoth": 96.70926852877238,
+          "sourceTransfer": 81.4465983749605
+        }
+      ],
+      "scores": {
+        "mass": {
+          "n": 2,
+          "rmse": 37.80252570547222,
+          "mae": 36.79269935220583,
+          "mape": 39.314131530717994
+        },
+        "sharedDH": {
+          "n": 2,
+          "rmse": 17.675557587040213,
+          "mae": 17.654652442773603,
+          "mape": 19.634189068421076
+        },
+        "partialDH": {
+          "n": 2,
+          "rmse": 13.131832164383393,
+          "mae": 12.631947286242262,
+          "mape": 14.503879178678947
+        },
+        "partialBoth": {
+          "n": 2,
+          "rmse": 12.824971951334799,
+          "mae": 12.23519528111412,
+          "mape": 14.104777854135692
+        },
+        "sourceTransfer": {
+          "n": 2,
+          "rmse": 22.22959331923016,
+          "mae": 22.180760763105596,
+          "mape": 24.27678240432164
+        }
+      }
+    },
+    "korelc": {
+      "records": [
+        {
+          "grade": "PVA88",
+          "Mw_g_mol": 24000,
+          "DH_pct": 87,
+          "eta_mL_g": 39,
+          "solvent": "aqueous-sodium-chloride-azide",
+          "T_K": null,
+          "study": "Korelc 2024",
+          "conditionNote": "10 mM NaCl ve %0,002 NaN₃ içeren sulu SEC. SEC sıcaklığı bildirilmedi.",
+          "measured": 39,
+          "mass": 20.729588340073832,
+          "sharedDH": 24.760291159087362,
+          "partialDH": 25.41397328358643,
+          "partialBoth": 26.55410580323148,
+          "sourceTransfer": 25.790229639541913
+        },
+        {
+          "grade": "PVA98",
+          "Mw_g_mol": 23000,
+          "DH_pct": 98,
+          "eta_mL_g": 41,
+          "solvent": "aqueous-sodium-chloride-azide",
+          "T_K": null,
+          "study": "Korelc 2024",
+          "conditionNote": "10 mM NaCl ve %0,002 NaN₃ içeren sulu SEC. SEC sıcaklığı bildirilmedi.",
+          "measured": 41,
+          "mass": 20.090985673786115,
+          "sharedDH": 32.20976489626754,
+          "partialDH": 35.09447579390428,
+          "partialBoth": 37.27777330559564,
+          "sourceTransfer": 32.26595253619407
+        }
+      ],
+      "scores": {
+        "mass": {
+          "n": 2,
+          "rmse": 19.634087988966836,
+          "mae": 19.589712993070027,
+          "mape": 48.92240265101046
+        },
+        "sharedDH": {
+          "n": 2,
+          "rmse": 11.832952739127627,
+          "mae": 11.51497197232255,
+          "mape": 28.975835882519828
+        },
+        "partialDH": {
+          "n": 2,
+          "rmse": 10.475097567275586,
+          "mae": 9.745775461254645,
+          "mape": 24.619841757682597
+        },
+        "partialBoth": {
+          "n": 2,
+          "rmse": 9.185729527960552,
+          "mae": 8.084060445586442,
+          "mape": 20.49557545807628
+        },
+        "sourceTransfer": {
+          "n": 2,
+          "rmse": 11.1978037595783,
+          "mae": 10.971908912132008,
+          "mape": 27.586880421113598
+        }
+      }
+    }
+  },
+  "sourceSlopes": [
+    0.609771277963442,
+    0.12252040874326704
+  ]
+}

@@ -1,0 +1,16 @@
+replica,frame,atom,role,x_nm,y_nm,z_nm,Lx_nm,Ly_nm,Lz_nm
+packing-A,0,P1,oh,0.1,0.5,0.5,2,2,2
+packing-A,0,P2,oac,1.05,1,1,2,2,2
+packing-A,0,W1,water,1.91,0.5,0.5,2,2,2
+packing-A,0,W2,water,0.23,0.5,0.5,2,2,2
+packing-A,0,W3,water,1.05,1.1,1,2,2,2
+packing-A,1,P1,oh,0.1,0.5,0.5,2,2,2
+packing-A,1,P2,oac,1.05,1,1,2,2,2
+packing-A,1,W1,water,1.91,0.5,0.5,2,2,2
+packing-A,1,W2,water,0.25,0.5,0.5,2,2,2
+packing-A,1,W3,water,1.05,1.1,1,2,2,2
+packing-B,0,P1,oh,0.1,0.5,0.5,2,2,2
+packing-B,0,P2,oac,0.75,0.15,0.85,2,2,2
+packing-B,0,W1,water,1.91,0.5,0.5,2,2,2
+packing-B,0,W2,water,0.23,0.5,0.5,2,2,2
+packing-B,0,W3,water,1.05,1.1,1,2,2,2

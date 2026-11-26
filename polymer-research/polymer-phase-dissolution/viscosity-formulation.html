@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#153c34"><title>HPAM formülasyonunda görünür viskozite · Polymer Research Studio</title>
+<link rel="stylesheet" href="viscosity.css">
+<style>
+.fieldval{display:block;font-size:1.16rem;font-variant-numeric:tabular-nums;color:#174f3d}.controlbox input[type=range]{padding:0;width:100%;accent-color:#246e54;cursor:pointer}
+#curve text{font:13px system-ui;fill:#40564d}.key .blend{border-color:#98623b}.sourceBox{margin-top:14px}.hpamMetrics{grid-template-columns:repeat(4,1fr)}.key .quadLine{width:22px;border-top:3px solid #644b78}.key .ridgeLine{width:22px;border-top:3px dashed #19694f}@media(max-width:700px){.hpamMetrics{grid-template-columns:repeat(2,1fr)}.hpamMetrics .relative{grid-column:auto}}.rangeNote{margin-bottom:.3em}.observation{border-left:4px solid #28775a;background:#f0f5ef;padding:10px 14px;margin:.8rem 0}
+</style>
+<script defer src="formulation-model.js"></script><script defer src="formulation-engine.js"></script><script defer src="formulation-ui.js"></script>
+</head><body>
+<header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="viscosity.html">Çözelti viskozitesi</a><a href="viscosity-ai.html">PS model karşılaştırması</a></div></nav></header>
+<main>
+<p class="overline">Formülasyon reolojisi · 24 °C</p><h1>HPAM çözeltisinin görünür viskozitesi</h1>
+<p class="intro">Kısmen hidroliz edilmiş poliakrilamidin tuzlu suda akışını inceleyin. Polimer derişimini, NaCl miktarını veya kayma hızını değiştirerek deneylerden öğrenilen görünür viskoziteyi karşılaştırın.</p>
+<noscript>Hesaplama için JavaScript gerekir.</noscript><p id="loading" role="status">Ölçüm tablosu yükleniyor…</p>
+<div id="workspace" hidden>
+<div class="controlbox">
+<div><label for="composition">Ölçülmüş bir formülasyona git</label><select id="composition"></select></div>
+<div><label for="c">HPAM (ppm)</label><output class="fieldval" id="valC" for="c"></output><input id="c" type="range" min="700" max="3300" step="50" value="2000"></div>
+<div><label for="salt">NaCl (g/L)</label><output class="fieldval" id="valS" for="salt"></output><input id="salt" type="range" min="2.75" max="22.25" step=".25" value="12.5"></div>
+<div><label for="shear">Kayma hızı (s⁻¹)</label><output class="fieldval" id="valG" for="shear"></output><input id="shear" type="range" min="4" max="56" step="1" value="30"></div>
+</div><p id="domain" class="reading rangeNote" aria-live="polite"></p>
+<div class="metrics hpamMetrics" aria-live="polite">
+<section class="relative"><h2>İkinci derece model</h2><strong id="etaQ"></strong><p>En küçük kareler uyumu</p></section>
+<section><h2>Düzenlileştirilmiş model</h2><strong id="etaR"></strong><p>İkinci dereceden Ridge regresyonu</p></section>
+<section><h2>Karşılaştırma modeli</h2><strong id="etaB"></strong><p>Log-doğrusal kuvvet yasası</p></section>
+<section><h2>Bu koşuldaki ölçüm</h2><strong id="obs"></strong><p id="rep"></p></section>
+</div>
+<section class="panel"><div class="heading"><h2>Kayma hızı ve görünür viskozite</h2></div>
+<div class="compare"><div class="graph"><svg viewBox="0 0 640 310" role="img" id="curve" aria-label="Kayma hızına karşı modellerin görünür viskozitesi ve seçilen bileşimdeki ölçümler"></svg>
+<div class="key"><span><i class="quadLine"></i>İkinci derece</span><span><i class="ridgeLine"></i>Ridge</span><span><i class="dotted blend"></i>Kuvvet yasası</span><span><i class="pt"></i>Ölçüm ortalaması</span></div></div>
+<aside><h3>Deney koşulları</h3><p>SNF Floerger HPAM, molce %5 hidroliz. Üreticinin bildirdiği mol kütlesi 8–9 milyon g/mol. Çözücü, demineralize suda NaCl çözeltisidir.</p><p>Malvern Bohlin Gemini II döner reometrede ölçülen görünür viskozite, uygulanan kayma hızındaki kayma geriliminin kayma hızına oranıdır.</p><p id="supportText"></p></aside></div></section>
+<section class="panel"><div class="heading"><div><p class="overline">Formülasyon bazında çapraz doğrulama</p><h2>Görülmemiş bileşimlerde hata</h2></div><button type="button" id="save">Ölçümleri ve sınamayı indir</button></div>
+<p id="validationInfo"></p><div class="scroll"><table><thead><tr><th>Model</th><th>MAE (mPa·s)</th><th>RMSE (mPa·s)</th></tr></thead><tbody id="summary"></tbody></table></div><p id="conclusion" class="reading"></p>
+<details><summary>Her sınama koşulunun ölçümü ve öngörüsü</summary><div class="scroll" tabindex="0"><table><thead><tr><th>HPAM (ppm)</th><th>NaCl (g/L)</th><th>Kayma hızı (s⁻¹)</th><th>n</th><th>Ölçüm (mPa·s)</th><th>Kuvvet yasası (mPa·s)</th><th>İkinci derece (mPa·s)</th><th>Ridge (mPa·s)</th></tr></thead><tbody id="validationRows"></tbody></table></div></details>
+<details><summary>Dokuz formülasyonun ayrı hata ölçüleri</summary><label for="fold">Dışarıda tutulan bileşim</label><select id="fold"></select><p class="reading" id="foldInfo"></p><div class="scroll"><table><thead><tr><th>Model</th><th>MAE (mPa·s)</th><th>RMSE (mPa·s)</th></tr></thead><tbody id="foldScores"></tbody></table></div></details></section>
+<section class="panel" id="challengePanel" hidden><h2>Tasarım aralığı dışında yayımlanmış ölçümler</h2><p id="challengeText"></p><div class="scroll"><table><thead><tr><th>Model</th><th>MAE (mPa·s)</th><th>RMSE (mPa·s)</th></tr></thead><tbody id="challengeScores"></tbody></table></div></section>
+<details class="definitions"><summary>Veri, denklemler ve yeniden üretim</summary>
+<p>Üç model de doğal logaritmada ln(η / 1 mPa·s) büyüklüğünü öğrenir. Girdiler ln(c/2000), ln(s/12,5) ve ln(γ̇/30) olup paydalarda sırasıyla ppm, g/L ve s⁻¹ kullanılır. Kuvvet yasası bu üç girdide doğrusaldır. İkinci derece model üç kare ve üç ikili etkileşim ekler. Ridge sürümünde aynı altı katsayının kareleri toplamına sabit λ = 0,25 cezası uygulanır. Sırasıyla dört ve on katsayı her eğitim katında yeniden uyarlanır. Uyumda her farklı deney koşulunun ağırlığı birdir.</p>
+<p>Kaydırıcılarla öngörü, gerçek üç değişkenli deney tasarımının dışbükey zarfı ile sınırlıdır. Ölçüm olmayan noktalarda eğriler model öngörüsüdür. Kaynakta ppm için kullanılan gösterim korunmuştur. Model tek bir polimer derecesi ve sıcaklığa aittir. Numune değişimi, sıcaklık etkisi ve laboratuvarlar arası hata ayrıca sınanmalıdır.</p>
+<p>Akbari, Mahmood, Tan ve Hematpour. <i>Comparison of neuro-fuzzy network and response surface methodology pertaining to the viscosity of polymer solutions.</i> Tablo 1 ve 5. Koşullar ve yayımlanmış log₁₀(η) değerleri deney numarasıyla eşleştirildi. Her gözlem 10 tabanında ters dönüşümle mPa·s birimine getirildi. Merkez tekrarları fiziksel birimlerde ortalandı. <a href="https://doi.org/10.1007/s13202-017-0375-6">Makale ve deney tabloları</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+<p><a href="viscosity-inputs/hpam-akbari.csv">20 özgün deney satırını indir (CSV)</a> · <a href="viscosity-inputs/HPAM_DATA.md">Veri kökeni ve birimler</a></p></details></div><p class="linkrow"><a href="viscosity-improvement.html">Viskozite modellerinin saklı numunelerdeki hatalarını incele</a></p></main></body></html>

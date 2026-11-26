@@ -1,0 +1,186 @@
+{
+  "schema": "pair-reorganization/1",
+  "contact_nm": 0.45,
+  "shared_water_radius_nm": 0.35,
+  "atom_indices": "Zero based, global, fixed through each trajectory. Water identity is its oxygen atom index within one replica.",
+  "strict_interposition": "The same initially contacting A/B heavy-atom pair (distance ≤0.45 nm at free t=0) is open (>0.45 nm) in a later frame. The same water oxygen lies ≤0.35 nm from both A and B and subtends angle A–Ow–B ≥120 degrees. A water and atom pair may appear in multiple rows of the event CSV.",
+  "time_window_means": "Equal-weight arithmetic means of saved frames in first [0,T/4) and last (3T/4,T] quarters. Difference is descriptive.",
+  "hbond_definition": "Water donor Ow···amide carbonyl O ≤0.35 nm AND Ow–Hw···O angle ≥150 degrees, reported per six carbonyls per contacting pair.",
+  "pbc_audit": "Closest same-chain image uses all heavy atoms and 26 neighboring cells. Alternate cross-image gap is measured outside the nearest pair of chain COM images. The sensitivity analysis repeats heavy-atom pair counts at 0.40, 0.45 and 0.50 nm.",
+  "summary": "Two independently assembled contacting pairs in periodic explicit water. Shared water means the same O is simultaneously close to both chains. Crossing an atom-distance cutoff is a sampled contact-state change. Event durations are interval-censored at the sample stride.",
+  "code_sha256": "552ea771bdf2bfe9a3d90ff571a1f62f739be543a1ddb080abc39f905f5a377f",
+  "replicas": [
+    {
+      "seed": 73111,
+      "free_frames": 61,
+      "duration_ps": 60.0,
+      "stride_ps": 1.0,
+      "water_count": 700,
+      "contact_pairs_t0": 16,
+      "contact_pairs_last": 9,
+      "contact_pairs_min": 1,
+      "contact_pairs_max": 29,
+      "contact_pairs_mean": 15.0,
+      "first_minimum_contact_sample_ps": 59.0,
+      "closest_heavy_distance_range_nm": [
+        0.3013057183578868,
+        0.4198328805703813
+      ],
+      "com_t0_and_final_nm": [
+        0.7700707246057427,
+        0.6634419156734336
+      ],
+      "com_range_nm": [
+        0.6426805708525232,
+        0.8275018018719101
+      ],
+      "merged_contact_image_count_max": 1,
+      "closest_heavy_own_image_nm": 1.6160376072870282,
+      "closest_heavy_alternate_cross_image_nm": 1.011696222459198,
+      "samples_with_zero_contact": 0,
+      "windows": {
+        "first_quarter": {
+          "first_ps": 0.0,
+          "last_ps": 14.0,
+          "n_frames": 15,
+          "contact_pairs": 14.733333333333333,
+          "shared_waters": 0.7333333333333333,
+          "min_heavy_nm": 0.36433580531080006,
+          "water_donor_hbs_per_carbonyl": 1.4111111111111112
+        },
+        "last_quarter": {
+          "first_ps": 46.0,
+          "last_ps": 60.0,
+          "n_frames": 15,
+          "contact_pairs": 13.066666666666666,
+          "shared_waters": 1.2666666666666666,
+          "min_heavy_nm": 0.3586063636836593,
+          "water_donor_hbs_per_carbonyl": 1.4666666666666666
+        }
+      },
+      "recontact_after_first_zero": false,
+      "longest_consecutive_zero_samples": 0,
+      "new_interposed_water_count": 2,
+      "initial_pairs_with_interposition": 2,
+      "interposition_first_ps": 10.0,
+      "frames_with_interposition": 3,
+      "shared_interposition_event_csv_sha256": "4a386768fbdec726109ab61ea342b2b7a84448811289822c2f29141446b2c70f",
+      "cutoff_sensitivity": {
+        "0.4": {
+          "contact_free_sample_count": 1,
+          "mean_contact_pairs": 5.344262295081967
+        },
+        "0.45": {
+          "contact_free_sample_count": 0,
+          "mean_contact_pairs": 15.0
+        },
+        "0.5": {
+          "contact_free_sample_count": 0,
+          "mean_contact_pairs": 30.327868852459016
+        }
+      },
+      "first_zero_contact_sample_ps": null,
+      "last_zero_contact_sample_ps": null,
+      "shared_water_t0": 0,
+      "shared_water_last": 4,
+      "shared_water_min": 0,
+      "shared_water_max": 4,
+      "first_max_shared_water_sample_ps": 60.0,
+      "distinct_shared_water_identities": 21,
+      "new_shared_water_identities_after_t0": 21,
+      "observed_shared_episodes": 33,
+      "density_mean_g_ml": 0.9885946239838251,
+      "mean_chain_concentration_mol_L": 0.1496787648500243,
+      "mean_cell_volume_nm3": 22.189762842564893,
+      "shared_water_events_sha256": "6276c8f2cb19324de06290499918f7922dfd5ad281e5b8a12d2e37b9ae50196d",
+      "trajectory_sha256": "7d0baa819b7f821a5f2154ca8a431a56b0bd65f244205f54369da70e94f91f4d",
+      "topology_sha256": "4bafa9b25a9f587118c1177153132cbcac48d87e30b527ba6aea952fdc84696a"
+    },
+    {
+      "seed": 86201,
+      "free_frames": 61,
+      "duration_ps": 60.0,
+      "stride_ps": 1.0,
+      "water_count": 700,
+      "contact_pairs_t0": 13,
+      "contact_pairs_last": 7,
+      "contact_pairs_min": 0,
+      "contact_pairs_max": 18,
+      "contact_pairs_mean": 8.721311475409836,
+      "first_minimum_contact_sample_ps": 44.0,
+      "closest_heavy_distance_range_nm": [
+        0.2943766048278038,
+        0.4601381397868668
+      ],
+      "com_t0_and_final_nm": [
+        0.788205230233685,
+        0.8180444451351416
+      ],
+      "com_range_nm": [
+        0.6850181338862258,
+        0.9940992210628915
+      ],
+      "merged_contact_image_count_max": 1,
+      "closest_heavy_own_image_nm": 1.769591349452453,
+      "closest_heavy_alternate_cross_image_nm": 1.1136334838994562,
+      "samples_with_zero_contact": 2,
+      "windows": {
+        "first_quarter": {
+          "first_ps": 0.0,
+          "last_ps": 14.0,
+          "n_frames": 15,
+          "contact_pairs": 13.266666666666667,
+          "shared_waters": 2.0,
+          "min_heavy_nm": 0.3554392828631963,
+          "water_donor_hbs_per_carbonyl": 1.5888888888888886
+        },
+        "last_quarter": {
+          "first_ps": 46.0,
+          "last_ps": 60.0,
+          "n_frames": 15,
+          "contact_pairs": 5.2,
+          "shared_waters": 1.6,
+          "min_heavy_nm": 0.3788647403906606,
+          "water_donor_hbs_per_carbonyl": 1.5111111111111113
+        }
+      },
+      "recontact_after_first_zero": true,
+      "longest_consecutive_zero_samples": 2,
+      "new_interposed_water_count": 2,
+      "initial_pairs_with_interposition": 3,
+      "interposition_first_ps": 24.0,
+      "frames_with_interposition": 7,
+      "shared_interposition_event_csv_sha256": "6c1c998662b1d44453ce85793fa243a486151f3a85ed5f776ff1d4aeaf2e7764",
+      "cutoff_sensitivity": {
+        "0.4": {
+          "contact_free_sample_count": 8,
+          "mean_contact_pairs": 2.7540983606557377
+        },
+        "0.45": {
+          "contact_free_sample_count": 2,
+          "mean_contact_pairs": 8.721311475409836
+        },
+        "0.5": {
+          "contact_free_sample_count": 0,
+          "mean_contact_pairs": 17.81967213114754
+        }
+      },
+      "first_zero_contact_sample_ps": 44.0,
+      "last_zero_contact_sample_ps": 45.0,
+      "shared_water_t0": 2,
+      "shared_water_last": 2,
+      "shared_water_min": 0,
+      "shared_water_max": 4,
+      "first_max_shared_water_sample_ps": 7.0,
+      "distinct_shared_water_identities": 19,
+      "new_shared_water_identities_after_t0": 17,
+      "observed_shared_episodes": 44,
+      "density_mean_g_ml": 0.9939128636892501,
+      "mean_chain_concentration_mol_L": 0.1504839761378184,
+      "mean_cell_volume_nm3": 22.072011183342543,
+      "shared_water_events_sha256": "bc83afcef521549d275a6bb9f4d1532e31bd94301291a2003b5098eaf19456fb",
+      "trajectory_sha256": "e7ed072e4deffebaee59d3c4ddd3e34892db2dede1d802e2fa12bd000a215f96",
+      "topology_sha256": "4bafa9b25a9f587118c1177153132cbcac48d87e30b527ba6aea952fdc84696a"
+    }
+  ]
+}

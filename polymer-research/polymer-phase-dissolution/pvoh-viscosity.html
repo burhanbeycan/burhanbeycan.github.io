@@ -1,0 +1,25 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153c34"><title>PVOH · Hidroliz ve viskozite | Polymer Research Studio</title><link rel="stylesheet" href="viscosity.css"><link rel="stylesheet" href="pvoh.css">
+<script defer src="family-pvoh.js"></script><script defer src="pvoh-engine.js"></script><script defer src="pvoh-view.js"></script></head>
+<body><header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="family-viscosity.html">Polimer aileleri</a><a href="viscosity.html">Çözelti viskozitesi</a></div></nav></header>
+<main><p class="overline">Kısmen hidrolize poli(vinil alkol) · 25 °C</p><h1>Hidroliz derecesi viskoziteyi açıklıyor mu?</h1>
+<p class="intro">Aynı PVOH numunesinin sudaki ve dimetil sülfoksitteki (DMSO) intrinsik viskozitesini karşılaştır. Hidroliz derecesinin, mol kütlesinden yapılan tahmine ne kattığını her seferinde bir numuneyi bütünüyle ayırarak incele.</p>
+<noscript>Hesapları çalıştırmak için JavaScript gerekir.</noscript><p id="loadError" role="alert" class="notice" hidden>Ölçüm dosyası veya viskozite modeli yüklenemedi.</p>
+<div id="app" hidden>
+<div class="controlbox"><div><label for="grade">PVOH numunesi</label><select id="grade"></select></div><div><label for="concentration">Polimer derişimi (g/L)</label><input id="concentration" type="number" value="0.5" min="0" step="any"></div></div>
+<p class="reading" id="chemistry"></p>
+<div class="pvoh-pair" aria-live="polite">
+<section class="panel observed water"><h2>Su</h2><strong id="waterEta"></strong><span class="reading">Ölçülmüş intrinsik viskozite</span><p id="waterH"></p><p id="waterRel"></p></section>
+<section class="panel observed dmso"><h2>DMSO</h2><strong id="dmsoEta"></strong><span class="reading">Ölçülmüş intrinsik viskozite</span><p id="dmsoH"></p><p id="dmsoRel"></p></section></div>
+<p class="reading">[η]c ≤ 0,1 için ηᵣ = 1 + [η]c + kₕ([η]c)² gösterilir. Bu seyreltik gösterim sınırını uygulamada seçtik. ηᵣ seçilen derişimde modelden gelir, [η] ise bir dizi ölçümün c → 0 kesişimidir. Kaynakta her numune için ölçülen derişimlerin tam aralığı tablo halinde verilmemiştir.</p>
+<section class="panel"><div class="heading"><h2>Görülmemiş numunede model hatası</h2><div><label for="scope">Sınanan çözücü</label><select id="scope"><option value="all">Su ve DMSO</option><option value="water">Su</option><option value="dmso">DMSO</option></select></div></div>
+<div class="compare"><div class="graph"><svg viewBox="0 0 520 365" id="parity" role="img" aria-label="Saklı numuneler için ölçülen ve tahmin edilen intrinsik viskoziteler"></svg>
+<div class="key"><span><i class="pt pvoh-water"></i>Su</span><span><i class="pt pvoh-dmso"></i>DMSO</span><span>○ Mol kütlesi</span><span>◆ Mol kütlesi + hidroliz</span></div></div>
+<aside><h3>Saklı ölçümlerde RMSE</h3><dl><div><dt>Mol kütlesi</dt><dd id="massError"></dd></div><div><dt>Mol kütlesi + hidroliz</dt><dd id="dhError"></dd></div></dl><p id="subset"></p><p id="interpret"></p></aside></div>
+<p id="focusSummary" class="reading"></p>
+<div class="scroll" tabindex="0"><table><thead><tr><th>Numune</th><th>Çözücü</th><th>Ölçüm (mL/g)</th><th>M𝑤 modeli</th><th>M𝑤 + DH modeli</th><th>DH desteği¹</th></tr></thead><tbody id="folds"></tbody></table></div><p class="quiet">¹ Saklı numunenin hidroliz derecesinin eğitimdeki dört numunenin hidroliz aralığına göre konumu. Her iki tahmin sütunu mL/g cinsindendir.</p>
+<button id="export" type="button">Eşlenmiş ölçümleri ve saklı tahminleri indir</button></section>
+<details class="definitions"><summary>Numune, model ve kapsam</summary><p id="coefficients"></p><p>Mol kütlesi modelinde ln([η]/(1 mL/g)) = b<sub>çözücü</sub> + a ln(M𝑤/(50.000 g/mol)). Genişletilmiş model β(DH − 80)/10 terimini ekler. Modeller her çözücüye ayrı kesişim, iki çözücüye ortak üs kullanır. Hidroliz yüzdesi modele yüzde puan olarak girer. Her turda sekiz eğitim gözlemi logaritma uzayında eşit ağırlıklıdır.</p>
+<p>DH, vinil asetat birimlerinin hidroliz derecesidir. Yazarlar numune değerlerini D₂O'da ¹H NMR ile doğruladı. Kalan asetat gruplarının zincirdeki dizilimi ve taktisite bu deney serisinde ayrı ayrı ölçülmedi. Ayrılmış iki gözlem aynı ticari numuneye aittir. Başka bir laboratuvara veya başka bir polimer ailesine aktarım bu sınamadan ayrıca değerlendirilmelidir.</p>
+<p>İntrinsik viskozite 25 °C’de kılcal viskozimetride, her derişimde üç akış süresinin ortalaması ve Huggins/Kraemer ekstrapolasyonu kullanılarak ölçüldü. Sayfadaki kₕ, Huggins eğiminden elde edilen değerdir. M𝑤 ve Mₙ tedarikçinin bildirdiği ortalamalardır.</p>
+<p><a href="https://doi.org/10.1122/8.0000435">Parisi ve ark., Journal of Rheology (2022)</a> · <a href="https://pure.rug.nl/ws/portalfiles/portal/495697175/8.0000435.pdf">Tablo I ve III, s. 1142–1143</a></p></details>
+</div><p class="linkrow"><a href="pvoh-transfer.html">PVOH için çözücüye özgü modeli aç</a></p><p class="linkrow"><a href="viscosity-improvement.html">Viskozite modellerinin saklı numunelerdeki hatalarını incele</a></p></main></body></html>

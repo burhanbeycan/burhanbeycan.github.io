@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite this software and the model-specific primary references used in your calculation."
+title: "Polymer Network Lab"
+version: 0.4.0
+type: software
+authors:
+  - family-names: Beycan
+    given-names: Burhan
+license: MIT
+repository-code: "https://github.com/burhanbeycan/burhanbeycan.github.io/tree/polymer-research-review-v0.2.0/polymer-research/polymer-network-lab"

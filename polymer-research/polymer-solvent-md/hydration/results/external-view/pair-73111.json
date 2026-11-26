@@ -1,0 +1,22 @@
+{
+  "export_code_sha256": "1685564424abbb737462e56aa6ce18269912b9c646f7c46ea59e1524441a4e5e",
+  "trajectory_sha256": "7d0baa819b7f821a5f2154ca8a431a56b0bd65f244205f54369da70e94f91f4d",
+  "topology_sha256": "4bafa9b25a9f587118c1177153132cbcac48d87e30b527ba6aea952fdc84696a",
+  "manifest_sha256": "e2ef3d8cc70e53e0cc0909af987080077da7c38551b011d5697fb81e23a4bc43",
+  "engine": "8.6.1.dev-b399af4",
+  "frames": 61,
+  "atoms": 2200,
+  "waters": 700,
+  "first_time_ps": 0.0,
+  "last_time_ps": 60.0,
+  "stride_ps": 1.0,
+  "coordinate_precision_nm": 0.001,
+  "max_abs_component_error_nm": 0.0005002021789550781,
+  "coordinate_source": "Original periodic coordinates with per-frame box. No resampling or smoothing.",
+  "files_sha256": {
+    "pair-73111.gro": "d00c962582faedac4f75d6fd9f408eca9cf2eb56e2571a60e167134cf073a32e",
+    "pair-73111.ndx": "a52d1ab2ea43fa9fcd7cb937c0afdf20b4ed29c1853d3c5336cff3483beb36a5",
+    "pair-73111.pdb": "6e2471100b1606428f077f67858b4c278dead2b863a58e81e5a50c1f26027d2b",
+    "pair-73111.xtc": "2db397dc22e174f9e853eaef1df4432c6565989e886ad1d47337e6429a516e6d"
+  }
+}

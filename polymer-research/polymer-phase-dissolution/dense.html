@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#15392f">
+  <title>Derişik çözeltide ozmotik basınç · Polymer Research Studio</title>
+  <link rel="stylesheet" href="dense.css">
+  <script defer src="phase-engine.js"></script><script defer src="osmotic-engine.js"></script>
+  <script defer src="dense-engine.js"></script><script defer src="dense-results.js"></script>
+  <script defer src="dense-ui.js"></script>
+</head>
+<body>
+<header><nav aria-label="Ana menü"><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="osmotic.html">Ozmotik basınç</a><a href="solvent-activity.html">Çözücü aktivitesi</a></div></nav></header>
+<main>
+  <section class="lead" aria-labelledby="title">
+    <div><p class="system">Polistiren / siklohekzan</p><h1 id="title">Derişik çözeltide<br>ozmotik basınç</h1></div>
+    <p class="lede">Seyreltik çözeltinin ikinci virial katsayısı sabit tutulduğunda, derişime bağlı tek bir ek terim farklı koşullardaki membran osmometrisi ölçümlerini açıklayabiliyor mu?</p>
+  </section>
+  <noscript><p>Grafikleri ve sayısal karşılaştırmaları görmek için JavaScript gerekiyor.</p></noscript>
+  <p id="dataError" role="alert" hidden></p>
+  <div id="workspace" hidden>
+    <section class="settings" aria-label="Sınama koşulları">
+      <label for="fold">Uyum dışında bırakılan seri<select id="fold"></select></label>
+      <label for="temp">Grafikteki sıcaklık<select id="temp"></select></label>
+      <div class="sample"><span>Deney numunesi</span><b id="sampleName"></b></div>
+    </section>
+    <div class="layout">
+      <section class="plotbox" aria-labelledby="plotTitle">
+        <div class="plottop"><div><h2 id="plotTitle">Basınç izotermi</h2><p id="plotSub"></p></div>
+          <div class="switch" role="group" aria-label="Grafik türü"><button type="button" id="pressureTab" aria-pressed="true">Basınç</button><button type="button" id="residualTab" aria-pressed="false">Sapma</button></div>
+        </div>
+        <label class="guardcheck" for="guard"><input type="checkbox" id="guard" checked> A₃ ≥ 0 kısıtlı modeli de göster</label>
+        <div id="plot"></div>
+        <div class="legend" id="legend"></div>
+        <p class="caption" id="plotNote"></p>
+      </section>
+      <aside aria-labelledby="readingTitle">
+        <h2 id="readingTitle">Ölçüm karşılaştırması</h2>
+        <label for="record">Tablodaki derişim<select id="record"></select></label>
+        <p id="sampleRole" class="role"></p>
+        <dl id="values" aria-live="polite"></dl>
+        <p id="phaseNote" class="caption"></p><a id="chainLink" href="chain.html">Bu derişimi zincir boyutu ekranına aktar</a>
+      </aside>
+    </div>
+    <section class="scores" aria-labelledby="scoreTitle">
+      <div><h2 id="scoreTitle">Sınama hatası</h2><p id="scoreText"></p><label class="tier-choice" id="tierChoice" for="tier" hidden>Hesaba katılan ölçümler<select id="tier"><option value="primary">Çapraz doğrulanan derişim</option><option value="all">İkincil kaynaktaki derişimleri ekle</option></select></label></div>
+      <div class="score"><span>Temel model · MAE</span><b id="baseMae"></b></div>
+      <div class="score"><span>Ek terimli model · MAE</span><b id="newMae"></b></div>
+      <div class="score" id="guardScore"><span>A₃ ≥ 0 modeli · MAE</span><b id="guardMae"></b></div>
+    </section>
+    <section class="virial" aria-labelledby="virialTitle"><h2 id="virialTitle">Üçüncü virial denetimi</h2><p id="virialText"></p><a href="https://doi.org/10.1021/ma00017a029">Nakamura ve ark. · Işık saçılması ölçümleri</a></section>
+    <section class="observations">
+      <div class="sectiontop"><div><h2>Ölçüm ve model değerleri</h2><p id="tableNote"></p></div><button type="button" id="export">Seriyi indir · CSV</button></div>
+      <div class="tablewrap" role="region" aria-label="Yana kaydırılabilen basınç karşılaştırması" tabindex="0"><table><thead><tr><th scope="col">c (g/L)</th><th scope="col">Kullanım</th><th scope="col">Ölçüm (kPa)</th><th scope="col">Temel (kPa)</th><th scope="col">Ek terimli (kPa)</th><th scope="col" id="guardCol">A₃ ≥ 0 (kPa)</th></tr></thead><tbody id="observations"></tbody></table></div>
+    </section>
+    <details class="method"><summary>Model, birimler ve deneysel kapsam</summary>
+      <div class="methodsGrid"><section><h3>Termodinamik model</h3>
+      <p>İkili ve sıkıştırılamaz çözelti için Flory–Huggins serbest enerjisinde integral etkileşim parametresi kullanılır. Temel model bulutlanma ve seyreltik çözeltinin ikinci ozmotik virial katsayısı A₂ ile belirlenmiştir. A, B ve C bu sınamalarda sabittir.</p>
+      <p class="equation">χ(φ, T) = A + B/T + Cφ + Dφ²</p>
+      <p>Ek terimin serbest enerjiye katkısı Dφ³(1 − φ) olduğundan basınç açılımında c³ mertebesinde başlar. Böylece ideal zincir terimi ve A₂ korunur. İki faz birlikte bulunuyorsa denge basıncı iki fazın ortak teğetinden hesaplanır.</p>
+      <p id="paramText"></p><p id="fitText"></p></section>
+      <section><h3>Deney ve aktarım sınırı</h3>
+      <p>Krigbaum ve Geymer’in membran osmometrisi tablosundaki derişim ile indirgenmiş basınçtan ozmotik basınç geri hesaplanır. Aynı yayın ve polimer fraksiyonundan ayrılan seriler, aynı numunenin başka koşullarına aktarımı sınar. Başka mol kütlelerine veya polimerlere aktarım için bağımsız numuneler gerekir.</p>
+      <p>Kaynak her nokta için standart sapma veya bağımsız deneysel faz sayısı bildirmiyor. Grafikteki denge fazları model çıktısıdır.</p>
+      <p><a href="https://doi.org/10.1021/ja01517a022">Krigbaum ve Geymer · Tablo I</a> · <a href="transfer.html?view=osmotic">A₂ ve temel modelin kaynakları</a> · <a href="solvent-activity.html">Bağımsız çözücü aktivitesi karşılaştırması</a></p>
+      </section></div>
+    </details>
+    <details class="method"><summary>Üçüncü virial katsayısını koruyunca sonuç değişiyor mu?</summary><p>Basınç sonuçlarını gördükten sonra araştırılan Eφ³ terimi, A₂ ile A₃'ü birlikte korur. İki en yüksek derişim dışarıda tutulduğunda bu seçeneğin basınç hatası ortalama 3,35 kPa oldu. Buna karşılık 34 °C verisine uydurulup 24 °C’ye aktarıldığında üç ayrı basınç ölçümünün tamamı için aynı 0,849 kPa platosunu verdi. Bu nedenle model seçiminde farklı sıcaklıklardaki izoterm biçimi ve bağımsız virial ölçümleri birlikte değerlendiriliyor.</p><p><a href="transfer-inputs/e-sensitivity.json">Eφ³ hesap sonuçları</a> · <a href="transfer-inputs/PRESSURE44.md">44 °C kaynak karşılaştırması</a> · <a href="PS_Basinc_Aktivite.png">Basınç, virial ve aktivite grafiği</a></p></details>
+  </div>
+</main>
+</body>
+</html>

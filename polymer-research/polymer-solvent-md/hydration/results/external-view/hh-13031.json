@@ -1,0 +1,22 @@
+{
+  "export_code_sha256": "1685564424abbb737462e56aa6ce18269912b9c646f7c46ea59e1524441a4e5e",
+  "trajectory_sha256": "81dcd3399d4a02296452a895a1de5ddae2b2a3d0d018b9ccb077a22562ec30b6",
+  "topology_sha256": "1a52d4aa60a1f1cc773f1afc6bdccff498b6c0a2aeaa0daec20632852a87fee1",
+  "manifest_sha256": "60b4462af43945001a138ce01cd36b156853109dde2cd3023a6dd8595ef26945",
+  "engine": "8.6.1.dev-b399af4",
+  "frames": 120,
+  "atoms": 1550,
+  "waters": 500,
+  "first_time_ps": 1.0,
+  "last_time_ps": 120.0,
+  "stride_ps": 1.0,
+  "coordinate_precision_nm": 0.001,
+  "max_abs_component_error_nm": 0.0005002021789550781,
+  "coordinate_source": "Original periodic coordinates with per-frame box. No resampling or smoothing.",
+  "files_sha256": {
+    "hh-13031.gro": "9e412acd9296bf80099908efffbc63cca1dd4b1a137bee0c3ee29610019d264a",
+    "hh-13031.ndx": "94392b26aeace4e023d776de0702bc6e8e6f579bc09e29f69d44efc32259292a",
+    "hh-13031.pdb": "ddf62aaa21cfc793827528bdc3a6d75ab7452e32457908a189d78807392657f3",
+    "hh-13031.xtc": "6780834204dbd3b8ea34141d98602bc8a6618e5eb30f8f34dff45913f33eeaa8"
+  }
+}

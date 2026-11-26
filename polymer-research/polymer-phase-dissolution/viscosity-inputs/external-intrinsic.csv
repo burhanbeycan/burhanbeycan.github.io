@@ -1,0 +1,9 @@
+id,study,sample,system,solvent,T_K,Mw_g_mol,Mw_sdm_g_mol,dispersity,eta_mL_g,eta_sdm_mL_g,training,role,source_url
+baysal1992-PS1,baysal1992,PS1,ps-cyclohexane-theta,cyclohexane,307.65,63000,,1.04,20.7,,false,external,https://doi.org/10.1016/0032-3861(92)90695-S
+baysal1992-PS2,baysal1992,PS2,ps-cyclohexane-theta,cyclohexane,307.65,90000,,1.06,24.8,,false,external,https://doi.org/10.1016/0032-3861(92)90695-S
+baysal1992-PS3,baysal1992,PS3,ps-cyclohexane-theta,cyclohexane,307.65,600000,,1.08,70,,false,external,https://doi.org/10.1016/0032-3861(92)90695-S
+baysal1992-PS4,baysal1992,PS4,ps-cyclohexane-theta,cyclohexane,307.65,2800000,,1.2,131,,false,external,https://doi.org/10.1016/0032-3861(92)90695-S
+baysal1992-PS5,baysal1992,PS5,ps-cyclohexane-theta,cyclohexane,307.65,10000000,,1.2,211,,false,external,https://doi.org/10.1016/0032-3861(92)90695-S
+nbs705-benzene25,nbs705,SRM 705,ps-benzene-25,benzene,298.15,179300,740,1.07,74.3,0.18,false,external,https://tsapps.nist.gov/srmext/certificates/archives/705_COA_1978-11-28.pdf
+nbs705-cyclohexane35,nbs705,SRM 705,ps-cyclohexane-35,cyclohexane,308.15,179300,740,1.07,35.4,0.24,false,off-temperature,https://tsapps.nist.gov/srmext/certificates/archives/705_COA_1978-11-28.pdf
+nbs705-benzene35,nbs705,SRM 705,ps-benzene-35,benzene,308.15,179300,740,1.07,74.5,0.23,false,off-temperature,https://tsapps.nist.gov/srmext/certificates/archives/705_COA_1978-11-28.pdf

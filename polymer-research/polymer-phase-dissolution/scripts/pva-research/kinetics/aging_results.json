@@ -1,0 +1,429 @@
+{
+  "source_doi": "10.1295/koron1944.15.348",
+  "title": "Early aging of aqueous PVA under the original falling-ball protocol",
+  "n_digitized_fig1": 19,
+  "n_table1_derived_rates": 29,
+  "n_parent_groups": 11,
+  "K_held_two_materials": 4.027238697054084e-05,
+  "K_unit": "h^-1 (numerical wt-percent)^-2",
+  "transfer_uses_time_zero_reference": true,
+  "valid_early_range_h": [
+    0,
+    16
+  ],
+  "time_benchmark": {
+    "early": {
+      "fresh_cP": {
+        "n": 10,
+        "mean_APE_pct": 6.553648533430149,
+        "median_APE_pct": 6.205153185725759,
+        "within_10_pct_count": 8
+      },
+      "early_law_cP": {
+        "n": 10,
+        "mean_APE_pct": 0.7179996806083055,
+        "median_APE_pct": 0.6254492477901497,
+        "within_10_pct_count": 10
+      }
+    },
+    "late_diagnostic": {
+      "fresh_cP": {
+        "n": 7,
+        "mean_APE_pct": 30.470394486346354,
+        "median_APE_pct": 30.284583600069837,
+        "within_10_pct_count": 0
+      },
+      "early_law_cP": {
+        "n": 7,
+        "mean_APE_pct": 13.509156781375433,
+        "median_APE_pct": 14.421878127006805,
+        "within_10_pct_count": 3
+      }
+    }
+  },
+  "rate_group_mean_MAPE_pct": {
+    "constant": 65.80788556696014,
+    "c_squared": 5.540519766177173
+  },
+  "rate_predictions": [
+    {
+      "group": "high_parent",
+      "material": "H1897",
+      "wt_percent": 16.2,
+      "observed": 0.01002,
+      "c_squared": 0.010335444932840769,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "H1897",
+      "wt_percent": 13.5,
+      "observed": 0.0081,
+      "c_squared": 0.007177392314472756,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F9",
+      "wt_percent": 14.3,
+      "observed": 0.00802,
+      "c_squared": 0.008053250778526935,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F9",
+      "wt_percent": 9.9,
+      "observed": 0.00363,
+      "c_squared": 0.0038598420891164604,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F8",
+      "wt_percent": 13.8,
+      "observed": 0.0088,
+      "c_squared": 0.00749993191971573,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F8",
+      "wt_percent": 10.03,
+      "observed": 0.00402,
+      "c_squared": 0.00396187723725126,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F7",
+      "wt_percent": 16.0,
+      "observed": 0.0105,
+      "c_squared": 0.010081824046666807,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F5",
+      "wt_percent": 16.06,
+      "observed": 0.0106,
+      "c_squared": 0.010157579502667463,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F5",
+      "wt_percent": 14.0,
+      "observed": 0.00758,
+      "c_squared": 0.007718896535729275,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F4",
+      "wt_percent": 16.0,
+      "observed": 0.0106,
+      "c_squared": 0.010081824046666807,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F3",
+      "wt_percent": 20.01,
+      "observed": 0.0166,
+      "c_squared": 0.015768606861202326,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F3",
+      "wt_percent": 14.02,
+      "observed": 0.0076,
+      "c_squared": 0.0077409662786814305,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "high_parent",
+      "material": "F2",
+      "wt_percent": 20.04,
+      "observed": 0.0166,
+      "c_squared": 0.015815924484608845,
+      "constant": 0.009776885663103977
+    },
+    {
+      "group": "low_1170",
+      "material": "L1170",
+      "wt_percent": 19.26,
+      "observed": 0.0151,
+      "c_squared": 0.014590330143861128,
+      "constant": 0.009392700663977913
+    },
+    {
+      "group": "low_1170",
+      "material": "L1170",
+      "wt_percent": 16.35,
+      "observed": 0.0111,
+      "c_squared": 0.010514486493192884,
+      "constant": 0.009392700663977913
+    },
+    {
+      "group": "low_1490",
+      "material": "L1490",
+      "wt_percent": 16.04,
+      "observed": 0.01,
+      "c_squared": 0.010176530685455216,
+      "constant": 0.00963841181745343
+    },
+    {
+      "group": "low_1650",
+      "material": "L1650",
+      "wt_percent": 18.02,
+      "observed": 0.013,
+      "c_squared": 0.012854338708540268,
+      "constant": 0.00975069269245133
+    },
+    {
+      "group": "low_1650",
+      "material": "L1650",
+      "wt_percent": 16.35,
+      "observed": 0.00962,
+      "c_squared": 0.010582193047969136,
+      "constant": 0.00975069269245133
+    },
+    {
+      "group": "low_1650",
+      "material": "L1650",
+      "wt_percent": 14.7,
+      "observed": 0.00833,
+      "c_squared": 0.008554110094495037,
+      "constant": 0.00975069269245133
+    },
+    {
+      "group": "low_1650",
+      "material": "L1650",
+      "wt_percent": 12.32,
+      "observed": 0.00604,
+      "c_squared": 0.006008437965693386,
+      "constant": 0.00975069269245133
+    },
+    {
+      "group": "low_1705",
+      "material": "L1705",
+      "wt_percent": 14.63,
+      "observed": 0.0072,
+      "c_squared": 0.008589233585759156,
+      "constant": 0.009960295626387103
+    },
+    {
+      "group": "low_291",
+      "material": "L291",
+      "wt_percent": 20.0,
+      "observed": 0.0159,
+      "c_squared": 0.015786157221074685,
+      "constant": 0.009201651181488166
+    },
+    {
+      "group": "low_2950",
+      "material": "L2950",
+      "wt_percent": 11.36,
+      "observed": 0.0052,
+      "c_squared": 0.005086067743693773,
+      "constant": 0.010289757598420256
+    },
+    {
+      "group": "low_308",
+      "material": "L308",
+      "wt_percent": 20.02,
+      "observed": 0.0158,
+      "c_squared": 0.015830892433832424,
+      "constant": 0.009207458490676482
+    },
+    {
+      "group": "low_4070",
+      "material": "L4070",
+      "wt_percent": 12.1,
+      "observed": 0.00572,
+      "c_squared": 0.005816186457885843,
+      "constant": 0.010849094309906456
+    },
+    {
+      "group": "low_4070",
+      "material": "L4070",
+      "wt_percent": 6.8,
+      "observed": 0.00164,
+      "c_squared": 0.0018368995411013004,
+      "constant": 0.010849094309906456
+    },
+    {
+      "group": "low_718",
+      "material": "L718",
+      "wt_percent": 18.5,
+      "observed": 0.0156,
+      "c_squared": 0.013323412940101743,
+      "constant": 0.009219195370015391
+    },
+    {
+      "group": "low_990",
+      "material": "L990",
+      "wt_percent": 19.52,
+      "observed": 0.0154,
+      "c_squared": 0.015012522213789015,
+      "constant": 0.009231098949210929
+    }
+  ],
+  "time_predictions": [
+    {
+      "material": "L1490",
+      "age_h": 2.52,
+      "wt_percent": 16.04,
+      "observed_cP": 6153.6,
+      "fresh_cP": 5989.6,
+      "regime": "early",
+      "early_law_cP": 6145.9919735250405
+    },
+    {
+      "material": "L1490",
+      "age_h": 4.83,
+      "wt_percent": 16.04,
+      "observed_cP": 6234.5,
+      "fresh_cP": 5989.6,
+      "regime": "early",
+      "early_law_cP": 6289.351282589661
+    },
+    {
+      "material": "L1490",
+      "age_h": 8.2,
+      "wt_percent": 16.04,
+      "observed_cP": 6522.7,
+      "fresh_cP": 5989.6,
+      "regime": "early",
+      "early_law_cP": 6498.494517025926
+    },
+    {
+      "material": "L1490",
+      "age_h": 10.56,
+      "wt_percent": 16.04,
+      "observed_cP": 6666.0,
+      "fresh_cP": 5989.6,
+      "regime": "early",
+      "early_law_cP": 6644.956841438265
+    },
+    {
+      "material": "L1490",
+      "age_h": 15.18,
+      "wt_percent": 16.04,
+      "observed_cP": 7025.7,
+      "fresh_cP": 5989.6,
+      "regime": "early",
+      "early_law_cP": 6931.675459567507
+    },
+    {
+      "material": "L1490",
+      "age_h": 21.96,
+      "wt_percent": 16.04,
+      "observed_cP": 8591.5,
+      "fresh_cP": 5989.6,
+      "regime": "late_diagnostic",
+      "early_law_cP": 7352.444340718211
+    },
+    {
+      "material": "L1490",
+      "age_h": 23.64,
+      "wt_percent": 16.04,
+      "observed_cP": 9631.4,
+      "fresh_cP": 5989.6,
+      "regime": "late_diagnostic",
+      "early_law_cP": 7456.705656401571
+    },
+    {
+      "material": "L1490",
+      "age_h": 24.75,
+      "wt_percent": 16.04,
+      "observed_cP": 10942.8,
+      "fresh_cP": 5989.6,
+      "regime": "late_diagnostic",
+      "early_law_cP": 7525.592597120934
+    },
+    {
+      "material": "L1705",
+      "age_h": 2.31,
+      "wt_percent": 14.63,
+      "observed_cP": 5570.5,
+      "fresh_cP": 5447.9,
+      "regime": "early",
+      "early_law_cP": 5556.376866276343
+    },
+    {
+      "material": "L1705",
+      "age_h": 3.57,
+      "wt_percent": 14.63,
+      "observed_cP": 5548.3,
+      "fresh_cP": 5447.9,
+      "regime": "early",
+      "early_law_cP": 5615.54606606344
+    },
+    {
+      "material": "L1705",
+      "age_h": 5.99,
+      "wt_percent": 14.63,
+      "observed_cP": 5743.7,
+      "fresh_cP": 5447.9,
+      "regime": "early",
+      "early_law_cP": 5729.188497400563
+    },
+    {
+      "material": "L1705",
+      "age_h": 10.51,
+      "wt_percent": 14.63,
+      "observed_cP": 5874.4,
+      "fresh_cP": 5447.9,
+      "regime": "early",
+      "early_law_cP": 5941.446261716179
+    },
+    {
+      "material": "L1705",
+      "age_h": 13.77,
+      "wt_percent": 14.63,
+      "observed_cP": 6016.8,
+      "fresh_cP": 5447.9,
+      "regime": "early",
+      "early_law_cP": 6094.534826244699
+    },
+    {
+      "material": "L1705",
+      "age_h": 21.12,
+      "wt_percent": 14.63,
+      "observed_cP": 6394.5,
+      "fresh_cP": 5447.9,
+      "regime": "late_diagnostic",
+      "early_law_cP": 6439.688491669431
+    },
+    {
+      "material": "L1705",
+      "age_h": 29.42,
+      "wt_percent": 14.63,
+      "observed_cP": 6969.1,
+      "fresh_cP": 5447.9,
+      "regime": "late_diagnostic",
+      "early_law_cP": 6829.453855346338
+    },
+    {
+      "material": "L1705",
+      "age_h": 32.57,
+      "wt_percent": 14.63,
+      "observed_cP": 7590.8,
+      "fresh_cP": 5447.9,
+      "regime": "late_diagnostic",
+      "early_law_cP": 6977.376854814079
+    },
+    {
+      "material": "L1705",
+      "age_h": 34.89,
+      "wt_percent": 14.63,
+      "observed_cP": 8390.5,
+      "fresh_cP": 5447.9,
+      "regime": "late_diagnostic",
+      "early_law_cP": 7086.32331791413
+    }
+  ]
+}

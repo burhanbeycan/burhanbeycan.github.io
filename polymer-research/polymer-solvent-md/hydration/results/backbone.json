@@ -1,0 +1,171 @@
+{
+  "analysis_sha256": "782c50f768213251c8f52edd445c6688168c357cc28181be9dba26d9ba63b67a",
+  "endpoint": "Norm of the reconstructed vector from the first amide N to the final backbone C. Both are common atoms; omit OH and the α-methyl carbon.",
+  "mass_weighting": "GAFF2 masses of three amide N and six backbone C; all hydrogens, side chains and caps excluded.",
+  "metrics": {
+    "H/H": {
+      "alpha_n_to_omega_backbone_c": {
+        "between_lineage_sd_nm": 0.08563011742357382,
+        "mean_nm": 0.6729291376256918
+      },
+      "backbone_rg": {
+        "between_lineage_sd_nm": 0.015380269953856886,
+        "mean_nm": 0.2638496036187332
+      }
+    },
+    "Me/OH": {
+      "alpha_n_to_omega_backbone_c": {
+        "between_lineage_sd_nm": 0.05512971468092494,
+        "mean_nm": 0.8367849807146108
+      },
+      "backbone_rg": {
+        "between_lineage_sd_nm": 0.009844820399931332,
+        "mean_nm": 0.2897607301483345
+      }
+    }
+  },
+  "provenance": {
+    "H/H": {
+      "backbone_indices_alpha_to_omega": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "mass_da": [
+        14.01,
+        12.01,
+        12.01,
+        14.01,
+        12.01,
+        12.01,
+        14.01,
+        12.01,
+        12.01
+      ],
+      "metadata_sha256": {
+        "13031": "60b4462af43945001a138ce01cd36b156853109dde2cd3023a6dd8595ef26945",
+        "27011": "7fd0f4d34afe95f894f62c890b2ca1bc7eee880571b02937622134ea95642646",
+        "49033": "48c852e7f1fe19fe71b58a1b7b1bc82ea739e06c064b887e9239104ba16a1680"
+      },
+      "sdf_sha256": "81be06f85ca4959ecbe98f7c884be3e392267104093b6e8d20fbbcd44f9a7503",
+      "topology_sha256": "1a52d4aa60a1f1cc773f1afc6bdccff498b6c0a2aeaa0daec20632852a87fee1",
+      "trajectory_sha256": {
+        "13031": "81dcd3399d4a02296452a895a1de5ddae2b2a3d0d018b9ccb077a22562ec30b6",
+        "27011": "32a1332b75a7fb1704814982d99c2ee12c1344780f89facac314f113c7140d5f",
+        "49033": "f6180e1d23e0d5effbdc2acc44022c657a32cb940589a3af24b3d0bcf107627f"
+      }
+    },
+    "Me/OH": {
+      "backbone_indices_alpha_to_omega": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "mass_da": [
+        14.01,
+        12.01,
+        12.01,
+        14.01,
+        12.01,
+        12.01,
+        14.01,
+        12.01,
+        12.01
+      ],
+      "metadata_sha256": {
+        "13031": "9d976dee07e5a2721676e6095a2adfd68567c8f9a461413b26e4a19a1dfe2f70",
+        "27011": "668a8cb4cc7ae49975b57f241bcd70b6c63586e18922ba5d035d1237950d7ae1",
+        "49033": "186345135faca688c2b0872ac2d4376e5036a92d1b28405e96ff453aebb6458e"
+      },
+      "sdf_sha256": "68f6860b1f4ac103e23af1c3794d9d9cf8afe8ada25d4f59ce22368758840c22",
+      "topology_sha256": "faf9ab5ca5d53f0bcd7f9419ca84221c82f04bf18a400474c974f4e1a9a6b2fc",
+      "trajectory_sha256": {
+        "13031": "87ae03aa4fb7ce3b6b3559663b1b91cf3680cd2ee23146d5b9f3ce79e8a1e672",
+        "27011": "23c0fb63c412fc18abc89b7df1888ea81ca49f3f036302504ba9337f81015e48",
+        "49033": "dc70b3dc4d86011531809933be85113fe878a7075831169fe2082d07e05e76fb"
+      }
+    }
+  },
+  "replicas": [
+    {
+      "condition": "H/H",
+      "first_half_rg_nm": 0.2643797620852412,
+      "first_half_span_nm": 0.6939007995350337,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.2508643204457618,
+      "mean_endpoint_separation_nm": 0.5966136629913036,
+      "second_half_rg_nm": 0.23734887880628242,
+      "second_half_span_nm": 0.49932652644757347,
+      "seed": 13031
+    },
+    {
+      "condition": "H/H",
+      "first_half_rg_nm": 0.2872211831582448,
+      "first_half_span_nm": 0.8039597975996661,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.28083460049570647,
+      "mean_endpoint_separation_nm": 0.765533897436968,
+      "second_half_rg_nm": 0.27444801783316813,
+      "second_half_span_nm": 0.7271079972742697,
+      "seed": 27011
+    },
+    {
+      "condition": "H/H",
+      "first_half_rg_nm": 0.26276896892364826,
+      "first_half_span_nm": 0.6641901859246221,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.2598498899147314,
+      "mean_endpoint_separation_nm": 0.656639852448804,
+      "second_half_rg_nm": 0.25693081090581454,
+      "second_half_span_nm": 0.6490895189729862,
+      "seed": 49033
+    },
+    {
+      "condition": "Me/OH",
+      "first_half_rg_nm": 0.28593672594202696,
+      "first_half_span_nm": 0.8045140459110727,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.28435250588177763,
+      "mean_endpoint_separation_nm": 0.7988340482177897,
+      "second_half_rg_nm": 0.28276828582152835,
+      "second_half_span_nm": 0.7931540505245069,
+      "seed": 13031
+    },
+    {
+      "condition": "Me/OH",
+      "first_half_rg_nm": 0.283897207681505,
+      "first_half_span_nm": 0.8057568256924719,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.283805522364964,
+      "mean_endpoint_separation_nm": 0.811498945827537,
+      "second_half_rg_nm": 0.283713837048423,
+      "second_half_span_nm": 0.8172410659626022,
+      "seed": 27011
+    },
+    {
+      "condition": "Me/OH",
+      "first_half_rg_nm": 0.30211146920179205,
+      "first_half_span_nm": 0.9013522665718583,
+      "frames": 120,
+      "mean_backbone_rg_nm": 0.3011241621982619,
+      "mean_endpoint_separation_nm": 0.9000219480985058,
+      "second_half_rg_nm": 0.3001368551947317,
+      "second_half_span_nm": 0.8986916296251536,
+      "seed": 49033
+    }
+  ],
+  "schema": "petox-matched-backbone/1",
+  "uncertainty": "Arithmetic mean of three lineage means and sample SD across those means. SD is descriptive; no significance or converged conformational equilibrium inferred."
+}

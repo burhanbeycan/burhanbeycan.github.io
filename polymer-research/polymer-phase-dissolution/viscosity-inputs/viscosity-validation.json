@@ -1,0 +1,1978 @@
+{
+  "version": 1,
+  "units": {
+    "mass": "g/mol",
+    "intrinsic": "mL/g",
+    "concentration": "g/L",
+    "relativeViscosity": "dimensionless"
+  },
+  "intrinsicProtocol": "For each solvent, fit six paired fractions with equal-weight OLS in log coordinates. Use measured Mw as the empirical mass coordinate. Score other-study measurements at the same solvent and temperature, without using them during fitting. Parent groups and additional fractions from the training study are reported separately.",
+  "finiteProtocol": "Per specimen, fit reduced and inherent viscosity lines on the lower concentrations. Hold out the largest distinct c, or two largest as a sensitivity check. For low-concentration interpolation, hold the middle of the three lowest levels and fit only its two neighbours. Retain flagged points. All series use the relative viscosities reported by the source.",
+  "scope": "Huggins/Kraemer are dilute expansions. Use the reported u and residuals to interpret extrapolations. Two-point fits have zero residual degrees of freedom. Each mPa·s prediction requires the matched solvent dynamic viscosity.",
+  "systems": {
+    "ps-benzene-25": {
+      "fit": {
+        "a": 0.7476363155117225,
+        "K_mL_g": 0.008548854902831873,
+        "Mref_g_mol": 24483931.8873916,
+        "etaRef_mL_g": 2858.27383798236,
+        "minMw": 8760000,
+        "maxMw": 56800000,
+        "n": 6
+      },
+      "training_ids": [
+        "IK1500-1",
+        "IK1500-2",
+        "BK2500-1",
+        "BK2500-2",
+        "BK2500-3",
+        "BK2500-4"
+      ],
+      "loo": {
+        "folds": [
+          {
+            "id": "IK1500-1",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 56800000,
+            "measured_mL_g": 5306,
+            "predicted_mL_g": 5413.565434774267,
+            "a": 0.7549976738736468,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 39000000,
+            "train_ids": [
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "IK1500-2",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 39000000,
+            "measured_mL_g": 4007,
+            "predicted_mL_g": 4062.881869751925,
+            "a": 0.7504466352658644,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-1",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 31900000,
+            "measured_mL_g": 3508,
+            "predicted_mL_g": 3477.4943095973076,
+            "a": 0.7466290546947566,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-2",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 23200000,
+            "measured_mL_g": 2802,
+            "predicted_mL_g": 2734.1813695444894,
+            "a": 0.7482115555469043,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-3",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 15000000,
+            "measured_mL_g": 2004,
+            "predicted_mL_g": 1973.3141718945992,
+            "a": 0.7509317071643506,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-4",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 8760000,
+            "measured_mL_g": 1302,
+            "predicted_mL_g": 1365.9536993220831,
+            "a": 0.7261544544829065,
+            "domain": "extrapolation",
+            "training_min_Mw": 15000000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 6,
+          "mae": 59.401858801979756,
+          "rmse": 64.87778974406132,
+          "rmse_pct": 2.55411466083708,
+          "mae_mL_g": 59.401858801979756,
+          "rmse_mL_g": 64.87778974406132
+        }
+      },
+      "parentBlocked": {
+        "IK1500": {
+          "folds": [
+            {
+              "id": "IK1500-1",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 56800000,
+              "measured_mL_g": 5306,
+              "predicted_mL_g": 5528.209074807718,
+              "a": 0.7692961646716363,
+              "domain": "extrapolation",
+              "training_min_Mw": 8760000,
+              "training_max_Mw": 31900000,
+              "train_ids": [
+                "BK2500-1",
+                "BK2500-2",
+                "BK2500-3",
+                "BK2500-4"
+              ]
+            },
+            {
+              "id": "IK1500-2",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 39000000,
+              "measured_mL_g": 4007,
+              "predicted_mL_g": 4139.719482867273,
+              "a": 0.7692961646716363,
+              "domain": "extrapolation",
+              "training_min_Mw": 8760000,
+              "training_max_Mw": 31900000,
+              "train_ids": [
+                "BK2500-1",
+                "BK2500-2",
+                "BK2500-3",
+                "BK2500-4"
+              ]
+            }
+          ],
+          "metrics": {
+            "n": 2,
+            "mae": 177.46427883749539,
+            "rmse": 183.01821502169986,
+            "rmse_pct": 3.775511352931218,
+            "mae_mL_g": 177.46427883749539,
+            "rmse_mL_g": 183.01821502169986
+          }
+        },
+        "BK2500": {
+          "folds": [
+            {
+              "id": "BK2500-1",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 31900000,
+              "measured_mL_g": 3508,
+              "predicted_mL_g": 3448.5704780928922,
+              "a": 0.7468466343589304,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-2",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 23200000,
+              "measured_mL_g": 2802,
+              "predicted_mL_g": 2718.618083629898,
+              "a": 0.7468466343589304,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-3",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 15000000,
+              "measured_mL_g": 2004,
+              "predicted_mL_g": 1962.8987305579694,
+              "a": 0.7468466343589304,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-4",
+              "study": "einaga1979",
+              "system": "ps-benzene-25",
+              "Mw_g_mol": 8760000,
+              "measured_mL_g": 1302,
+              "predicted_mL_g": 1313.542458053104,
+              "a": 0.7468466343589304,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            }
+          ],
+          "metrics": {
+            "n": 4,
+            "mae": 48.86379144308603,
+            "rmse": 55.4683575097373,
+            "rmse_pct": 2.044368167292645,
+            "mae_mL_g": 48.86379144308603,
+            "rmse_mL_g": 55.4683575097373
+          }
+        }
+      },
+      "extraSameStudy": {
+        "folds": [
+          {
+            "id": "F450",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 4800000,
+            "measured_mL_g": 825,
+            "predicted_mL_g": 845.3694082015104,
+            "a": 0.7476363155117225,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "F288",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 3080000,
+            "measured_mL_g": 600,
+            "predicted_mL_g": 606.714112082326,
+            "a": 0.7476363155117225,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "F126",
+            "study": "einaga1979",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 1340000,
+            "measured_mL_g": 320,
+            "predicted_mL_g": 325.65218929581863,
+            "a": 0.7476363155117225,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 3,
+          "mae": 10.911903193218336,
+          "rmse": 12.805458931897775,
+          "rmse_pct": 1.8679852362956735,
+          "mae_mL_g": 10.911903193218336,
+          "rmse_mL_g": 12.805458931897775
+        }
+      },
+      "external": {
+        "folds": [
+          {
+            "id": "nbs705-benzene25",
+            "study": "nbs705",
+            "system": "ps-benzene-25",
+            "Mw_g_mol": 179300,
+            "measured_mL_g": 74.3,
+            "predicted_mL_g": 72.3894633287029,
+            "a": 0.7476363155117225,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 1,
+          "mae": 1.9105366712970948,
+          "rmse": 1.9105366712970948,
+          "rmse_pct": 2.5713817917861306,
+          "mae_mL_g": 1.9105366712970948,
+          "rmse_mL_g": 1.9105366712970948
+        }
+      }
+    },
+    "ps-cyclohexane-theta": {
+      "fit": {
+        "a": 0.509230670928604,
+        "K_mL_g": 0.076826404022584,
+        "Mref_g_mol": 24483931.8873916,
+        "etaRef_mL_g": 444.79041280626484,
+        "minMw": 8760000,
+        "maxMw": 56800000,
+        "n": 6
+      },
+      "training_ids": [
+        "IK1500-1",
+        "IK1500-2",
+        "BK2500-1",
+        "BK2500-2",
+        "BK2500-3",
+        "BK2500-4"
+      ],
+      "loo": {
+        "folds": [
+          {
+            "id": "IK1500-1",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 56800000,
+            "measured_mL_g": 667,
+            "predicted_mL_g": 697.3420478432115,
+            "a": 0.525547699162757,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 39000000,
+            "train_ids": [
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "IK1500-2",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 39000000,
+            "measured_mL_g": 564,
+            "predicted_mL_g": 563.7088787381574,
+            "a": 0.5091259045390116,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-1",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 31900000,
+            "measured_mL_g": 522,
+            "predicted_mL_g": 505.78884801083854,
+            "a": 0.5055923461902776,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-2",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 23200000,
+            "measured_mL_g": 435,
+            "predicted_mL_g": 432.30426933345956,
+            "a": 0.5093766178997435,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-3",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 15000000,
+            "measured_mL_g": 350,
+            "predicted_mL_g": 345.3073552577927,
+            "a": 0.5121133607681962,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "BK2500-4",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 8760000,
+            "measured_mL_g": 259,
+            "predicted_mL_g": 271.3557809534496,
+            "a": 0.4883529638497797,
+            "domain": "extrapolation",
+            "training_min_Mw": 15000000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 6,
+          "mae": 11.098079576068812,
+          "rmse": 15.08575083313857,
+          "rmse_pct": 3.0353758099875003,
+          "mae_mL_g": 11.098079576068812,
+          "rmse_mL_g": 15.08575083313857
+        }
+      },
+      "parentBlocked": {
+        "IK1500": {
+          "folds": [
+            {
+              "id": "IK1500-1",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 56800000,
+              "measured_mL_g": 667,
+              "predicted_mL_g": 710.0277666670064,
+              "a": 0.5378484242450252,
+              "domain": "extrapolation",
+              "training_min_Mw": 8760000,
+              "training_max_Mw": 31900000,
+              "train_ids": [
+                "BK2500-1",
+                "BK2500-2",
+                "BK2500-3",
+                "BK2500-4"
+              ]
+            },
+            {
+              "id": "IK1500-2",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 39000000,
+              "measured_mL_g": 564,
+              "predicted_mL_g": 580.0339801412873,
+              "a": 0.5378484242450252,
+              "domain": "extrapolation",
+              "training_min_Mw": 8760000,
+              "training_max_Mw": 31900000,
+              "train_ids": [
+                "BK2500-1",
+                "BK2500-2",
+                "BK2500-3",
+                "BK2500-4"
+              ]
+            }
+          ],
+          "metrics": {
+            "n": 2,
+            "mae": 29.53087340414686,
+            "rmse": 32.46904081984516,
+            "rmse_pct": 4.9848132146927435,
+            "mae_mL_g": 29.53087340414686,
+            "rmse_mL_g": 32.46904081984516
+          }
+        },
+        "BK2500": {
+          "folds": [
+            {
+              "id": "BK2500-1",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 31900000,
+              "measured_mL_g": 522,
+              "predicted_mL_g": 515.6358152526792,
+              "a": 0.44613587967453644,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-2",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 23200000,
+              "measured_mL_g": 435,
+              "predicted_mL_g": 447.34365234655957,
+              "a": 0.44613587967453644,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-3",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 15000000,
+              "measured_mL_g": 350,
+              "predicted_mL_g": 368.2515676763305,
+              "a": 0.44613587967453644,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            },
+            {
+              "id": "BK2500-4",
+              "study": "einaga1979",
+              "system": "ps-cyclohexane-theta",
+              "Mw_g_mol": 8760000,
+              "measured_mL_g": 259,
+              "predicted_mL_g": 289.68966024254195,
+              "a": 0.44613587967453644,
+              "domain": "extrapolation",
+              "training_min_Mw": 39000000,
+              "training_max_Mw": 56800000,
+              "train_ids": [
+                "IK1500-1",
+                "IK1500-2"
+              ]
+            }
+          ],
+          "metrics": {
+            "n": 4,
+            "mae": 16.912266253188207,
+            "rmse": 19.156223330794415,
+            "rmse_pct": 6.654653201870345,
+            "mae_mL_g": 16.912266253188207,
+            "rmse_mL_g": 19.156223330794415
+          }
+        }
+      },
+      "extraSameStudy": {
+        "folds": [
+          {
+            "id": "F450",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 4800000,
+            "measured_mL_g": 192,
+            "predicted_mL_g": 194.00077451957569,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "F288",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 3080000,
+            "measured_mL_g": 155,
+            "predicted_mL_g": 154.7674191716313,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "F126",
+            "study": "einaga1979",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 1340000,
+            "measured_mL_g": 99,
+            "predicted_mL_g": 101.3025069770641,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 3,
+          "mae": 1.51195410833616,
+          "rmse": 1.7662324214116363,
+          "rmse_pct": 1.4739523674572006,
+          "mae_mL_g": 1.51195410833616,
+          "rmse_mL_g": 1.7662324214116363
+        }
+      },
+      "external": {
+        "folds": [
+          {
+            "id": "baysal1992-PS1",
+            "study": "baysal1992",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 63000,
+            "measured_mL_g": 20.7,
+            "predicted_mL_g": 21.354131551741816,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "baysal1992-PS2",
+            "study": "baysal1992",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 90000,
+            "measured_mL_g": 24.8,
+            "predicted_mL_g": 25.607238290992612,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "baysal1992-PS3",
+            "study": "baysal1992",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 600000,
+            "measured_mL_g": 70,
+            "predicted_mL_g": 67.28563320895135,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "baysal1992-PS4",
+            "study": "baysal1992",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 2800000,
+            "measured_mL_g": 131,
+            "predicted_mL_g": 147.43517707563439,
+            "a": 0.509230670928604,
+            "domain": "extrapolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          },
+          {
+            "id": "baysal1992-PS5",
+            "study": "baysal1992",
+            "system": "ps-cyclohexane-theta",
+            "Mw_g_mol": 10000000,
+            "measured_mL_g": 211,
+            "predicted_mL_g": 281.91955573488417,
+            "a": 0.509230670928604,
+            "domain": "interpolation",
+            "training_min_Mw": 8760000,
+            "training_max_Mw": 56800000,
+            "train_ids": [
+              "IK1500-1",
+              "IK1500-2",
+              "BK2500-1",
+              "BK2500-2",
+              "BK2500-3",
+              "BK2500-4"
+            ]
+          }
+        ],
+        "metrics": {
+          "n": 5,
+          "mae": 18.306093888860325,
+          "rmse": 32.5826510276944,
+          "rmse_pct": 16.264858415349796,
+          "mae_mL_g": 18.306093888860325,
+          "rmse_mL_g": 32.5826510276944
+        }
+      }
+    }
+  },
+  "series": {
+    "copenhaver-ps-toluene-30": {
+      "fit": {
+        "eta_mL_g": 68.22131661278776,
+        "kH": 0.5417614679734287,
+        "kK": -0.1314231606994079,
+        "kraemerIntercept_mL_g": 72.85622983258237,
+        "hugginsSlope_mL2_g2": 2521.438074523134,
+        "kraemerSlope_mL2_g2": -697.5981093124327,
+        "maxC_g_L": 17.22,
+        "minC_g_L": 4.295,
+        "n": 4
+      },
+      "train_ids": [
+        "team-1",
+        "team-2",
+        "team-3",
+        "team-4"
+      ],
+      "test_ids": [
+        "team-5"
+      ],
+      "folds": [
+        {
+          "id": "team-1",
+          "c_g_L": 4.295,
+          "eta_rel": 1.388,
+          "observed_eta_rel": 1.388,
+          "huggins_eta_rel": 1.3395235860486037,
+          "kraemer_eta_rel": 1.3499248137332935,
+          "observed_reduced_mL_g": 90.33760186263093,
+          "observed_inherent_mL_g": 76.3361727787224,
+          "u": 0.29301055485192345,
+          "role": "train"
+        },
+        {
+          "id": "team-2",
+          "c_g_L": 9.38,
+          "eta_rel": 1.656,
+          "observed_eta_rel": 1.656,
+          "huggins_eta_rel": 1.8617631659520226,
+          "kraemer_eta_rel": 1.8626751083172586,
+          "observed_reduced_mL_g": 69.93603411513857,
+          "observed_inherent_mL_g": 53.774526222075465,
+          "u": 0.6399159498279493,
+          "role": "train"
+        },
+        {
+          "id": "team-3",
+          "c_g_L": 11.66,
+          "eta_rel": 2.193,
+          "observed_eta_rel": 2.193,
+          "huggins_eta_rel": 2.138264177989743,
+          "kraemer_eta_rel": 2.1268909602669392,
+          "observed_reduced_mL_g": 102.31560891938251,
+          "observed_inherent_mL_g": 67.3473815982634,
+          "u": 0.7954605517051053,
+          "role": "train"
+        },
+        {
+          "id": "team-4",
+          "c_g_L": 17.22,
+          "eta_rel": 3.025,
+          "observed_eta_rel": 3.025,
+          "huggins_eta_rel": 2.9224490700096304,
+          "kraemer_eta_rel": 2.8511619886972825,
+          "observed_reduced_mL_g": 117.59581881533101,
+          "observed_inherent_mL_g": 64.28055118947762,
+          "u": 1.174771072072205,
+          "role": "train"
+        },
+        {
+          "id": "team-5",
+          "c_g_L": 19.93,
+          "eta_rel": 3.63,
+          "observed_eta_rel": 3.63,
+          "huggins_eta_rel": 3.361178398340014,
+          "kraemer_eta_rel": 3.237933356358571,
+          "observed_reduced_mL_g": 131.96186653286503,
+          "observed_inherent_mL_g": 64.6880405557832,
+          "u": 1.35965084009286,
+          "role": "test"
+        }
+      ],
+      "metrics": {
+        "huggins": {
+          "n": 1,
+          "mae": 0.2688216016599858,
+          "rmse": 0.2688216016599858,
+          "rmse_pct": 7.405553764737902
+        },
+        "kraemer": {
+          "n": 1,
+          "mae": 0.39206664364142885,
+          "rmse": 0.39206664364142885,
+          "rmse_pct": 10.800733984612364
+        }
+      },
+      "upperTwo": {
+        "fit": {
+          "eta_mL_g": 81.75761886141623,
+          "kH": 0.1022539135404426,
+          "kK": -0.27020330580867985,
+          "kraemerIntercept_mL_g": 80.66833652181633,
+          "hugginsSlope_mL2_g2": 683.4966770437451,
+          "kraemerSlope_mL2_g2": -1758.315727901628,
+          "maxC_g_L": 11.66,
+          "minC_g_L": 4.295,
+          "n": 3
+        },
+        "train_ids": [
+          "team-1",
+          "team-2",
+          "team-3"
+        ],
+        "test_ids": [
+          "team-4",
+          "team-5"
+        ],
+        "folds": [
+          {
+            "id": "team-1",
+            "c_g_L": 4.295,
+            "eta_rel": 1.388,
+            "observed_eta_rel": 1.388,
+            "huggins_eta_rel": 1.3637574532986256,
+            "kraemer_eta_rel": 1.368937390031105,
+            "observed_reduced_mL_g": 90.33760186263093,
+            "observed_inherent_mL_g": 76.3361727787224,
+            "u": 0.35114897300978276,
+            "role": "train"
+          },
+          {
+            "id": "team-2",
+            "c_g_L": 9.38,
+            "eta_rel": 1.656,
+            "observed_eta_rel": 1.656,
+            "huggins_eta_rel": 1.827023509951772,
+            "kraemer_eta_rel": 1.8257021307890806,
+            "observed_reduced_mL_g": 69.93603411513857,
+            "observed_inherent_mL_g": 53.774526222075465,
+            "u": 0.7668864649200844,
+            "role": "train"
+          },
+          {
+            "id": "team-3",
+            "c_g_L": 11.66,
+            "eta_rel": 2.193,
+            "observed_eta_rel": 2.193,
+            "huggins_eta_rel": 2.046219036749602,
+            "kraemer_eta_rel": 2.0168561427989955,
+            "observed_reduced_mL_g": 102.31560891938251,
+            "observed_inherent_mL_g": 67.3473815982634,
+            "u": 0.9532938359241133,
+            "role": "train"
+          },
+          {
+            "id": "team-4",
+            "c_g_L": 17.22,
+            "eta_rel": 3.025,
+            "observed_eta_rel": 3.025,
+            "huggins_eta_rel": 2.610542372842686,
+            "kraemer_eta_rel": 2.381470622372033,
+            "observed_reduced_mL_g": 117.59581881533101,
+            "observed_inherent_mL_g": 64.28055118947762,
+            "u": 1.4078661967935875,
+            "role": "test"
+          },
+          {
+            "id": "team-5",
+            "c_g_L": 19.93,
+            "eta_rel": 3.63,
+            "observed_eta_rel": 3.63,
+            "huggins_eta_rel": 2.900917573163518,
+            "kraemer_eta_rel": 2.4826047812700005,
+            "observed_reduced_mL_g": 131.96186653286503,
+            "observed_inherent_mL_g": 64.6880405557832,
+            "u": 1.6294293439080254,
+            "role": "test"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 2,
+            "mae": 0.5717700269968977,
+            "rmse": 0.5930161506361545,
+            "rmse_pct": 17.191907668521484
+          },
+          "kraemer": {
+            "n": 2,
+            "mae": 0.895462298178983,
+            "rmse": 0.9302273506607676,
+            "rmse_pct": 26.941409865095306
+          }
+        }
+      },
+      "lowInterpolation": {
+        "fit": {
+          "eta_mL_g": 83.35246400672489,
+          "kH": 0.23408572377224215,
+          "kK": -0.1833923751752266,
+          "kraemerIntercept_mL_g": 81.57810870812789,
+          "hugginsSlope_mL2_g2": 1626.3417592330727,
+          "kraemerSlope_mL2_g2": -1220.4740231444675,
+          "maxC_g_L": 11.66,
+          "minC_g_L": 4.295,
+          "n": 2
+        },
+        "train_ids": [
+          "team-1",
+          "team-3"
+        ],
+        "test_ids": [
+          "team-2"
+        ],
+        "folds": [
+          {
+            "id": "team-1",
+            "c_g_L": 4.295,
+            "eta_rel": 1.388,
+            "observed_eta_rel": 1.388,
+            "huggins_eta_rel": 1.388,
+            "kraemer_eta_rel": 1.388,
+            "observed_reduced_mL_g": 90.33760186263093,
+            "observed_inherent_mL_g": 76.3361727787224,
+            "u": 0.3579988329088834,
+            "role": "train"
+          },
+          {
+            "id": "team-2",
+            "c_g_L": 9.38,
+            "eta_rel": 1.656,
+            "observed_eta_rel": 1.656,
+            "huggins_eta_rel": 1.924938816264146,
+            "kraemer_eta_rel": 1.930579052346676,
+            "observed_reduced_mL_g": 69.93603411513857,
+            "observed_inherent_mL_g": 53.774526222075465,
+            "u": 0.7818461123830796,
+            "role": "test"
+          },
+          {
+            "id": "team-3",
+            "c_g_L": 11.66,
+            "eta_rel": 2.193,
+            "observed_eta_rel": 2.193,
+            "huggins_eta_rel": 2.193,
+            "kraemer_eta_rel": 2.193,
+            "observed_reduced_mL_g": 102.31560891938251,
+            "observed_inherent_mL_g": 67.3473815982634,
+            "u": 0.9718897303184122,
+            "role": "train"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 1,
+            "mae": 0.2689388162641462,
+            "rmse": 0.2689388162641462,
+            "rmse_pct": 16.240266682617523
+          },
+          "kraemer": {
+            "n": 1,
+            "mae": 0.274579052346676,
+            "rmse": 0.274579052346676,
+            "rmse_pct": 16.580860648953866
+          }
+        }
+      },
+      "source": "https://doi.org/10.1021/acs.jchemed.4c00439",
+      "temperature_K": 303.15,
+      "molarMass_g_mol": 350000,
+      "fullSeriesFit": {
+        "eta_mL_g": 62.84832722647358,
+        "kH": 0.8018519541706609,
+        "kK": -0.08493632758788008,
+        "kraemerIntercept_mL_g": 70.5717460754449,
+        "hugginsSlope_mL2_g2": 3167.2448445703803,
+        "kraemerSlope_mL2_g2": -423.0144519949172,
+        "maxC_g_L": 19.93,
+        "minC_g_L": 4.295,
+        "n": 5
+      },
+      "sourceIntrinsic_mL_g": null
+    },
+    "phywe-ps-toluene-25": {
+      "fit": {
+        "eta_mL_g": 65.09375,
+        "kH": 0.32020485735710996,
+        "kK": -0.15351363858116826,
+        "kraemerIntercept_mL_g": 64.56474044193389,
+        "hugginsSlope_mL2_g2": 1356.7708333333335,
+        "kraemerSlope_mL2_g2": -639.9378300966257,
+        "maxC_g_L": 16,
+        "minC_g_L": 4,
+        "n": 4
+      },
+      "train_ids": [
+        "c-4",
+        "c-8",
+        "c-12",
+        "c-16"
+      ],
+      "test_ids": [
+        "c-20"
+      ],
+      "folds": [
+        {
+          "id": "c-4",
+          "c_g_L": 4,
+          "eta_rel": 1.282,
+          "observed_eta_rel": 1.282,
+          "huggins_eta_rel": 1.2820833333333335,
+          "kraemer_eta_rel": 1.2814855058866401,
+          "observed_reduced_mL_g": 70.5,
+          "observed_inherent_mL_g": 62.10533962461958,
+          "u": 0.260375,
+          "role": "train"
+        },
+        {
+          "id": "c-8",
+          "c_g_L": 8,
+          "eta_rel": 1.607,
+          "observed_eta_rel": 1.607,
+          "huggins_eta_rel": 1.6075833333333334,
+          "kraemer_eta_rel": 1.608917998437704,
+          "observed_reduced_mL_g": 75.875,
+          "observed_inherent_mL_g": 59.29613584442194,
+          "u": 0.52075,
+          "role": "train"
+        },
+        {
+          "id": "c-12",
+          "c_g_L": 12,
+          "eta_rel": 1.979,
+          "observed_eta_rel": 1.979,
+          "huggins_eta_rel": 1.9765000000000001,
+          "kraemer_eta_rel": 1.9790676258590219,
+          "observed_reduced_mL_g": 81.58333333333334,
+          "observed_inherent_mL_g": 56.882638885035725,
+          "u": 0.7811250000000001,
+          "role": "train"
+        },
+        {
+          "id": "c-16",
+          "c_g_L": 16,
+          "eta_rel": 2.387,
+          "observed_eta_rel": 2.387,
+          "huggins_eta_rel": 2.3888333333333334,
+          "kraemer_eta_rel": 2.3850301423592475,
+          "observed_reduced_mL_g": 86.6875,
+          "observed_inherent_mL_g": 54.37733420979331,
+          "u": 1.0415,
+          "role": "train"
+        },
+        {
+          "id": "c-20",
+          "c_g_L": 20,
+          "eta_rel": 2.889,
+          "observed_eta_rel": 2.889,
+          "huggins_eta_rel": 2.8445833333333335,
+          "kraemer_eta_rel": 2.816006303634972,
+          "observed_reduced_mL_g": 94.44999999999999,
+          "observed_inherent_mL_g": 53.045521074204906,
+          "u": 1.3018750000000001,
+          "role": "test"
+        }
+      ],
+      "metrics": {
+        "huggins": {
+          "n": 1,
+          "mae": 0.04441666666666633,
+          "rmse": 0.04441666666666633,
+          "rmse_pct": 1.5374408676589246
+        },
+        "kraemer": {
+          "n": 1,
+          "mae": 0.07299369636502773,
+          "rmse": 0.07299369636502773,
+          "rmse_pct": 2.526607696954923
+        }
+      },
+      "upperTwo": {
+        "fit": {
+          "eta_mL_g": 64.90277777777777,
+          "kH": 0.32889240057519115,
+          "kK": -0.15619177825084554,
+          "kraemerIntercept_mL_g": 64.65073885760961,
+          "hugginsSlope_mL2_g2": 1385.4166666666679,
+          "kraemerSlope_mL2_g2": -652.8375924479822,
+          "maxC_g_L": 12,
+          "minC_g_L": 4,
+          "n": 3
+        },
+        "train_ids": [
+          "c-4",
+          "c-8",
+          "c-12"
+        ],
+        "test_ids": [
+          "c-16",
+          "c-20"
+        ],
+        "folds": [
+          {
+            "id": "c-4",
+            "c_g_L": 4,
+            "eta_rel": 1.282,
+            "observed_eta_rel": 1.282,
+            "huggins_eta_rel": 1.2817777777777777,
+            "kraemer_eta_rel": 1.2816618471755672,
+            "observed_reduced_mL_g": 70.5,
+            "observed_inherent_mL_g": 62.10533962461958,
+            "u": 0.25961111111111107,
+            "role": "train"
+          },
+          {
+            "id": "c-8",
+            "c_g_L": 8,
+            "eta_rel": 1.607,
+            "observed_eta_rel": 1.607,
+            "huggins_eta_rel": 1.607888888888889,
+            "kraemer_eta_rel": 1.6086966306297696,
+            "observed_reduced_mL_g": 75.875,
+            "observed_inherent_mL_g": 59.29613584442194,
+            "u": 0.5192222222222221,
+            "role": "train"
+          },
+          {
+            "id": "c-12",
+            "c_g_L": 12,
+            "eta_rel": 1.979,
+            "observed_eta_rel": 1.979,
+            "huggins_eta_rel": 1.9783333333333335,
+            "kraemer_eta_rel": 1.9774344119987943,
+            "observed_reduced_mL_g": 81.58333333333334,
+            "observed_inherent_mL_g": 56.882638885035725,
+            "u": 0.7788333333333333,
+            "role": "train"
+          },
+          {
+            "id": "c-16",
+            "c_g_L": 16,
+            "eta_rel": 2.387,
+            "observed_eta_rel": 2.387,
+            "huggins_eta_rel": 2.393111111111111,
+            "kraemer_eta_rel": 2.380440127375419,
+            "observed_reduced_mL_g": 86.6875,
+            "observed_inherent_mL_g": 54.37733420979331,
+            "u": 1.0384444444444443,
+            "role": "test"
+          },
+          {
+            "id": "c-20",
+            "c_g_L": 20,
+            "eta_rel": 2.889,
+            "observed_eta_rel": 2.889,
+            "huggins_eta_rel": 2.8522222222222227,
+            "kraemer_eta_rel": 2.8063360624533655,
+            "observed_reduced_mL_g": 94.44999999999999,
+            "observed_inherent_mL_g": 53.045521074204906,
+            "u": 1.2980555555555555,
+            "role": "test"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 2,
+            "mae": 0.021444444444444155,
+            "rmse": 0.02636238435047088,
+            "rmse_pct": 0.9181896801680076
+          },
+          "kraemer": {
+            "n": 2,
+            "mae": 0.04461190508560753,
+            "rmse": 0.05863598937327046,
+            "rmse_pct": 2.032579161141001
+          }
+        }
+      },
+      "lowInterpolation": {
+        "fit": {
+          "eta_mL_g": 64.95833333333333,
+          "kH": 0.3283300712904157,
+          "kK": -0.15587359830131906,
+          "kraemerIntercept_mL_g": 64.71668999441151,
+          "hugginsSlope_mL2_g2": 1385.4166666666679,
+          "kraemerSlope_mL2_g2": -652.8375924479822,
+          "maxC_g_L": 12,
+          "minC_g_L": 4,
+          "n": 2
+        },
+        "train_ids": [
+          "c-4",
+          "c-12"
+        ],
+        "test_ids": [
+          "c-8"
+        ],
+        "folds": [
+          {
+            "id": "c-4",
+            "c_g_L": 4,
+            "eta_rel": 1.282,
+            "observed_eta_rel": 1.282,
+            "huggins_eta_rel": 1.282,
+            "kraemer_eta_rel": 1.282,
+            "observed_reduced_mL_g": 70.5,
+            "observed_inherent_mL_g": 62.10533962461958,
+            "u": 0.2598333333333333,
+            "role": "train"
+          },
+          {
+            "id": "c-8",
+            "c_g_L": 8,
+            "eta_rel": 1.607,
+            "observed_eta_rel": 1.607,
+            "huggins_eta_rel": 1.6083333333333334,
+            "kraemer_eta_rel": 1.6095456175491603,
+            "observed_reduced_mL_g": 75.875,
+            "observed_inherent_mL_g": 59.29613584442194,
+            "u": 0.5196666666666666,
+            "role": "test"
+          },
+          {
+            "id": "c-12",
+            "c_g_L": 12,
+            "eta_rel": 1.979,
+            "observed_eta_rel": 1.979,
+            "huggins_eta_rel": 1.979,
+            "kraemer_eta_rel": 1.979,
+            "observed_reduced_mL_g": 81.58333333333334,
+            "observed_inherent_mL_g": 56.882638885035725,
+            "u": 0.7795,
+            "role": "train"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 1,
+            "mae": 0.0013333333333334085,
+            "rmse": 0.0013333333333334085,
+            "rmse_pct": 0.08297033810413246
+          },
+          "kraemer": {
+            "n": 1,
+            "mae": 0.002545617549160273,
+            "rmse": 0.002545617549160273,
+            "rmse_pct": 0.1584080615532217
+          }
+        }
+      },
+      "source": "https://spegroup.ru/upload/wikifiles%202/Experiment_guide_P3010601.pdf",
+      "temperature_K": 298.15,
+      "molarMass_g_mol": null,
+      "fullSeriesFit": {
+        "eta_mL_g": 64.20541666666668,
+        "kH": 0.3560633261298121,
+        "kK": -0.14038319175083042,
+        "kraemerIntercept_mL_g": 64.05292554825249,
+        "hugginsSlope_mL2_g2": 1467.8124999999995,
+        "kraemerSlope_mL2_g2": -575.9609683864496,
+        "maxC_g_L": 20,
+        "minC_g_L": 4,
+        "n": 5
+      },
+      "sourceIntrinsic_mL_g": 64.4
+    },
+    "luh1967-ps-cyclohexane-633000": {
+      "fit": {
+        "eta_mL_g": 66.46980792955165,
+        "kH": 0.5728374828655284,
+        "kK": -0.03824052672184417,
+        "kraemerIntercept_mL_g": 67.49112155174733,
+        "hugginsSlope_mL2_g2": 2530.9308258765877,
+        "kraemerSlope_mL2_g2": -174.1875681581991,
+        "maxC_g_L": 6.544,
+        "minC_g_L": 3.371,
+        "n": 4
+      },
+      "train_ids": [
+        "c-1",
+        "c-2",
+        "c-3",
+        "c-4"
+      ],
+      "test_ids": [
+        "c-5"
+      ],
+      "folds": [
+        {
+          "id": "c-1",
+          "c_g_L": 3.371,
+          "eta_rel": 1.2529,
+          "observed_eta_rel": 1.2529,
+          "huggins_eta_rel": 1.2528303118316138,
+          "kraemer_eta_rel": 1.2529905898121187,
+          "observed_reduced_mL_g": 75.02224859092254,
+          "observed_inherent_mL_g": 66.88248717572527,
+          "u": 0.2240697225305186,
+          "role": "train"
+        },
+        {
+          "id": "c-2",
+          "c_g_L": 4.382,
+          "eta_rel": 1.3396,
+          "observed_eta_rel": 1.3396,
+          "huggins_eta_rel": 1.3398694397150348,
+          "kraemer_eta_rel": 1.3396405854797648,
+          "observed_reduced_mL_g": 77.49885896850752,
+          "observed_inherent_mL_g": 66.72091783156377,
+          "u": 0.2912706983472953,
+          "role": "train"
+        },
+        {
+          "id": "c-3",
+          "c_g_L": 5.519,
+          "eta_rel": 1.4443,
+          "observed_eta_rel": 1.4443,
+          "huggins_eta_rel": 1.4439374056545988,
+          "kraemer_eta_rel": 1.4436546615591719,
+          "observed_reduced_mL_g": 80.5037144410219,
+          "observed_inherent_mL_g": 66.61075831219132,
+          "u": 0.3668468699631956,
+          "role": "train"
+        },
+        {
+          "id": "c-4",
+          "c_g_L": 6.544,
+          "eta_rel": 1.5432,
+          "observed_eta_rel": 1.5432,
+          "huggins_eta_rel": 1.543362842798752,
+          "kraemer_eta_rel": 1.5437314454247024,
+          "observed_reduced_mL_g": 83.00733496332518,
+          "observed_inherent_mL_g": 66.29862203688603,
+          "u": 0.43497842309098594,
+          "role": "train"
+        },
+        {
+          "id": "c-5",
+          "c_g_L": 9.956,
+          "eta_rel": 1.9161,
+          "observed_eta_rel": 1.9161,
+          "huggins_eta_rel": 1.9126441710895825,
+          "kraemer_eta_rel": 1.9245184819178005,
+          "observed_reduced_mL_g": 92.01486540779429,
+          "observed_inherent_mL_g": 65.31657997725152,
+          "u": 0.6617734077466162,
+          "role": "test"
+        }
+      ],
+      "metrics": {
+        "huggins": {
+          "n": 1,
+          "mae": 0.0034558289104174023,
+          "rmse": 0.0034558289104174023,
+          "rmse_pct": 0.18035744013451294
+        },
+        "kraemer": {
+          "n": 1,
+          "mae": 0.008418481917800591,
+          "rmse": 0.008418481917800591,
+          "rmse_pct": 0.43935503981006163
+        }
+      },
+      "upperTwo": {
+        "fit": {
+          "eta_mL_g": 66.37705187089655,
+          "kH": 0.5796238652630175,
+          "kK": -0.027798959241628247,
+          "kraemerIntercept_mL_g": 67.29499544096217,
+          "hugginsSlope_mL2_g2": 2553.772331808489,
+          "kraemerSlope_mL2_g2": -125.89082304145289,
+          "maxC_g_L": 5.519,
+          "minC_g_L": 3.371,
+          "n": 3
+        },
+        "train_ids": [
+          "c-1",
+          "c-2",
+          "c-3"
+        ],
+        "test_ids": [
+          "c-4",
+          "c-5"
+        ],
+        "folds": [
+          {
+            "id": "c-1",
+            "c_g_L": 3.371,
+            "eta_rel": 1.2529,
+            "observed_eta_rel": 1.2529,
+            "huggins_eta_rel": 1.252777193831197,
+            "kraemer_eta_rel": 1.252849869020798,
+            "observed_reduced_mL_g": 75.02224859092254,
+            "observed_inherent_mL_g": 66.88248717572527,
+            "u": 0.22375704185679227,
+            "role": "train"
+          },
+          {
+            "id": "c-2",
+            "c_g_L": 4.382,
+            "eta_rel": 1.3396,
+            "observed_eta_rel": 1.3396,
+            "huggins_eta_rel": 1.339901583526958,
+            "kraemer_eta_rel": 1.3397316383337736,
+            "observed_reduced_mL_g": 77.49885896850752,
+            "observed_inherent_mL_g": 66.72091783156377,
+            "u": 0.29086424129826866,
+            "role": "train"
+          },
+          {
+            "id": "c-3",
+            "c_g_L": 5.519,
+            "eta_rel": 1.4443,
+            "observed_eta_rel": 1.4443,
+            "huggins_eta_rel": 1.4441212226418447,
+            "kraemer_eta_rel": 1.4442158729689878,
+            "observed_reduced_mL_g": 80.5037144410219,
+            "observed_inherent_mL_g": 66.61075831219132,
+            "u": 0.3663349492754781,
+            "role": "train"
+          },
+          {
+            "id": "c-4",
+            "c_g_L": 6.544,
+            "eta_rel": 1.5432,
+            "observed_eta_rel": 1.5432,
+            "huggins_eta_rel": 1.5437340103390844,
+            "kraemer_eta_rel": 1.544943452902405,
+            "observed_reduced_mL_g": 83.00733496332518,
+            "observed_inherent_mL_g": 66.29862203688603,
+            "u": 0.434371427443147,
+            "role": "test"
+          },
+          {
+            "id": "c-5",
+            "c_g_L": 9.956,
+            "eta_rel": 1.9161,
+            "observed_eta_rel": 1.9161,
+            "huggins_eta_rel": 1.9139847860587378,
+            "kraemer_eta_rel": 1.929981529195008,
+            "observed_reduced_mL_g": 92.01486540779429,
+            "observed_inherent_mL_g": 65.31657997725152,
+            "u": 0.660849928426646,
+            "role": "test"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 2,
+            "mae": 0.0013246121401733202,
+            "rmse": 0.0015426109456954501,
+            "rmse_pct": 0.0818038941099582
+          },
+          "kraemer": {
+            "n": 2,
+            "mae": 0.007812491048706627,
+            "rmse": 0.009892837833876749,
+            "rmse_pct": 0.5184676476140033
+          }
+        }
+      },
+      "lowInterpolation": {
+        "fit": {
+          "eta_mL_g": 66.41981778054782,
+          "kH": 0.5784516658937308,
+          "kK": -0.02792261762730189,
+          "kraemerIntercept_mL_g": 67.30892944712795,
+          "hugginsSlope_mL2_g2": 2551.892853863759,
+          "kraemerSlope_mL2_g2": -126.50319531375762,
+          "maxC_g_L": 5.519,
+          "minC_g_L": 3.371,
+          "n": 2
+        },
+        "train_ids": [
+          "c-1",
+          "c-3"
+        ],
+        "test_ids": [
+          "c-2"
+        ],
+        "folds": [
+          {
+            "id": "c-1",
+            "c_g_L": 3.371,
+            "eta_rel": 1.2529,
+            "observed_eta_rel": 1.2529,
+            "huggins_eta_rel": 1.2529,
+            "kraemer_eta_rel": 1.2529,
+            "observed_reduced_mL_g": 75.02224859092254,
+            "observed_inherent_mL_g": 66.88248717572527,
+            "u": 0.2239012057382267,
+            "role": "train"
+          },
+          {
+            "id": "c-2",
+            "c_g_L": 4.382,
+            "eta_rel": 1.3396,
+            "observed_eta_rel": 1.3396,
+            "huggins_eta_rel": 1.3400528941503955,
+            "kraemer_eta_rel": 1.3397976888511636,
+            "observed_reduced_mL_g": 77.49885896850752,
+            "observed_inherent_mL_g": 66.72091783156377,
+            "u": 0.2910516415143605,
+            "role": "test"
+          },
+          {
+            "id": "c-3",
+            "c_g_L": 5.519,
+            "eta_rel": 1.4443,
+            "observed_eta_rel": 1.4443,
+            "huggins_eta_rel": 1.4443,
+            "kraemer_eta_rel": 1.4443,
+            "observed_reduced_mL_g": 80.5037144410219,
+            "observed_inherent_mL_g": 66.61075831219132,
+            "u": 0.36657097433084346,
+            "role": "train"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 1,
+            "mae": 0.00045289415039562186,
+            "rmse": 0.00045289415039562186,
+            "rmse_pct": 0.03380816291397595
+          },
+          "kraemer": {
+            "n": 1,
+            "mae": 0.00019768885116366874,
+            "rmse": 0.00019768885116366874,
+            "rmse_pct": 0.014757304506096504
+          }
+        }
+      },
+      "source": "https://scholarsmine.mst.edu/masters_theses/6870/",
+      "temperature_K": 307.65,
+      "molarMass_g_mol": 633000,
+      "fullSeriesFit": {
+        "eta_mL_g": 66.21737017619195,
+        "kH": 0.5895411970941055,
+        "kK": -0.052792173019162385,
+        "kraemerIntercept_mL_g": 67.81135403271588,
+        "hugginsSlope_mL2_g2": 2584.9849351945327,
+        "kraemerSlope_mL2_g2": -242.75845861754178,
+        "maxC_g_L": 9.956,
+        "minC_g_L": 3.371,
+        "n": 5
+      },
+      "sourceIntrinsic_mL_g": 66.19999999999999
+    },
+    "luh1967-ps-cyclohexane-1770000": {
+      "fit": {
+        "eta_mL_g": 110.85212558981351,
+        "kH": 0.5925197060895322,
+        "kK": -0.014283948940110138,
+        "kraemerIntercept_mL_g": 112.09432161672758,
+        "hugginsSlope_mL2_g2": 7280.996947805707,
+        "kraemerSlope_mL2_g2": -179.47977445808775,
+        "maxC_g_L": 3.87,
+        "minC_g_L": 1.157,
+        "n": 4
+      },
+      "train_ids": [
+        "c-1",
+        "c-2",
+        "c-3",
+        "c-4"
+      ],
+      "test_ids": [
+        "c-5"
+      ],
+      "folds": [
+        {
+          "id": "c-1",
+          "c_g_L": 1.157,
+          "eta_rel": 1.1377,
+          "observed_eta_rel": 1.1377,
+          "huggins_eta_rel": 1.1380026085905974,
+          "kraemer_eta_rel": 1.1382054662221186,
+          "observed_reduced_mL_g": 119.01469317199648,
+          "observed_inherent_mL_g": 111.50274897453218,
+          "u": 0.12825590930741423,
+          "role": "train"
+        },
+        {
+          "id": "c-2",
+          "c_g_L": 1.886,
+          "eta_rel": 1.2358,
+          "observed_eta_rel": 1.2358,
+          "huggins_eta_rel": 1.2349655858817454,
+          "kraemer_eta_rel": 1.2346301872670504,
+          "observed_reduced_mL_g": 125.02651113467658,
+          "observed_inherent_mL_g": 112.25797117960877,
+          "u": 0.20906710886238827,
+          "role": "train"
+        },
+        {
+          "id": "c-3",
+          "c_g_L": 2.877,
+          "eta_rel": 1.3787,
+          "observed_eta_rel": 1.3787,
+          "huggins_eta_rel": 1.3791873163074877,
+          "kraemer_eta_rel": 1.3785190710777462,
+          "observed_reduced_mL_g": 131.63017031630173,
+          "observed_inherent_mL_g": 111.62357531993267,
+          "u": 0.3189215653218935,
+          "role": "train"
+        },
+        {
+          "id": "c-4",
+          "c_g_L": 3.87,
+          "eta_rel": 1.538,
+          "observed_eta_rel": 1.538,
+          "huggins_eta_rel": 1.5380444892201695,
+          "kraemer_eta_rel": 1.5389755595904064,
+          "observed_reduced_mL_g": 139.01808785529715,
+          "observed_inherent_mL_g": 111.23588400089204,
+          "u": 0.4289977260325783,
+          "role": "train"
+        },
+        {
+          "id": "c-5",
+          "c_g_L": 4.704,
+          "eta_rel": 1.6821,
+          "observed_eta_rel": 1.6821,
+          "huggins_eta_rel": 1.6825595033326994,
+          "kraemer_eta_rel": 1.6876216488202744,
+          "observed_reduced_mL_g": 145.00425170068027,
+          "observed_inherent_mL_g": 110.55336156794208,
+          "u": 0.5214483987744828,
+          "role": "test"
+        }
+      ],
+      "metrics": {
+        "huggins": {
+          "n": 1,
+          "mae": 0.00045950333269950683,
+          "rmse": 0.00045950333269950683,
+          "rmse_pct": 0.027317242298288264
+        },
+        "kraemer": {
+          "n": 1,
+          "mae": 0.005521648820274505,
+          "rmse": 0.005521648820274505,
+          "rmse_pct": 0.32825924857466887
+        }
+      },
+      "upperTwo": {
+        "fit": {
+          "eta_mL_g": 110.82709317778395,
+          "kH": 0.5939782855147605,
+          "kK": 0.0023228480704058645,
+          "kraemerIntercept_mL_g": 111.73753572606128,
+          "hugginsSlope_mL2_g2": 7295.624170544418,
+          "kraemerSlope_mL2_g2": 29.00140133272796,
+          "maxC_g_L": 2.877,
+          "minC_g_L": 1.157,
+          "n": 3
+        },
+        "train_ids": [
+          "c-1",
+          "c-2",
+          "c-3"
+        ],
+        "test_ids": [
+          "c-4",
+          "c-5"
+        ],
+        "folds": [
+          {
+            "id": "c-1",
+            "c_g_L": 1.157,
+            "eta_rel": 1.1377,
+            "observed_eta_rel": 1.1377,
+            "huggins_eta_rel": 1.1379932268069712,
+            "kraemer_eta_rel": 1.1380532776591528,
+            "observed_reduced_mL_g": 119.01469317199648,
+            "observed_inherent_mL_g": 111.50274897453218,
+            "u": 0.12822694680669602,
+            "role": "train"
+          },
+          {
+            "id": "c-2",
+            "c_g_L": 1.886,
+            "eta_rel": 1.2358,
+            "observed_eta_rel": 1.2358,
+            "huggins_eta_rel": 1.2349704037254303,
+            "kraemer_eta_rel": 1.2347149704039204,
+            "observed_reduced_mL_g": 125.02651113467658,
+            "observed_inherent_mL_g": 112.25797117960877,
+            "u": 0.2090198977333005,
+            "role": "train"
+          },
+          {
+            "id": "c-3",
+            "c_g_L": 2.877,
+            "eta_rel": 1.3787,
+            "observed_eta_rel": 1.3787,
+            "huggins_eta_rel": 1.3792363694675984,
+            "kraemer_eta_rel": 1.379483203239472,
+            "observed_reduced_mL_g": 131.63017031630173,
+            "observed_inherent_mL_g": 111.62357531993267,
+            "u": 0.3188495470724844,
+            "role": "train"
+          },
+          {
+            "id": "c-4",
+            "c_g_L": 3.87,
+            "eta_rel": 1.538,
+            "observed_eta_rel": 1.538,
+            "huggins_eta_rel": 1.5381666842378507,
+            "kraemer_eta_rel": 1.541658236935311,
+            "observed_reduced_mL_g": 139.01808785529715,
+            "observed_inherent_mL_g": 111.23588400089204,
+            "u": 0.4289008505980239,
+            "role": "test"
+          },
+          {
+            "id": "c-5",
+            "c_g_L": 4.704,
+            "eta_rel": 1.6821,
+            "observed_eta_rel": 1.6821,
+            "huggins_eta_rel": 1.682765416434421,
+            "kraemer_eta_rel": 1.6925818751839077,
+            "observed_reduced_mL_g": 145.00425170068027,
+            "observed_inherent_mL_g": 110.55336156794208,
+            "u": 0.5213306463082957,
+            "role": "test"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 2,
+            "mae": 0.00041605033613589804,
+            "rmse": 0.00048505807195919437,
+            "rmse_pct": 0.029002973226053184
+          },
+          "kraemer": {
+            "n": 2,
+            "mae": 0.007070056059609309,
+            "rmse": 0.007850235819575543,
+            "rmse_pct": 0.4716365424109425
+          }
+        }
+      },
+      "lowInterpolation": {
+        "fit": {
+          "eta_mL_g": 110.52858441853068,
+          "kH": 0.6003797261990985,
+          "kK": 0.005658422969552739,
+          "kraemerIntercept_mL_g": 111.42147218288778,
+          "hugginsSlope_mL2_g2": 7334.579735061189,
+          "kraemerSlope_mL2_g2": 70.24787523284178,
+          "maxC_g_L": 2.877,
+          "minC_g_L": 1.157,
+          "n": 2
+        },
+        "train_ids": [
+          "c-1",
+          "c-3"
+        ],
+        "test_ids": [
+          "c-2"
+        ],
+        "folds": [
+          {
+            "id": "c-1",
+            "c_g_L": 1.157,
+            "eta_rel": 1.1377,
+            "observed_eta_rel": 1.1377,
+            "huggins_eta_rel": 1.1377,
+            "kraemer_eta_rel": 1.1377,
+            "observed_reduced_mL_g": 119.01469317199648,
+            "observed_inherent_mL_g": 111.50274897453218,
+            "u": 0.12788157217224,
+            "role": "train"
+          },
+          {
+            "id": "c-2",
+            "c_g_L": 1.886,
+            "eta_rel": 1.2358,
+            "observed_eta_rel": 1.2358,
+            "huggins_eta_rel": 1.2345459809926425,
+            "kraemer_eta_rel": 1.234160236004232,
+            "observed_reduced_mL_g": 125.02651113467658,
+            "observed_inherent_mL_g": 112.25797117960877,
+            "u": 0.20845691021334886,
+            "role": "test"
+          },
+          {
+            "id": "c-3",
+            "c_g_L": 2.877,
+            "eta_rel": 1.3787,
+            "observed_eta_rel": 1.3787,
+            "huggins_eta_rel": 1.3787,
+            "kraemer_eta_rel": 1.3787,
+            "observed_reduced_mL_g": 131.63017031630173,
+            "observed_inherent_mL_g": 111.62357531993267,
+            "u": 0.31799073737211275,
+            "role": "train"
+          }
+        ],
+        "metrics": {
+          "huggins": {
+            "n": 1,
+            "mae": 0.0012540190073575541,
+            "rmse": 0.0012540190073575541,
+            "rmse_pct": 0.1014742682762222
+          },
+          "kraemer": {
+            "n": 1,
+            "mae": 0.0016397639957679289,
+            "rmse": 0.0016397639957679289,
+            "rmse_pct": 0.13268846057354983
+          }
+        }
+      },
+      "source": "https://scholarsmine.mst.edu/masters_theses/6870/",
+      "temperature_K": 307.65,
+      "molarMass_g_mol": 1770000,
+      "fullSeriesFit": {
+        "eta_mL_g": 110.89445820979407,
+        "kH": 0.5903318666827555,
+        "kK": -0.026256840509536722,
+        "kraemerIntercept_mL_g": 112.39624143434558,
+        "hugginsSlope_mL2_g2": 7259.653865736292,
+        "kraemerSlope_mL2_g2": -331.70043665104214,
+        "maxC_g_L": 4.704,
+        "minC_g_L": 1.157,
+        "n": 5
+      },
+      "sourceIntrinsic_mL_g": 110.9
+    }
+  }
+}
