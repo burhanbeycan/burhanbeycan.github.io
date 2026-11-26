@@ -1,0 +1,26 @@
+{
+  "total": 783,
+  "studies": 13,
+  "per_study": {
+    "Carrasco2023": 244,
+    "Parisi2022": 463,
+    "Modarress2005": 12,
+    "PerezPuyana2018": 4,
+    "Turan2021": 5,
+    "Saxena2018": 6,
+    "Lipophilic2021": 8,
+    "Electrode2022": 3,
+    "Kan2022": 1,
+    "FexOy2024": 1,
+    "Roller2010": 9,
+    "Ohyanagi1958": 19,
+    "Wang2025": 8
+  },
+  "nonempty_Mn": 396,
+  "unresolved": 79,
+  "original_concentration_units": [
+    "% m/v",
+    "g/20 mL (source)",
+    "wt%"
+  ]
+}

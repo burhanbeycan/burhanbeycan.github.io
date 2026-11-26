@@ -1,0 +1,224 @@
+{
+  "whole_concentration": {
+    "direct_ridge": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 22.31283727924,
+        "mae_log10": 0.07469139197515287,
+        "mape_pct": 15.692181966510734,
+        "median_ape_pct": 14.429744180285915,
+        "within10_pct": 36.47540983606557
+      },
+      "equal_curve_mean": {
+        "mae_cp": 18.8945805171073,
+        "mae_log10": 0.09426074404599677,
+        "mape_pct": 19.053630934944337,
+        "median_ape_pct": 20.851823080411286,
+        "within10_pct": 36.14135889915657
+      }
+    },
+    "shared_power_law": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 49.80184214249675,
+        "mae_log10": 0.18408820334022974,
+        "mape_pct": 34.660934865645466,
+        "median_ape_pct": 37.45080472079422,
+        "within10_pct": 17.21311475409836
+      },
+      "equal_curve_mean": {
+        "mae_cp": 41.734065505613685,
+        "mae_log10": 0.19588326609143203,
+        "mape_pct": 38.322506025052924,
+        "median_ape_pct": 40.9454710020959,
+        "within10_pct": 14.821721983872127
+      }
+    },
+    "inverse_curve_ml": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 31.99326213817779,
+        "mae_log10": 0.11481088412694777,
+        "mape_pct": 22.573142839686042,
+        "median_ape_pct": 22.43075389045368,
+        "within10_pct": 25.40983606557377
+      },
+      "equal_curve_mean": {
+        "mae_cp": 29.534400709931653,
+        "mae_log10": 0.14310123939415692,
+        "mape_pct": 27.3226583282796,
+        "median_ape_pct": 28.27760999280416,
+        "within10_pct": 22.54170420753082
+      }
+    },
+    "inverse_parametric": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 17.81440023450024,
+        "mae_log10": 0.06349268682417078,
+        "mape_pct": 13.291864658313074,
+        "median_ape_pct": 11.282839218595285,
+        "within10_pct": 41.39344262295082
+      },
+      "equal_curve_mean": {
+        "mae_cp": 18.028400642947748,
+        "mae_log10": 0.08949251679246815,
+        "mape_pct": 18.133896727621515,
+        "median_ape_pct": 18.8990929785477,
+        "within10_pct": 35.71698428820108
+      }
+    }
+  },
+  "whole_temperature": {
+    "direct_ridge": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 10.698671828258666,
+        "mae_log10": 0.028915112591594738,
+        "mape_pct": 6.636091255607523,
+        "median_ape_pct": 5.127242907094049,
+        "within10_pct": 75.0
+      },
+      "equal_curve_mean": {
+        "mae_cp": 8.922667799690284,
+        "mae_log10": 0.030757169785063466,
+        "mape_pct": 7.128110056980511,
+        "median_ape_pct": 6.978954345592176,
+        "within10_pct": 71.65597928584171
+      }
+    },
+    "shared_power_law": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 28.97457149452696,
+        "mae_log10": 0.08824486441747989,
+        "mape_pct": 19.332410974776817,
+        "median_ape_pct": 18.724424884332645,
+        "within10_pct": 27.86885245901639
+      },
+      "equal_curve_mean": {
+        "mae_cp": 23.05715999723686,
+        "mae_log10": 0.08546368716424249,
+        "mape_pct": 19.852532653656457,
+        "median_ape_pct": 20.637872183015755,
+        "within10_pct": 28.687483178410595
+      }
+    },
+    "inverse_curve_ml": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 13.078894141586577,
+        "mae_log10": 0.035263420012841114,
+        "mape_pct": 8.060710155666321,
+        "median_ape_pct": 6.612355283497207,
+        "within10_pct": 70.49180327868852
+      },
+      "equal_curve_mean": {
+        "mae_cp": 10.789565828352142,
+        "mae_log10": 0.037643218371996655,
+        "mape_pct": 8.698592075759436,
+        "median_ape_pct": 8.329188184294315,
+        "within10_pct": 61.163723829757984
+      }
+    },
+    "inverse_parametric": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 9.711292588744971,
+        "mae_log10": 0.024780353949624377,
+        "mape_pct": 5.652117984008766,
+        "median_ape_pct": 4.435483287385083,
+        "within10_pct": 83.60655737704919
+      },
+      "equal_curve_mean": {
+        "mae_cp": 7.862056109528751,
+        "mae_log10": 0.026109645933614305,
+        "mape_pct": 6.037541271241676,
+        "median_ape_pct": 5.575405490832221,
+        "within10_pct": 76.67747206409446
+      }
+    }
+  },
+  "whole_curve": {
+    "direct_ridge": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 12.83439965142019,
+        "mae_log10": 0.03397909783447285,
+        "mape_pct": 7.890264617059982,
+        "median_ape_pct": 6.495129703727187,
+        "within10_pct": 69.67213114754098
+      },
+      "equal_curve_mean": {
+        "mae_cp": 10.54135599559902,
+        "mae_log10": 0.03593801888732482,
+        "mape_pct": 8.37343866572434,
+        "median_ape_pct": 7.936567553365452,
+        "within10_pct": 65.57235934593027
+      }
+    },
+    "shared_power_law": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 32.6600653974536,
+        "mae_log10": 0.10284709885878639,
+        "mape_pct": 22.179926379710217,
+        "median_ape_pct": 21.90461880652031,
+        "within10_pct": 23.770491803278688
+      },
+      "equal_curve_mean": {
+        "mae_cp": 26.431007144913377,
+        "mae_log10": 0.10091289161159556,
+        "mape_pct": 23.267374558163123,
+        "median_ape_pct": 24.64206421048003,
+        "within10_pct": 21.74390853322305
+      }
+    },
+    "inverse_curve_ml": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 14.84692258879265,
+        "mae_log10": 0.043204432276484225,
+        "mape_pct": 9.80036894238332,
+        "median_ape_pct": 7.413138039958472,
+        "within10_pct": 60.65573770491803
+      },
+      "equal_curve_mean": {
+        "mae_cp": 13.164457893820828,
+        "mae_log10": 0.05019952523397863,
+        "mape_pct": 11.466657600081566,
+        "median_ape_pct": 11.677722180131646,
+        "within10_pct": 49.576381093518194
+      }
+    },
+    "inverse_parametric": {
+      "n_points": 244,
+      "n_curves": 16,
+      "point_weighted": {
+        "mae_cp": 11.188391717674522,
+        "mae_log10": 0.02831988897411947,
+        "mape_pct": 6.482269577921775,
+        "median_ape_pct": 4.48682708195427,
+        "within10_pct": 77.8688524590164
+      },
+      "equal_curve_mean": {
+        "mae_cp": 8.779279283732935,
+        "mae_log10": 0.028864102235272717,
+        "mape_pct": 6.668849450060063,
+        "median_ape_pct": 6.334666342202759,
+        "within10_pct": 71.83745913584623
+      }
+    }
+  }
+}

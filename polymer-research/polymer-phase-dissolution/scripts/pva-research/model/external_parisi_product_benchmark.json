@@ -1,0 +1,44 @@
+{
+  "training_source": "10.3390/polym15071743",
+  "test_source": "10.1122/8.0000435",
+  "source_figure": "4 (water)",
+  "attempted": 283,
+  "numeric_matches": 35,
+  "distinct_concentrations_wt_percent": [
+    4.0
+  ],
+  "by_grade": {
+    "144k-88": {
+      "n": 10,
+      "mae_cp": 56.836252980259744,
+      "mae_log10": 0.5116074481024875,
+      "mape_pct": 245.06605437504874,
+      "median_ape_pct": 221.12096808919478,
+      "within10_pct": 0.0
+    },
+    "171k-80": {
+      "n": 10,
+      "mae_cp": 47.18782368571887,
+      "mae_log10": 0.3613891431889825,
+      "mape_pct": 144.2930923436397,
+      "median_ape_pct": 127.50253769458666,
+      "within10_pct": 0.0
+    },
+    "24k-80": {
+      "n": 5,
+      "mae_cp": 54.86284011927241,
+      "mae_log10": 1.3137286329363023,
+      "mape_pct": 1988.2406110577044,
+      "median_ape_pct": 1948.378951873748,
+      "within10_pct": 0.0
+    },
+    "49k-75": {
+      "n": 10,
+      "mae_cp": 75.48199443285519,
+      "mae_log10": 1.2337601745720934,
+      "mape_pct": 1714.7643479456287,
+      "median_ape_pct": 1604.7553992504759,
+      "within10_pct": 0.0
+    }
+  }
+}

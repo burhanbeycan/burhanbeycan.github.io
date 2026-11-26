@@ -1,0 +1,25 @@
+{
+  "training_grade": "Merck Peru 141351 (Carrasco et al., 2023)",
+  "training_source": "https://doi.org/10.3390/polym15071743",
+  "aim": "Stress-test for independent product and laboratory given matched nominal concentration, temperature and shear rate; this is outside the chemical grade scope of the deployed Carrasco model.",
+  "specified_points": 9,
+  "numerically_supported_points": 3,
+  "source_scores": {
+    "PerezPuyana2018": {
+      "attempted": 4,
+      "numeric_matches": 3,
+      "point_weighted": {
+        "mae_cp": 493.78943075400747,
+        "mae_log10": 0.39078865378451333,
+        "mape_pct": 48.582676568448356,
+        "median_ape_pct": 57.95426962869994,
+        "within10_pct": 33.33333333333333
+      }
+    },
+    "Turan2021": {
+      "attempted": 5,
+      "numeric_matches": 0,
+      "point_weighted": null
+    }
+  }
+}
