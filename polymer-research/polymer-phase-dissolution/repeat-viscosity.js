@@ -1,11 +1,11 @@
 (() => {
   'use strict';
   const el=id=>document.getElementById(id),catalog=window.THETA_FAMILY_DATA,engine=window.FamilyModels,reader=window.RepeatViscosity;
-  if(!catalog?.rows?.length||!engine||!reader||!window.PolyOcl){el('loadError').hidden=false;return;}
+  if(!catalog?.rows?.length||!engine||!reader||!window.ThetaTransferAI||!window.PolyOcl){el('loadError').hidden=false;return;}
   const ocl=window.PolyOcl(),keys=reader.registry(catalog,ocl),q=new URLSearchParams(location.search);
   const fmt=(n,k=4)=>Number.isFinite(n)?n.toLocaleString('tr-TR',{maximumSignificantDigits:k}):'—';
   const solventNames={'1,4-dioxane':'1,4-dioksan','isoamyl isovalerate':'izoamil izovalerat',cyclohexane:'Siklohekzan'};
-  let active=null,model=null;
+  let active=null,model=null,transfer=null;
   for(const [id,v] of Object.entries(catalog.chemistries))el('chemistry').add(new Option(v.label,id));
   function fail(msg){
     active=null;model=null;el('matched').hidden=true;el('issue').textContent=msg;el('issue').hidden=false;
@@ -36,13 +36,29 @@
     el('theta').textContent=fmt(out.theta);el('ridge').textContent=fmt(out.ridge);
     el('observed').textContent=own?'—':fmt(r.eta_mL_g);
     el('observedNote').textContent=own?'Kendi numunen için eşlenmiş ölçüm yok.':'Seçilen yayındaki numune · mL/g';
+    const target={...r,mass_g_mol:mass};
+    // If a custom mass duplicates a catalog sample, exclude that mass too.
+    const pool=catalog.rows.filter(ref=>ref.id!==r.id || own);
+    const available=own?pool.filter(ref=>Math.abs(ref.mass_g_mol-mass)>1e-8*Math.max(1,mass)):pool;
+    if(own)target.id=null;
+    const ref=window.ThetaTransferAI.chooseReference(target,available);
+    el('refResult').hidden=!ref;
+    if(ref){
+      const values=window.ThetaTransferAI.predict(transfer,target,ref);
+      const src=catalog.sources[ref.source];
+      const factor=Math.max(ref.mass_g_mol/mass,mass/ref.mass_g_mol);
+      el('refPhysics').textContent=fmt(values.control);el('refAI').textContent=fmt(values.adapted);
+      el('refStatus').textContent=ref.sample+' · '+fmt(ref.mass_g_mol/1000,5)+' kg/mol · yayımlanmış [η] = '+fmt(ref.eta_mL_g)+' mL/g. Hedef ve referans aynı nominal kimya, çözücü, sıcaklık ve mol kütlesi tanımını taşır.';
+      el('refMethod').textContent='Hedef ile referansın mol kütleleri arasında '+fmt(factor,3)+' kat fark var. İlk değer referansın [η] değerini √(M/Mref) ile ölçekler. İkinci değer, diğer ailelerden öğrenilen ağırlıkla referansın yapı modelinden sapmasını kullanır. Hedefin [η] ölçümü iki hesapta da dışarıda tutulur.';
+      el('refSource').textContent=src.label+' · referans ölçüm';el('refSource').href='https://doi.org/'+src.doi;
+    } else el('refStatus').textContent='Aynı koşulda kullanılabilecek başka bir referans bulunamadı.';
     const min=model.trainMassMin,max=model.trainMassMax;
     el('support').textContent=engine.labels[model.heldFamily]+' ailesi bütünüyle dışarıda. '+model.nTrain+' eğitim noktasında mol kütlesi '+fmt(min/1000)+'–'+fmt(max/1000)+' kg/mol. Seçilen kütle '+(out.domain==='interpolation'?'aralık içinde':'aralık dışında')+', yapı tanımlayıcısı '+(out.descriptorDomain==='interpolation'?'eğitim aralığında.':'eğitim aralığı dışında.');
   }
   function resolve(sampleId,imported=false){
     let matched;try{matched=reader.match(el('smiles').value,ocl,keys);}catch(e){el('chemistry').value='';fail(e.message);return;}
     active=matched.chemistry;
-    const v=catalog.chemistries[active];model=engine.fitForFamily(catalog.rows,v.family);
+    const v=catalog.chemistries[active];model=engine.fitForFamily(catalog.rows,v.family);transfer=window.ThetaTransferAI.makeModel(catalog.rows,v.family);
     el('chemistry').value=active;el('name').textContent=v.label;el('issue').hidden=true;el('matched').hidden=false;
     el('structure').innerHTML=reader.depiction(matched);
     el('chemInfo').textContent='Tekrar formülü '+v.repeat_formula+' · '+fmt(v.repeat_molar_mass,6)+' g/mol · tekrar başına '+v.backbone_atoms_per_repeat+' omurga bağı.';

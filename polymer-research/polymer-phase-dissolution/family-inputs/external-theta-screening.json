@@ -1,0 +1,1224 @@
+{
+  "frozen_sha256": "c7d00b3e182755bca3fa6c1c2b8032a46060d2e30a386d6bc32b577fbe5e626d",
+  "rule": "Yeni katsayı uyumu yapılmadı. Ölçümler kimya, çözücü, nominal sıcaklık, mol kütlesi tanımı ve kaynak kökeniyle tarandı. Uyuşmazlıkları olan ayrı duyarlılık karşılaştırmaları ana doğrulama paydasından çıkarılır.",
+  "condition": {
+    "chemistry": "PS",
+    "family": "vinylaromatic",
+    "solvent": "cyclohexane",
+    "T_C": 34.5,
+    "mass_basis": "Mw"
+  },
+  "modelMassRange": [
+    10800,
+    2225000
+  ],
+  "sourcePSRange": [
+    63000,
+    56800000
+  ],
+  "reference": {
+    "id": "baysal1992-PS-PS2",
+    "mass_g_mol": 90000,
+    "eta_mL_g": 24.8,
+    "source_doi": "10.1016/0032-3861(92)90695-S"
+  },
+  "studies": [
+    {
+      "study": "miyaki1980",
+      "status": "strict",
+      "label": "Miyaki, Einaga, Fujita ve Fukuda (1980)",
+      "doi": "10.1021/ma60075a021",
+      "n": 2,
+      "reportedMassBasis": "Mw",
+      "reportedTC": 34.5,
+      "flags": [],
+      "sourceLocation": "Fetters ve ark. Tablo 7 s. 628, kaynak 53.",
+      "sourceEvidence": "Deney sıcaklığı özgün başlık/özet ve NIST ölçüm derlemesinden doğrulandı. Her iki dağılım için Mw/Mn < 1,05.",
+      "independenceNote": "Bir standardın yeniden fraksiyonlanmasıyla üretilen iki kesit. Eski PS kesitlerinin mol kütleleriyle çakışmaz. Numuneler aynı stoktan gelir. Yazarların üçü önceki Einaga çalışmasıyla ortaktır. 90 kg/mol Baysal kalibrasyonu başka bir gruptandır.",
+      "observedMassRange": [
+        6480000,
+        6550000
+      ],
+      "outsideTrainingMass": 2,
+      "outsideDatabasePSMass": 0,
+      "scores": {
+        "baseline": {
+          "mape": 8.858693992990407,
+          "bias_mL_g": 20.28457965197977,
+          "mae_mL_g": 20.28457965197977
+        },
+        "control": {
+          "mape": 7.858818994848543,
+          "bias_mL_g": -17.998244118331996,
+          "mae_mL_g": 17.998244118331996
+        },
+        "adaptive": {
+          "mape": 7.7409654268944355,
+          "bias_mL_g": -17.72836142848621,
+          "mae_mL_g": 17.72836142848621
+        }
+      }
+    },
+    {
+      "study": "azim1985",
+      "status": "sensitivity",
+      "label": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "n": 5,
+      "reportedMassBasis": "M_supplier",
+      "reportedTC": 34.5,
+      "flags": [
+        "mass_basis"
+      ],
+      "sourceLocation": "Deney bölümü, s. 808 ve Tablo 1, s. 812. Siklohekzan hacim kesri 1,00.",
+      "sourceEvidence": "Birincil tabloda 34,5 ± 0,05 °C saf siklohekzan. 1983 ve 1985 raporları aynı veri serisidir; bir defa kullanıldı.",
+      "independenceNote": null,
+      "observedMassRange": [
+        106500,
+        960000
+      ],
+      "outsideTrainingMass": 0,
+      "outsideDatabasePSMass": 0,
+      "scores": {
+        "baseline": {
+          "mape": 13.615199546234617,
+          "bias_mL_g": 7.729308091487987,
+          "mae_mL_g": 7.729308091487987
+        },
+        "control": {
+          "mape": 3.832773641395191,
+          "bias_mL_g": -2.15900725397013,
+          "mae_mL_g": 2.15900725397013
+        },
+        "adaptive": {
+          "mape": 3.7097705430739,
+          "bias_mL_g": -2.0892975282851056,
+          "mae_mL_g": 2.0892975282851056
+        }
+      }
+    },
+    {
+      "study": "berry1967",
+      "status": "sensitivity",
+      "label": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "n": 16,
+      "reportedMassBasis": "Mw",
+      "reportedTC": 34.8,
+      "flags": [
+        "temperature"
+      ],
+      "sourceLocation": "Fetters ve ark. Tablo 7 s. 627 (kaynak 37, 38) ve Bozdoğan Tablo 9 s. 6421 (kaynak 11).",
+      "sourceEvidence": "Fetters (1994) ve Bozdoğan (2004) aynı özgün ölçümleri aktarıyor. 34,8 °C Bozdoğan Tablo 9'da verilen sıcaklıktır. Bu set, 34,5 °C kör sınamasından ayrı raporlanır.",
+      "independenceNote": null,
+      "observedMassRange": [
+        19800,
+        1560000
+      ],
+      "outsideTrainingMass": 0,
+      "outsideDatabasePSMass": 3,
+      "scores": {
+        "baseline": {
+          "mape": 15.007565655546024,
+          "bias_mL_g": 7.116178710658197,
+          "mae_mL_g": 7.116178710658197
+        },
+        "control": {
+          "mape": 2.7521136965356154,
+          "bias_mL_g": -1.1455336082557317,
+          "mae_mL_g": 1.1739186443862273
+        },
+        "adaptive": {
+          "mape": 2.6437165534940275,
+          "bias_mL_g": -1.0872909572763003,
+          "mae_mL_g": 1.1203488710161484
+        }
+      }
+    }
+  ],
+  "counts": {
+    "strict": 2,
+    "sensitivity": 21,
+    "excluded": 0
+  },
+  "rows": [
+    {
+      "id": "azim1985-PS1",
+      "sample": "PS1",
+      "study": "azim1985",
+      "source": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "M_supplier",
+      "mass_g_mol": 106500,
+      "eta_mL_g": 28.1,
+      "status": "sensitivity",
+      "flags": [
+        "mass_basis"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 31.87238591024513,
+      "control": 26.977719201840127,
+      "adaptive": 27.012225167886122,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 3.772385910245127,
+          "absolute_mL_g": 3.772385910245127,
+          "signedPct": 13.42486089055206
+        },
+        "control": {
+          "signed_mL_g": -1.1222807981598741,
+          "absolute_mL_g": 1.1222807981598741,
+          "signedPct": -3.993881843985314
+        },
+        "adaptive": {
+          "signed_mL_g": -1.0877748321138796,
+          "absolute_mL_g": 1.0877748321138796,
+          "signedPct": -3.8710848117931684
+        }
+      }
+    },
+    {
+      "id": "azim1985-PS2",
+      "sample": "PS2",
+      "study": "azim1985",
+      "source": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "M_supplier",
+      "mass_g_mol": 294000,
+      "eta_mL_g": 46.6,
+      "status": "sensitivity",
+      "flags": [
+        "mass_basis"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 52.95578820161716,
+      "control": 44.82332726010717,
+      "adaptive": 44.88065872674947,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 6.355788201617159,
+          "absolute_mL_g": 6.355788201617159,
+          "signedPct": 13.63903047557331
+        },
+        "control": {
+          "signed_mL_g": -1.776672739892831,
+          "absolute_mL_g": 1.776672739892831,
+          "signedPct": -3.81260244612196
+        },
+        "adaptive": {
+          "signed_mL_g": -1.719341273250528,
+          "absolute_mL_g": 1.719341273250528,
+          "signedPct": -3.6895735477479152
+        }
+      }
+    },
+    {
+      "id": "azim1985-PS3",
+      "sample": "PS3",
+      "study": "azim1985",
+      "source": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "M_supplier",
+      "mass_g_mol": 420000,
+      "eta_mL_g": 55.7,
+      "status": "sensitivity",
+      "flags": [
+        "mass_basis"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 63.294273088425626,
+      "control": 53.574123106838314,
+      "adaptive": 53.642647315984334,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 7.5942730884256235,
+          "absolute_mL_g": 7.5942730884256235,
+          "signedPct": 13.634242528591777
+        },
+        "control": {
+          "signed_mL_g": -2.1258768931616885,
+          "absolute_mL_g": 2.1258768931616885,
+          "signedPct": -3.816655104419553
+        },
+        "adaptive": {
+          "signed_mL_g": -2.057352684015669,
+          "absolute_mL_g": 2.057352684015669,
+          "signedPct": -3.693631389615204
+        }
+      }
+    },
+    {
+      "id": "azim1985-PS4",
+      "sample": "PS4",
+      "study": "azim1985",
+      "source": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "M_supplier",
+      "mass_g_mol": 640000,
+      "eta_mL_g": 68.7,
+      "status": "sensitivity",
+      "flags": [
+        "mass_basis"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 78.1321469676764,
+      "control": 66.13333333333333,
+      "adaptive": 66.21792145353115,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 9.432146967676402,
+          "absolute_mL_g": 9.432146967676402,
+          "signedPct": 13.72947156867017
+        },
+        "control": {
+          "signed_mL_g": -2.566666666666677,
+          "absolute_mL_g": 2.566666666666677,
+          "signedPct": -3.736050460941309
+        },
+        "adaptive": {
+          "signed_mL_g": -2.4820785464688555,
+          "absolute_mL_g": 2.4820785464688555,
+          "signedPct": -3.6129236484262806
+        }
+      }
+    },
+    {
+      "id": "azim1985-PS5",
+      "sample": "PS5",
+      "study": "azim1985",
+      "source": "Abdel Azim ve Huglin (1985)",
+      "doi": "10.21608/asat.1985.26559",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "M_supplier",
+      "mass_g_mol": 960000,
+      "eta_mL_g": 84.2,
+      "status": "sensitivity",
+      "flags": [
+        "mass_basis"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 95.69194628947562,
+      "control": 80.99646082803042,
+      "adaptive": 81.10005969442341,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 11.49194628947562,
+          "absolute_mL_g": 11.49194628947562,
+          "signedPct": 13.64839226778578
+        },
+        "control": {
+          "signed_mL_g": -3.203539171969581,
+          "absolute_mL_g": 3.203539171969581,
+          "signedPct": -3.8046783515078175
+        },
+        "adaptive": {
+          "signed_mL_g": -3.0999403055765953,
+          "absolute_mL_g": 3.0999403055765953,
+          "signedPct": -3.6816393177869333
+        }
+      }
+    },
+    {
+      "id": "berry1967-M19800",
+      "sample": "M19800",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 19800,
+      "eta_mL_g": 11.9,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "extrapolation",
+      "baseline": 13.742709505726117,
+      "control": 11.632231084362106,
+      "adaptive": 11.647109338814722,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 1.8427095057261162,
+          "absolute_mL_g": 1.8427095057261162,
+          "signedPct": 15.48495382963122
+        },
+        "control": {
+          "signed_mL_g": -0.2677689156378946,
+          "absolute_mL_g": 0.2677689156378946,
+          "signedPct": -2.2501589549402956
+        },
+        "adaptive": {
+          "signed_mL_g": -0.2528906611852779,
+          "absolute_mL_g": 0.2528906611852779,
+          "signedPct": -2.1251316065989734
+        }
+      }
+    },
+    {
+      "id": "berry1967-M44000",
+      "sample": "M44000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 44000,
+      "eta_mL_g": 18,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "extrapolation",
+      "baseline": 20.48642176655742,
+      "control": 17.340306289746504,
+      "adaptive": 17.362485481974897,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 2.48642176655742,
+          "absolute_mL_g": 2.48642176655742,
+          "signedPct": 13.813454258652325
+        },
+        "control": {
+          "signed_mL_g": -0.6596937102534959,
+          "absolute_mL_g": 0.6596937102534959,
+          "signedPct": -3.6649650569638648
+        },
+        "adaptive": {
+          "signed_mL_g": -0.6375145180251032,
+          "absolute_mL_g": 0.6375145180251032,
+          "signedPct": -3.541747322361688
+        }
+      }
+    },
+    {
+      "id": "berry1967-M55000",
+      "sample": "M55000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 55000,
+      "eta_mL_g": 20,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "extrapolation",
+      "baseline": 22.904515842876854,
+      "control": 19.38705180727018,
+      "adaptive": 19.411848898024534,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 2.9045158428768545,
+          "absolute_mL_g": 2.9045158428768545,
+          "signedPct": 14.522579214384269
+        },
+        "control": {
+          "signed_mL_g": -0.6129481927298208,
+          "absolute_mL_g": 0.6129481927298208,
+          "signedPct": -3.064740963649104
+        },
+        "adaptive": {
+          "signed_mL_g": -0.5881511019754662,
+          "absolute_mL_g": 0.5881511019754662,
+          "signedPct": -2.9407555098773352
+        }
+      }
+    },
+    {
+      "id": "berry1967-M76000",
+      "sample": "M76000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 76000,
+      "eta_mL_g": 24.5,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 26.924433072698235,
+      "control": 22.7896272701225,
+      "adaptive": 22.81877643943886,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 2.4244330726982355,
+          "absolute_mL_g": 2.4244330726982355,
+          "signedPct": 9.895645194686686
+        },
+        "control": {
+          "signed_mL_g": -1.7103727298774984,
+          "absolute_mL_g": 1.7103727298774984,
+          "signedPct": -6.981113183173459
+        },
+        "adaptive": {
+          "signed_mL_g": -1.6812235605611399,
+          "absolute_mL_g": 1.6812235605611399,
+          "signedPct": -6.862136981882205
+        }
+      }
+    },
+    {
+      "id": "berry1967-M96200",
+      "sample": "M96200",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 96200,
+      "eta_mL_g": 26.6,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 30.29195530315918,
+      "control": 25.639996533194427,
+      "adaptive": 25.67279147939335,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 3.6919553031591796,
+          "absolute_mL_g": 3.6919553031591796,
+          "signedPct": 13.879531214884144
+        },
+        "control": {
+          "signed_mL_g": -0.9600034668055741,
+          "absolute_mL_g": 0.9600034668055741,
+          "signedPct": -3.6090355894946358
+        },
+        "adaptive": {
+          "signed_mL_g": -0.9272085206066514,
+          "absolute_mL_g": 0.9272085206066514,
+          "signedPct": -3.4857463180701154
+        }
+      }
+    },
+    {
+      "id": "berry1967-M125000",
+      "sample": "M125000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 125000,
+      "eta_mL_g": 29,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 34.52985684344245,
+      "control": 29.227080289043965,
+      "adaptive": 29.264463309918785,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 5.529856843442452,
+          "absolute_mL_g": 5.529856843442452,
+          "signedPct": 19.068471873939497
+        },
+        "control": {
+          "signed_mL_g": 0.2270802890439647,
+          "absolute_mL_g": 0.2270802890439647,
+          "signedPct": 0.7830354794619465
+        },
+        "adaptive": {
+          "signed_mL_g": 0.264463309918785,
+          "absolute_mL_g": 0.264463309918785,
+          "signedPct": 0.9119424479958171
+        }
+      }
+    },
+    {
+      "id": "berry1967-M160000",
+      "sample": "M160000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 160000,
+      "eta_mL_g": 34,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 39.0660734838382,
+      "control": 33.06666666666666,
+      "adaptive": 33.10896072676559,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 5.066073483838203,
+          "absolute_mL_g": 5.066073483838203,
+          "signedPct": 14.900216128935885
+        },
+        "control": {
+          "signed_mL_g": -0.9333333333333371,
+          "absolute_mL_g": 0.9333333333333371,
+          "signedPct": -2.7450980392156987
+        },
+        "adaptive": {
+          "signed_mL_g": -0.8910392732344121,
+          "absolute_mL_g": 0.8910392732344121,
+          "signedPct": -2.620703744807096
+        }
+      }
+    },
+    {
+      "id": "berry1967-M180000",
+      "sample": "M180000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 180000,
+      "eta_mL_g": 35.4,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 41.435828212130936,
+      "control": 35.07249634685276,
+      "adaptive": 35.11735597190253,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 6.035828212130937,
+          "absolute_mL_g": 6.035828212130937,
+          "signedPct": 17.05036218116085
+        },
+        "control": {
+          "signed_mL_g": -0.3275036531472395,
+          "absolute_mL_g": 0.3275036531472395,
+          "signedPct": -0.9251515625628204
+        },
+        "adaptive": {
+          "signed_mL_g": -0.28264402809746514,
+          "absolute_mL_g": 0.28264402809746514,
+          "signedPct": -0.7984294579024387
+        }
+      }
+    },
+    {
+      "id": "berry1967-M247000",
+      "sample": "M247000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 247000,
+      "eta_mL_g": 42,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 48.538712003205994,
+      "control": 41.084584835569544,
+      "adaptive": 41.137134247873234,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 6.538712003205994,
+          "absolute_mL_g": 6.538712003205994,
+          "signedPct": 15.568361912395234
+        },
+        "control": {
+          "signed_mL_g": -0.9154151644304562,
+          "absolute_mL_g": 0.9154151644304562,
+          "signedPct": -2.1795599153106138
+        },
+        "adaptive": {
+          "signed_mL_g": -0.8628657521267655,
+          "absolute_mL_g": 0.8628657521267655,
+          "signedPct": -2.0544422669684925
+        }
+      }
+    },
+    {
+      "id": "berry1967-M394000",
+      "sample": "M394000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 394000,
+      "eta_mL_g": 54.5,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 61.30386867855442,
+      "control": 51.88938662621138,
+      "adaptive": 51.955755966023865,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 6.803868678554423,
+          "absolute_mL_g": 6.803868678554423,
+          "signedPct": 12.484162712943903
+        },
+        "control": {
+          "signed_mL_g": -2.610613373788617,
+          "absolute_mL_g": 2.610613373788617,
+          "signedPct": -4.790116282180945
+        },
+        "adaptive": {
+          "signed_mL_g": -2.5442440339761347,
+          "absolute_mL_g": 2.5442440339761347,
+          "signedPct": -4.668337677020428
+        }
+      }
+    },
+    {
+      "id": "berry1967-M406000",
+      "sample": "M406000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 406000,
+      "eta_mL_g": 55,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 62.23042802573186,
+      "control": 52.67365354499133,
+      "adaptive": 52.74102600472911,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 7.230428025731861,
+          "absolute_mL_g": 7.230428025731861,
+          "signedPct": 13.146232774057932
+        },
+        "control": {
+          "signed_mL_g": -2.326346455008668,
+          "absolute_mL_g": 2.326346455008668,
+          "signedPct": -4.229720827288485
+        },
+        "adaptive": {
+          "signed_mL_g": -2.2589739952708925,
+          "absolute_mL_g": 2.2589739952708925,
+          "signedPct": -4.1072254459470825
+        }
+      }
+    },
+    {
+      "id": "berry1967-M507000",
+      "sample": "M507000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 507000,
+      "eta_mL_g": 60,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 69.54145146082102,
+      "control": 58.861917513221854,
+      "adaptive": 58.93720509820698,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 9.541451460821023,
+          "absolute_mL_g": 9.541451460821023,
+          "signedPct": 15.90241910136838
+        },
+        "control": {
+          "signed_mL_g": -1.1380824867781456,
+          "absolute_mL_g": 1.1380824867781456,
+          "signedPct": -1.8968041446302375
+        },
+        "adaptive": {
+          "signed_mL_g": -1.0627949017930192,
+          "absolute_mL_g": 1.0627949017930192,
+          "signedPct": -1.7713248363216971
+        }
+      }
+    },
+    {
+      "id": "berry1967-M622000",
+      "sample": "M622000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 622000,
+      "eta_mL_g": 66,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 77.0255775948228,
+      "control": 65.19670066635103,
+      "adaptive": 65.2800907825678,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 11.025577594822806,
+          "absolute_mL_g": 11.025577594822806,
+          "signedPct": 16.70542059821638
+        },
+        "control": {
+          "signed_mL_g": -0.8032993336489653,
+          "absolute_mL_g": 0.8032993336489653,
+          "signedPct": -1.217120202498434
+        },
+        "adaptive": {
+          "signed_mL_g": -0.7199092174322033,
+          "absolute_mL_g": 0.7199092174322033,
+          "signedPct": -1.0907715415639396
+        }
+      }
+    },
+    {
+      "id": "berry1967-M862000",
+      "sample": "M862000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 862000,
+      "eta_mL_g": 78,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 90.67621931897601,
+      "control": 76.75100288885119,
+      "adaptive": 76.84917158427963,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 12.67621931897601,
+          "absolute_mL_g": 12.67621931897601,
+          "signedPct": 16.251563229456423
+        },
+        "control": {
+          "signed_mL_g": -1.2489971111488103,
+          "absolute_mL_g": 1.2489971111488103,
+          "signedPct": -1.6012783476266779
+        },
+        "adaptive": {
+          "signed_mL_g": -1.150828415720369,
+          "absolute_mL_g": 1.150828415720369,
+          "signedPct": -1.4754210457953443
+        }
+      }
+    },
+    {
+      "id": "berry1967-M1050000",
+      "sample": "M1050000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 1050000,
+      "eta_mL_g": 86,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 100.07703290206246,
+      "control": 84.70812633193268,
+      "adaptive": 84.81647261981419,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 14.077032902062456,
+          "absolute_mL_g": 14.077032902062456,
+          "signedPct": 16.36864290937494
+        },
+        "control": {
+          "signed_mL_g": -1.2918736680673248,
+          "absolute_mL_g": 1.2918736680673248,
+          "signedPct": -1.5021786837992157
+        },
+        "adaptive": {
+          "signed_mL_g": -1.183527380185808,
+          "absolute_mL_g": 1.183527380185808,
+          "signedPct": -1.3761946281230286
+        }
+      }
+    },
+    {
+      "id": "berry1967-M1560000",
+      "sample": "M1560000",
+      "study": "berry1967",
+      "source": "Berry (1967)",
+      "doi": "10.1063/1.1840854",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.8,
+      "mass_basis": "Mw",
+      "mass_g_mol": 1560000,
+      "eta_mL_g": 106,
+      "status": "sensitivity",
+      "flags": [
+        "temperature"
+      ],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "interpolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 121.98377535592718,
+      "control": 103.25063357352018,
+      "adaptive": 103.38269673385112,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 15.983775355927179,
+          "absolute_mL_g": 15.983775355927179,
+          "signedPct": 15.079033354648285
+        },
+        "control": {
+          "signed_mL_g": -2.749366426479824,
+          "absolute_mL_g": 2.749366426479824,
+          "signedPct": -2.5937419117734173
+        },
+        "adaptive": {
+          "signed_mL_g": -2.6173032661488804,
+          "absolute_mL_g": 2.6173032661488804,
+          "signedPct": -2.4691540246687516
+        }
+      }
+    },
+    {
+      "id": "miyaki1980-M6480000",
+      "sample": "M6480000",
+      "study": "miyaki1980",
+      "source": "Miyaki, Einaga, Fujita ve Fukuda (1980)",
+      "doi": "10.1021/ma60075a021",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "Mw",
+      "mass_g_mol": 6480000,
+      "eta_mL_g": 228,
+      "status": "strict",
+      "flags": [],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "extrapolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 248.6149692727856,
+      "control": 210.43497808111653,
+      "adaptive": 210.7041358314151,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 20.6149692727856,
+          "absolute_mL_g": 20.6149692727856,
+          "signedPct": 9.041653189818245
+        },
+        "control": {
+          "signed_mL_g": -17.565021918883474,
+          "absolute_mL_g": 17.565021918883474,
+          "signedPct": -7.7039569819664315
+        },
+        "adaptive": {
+          "signed_mL_g": -17.2958641685849,
+          "absolute_mL_g": 17.2958641685849,
+          "signedPct": -7.585905337098642
+        }
+      }
+    },
+    {
+      "id": "miyaki1980-M6550000",
+      "sample": "M6550000",
+      "study": "miyaki1980",
+      "source": "Miyaki, Einaga, Fujita ve Fukuda (1980)",
+      "doi": "10.1021/ma60075a021",
+      "chemistry": "PS",
+      "family": "vinylaromatic",
+      "solvent": "cyclohexane",
+      "T_C": 34.5,
+      "mass_basis": "Mw",
+      "mass_g_mol": 6550000,
+      "eta_mL_g": 230,
+      "status": "strict",
+      "flags": [],
+      "expected": {
+        "chemistry": "PS",
+        "family": "vinylaromatic",
+        "solvent": "cyclohexane",
+        "T_C": 34.5,
+        "mass_basis": "Mw"
+      },
+      "modelMassDomain": "extrapolation",
+      "databasePSMassDomain": "interpolation",
+      "baseline": 249.95419003117394,
+      "control": 211.56853368221948,
+      "adaptive": 211.83914131161248,
+      "errors": {
+        "baseline": {
+          "signed_mL_g": 19.954190031173937,
+          "absolute_mL_g": 19.954190031173937,
+          "signedPct": 8.67573479616257
+        },
+        "control": {
+          "signed_mL_g": -18.43146631778052,
+          "absolute_mL_g": 18.43146631778052,
+          "signedPct": -8.013681007730655
+        },
+        "adaptive": {
+          "signed_mL_g": -18.16085868838752,
+          "absolute_mL_g": 18.16085868838752,
+          "signedPct": -7.89602551669023
+        }
+      }
+    }
+  ],
+  "external_data_sha256": "6a2b215e8c5590ed68e14989341d3d0a4a181de8d0aef7763b7913459cb08a82"
+}

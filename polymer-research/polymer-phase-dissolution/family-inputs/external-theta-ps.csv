@@ -1,0 +1,24 @@
+id,sample,study,source,doi,chemistry,family,solvent,T_C,mass_basis,mass_g_mol,eta_mL_g
+azim1985-PS1,PS1,azim1985,Abdel Azim ve Huglin (1985),10.21608/asat.1985.26559,PS,vinylaromatic,cyclohexane,34.5,M_supplier,106500,28.1
+azim1985-PS2,PS2,azim1985,Abdel Azim ve Huglin (1985),10.21608/asat.1985.26559,PS,vinylaromatic,cyclohexane,34.5,M_supplier,294000,46.6
+azim1985-PS3,PS3,azim1985,Abdel Azim ve Huglin (1985),10.21608/asat.1985.26559,PS,vinylaromatic,cyclohexane,34.5,M_supplier,420000,55.7
+azim1985-PS4,PS4,azim1985,Abdel Azim ve Huglin (1985),10.21608/asat.1985.26559,PS,vinylaromatic,cyclohexane,34.5,M_supplier,640000,68.7
+azim1985-PS5,PS5,azim1985,Abdel Azim ve Huglin (1985),10.21608/asat.1985.26559,PS,vinylaromatic,cyclohexane,34.5,M_supplier,960000,84.2
+berry1967-M19800,M19800,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,19800,11.9
+berry1967-M44000,M44000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,44000,18.0
+berry1967-M55000,M55000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,55000,20.0
+berry1967-M76000,M76000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,76000,24.5
+berry1967-M96200,M96200,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,96200,26.6
+berry1967-M125000,M125000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,125000,29.0
+berry1967-M160000,M160000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,160000,34.0
+berry1967-M180000,M180000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,180000,35.4
+berry1967-M247000,M247000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,247000,42.0
+berry1967-M394000,M394000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,394000,54.5
+berry1967-M406000,M406000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,406000,55.0
+berry1967-M507000,M507000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,507000,60.0
+berry1967-M622000,M622000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,622000,66.0
+berry1967-M862000,M862000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,862000,78.0
+berry1967-M1050000,M1050000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,1050000,86.0
+berry1967-M1560000,M1560000,berry1967,Berry (1967),10.1063/1.1840854,PS,vinylaromatic,cyclohexane,34.8,Mw,1560000,106.0
+miyaki1980-M6480000,M6480000,miyaki1980,"Miyaki, Einaga, Fujita ve Fukuda (1980)",10.1021/ma60075a021,PS,vinylaromatic,cyclohexane,34.5,Mw,6480000,228.0
+miyaki1980-M6550000,M6550000,miyaki1980,"Miyaki, Einaga, Fujita ve Fukuda (1980)",10.1021/ma60075a021,PS,vinylaromatic,cyclohexane,34.5,Mw,6550000,230.0

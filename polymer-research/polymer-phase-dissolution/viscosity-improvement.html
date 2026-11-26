@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#153c34">
+  <title>Viskozite tahmininde hata · Polymer Research Studio</title>
+  <link rel="stylesheet" href="viscosity.css">
+  <link rel="stylesheet" href="viscosity-improvement.css">
+  <script defer src="viscosity-improvement-data.js"></script>
+  <script defer src="viscosity-improvement.js"></script>
+</head>
+<body>
+<header><nav aria-label="Ana menü">
+  <a class="brand" href="index.html">Polymer Research Studio</a>
+  <div><a href="viscosity-reference.html">İyi çözücüde tahmin</a><a href="repeat-viscosity.html">θ koşulunda tahmin</a></div>
+</nav></header>
+<main>
+  <p class="overline">Viskozimetri · model karşılaştırması</p>
+  <h1>Viskozite tahmininde hata</h1>
+  <p class="intro">Bir sınama seç. Aynı deneysel ölçümleri iki modelin tahminleriyle karşılaştır. Hatanın hangi polimerde, çözücüde veya koşulda değiştiğini incele.</p>
+  <noscript>Hesaplanan tahminleri karşılaştırmak için JavaScript gerekir.</noscript>
+  <p id="loadError" class="notice" role="alert" hidden>Sınama verileri yüklenemedi.</p>
+  <div id="app" hidden>
+    <div class="controlbox">
+      <div><label for="protocol">Karşılaştırma</label><select id="protocol"></select></div>
+      <div><label for="group">Gösterilen grup</label><select id="group"></select></div>
+    </div>
+    <p id="protocolDescription" class="reading"></p>
+
+    <section class="panel results" aria-labelledby="errorHeading">
+      <div class="heading">
+        <div><p id="scope" class="overline"></p><h2 id="errorHeading">Saklı ölçümlerde hata</h2></div>
+        <button type="button" id="csv">Seçili ölçümleri indir · CSV</button>
+      </div>
+      <div class="score-grid" aria-live="polite" aria-atomic="true">
+        <div><div class="model-label"><i class="base-mark" aria-hidden="true"></i><span id="baselineName"></span></div><strong id="baselineScore"></strong></div>
+        <div><div class="model-label"><i class="new-mark" aria-hidden="true"></i><span id="candidateName"></span></div><strong id="candidateScore"></strong></div>
+        <div class="score-outcome"><div id="changeLabel" class="model-label"></div><strong id="changeScore"></strong></div>
+      </div>
+      <p class="reading" id="aggregation"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="residualHeading">
+      <h2 id="residualHeading">Hangi ölçümlerde sapma büyüyor?</h2>
+      <div class="compare residual-section">
+        <figure>
+          <svg id="residualPlot" viewBox="0 0 580 320" role="img" aria-label="Ölçülen viskoziteye karşı iki modelin işaretli yüzde sapması"></svg>
+          <div class="key plot-legend"><span><i class="base-mark" aria-hidden="true"></i><span id="legendBase"></span></span><span><i class="new-mark" aria-hidden="true"></i><span id="legendNew"></span></span></div>
+          <figcaption class="reading">Aynı dikeyde birbirine bağlanan işaretler tek bir ölçümün iki tahminini gösterir. Sıfırın üzerindeki noktalar yüksek tahminlerdir. Yatay eksen logaritmiktir.</figcaption>
+        </figure>
+        <aside>
+          <label for="sample">Bir ölçümü incele</label><select id="sample"></select>
+          <p id="condition"></p>
+          <dl aria-live="polite">
+            <div><dt>Ölçüm</dt><dd id="observed"></dd></div>
+            <div><dt id="baseDetail"></dt><dd id="baseValue"></dd></div>
+            <div><dt id="newDetail"></dt><dd id="newValue"></dd></div>
+          </dl>
+          <p id="sampleSource"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Grup bazında sonuçlar</h2>
+      <p class="reading">Bir grubu seçerek o gruba ait numuneleri grafikte açabilirsin.</p>
+      <div class="scroll" tabindex="0" role="region" aria-label="Sınamanın tüm grupları">
+        <table><thead><tr><th scope="col">Grup</th><th scope="col">Ölçüm</th><th scope="col" id="baseGroup"></th><th scope="col" id="newGroup"></th></tr></thead><tbody id="groupRows"></tbody></table>
+      </div>
+      <details><summary>Seçili ölçümlerin sayısal dökümü</summary>
+        <div class="scroll" tabindex="0" role="region" aria-label="Gruptaki ölçümler ve model tahminleri">
+          <table><thead><tr><th scope="col">Numune</th><th scope="col" id="observedHeader"></th><th scope="col" id="baseHeader"></th><th scope="col" id="newHeader"></th></tr></thead><tbody id="sampleRows"></tbody></table>
+        </div>
+      </details>
+      <p class="linkrow"><a href="Viskozite_Hata_Karsilastirmasi.png" download>Modellerin hata karşılaştırmasını indir · PNG</a></p>
+      <details open><summary>Model, sınama düzeni ve kapsam</summary>
+        <p id="method"></p><p id="limit" class="reading"></p><div class="linkrow" id="sources"></div>
+      </details>
+    </section>
+  </div>
+</main>
+</body>
+</html>

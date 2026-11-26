@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "purpose": "New study nominally linear PS / cyclohexane / 34.5 °C; Mw in g/mol and [η] in mL/g.",
+  "rules": "Use all eligible explicitly measured observations. Record series/sample, T and units. Exclude overlapping original samples or inherited viscosity values, unresolved primary measurements, incorrect solvent or T, mass-basis mismatch. No source, hyperparameter, point or model selection on external viscosities.",
+  "oldDataSHA256": "b46a0f3d1c3f155a7b3ad1e3d9a40230063d4ed9e60100a18289a6581d97f047",
+  "model": {
+    "family": "vinylaromatic",
+    "trainedIds": [
+      "hadjichristidis1982-PBD-M0.108",
+      "hadjichristidis1982-PBD-M0.221",
+      "hadjichristidis1982-PBD-M0.253",
+      "hadjichristidis1982-PBD-M0.527",
+      "hadjichristidis1982-PBD-M0.717",
+      "hadjichristidis1982-PBD-M0.96",
+      "hadjichristidis1982-PBD-M2.32",
+      "hadjichristidis1982-PBD-M5.22",
+      "hadjichristidis1982-PBD-M5.71",
+      "hadjichristidis1982-PI-M0.134",
+      "hadjichristidis1982-PI-M0.195",
+      "hadjichristidis1982-PI-M0.257",
+      "hadjichristidis1982-PI-M0.38",
+      "hadjichristidis1982-PI-M0.401",
+      "hadjichristidis1982-PI-M0.548",
+      "hadjichristidis1982-PI-M0.82",
+      "hadjichristidis1982-PI-M1.15",
+      "hadjichristidis1982-PI-M1.5",
+      "hadjichristidis1982-PI-M1.62",
+      "hadjichristidis1982-PI-M2.28",
+      "hadjichristidis1982-PI-M2.4",
+      "hadjichristidis1982-PI-M3.94",
+      "hadjichristidis1982-PI-M5.37",
+      "hadjichristidis1982-PI-M5.91",
+      "hadjichristidis1982-PI-M6",
+      "hadjichristidis1982-PI-M15.6",
+      "hadjichristidis1982-PI-M16.1",
+      "hadjichristidis1982-PI-M22.25",
+      "abe1991-PIB-PIB2",
+      "abe1991-PIB-PIB3",
+      "abe1991-PIB-PIB5",
+      "abe1991-PIB-PIB9",
+      "abe1991-PIB-PIB13",
+      "abe1991-PIB-PIB40",
+      "abe1991-PIB-PIB80"
+    ],
+    "fixed": {
+      "b": 3.7057442126544213,
+      "center": -3.0269040506691285,
+      "slope": 0.5951427550382812
+    },
+    "tuning": {
+      "selected": 0.5,
+      "candidates": [
+        {
+          "shrink": 0,
+          "loss": 0.09729569811779792
+        },
+        {
+          "shrink": 0.25,
+          "loss": 0.04245217506052724
+        },
+        {
+          "shrink": 0.5,
+          "loss": 0.03313138374087373
+        },
+        {
+          "shrink": 0.75,
+          "loss": 0.06933332415883715
+        },
+        {
+          "shrink": 1,
+          "loss": 0.15105799631441783
+        }
+      ],
+      "chemistryCount": 3
+    },
+    "agreement": {
+      "meanSquareOffset": 0.03289558733459494,
+      "withinSeries": 0.00025414471263342226,
+      "retention": 0.992333430862387
+    }
+  },
+  "reference": {
+    "id": "baysal1992-PS-PS2",
+    "mass_g_mol": 90000,
+    "eta_mL_g": 24.8,
+    "source_doi": "10.1016/0032-3861(92)90695-S"
+  },
+  "comparators": [
+    "baseline (old fixed Ridge)",
+    "control (single physical reference)",
+    "adapted (learned log shrink toward old Ridge)"
+  ],
+  "score": "Per study MAPE on same rows. Also report pointwise absolute and signed error + mass coverage. Distinguish reused literature from evidence of independent measurements."
+}

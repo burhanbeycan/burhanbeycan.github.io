@@ -59,3 +59,5 @@ Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç g
 [Bir polimer ailesini uyum dışında bırakarak modeli sına](polymer-phase-dissolution/family-viscosity.html) · [Polivinil alkol çözeltisinin viskozitesini incele](polymer-phase-dissolution/pvoh-viscosity.html).
 
 [Tekrar biriminden viskozite veri kapsamını incele](polymer-phase-dissolution/repeat-viscosity.html).
+
+[Viskozite modellerinin hatalarını karşılaştır](polymer-phase-dissolution/viscosity-improvement.html) · [İyi çözücüde referans numuneden intrinsik viskoziteyi hesapla](polymer-phase-dissolution/viscosity-reference.html) · [PVOH için çözücüye bağlı viskozite modellerini sına](polymer-phase-dissolution/pvoh-transfer.html).

@@ -154,3 +154,43 @@ python scripts/plot-family-viscosity.py --dist dist --output dist/Aileler_Arasi_
 ```
 
 GitHub Pages ile çevrimdışı paketin düz dosya düzeninde `dist` yerine `.` kullanılabilir. Ölçüm derlemesi [Fetters ve ark.](https://doi.org/10.1063/1.555949) tarafından hazırlanmıştır. Birincil deneyler [Kato ve ark.](https://doi.org/10.1021/ma00139a016) ve [Parisi ve ark.](https://doi.org/10.1122/8.0000435) ile kaynak notlarında listelenen özgün saçılma ve viskozimetri yayınlarıdır.
+
+## Viskozite modelinde hata azaltma
+
+`viscosity-improvement.html` ekranında her ölçüm için hedef değer, iki tahmin, kaynak ve değerlendirme protokolü birlikte gösterilir. Uygulama paketindeki HTML dosyaları aynı klasörden açılabilir. Sayfaların tarayıcıda yeniden hesaplama yapan üç girişi vardır.
+
+- **Tekrar birimi ve θ koşulu** ekranı, seçilen kimya ve çözücü için kaynakta kayıtlı θ veya yaklaşık θ sıcaklığını kullanır. Kayıtlı bir referans varsa farklı kütledeki hedefe hem fiziksel ölçekleme hem de kaynak ailelerden öğrenilmiş bir düzeltme uygular. Hedef numunenin viskozitesi hesaplara girmez.
+- **İyi çözücüde referansla tahmin** ekranında siklohekzan içindeki bir polimeri seçin. Uygulama diğer kimyalardan eğitilmiş kütle üssünü ve hedef kimyadaki bir literatür fraksiyonunu kullanır. Katalogda kayıtlı sınama numunesinin bütün kaynak makalesi referans seçiminden çıkarılır.
+- **PVOH için çözücüye özgü öğrenme** ekranı, mol kütlesi ve hidroliz derecesi bilindiğinde 25 °C'de su ve DMSO için modelleri karşılaştırır. Beş ticari derecenin her biri iki ortamıyla birlikte dışarıda tutulur. Diğer kaynaklardan gelen sulu ölçümler ayrı değerlendirilir.
+
+| Soru | Sınama birimi | Sonuç |
+| --- | --- | --- |
+| Referans bulunursa θ ölçeklemesi ne kadar yardımcı oluyor? | 5 kimyadan birer referans ayrıldı, kalan 51 numune aynı modellerle karşılaştırıldı. Üç aileye eşit ağırlık verildi. | Yapı temelli Ridge ile %12,36 MAPE, referansın fiziksel ölçeklemesiyle %2,78, öğrenilmiş referans ağırlığıyla %3,10. Referans genellikle aynı yayından gelir. |
+| Referans hiç yoksa Ridge ayarı yeterli mi? | 56 numune, 3 dış omurga katı, katsayı seçimi yalnız iç katlarda. | Eski sabit model %12,71, yeni iç seçim %13,00 MAPE. |
+| Bir yayından diğerine iyi çözücü aktarımı nasıl değişiyor? | Poliizopren ve poliizobütilende 18 fraksiyon, farklı DOI'den referans, kimyalara eşit ağırlık. | Mol kütlesi modeli %18,26, öğrenilmiş kütle üssü ve bir referans %7,41. Ayrı bir polibütadien serisinin 8 fraksiyonunda %27,57 ve %4,61. |
+| PVOH'da hidroliz derecesi ve kütle etkisi çözücüye göre değişiyor mu? | 5 ticari derece, 10 ölçüm, her derece iki ortamıyla birlikte saklandı. | Birleşik RMSE 13,51 → 10,21 mL/g. Su grubunun hatası 6,34 → 7,67 mL/g. DMSO grubunda 18,03 → 12,24 mL/g, eski yalnız kütle modelinde 13,41 mL/g. |
+| HPAM–NaCl çözeltisinin görünür viskozitesinde eğim kısıtları yararlı mı? | 24 °C'de dokuz bileşim, 15 ayrı polimer–tuz–kayma koşulu. | Kısıtsız yüzeyin RMSE'si 0,685, kısıtlı yüzeyinki 0,741 mPa·s. |
+
+Ayrı bir PS sınaması için PS2 standardını (90 kg/mol ve 24,8 mL/g) ve model katsayılarını yeni yayınların sonuçları değerlendirilmeden sabitledik. 34,5 °C, saf siklohekzan ve M𝑤 koşullarını karşılayan Miyaki çalışmasındaki aynı stoktan hazırlanmış iki yeni fraksiyonda yapı modeli %8,86, referansla θ ölçeklemesi %7,86 ve öğrenilmiş düzeltme %7,74 MAPE verdi. Bu iki gözlem başlangıç modelinin kütle aralığının üstündedir. Üretici kütlesiyle verilen beş fraksiyon ve 34,8 °C'de ölçülen 16 fraksiyon ayrı duyarlılık karşılaştırmalarında bulunur. [Miyaki ve ark.](https://doi.org/10.1021/ma60075a021)
+
+Mol kütlesi ve derişimden bağımsız yapısal eşleşme, taktisite ve cis/trans dağılımı hakkında sınırlı bilgi verir. Modelin güçlü sonuçları belirli kaynak, çözücü, kimya ve sıcaklıklarla sınırlıdır. Karşılaştırmalar örtüşen altkümeler içerir. Satırlar farklı çalışmalar arasında birleştirilerek tek bir başarı oranı üretilmez.
+
+### Yöntemlerin dayanağı
+
+Fetters ve arkadaşlarının eleştirel deney derlemesiyle birincil makalelerdeki numune, mol kütlesi tanımı, sıcaklık ve viskozite birimleri birlikte izlendi. [Fetters ve ark.](https://doi.org/10.1063/1.555949) · [Colby ve ark., seyreltik çözelti ölçümleri](https://doi.org/10.1021/ma00175a030) · [Parisi ve ark.](https://doi.org/10.1122/8.0000435) · [Gebben ve ark.](https://doi.org/10.1016/0032-3861(85)90295-2)
+
+Polimer çözeltilerindeki önceki makine öğrenmesi çalışmaları farklı deney hedeflerini kullanıyor. Gharagheizi yapı ve çözücü tanımlayıcılarıyla intrinsik viskoziteyi modelledi. Pérez ve arkadaşları tek kayma hızında ölçülmüş bir HPAM viskozitesinden akış eğrisi parametrelerine geçti. Bu çalışmadaki benzerlik ölçümle koşullandırılmış tahmindir. Bizim θ ve siklohekzan modellerimizde referans bir başka fraksiyonun seyreltik-limit ölçümüdür. Akbari'nin reolojik ölçümlerinden elde edilen kısıtlı regresyon karşılaştırmasında birim mPa·s, intrinsik viskozite katmanında mL/g'dır. [Gharagheizi](https://doi.org/10.1016/j.commatsci.2006.11.010) · [Pérez ve ark.](https://doi.org/10.1016/j.petrol.2022.110793) · [Akbari ve ark.](https://doi.org/10.1007/s13202-017-0375-6)
+
+### Sayısal sonuçları yeniden oluşturma
+
+GitHub Pages ve çevrimdışı ZIP içinde içerik kökü düz dizindir. Aşağıdaki komutlarda bu durumda `dist` yerine `.` kullanılır ve `dist/` ön ekleri kaldırılır. Node.js katmanında ek paket gerekmez. HPAM için NumPy ve SciPy, şekil için Matplotlib gerekir.
+
+```sh
+node scripts/build-theta-learning.cjs dist
+node scripts/build-hydro-stack.cjs dist
+node scripts/build-pvoh-transfer.cjs dist
+node scripts/build-external-theta.cjs dist dist/family-inputs/external-theta-ps.json dist/family-inputs/theta-ps-frozen.json dist/family-inputs
+python scripts/train-constrained-hpam.py dist/viscosity-inputs/hpam-akbari.csv dist/family-inputs/hpam-shape.json
+node scripts/build-viscosity-improvement.cjs dist
+python scripts/plot-viscosity-improvement.py --dist dist --output dist/Viskozite_Hata_Karsilastirmasi.png
+```

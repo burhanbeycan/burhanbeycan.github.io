@@ -1,0 +1,137 @@
+[
+  {
+    "id": "pvoh-solvent-transfer",
+    "label": "PVOH · saklı numune ve çözücüye özgü eğimler",
+    "description": "Her numunenin su ve DMSO ölçümleri birlikte saklanır. İki eğimin çözücüye göre değişmesine izin veren modelin hatasını eski ortak hidroliz modeli ile karşılaştır.",
+    "baseline": "Ortak hidroliz etkisi",
+    "candidate": "Çözücüye özgü iki eğim · kısmi havuzlama",
+    "metric": "RMSE",
+    "unit": "mL/g",
+    "aggregation": "pooled",
+    "scope": "25 °C · Parisi ve ark. · 5 bağımsız numune · 10 ölçüm",
+    "method": "Mark–Houwink kütle üssü ve hidroliz katsayısı her çözücüde uyarlanır, ardından her bir eğim ortak katsayıya doğru yarı yarıya çekilir. Değerlendirme aynı numuneye ait iki ölçümü birlikte dışarıda tutar.",
+    "limit": "Bu ikinci aday birincil DH denemesinden sonra incelendi. Birleşik RMSE düşse de suya ait eski model daha iyi. DMSO için eski en iyi kütle modeli 13,41 mL/g verir. Bağımsız sulu seriler ayrı kapsamda gösterilir.",
+    "links": [
+      {
+        "label": "Çözücüler ve bağımsız deneyler",
+        "url": "pvoh-transfer.html"
+      },
+      {
+        "label": "Parisi · birincil deney",
+        "url": "https://doi.org/10.1122/8.0000435"
+      }
+    ],
+    "rows": [
+      {
+        "id": "171k-80/water",
+        "group": "Su",
+        "label": "171k-80",
+        "observed": 78,
+        "baseline": 73.32830584585582,
+        "candidate": 67.52857732737577,
+        "condition": "M𝑤 = 171000 g/mol · DH %80 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "171k-80/dmso",
+        "group": "DMSO",
+        "label": "171k-80",
+        "observed": 170,
+        "baseline": 134.93361011352076,
+        "candidate": 146.52245646049676,
+        "condition": "M𝑤 = 171000 g/mol · DH %80 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "144k-88/water",
+        "group": "Su",
+        "label": "144k-88",
+        "observed": 89,
+        "baseline": 86.83314715654281,
+        "candidate": 88.4205626661274,
+        "condition": "M𝑤 = 144500 g/mol · DH %88 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "144k-88/dmso",
+        "group": "DMSO",
+        "label": "144k-88",
+        "observed": 163,
+        "baseline": 166.8872700977208,
+        "candidate": 163.8911407708166,
+        "condition": "M𝑤 = 144500 g/mol · DH %88 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "49k-75/water",
+        "group": "Su",
+        "label": "49k-75",
+        "observed": 24,
+        "baseline": 34.98477617467182,
+        "candidate": 34.33525788457076,
+        "condition": "M𝑤 = 49500 g/mol · DH %75 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "49k-75/dmso",
+        "group": "DMSO",
+        "label": "49k-75",
+        "observed": 58,
+        "baseline": 62.73530013800075,
+        "candidate": 63.922060552371335,
+        "condition": "M𝑤 = 49500 g/mol · DH %75 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "48k-88/water",
+        "group": "Su",
+        "label": "48k-88",
+        "observed": 42,
+        "baseline": 43.56391742903758,
+        "candidate": 47.097358297317825,
+        "condition": "M𝑤 = 48100 g/mol · DH %88 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "48k-88/dmso",
+        "group": "DMSO",
+        "label": "48k-88",
+        "observed": 68,
+        "baseline": 86.34736497880564,
+        "candidate": 79.86922439269557,
+        "condition": "M𝑤 = 48100 g/mol · DH %88 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "24k-80/water",
+        "group": "Su",
+        "label": "24k-80",
+        "observed": 25,
+        "baseline": 17.822766880750798,
+        "candidate": 17.849464379973377,
+        "condition": "M𝑤 = 24500 g/mol · DH %80 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      },
+      {
+        "id": "24k-80/dmso",
+        "group": "DMSO",
+        "label": "24k-80",
+        "observed": 40,
+        "baseline": 35.43090122751101,
+        "candidate": 35.37790711867726,
+        "condition": "M𝑤 = 24500 g/mol · DH %80 · 25 °C",
+        "sourceUrl": "https://doi.org/10.1122/8.0000435",
+        "sourceLabel": "Parisi, Tablo III"
+      }
+    ]
+  }
+]
