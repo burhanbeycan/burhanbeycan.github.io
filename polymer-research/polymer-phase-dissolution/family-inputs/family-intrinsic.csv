@@ -1,0 +1,57 @@
+id,sample,chemistry,family,solvent,T_C,temperature_basis,mass_g_mol,mass_basis,eta_mL_g,dispersity,source,table,ref,source_ref,source_doi
+hadjichristidis1982-PBD-M0.108,M0.108,PBD,polydiene,"1,4-dioxane",26.5,compilation,10800,M_abs,18.5,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M0.221,M0.221,PBD,polydiene,"1,4-dioxane",26.5,compilation,22100,M_abs,27.2,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M0.253,M0.253,PBD,polydiene,"1,4-dioxane",26.5,compilation,25300,M_abs,28.4,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M0.527,M0.527,PBD,polydiene,"1,4-dioxane",26.5,compilation,52700,M_abs,40.8,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M0.717,M0.717,PBD,polydiene,"1,4-dioxane",26.5,compilation,71700,M_abs,47.6,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M0.96,M0.96,PBD,polydiene,"1,4-dioxane",26.5,compilation,96000,M_abs,55.0,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M2.32,M2.32,PBD,polydiene,"1,4-dioxane",26.5,compilation,232000,M_abs,84.5,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M5.22,M5.22,PBD,polydiene,"1,4-dioxane",26.5,compilation,522000,M_abs,129,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PBD-M5.71,M5.71,PBD,polydiene,"1,4-dioxane",26.5,compilation,571000,M_abs,132,,hadjichristidis1982,1,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.134,M0.134,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,13400,M_abs,14.2,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.195,M0.195,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,19500,M_abs,17.4,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.257,M0.257,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,25700,M_abs,19.7,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.38,M0.38,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,38000,M_abs,24.9,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.401,M0.401,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,40100,M_abs,25.6,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.548,M0.548,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,54800,M_abs,30.0,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M0.82,M0.82,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,82000,M_abs,37.0,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M1.15,M1.15,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,115000,M_abs,44.8,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M1.5,M1.5,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,150000,M_abs,49.9,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M1.62,M1.62,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,162000,M_abs,52.2,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M2.28,M2.28,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,228000,M_abs,63.5,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M2.4,M2.4,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,240000,M_abs,63.0,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M3.94,M3.94,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,394000,M_abs,83.5,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M5.37,M5.37,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,537000,M_abs,96.4,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M5.91,M5.91,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,591000,M_abs,102,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M6,M6,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,600000,M_abs,103,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M15.6,M15.6,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,1560000,M_abs,166,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M16.1,M16.1,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,1610000,M_abs,170,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+hadjichristidis1982-PI-M22.25,M22.25,PI,polydiene,"1,4-dioxane",34.5,approximate_compilation,2225000,M_abs,197,,hadjichristidis1982,3,23,fetters1994-ref-23,10.1002/pol.1982.180200415
+abe1991-PIB-PIB2,PIB2,PIB,polyolefin,isoamyl isovalerate,25,primary,16600,Mw,14.1,1.08,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB3,PIB3,PIB,polyolefin,isoamyl isovalerate,25,primary,27900,Mw,18.0,1.07,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB5,PIB5,PIB,polyolefin,isoamyl isovalerate,25,primary,48500,Mw,24.1,1.06,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB9,PIB9,PIB,polyolefin,isoamyl isovalerate,25,primary,85500,Mw,31.8,1.08,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB13,PIB13,PIB,polyolefin,isoamyl isovalerate,25,primary,130000,Mw,39.6,1.09,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB40,PIB40,PIB,polyolefin,isoamyl isovalerate,25,primary,419000,Mw,70.9,1.09,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+abe1991-PIB-PIB80,PIB80,PIB,polyolefin,isoamyl isovalerate,25,primary,854000,Mw,99.8,1.09,abe1991,5,33,fetters1994-ref-33,10.1021/ma00015a026
+cowie1967-PAMS-aD,aD,PAMS,vinylaromatic,cyclohexane,37,primary,96000,Mw,23.3,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-aG,aG,PAMS,vinylaromatic,cyclohexane,37,primary,220000,Mw,36.2,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-5,5,PAMS,vinylaromatic,cyclohexane,37,primary,480000,Mw,52.0,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-3,3,PAMS,vinylaromatic,cyclohexane,37,primary,660000,Mw,64.5,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-8,8,PAMS,vinylaromatic,cyclohexane,37,primary,840000,Mw,69.5,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-1,1,PAMS,vinylaromatic,cyclohexane,37,primary,1250000,Mw,90.0,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-2,2,PAMS,vinylaromatic,cyclohexane,37,primary,1400000,Mw,93.0,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-6,6,PAMS,vinylaromatic,cyclohexane,37,primary,1540000,Mw,101.0,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+cowie1967-PAMS-7,7,PAMS,vinylaromatic,cyclohexane,37,primary,4000000,Mw,160.0,,cowie1967,12,89,fetters1994-ref-89,10.1016/0032-3861(67)90014-6
+einaga1979-PS-F126,F126,PS,vinylaromatic,cyclohexane,34.5,primary,1340000,Mw,99.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-F288,F288,PS,vinylaromatic,cyclohexane,34.5,primary,3080000,Mw,155.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-F450,F450,PS,vinylaromatic,cyclohexane,34.5,primary,4800000,Mw,192.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-BK2500-4,BK2500-4,PS,vinylaromatic,cyclohexane,34.5,primary,8760000,Mw,259.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-BK2500-3,BK2500-3,PS,vinylaromatic,cyclohexane,34.5,primary,15000000,Mw,350.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-BK2500-2,BK2500-2,PS,vinylaromatic,cyclohexane,34.5,primary,23200000,Mw,435.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-BK2500-1,BK2500-1,PS,vinylaromatic,cyclohexane,34.5,primary,31900000,Mw,522.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-IK1500-2,IK1500-2,PS,vinylaromatic,cyclohexane,34.5,primary,39000000,Mw,564.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+einaga1979-PS-IK1500-1,IK1500-1,PS,vinylaromatic,cyclohexane,34.5,primary,56800000,Mw,667.0,,einaga1979,7,46,fetters1994-ref-46,10.1002/pol.1979.180171205
+baysal1992-PS-PS1,PS1,PS,vinylaromatic,cyclohexane,34.5,primary,63000,Mw,20.7,1.04,baysal1992,,,baysal1992,10.1016/0032-3861(92)90695-S
+baysal1992-PS-PS2,PS2,PS,vinylaromatic,cyclohexane,34.5,primary,90000,Mw,24.8,1.06,baysal1992,,,baysal1992,10.1016/0032-3861(92)90695-S
+baysal1992-PS-PS3,PS3,PS,vinylaromatic,cyclohexane,34.5,primary,600000,Mw,70.0,1.08,baysal1992,,,baysal1992,10.1016/0032-3861(92)90695-S

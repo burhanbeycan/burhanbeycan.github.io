@@ -123,3 +123,34 @@ python scripts/plot-viscosity-ai.py --dist dist --output dist/PS_HPAM_AI_Sinamas
 ```
 
 Dokuz HPAM formülasyonu sırayla ayrıldığında, koşul başına RMSE kuvvet yasasında 1,781 mPa·s, ikinci derece Ridge modelinde 0,855 mPa·s ve aynı özniteliklerle cezasız ikinci derece modelde 0,685 mPa·s olur. Üç katsayı kümesi ve her katın hatası arayüzde karşılaştırılır.
+
+## Görülmemiş polimer ailelerinde intrinsik viskozite
+
+**family-viscosity.html** her saklı numune için deneysel [η] değerini, fiziksel modeli, ilave bilginin katkısını ve kaynak yayını gösterir. Bu ekranın hedefi sonsuz seyreltmedeki [η] (mL/g) değeridir. Sonlu derişimdeki dinamik viskozite ve kesme hızı için ayrı uygulamalar kullanılır.
+
+| Sınama | Eğitim dışında kalan | Varsayım ve sonuç |
+| --- | --- | --- |
+| Teta veya tetaya yakın koşullarda yapısal aktarım | Her turda bir omurga grubunun tüm kimyaları ve ölçümleri. 56 ölçüm, 5 kimya, 3 omurga grubu. | Her iki model [η] ∝ M^0,5 sınırını kullanır. İkinci model, tekrar birimindeki omurga bağ sayısının tekrar birimi mol kütlesine oranından öğrenilen düzenlileştirilmiş bir düzeltme kullanır. Her aile eşit ağırlık aldığında ortalama mutlak yüzde hata %30,06 ve %12,71 olur. Poliizobütilen grubunda hata %2,69'dan %3,54'e çıkar. |
+| İyi çözücüde aynı fraksiyonun zincir boyutu | Siklohekzandaki üç kimya ve iki geniş omurga grubu ayrı ayrı ayrılır. Ayrıca benzen içindeki polistiren (6) ve sulu pullulan (7), 22 eğitim ölçümünden bağımsızdır. | Mol kütlesi modeli ile ölçülmüş Rg kullanan [η] ∝ Rg³/M modeli aynı ölçümler üzerinde sınanır. Pullulanda MAPE %138,92'den %20,32'ye iner. Poliizopreni tek başına saklayınca %8,68'den %49,57'ye çıkar. |
+| PVOH'da hidroliz derecesi | Su ve DMSO'daki aynı ticari numune birlikte saklanır. 5 numune, 10 ortam–numune eşleşmesi, 25 °C. | Hidroliz yüzdesinin ortak bir terim olarak eklenmesiyle RMSE suda 13,87'den 6,34 mL/g'a iner, DMSO'da 13,42'den 18,03 mL/g'a çıkar. |
+
+56 ölçümün 28'inde derlemenin bildirdiği mutlak mol kütlesi kullanılmıştır. 19 poliizopren ölçümünde teta sıcaklığı yaklaşık verilir. Tüm ailelerin ortak 63–854 kg/mol bölgesinde yeniden uyum yapıldığında aile dengeli hata %32,80 ve %14,25'tir. Bu kontroller ve yalnız açıkça Mw olarak verilen gözlemleri seçmenin etkisi arayüzdeki duyarlılık dosyasında bulunur. Pullulanın yedi kaydı aynı araştırma grubunun tek deney serisidir. Ayrı bir çözücüyle birlikte bir polisakkarit omurgasına geçişi sınar. Boyutla koşullandırılan model her saklı fraksiyonun o ortamdaki bağımsız Rg ölçümünü gerektirir. Kayda ait [η]'den türetilen bir yarıçap girdi olarak kullanılamaz.
+
+Yeni ekranlar ve kaynaklar:
+
+- `repeat-viscosity.html` desteklenen kimyaların tekrar birimi ile teta kestirimini açar.
+- `pvoh-viscosity.html` Parisi ve arkadaşlarının numunelerindeki hidroliz derecesi, çözücü, M𝑤, [η] ve Huggins ölçümlerini karşılaştırır.
+- `family-inputs/` kaynak tabloları, birimler, veri seçimleri ve kat bazında model sonuçlarını içerir.
+
+```sh
+node scripts/validate-theta-families.cjs
+node scripts/theta-sensitivity.cjs
+node scripts/build-hydro-family.cjs dist
+node tests/test-theta-families.cjs
+node tests/test-hydro-family.cjs
+node tests/test-pvoh.cjs
+node tests/test-repeat-viscosity.cjs
+python scripts/plot-family-viscosity.py --dist dist --output dist/Aileler_Arasi_Viskozite.png
+```
+
+GitHub Pages ile çevrimdışı paketin düz dosya düzeninde `dist` yerine `.` kullanılabilir. Ölçüm derlemesi [Fetters ve ark.](https://doi.org/10.1063/1.555949) tarafından hazırlanmıştır. Birincil deneyler [Kato ve ark.](https://doi.org/10.1021/ma00139a016) ve [Parisi ve ark.](https://doi.org/10.1122/8.0000435) ile kaynak notlarında listelenen özgün saçılma ve viskozimetri yayınlarıdır.

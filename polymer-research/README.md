@@ -53,3 +53,9 @@ Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç g
 [Çözelti viskozitesi uygulamasını aç](polymer-phase-dissolution/viscosity.html). Polistiren numunesinin intrinsik viskozitesini ve derişimin viskozite üzerindeki etkisini yayımlanmış ölçümlerle incele.
 
 [PS için Huggins ve Gauss süreci modelini karşılaştır](polymer-phase-dissolution/viscosity-ai.html) · [HPAM derişim ve kayma hızı ölçümlerini incele](polymer-phase-dissolution/viscosity-formulation.html) · [Viskozite modelinin farklı numunelere aktarımını incele](polymer-phase-dissolution/viscosity-transfer.html).
+
+## Polimer aileleri arasında viskozite tahmini
+
+[Bir polimer ailesini uyum dışında bırakarak modeli sına](polymer-phase-dissolution/family-viscosity.html) · [Polivinil alkol çözeltisinin viskozitesini incele](polymer-phase-dissolution/pvoh-viscosity.html).
+
+[Tekrar biriminden viskozite veri kapsamını incele](polymer-phase-dissolution/repeat-viscosity.html).

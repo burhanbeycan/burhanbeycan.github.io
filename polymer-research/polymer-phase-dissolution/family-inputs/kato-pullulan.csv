@@ -1,0 +1,10 @@
+id,family,study,solvent,T_K,Mw_g_mol,Rg_nm,eta_mL_g,dispersity,quality,use_primary,notes,source_doi
+"P2000A","pullulan","kato1984","water-NaN3-0.2wt","298.15","2360000","75.2","338","1.27","primary","true","","10.1021/ma00139a016"
+"F81","pullulan","kato1984","water-NaN3-0.2wt","298.15","2100000","66","310","1.28","primary","true","","10.1021/ma00139a016"
+"P2000B","pullulan","kato1984","water-NaN3-0.2wt","298.15","1490000","56","250","1.21","primary","true","","10.1021/ma00139a016"
+"F83","pullulan","kato1984","water-NaN3-0.2wt","298.15","1050000","45","225","1.25","primary","true","","10.1021/ma00139a016"
+"P800","pullulan","kato1984","water-NaN3-0.2wt","298.15","811000","37.5","175","1.19","primary","true","","10.1021/ma00139a016"
+"F85","pullulan","kato1984","water-NaN3-0.2wt","298.15","572000","31.5","145","1.2","primary","true","","10.1021/ma00139a016"
+"P400","pullulan","kato1984","water-NaN3-0.2wt","298.15","384000","25.1","102","1.11","eta-truncated","false","[η] sütununda 1,02 sonrasındaki işaret/basamak belirsizdir. 102 mL/g yaklaşık değeri yalnız duyarlılık hesabı içindir.","10.1021/ma00139a016"
+"P200","pullulan","kato1984","water-NaN3-0.2wt","298.15","188000","17","70","1.11","primary","true","","10.1021/ma00139a016"
+"P100","pullulan","kato1984","water-NaN3-0.2wt","298.15","107000","15","44.2","1.09","radius-parenthesized","false","Kaynak Rg değerini parantez içinde vermiştir. Duyarlılık satırıdır.","10.1021/ma00139a016"

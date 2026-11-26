@@ -1,0 +1,189 @@
+{
+  "target": "İntrinsik viskozite; tüm uyum ve sınamalar seçili altkümede baştan hesaplanır.",
+  "status": "Ana sonuçlar görüldükten sonra tanımlanan keşifsel duyarlılık sınamaları. Varsayılan model veya ceza ayarı değişmedi.",
+  "full": {
+    "n": 56,
+    "familyCounts": {
+      "polydiene": 28,
+      "polyolefin": 7,
+      "vinylaromatic": 21
+    },
+    "familyMAPE": {
+      "polydiene": [
+        33.26137192101972,
+        19.48796655499137
+      ],
+      "polyolefin": [
+        2.69155420229328,
+        3.53672998245666
+      ],
+      "vinylaromatic": [
+        54.22694181837784,
+        15.110353255554271
+      ]
+    },
+    "macro": {
+      "theta": {
+        "n": 56,
+        "mae": 38.22520291591231,
+        "rmse": 71.39802282749154,
+        "mape": 30.059955980563615,
+        "rmse_pct": 37.64541519737402,
+        "bias": 22.9438311035109
+      },
+      "ridge": {
+        "n": 56,
+        "mae": 11.974862180569124,
+        "rmse": 18.112137755419145,
+        "mape": 12.7116832643341,
+        "rmse_pct": 15.835178571491982,
+        "bias": 2.9509816212856577
+      }
+    },
+    "micro": {
+      "theta": {
+        "n": 56,
+        "mae": 45.570936457714204,
+        "rmse": 76.40146787836402,
+        "mape": 37.302233417688214,
+        "rmse_pct": 41.73423919943121,
+        "bias": 22.648878739112085
+      },
+      "ridge": {
+        "n": 56,
+        "mae": 14.7758921800687,
+        "rmse": 20.176518919205474,
+        "mape": 15.852456996135617,
+        "rmse_pct": 18.392043026165997,
+        "bias": 1.2400713411435031
+      }
+    }
+  },
+  "excludeApproximateThetaTemperature": {
+    "n": 37,
+    "familyCounts": {
+      "polydiene": 9,
+      "polyolefin": 7,
+      "vinylaromatic": 21
+    },
+    "familyMAPE": {
+      "polydiene": [
+        46.72283297457594,
+        33.404899254342695
+      ],
+      "polyolefin": [
+        11.140204731261093,
+        10.414211261617993
+      ],
+      "vinylaromatic": [
+        66.9155172683911,
+        17.677551484305717
+      ]
+    },
+    "macro": {
+      "theta": {
+        "n": 37,
+        "mae": 49.250391547415624,
+        "rmse": 90.33081486084153,
+        "mape": 41.59285165807604,
+        "rmse_pct": 48.00254728193639,
+        "bias": 29.86107785584073
+      },
+      "ridge": {
+        "n": 37,
+        "mae": 17.027836579665852,
+        "rmse": 23.88093309365864,
+        "mape": 20.498887333422136,
+        "rmse_pct": 22.895187031873704,
+        "bias": 3.2165515968462466
+      }
+    },
+    "micro": {
+      "theta": {
+        "n": 37,
+        "mae": 72.61195353527194,
+        "rmse": 116.15727708170827,
+        "mape": 51.45169709530336,
+        "rmse_pct": 56.28603312175459,
+        "bias": 58.46299489547403
+      },
+      "ridge": {
+        "n": 37,
+        "mae": 20.577336156549727,
+        "rmse": 27.63132783398829,
+        "mape": 20.128977115968386,
+        "rmse_pct": 22.11692319187065,
+        "bias": 10.4988308988165
+      }
+    }
+  },
+  "commonMassRange": {
+    "min_g_mol": 63000,
+    "max_g_mol": 854000,
+    "n": 27,
+    "familyCounts": {
+      "polydiene": 15,
+      "polyolefin": 4,
+      "vinylaromatic": 8
+    },
+    "familyMAPE": {
+      "polydiene": [
+        34.634089333908385,
+        19.961447112960855
+      ],
+      "polyolefin": [
+        1.6706478423833122,
+        2.5364354509871365
+      ],
+      "vinylaromatic": [
+        62.10183921878541,
+        20.2428429347686
+      ]
+    },
+    "macro": {
+      "theta": {
+        "n": 27,
+        "mae": 18.730800070586056,
+        "rmse": 25.249500209445376,
+        "mape": 32.80219213169237,
+        "rmse_pct": 41.73457202282124,
+        "bias": 0.5277305027996407
+      },
+      "ridge": {
+        "n": 27,
+        "mae": 8.875238770719223,
+        "rmse": 12.912596233191628,
+        "mape": 14.246908499572195,
+        "rmse_pct": 17.547085549604354,
+        "bias": -1.8946104536285695
+      }
+    },
+    "micro": {
+      "theta": {
+        "n": 27,
+        "mae": 23.563383370828408,
+        "rmse": 28.64482775827711,
+        "mape": 37.889209078831215,
+        "rmse_pct": 43.34246377671145,
+        "bias": -6.7750659088156215
+      },
+      "ridge": {
+        "n": 27,
+        "mae": 11.834424320769529,
+        "rmse": 15.841908307492073,
+        "mape": 17.46334044357445,
+        "rmse_pct": 19.919759121619496,
+        "bias": -6.115324386476789
+      }
+    }
+  },
+  "onlyExplicitMw": {
+    "n": 28,
+    "families": [
+      "polyolefin",
+      "vinylaromatic"
+    ],
+    "eligibleForThreeFoldProtocol": false,
+    "reason": "Polidien kaynağı mutlak M bildirir. Sadece özgün M_w etiketleri tutulursa üç aileli sınama yapılamaz."
+  }
+}

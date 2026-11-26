@@ -147,6 +147,14 @@
       "Bu sonlu graf, su içindeki PEtOx trimer çiftinin model kimyasıyla eşleşiyor. Makroskopik faz hesabı için deneysel numunenin molar kütle dağılımı ve ölçüm koşulları ayrıca gerekli." :
       "Bu sonlu kimyasal yapı için eşleşmiş bir çözücü yörüngesi veya deneysel faz numunesi kayıtlı değil. Yapı bilgisi saklanabilir. Sonlu modelin kütlesi numunenin sayı veya ağırlık ortalamalı molar kütlesini belirlemez.";
     link("Bu yapı için çözeltideki zincir boyutunu incele", "chain.html?"+new URLSearchParams({source:"structure",system:"custom",name:s.formula+" · "+s.structure_id.slice(-10)}));
+    const thetaInput=new URLSearchParams({source:"structure"});
+    if (result.native && s.mode==="repeat" && s.architecture==="linear_backbone" && typeof s.recipe?.smiles==="string" && s.tacticity==="as_drawn") {
+      thetaInput.set("repeat",s.recipe.smiles);
+      link("Bu tekrar birimini teta viskozitesi hesabına aktar","repeat-viscosity.html?"+thetaInput);
+    } else {
+      thetaInput.set("repeat","");
+      link("Teta viskozitesi için iki bağlantı noktalı tekrar birimi gir","repeat-viscosity.html?"+thetaInput);
+    }
     if (result.exact) link("Bu kimyanın suyla temas filmini izle","contact.html");
     link("Bu yapı için çözelti viskozitesini incele", "viscosity.html?"+new URLSearchParams({source:"structure",system:"custom",name:s.formula+" · "+s.structure_id.slice(-10)}));
     const p=new URLSearchParams({system:"unsupported",name:(result.exact?"PEtOx trimeri · ":"")+s.formula+" · "+s.structure_id.slice(-10),structure_id:s.structure_id});
