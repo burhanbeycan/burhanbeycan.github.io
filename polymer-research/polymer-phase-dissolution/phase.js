@@ -39,7 +39,9 @@ function initSystem(){
   const preferred=query.get("sample")||"ps-sip-123000";if(ps.samples.some(s=>s.id===preferred)) sampleEl.value=preferred;
   chooseSample();
   fitEl.replaceChildren();for(const [i,m] of (ps.fits||[ps.fit]).entries()) option(fitEl,i,m.label||m.id);
-  const chosen=(ps.fits||[ps.fit]).findIndex(m=>m.id===ps.fit.id);fitEl.value=String(Math.max(0,chosen));
+  const fits = ps.fits || [ps.fit];
+  const requestedFit = fits.find(m => m.id === query.get("fit")) || ps.fit;
+  fitEl.value = String(Math.max(0, fits.findIndex(m => m.id === requestedFit.id)));
   selectedFit=(ps.fits||[ps.fit])[+fitEl.value];
  }else{selectedSample={N:100};selectedFit=theoretical;experiments=[];}
  const pT=query.get("T");setSliderRange(key==="ps"&&pT&&Number.isFinite(+pT)?+pT:undefined);
@@ -161,6 +163,12 @@ function update(){
  get("stateNote").textContent=note[res.label]+rich+(beyond?" Seçim, bu numunede ölçülen sıcaklık veya bileşim aralığının dışında.":"");
  drawDiagram(p,T);drawEnergy(p,eq);
  const queryK=new URLSearchParams({N:String(N),chi:String(c0),chi1:String(C),phi:String(p),mode:"quench"});if(sys.value==="ps")queryK.set("T",T);
+ const osmoticLink = get("osmoticTransfer");
+ osmoticLink.hidden = sys.value !== "ps";
+ if (sys.value === "ps") {
+   const condition = new URLSearchParams({sample: selectedSample.id, T: String(T), phi: String(p), model: selectedFit.id === "fh0" ? "fh0" : "cloud"});
+   osmoticLink.href = "osmotic.html?" + condition;
+ }
  const xfer=get("transfer");xfer.hidden=false;xfer.href="kinetics.html?"+queryK;
  get("transferText").textContent="Zincir hacim oranı, χ fonksiyonu ve ortalama bileşim aynı yerel serbest enerjiyle faz alanı çözücüsüne aktarılır. Kinetik zaman ve uzunluk indirgenmiş birimlerdedir.";
 }

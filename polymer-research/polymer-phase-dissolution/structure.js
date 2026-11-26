@@ -150,6 +150,10 @@
     const p=new URLSearchParams({system:"unsupported",name:(result.exact?"PEtOx trimeri · ":"")+s.formula+" · "+s.structure_id.slice(-10),structure_id:s.structure_id});
     link("Bu yapının faz verisi durumunu gör","phase.html?"+p);
     if (result.exact) link("PEtOx–su deneysel referans numunelerini aç","phase.html?system=petox");
+    if (s.net_charge === 0 && Number.isFinite(s.molar_mass) && s.molar_mass > 0) {
+      const condition = new URLSearchParams({finiteMass: String(s.molar_mass), formula: s.formula, charge: "0"});
+      link("Bu yapı için seyreltik ozmotik sınırı incele", "ideal-osmotic.html?" + condition);
+    }
     $("output").hidden=false; paint();
   }
   async function operation(task) {

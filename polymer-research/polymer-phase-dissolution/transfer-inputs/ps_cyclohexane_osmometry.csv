@@ -1,0 +1,6 @@
+source_doi,table,printed_page,polymer_fraction,method,mass_basis,Mn_g_mol,T_C,T_K,A2_mol_cm3_g-2,A2_standard_uncertainty,polymer_series
+10.1021/ja01523a003,III,3501,B-V-2,equilibrium membrane osmometry,osmotic number-average,144000,35,308.15,-0.0000070,,B
+10.1021/ja01523a003,III,3501,B-V-2,equilibrium membrane osmometry,osmotic number-average,139200,40,313.15,0.000019,,B
+10.1021/ja01523a003,III,3501,B-V-1,equilibrium membrane osmometry,osmotic number-average,208800,35,308.15,0.0000040,,B
+10.1021/ja01523a003,III,3501,B-V-1,equilibrium membrane osmometry,osmotic number-average,196500,40,313.15,0.000074,,B
+10.1021/ja01523a003,III,3501,B-II-3,equilibrium membrane osmometry,osmotic number-average,519000,35,308.15,0.000000,,B

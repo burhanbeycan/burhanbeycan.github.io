@@ -35,3 +35,7 @@ Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç g
 ## Polimer–çözücü faz davranışı ve çözünme
 
 [Yapı, faz dengesi ve kinetik uygulaması](polymer-phase-dissolution/README.md) · [İki PEtOx zinciri arasına giren suyu izle (MP4)](polymer-phase-dissolution/PEtOx_Iki_Temas.mp4)
+
+## Ozmotik Basınç ve Çözelti Etkileşimleri
+
+[PS–siklohekzanda ozmotik basıncı ve ikinci virial katsayısını incele](polymer-phase-dissolution/osmotic.html). Seyreltik çözelti ölçümlerinin, bulutlanma verileriyle kurulan serbest enerji modelini nasıl kısıtladığını inceleyebilirsin.
