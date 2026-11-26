@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="osmotic.css">
 <script defer src="measurements.js"></script><script defer src="phase-engine.js"></script><script defer src="transfer-results.js"></script><script defer src="osmotic-pressure-data.js"></script><script defer src="osmotic-engine.js"></script><script defer src="osmotic.js"></script>
 </head><body>
-<header><nav><a href="index.html">Polymer Research Studio</a><div><a href="ideal-osmotic.html">Kendi numunem</a><a href="phase.html?system=ps">Faz dengesi</a><a href="transfer.html">Deneysel sınama</a></div></nav></header>
+<header><nav><a href="index.html">Polymer Research Studio</a><div><a href="ideal-osmotic.html">Kendi numunem</a><a href="phase.html?system=ps">Faz dengesi</a><a href="dense.html">Derişik çözeltide basınç</a><a href="solvent-activity.html">Çözücü aktivitesi</a><a href="transfer.html">Deneysel sınama</a></div></nav></header>
 <main>
 <div class="mast"><p class="systemname">Polistiren / siklohekzan</p><h1>Ozmotik basınç ve çözelti etkileşimleri</h1><p>Çözeltiyi saf çözücüden ayıran bir zar yalnız çözücüyü geçiriyorsa, net çözücü akışını durdurmak için çözelti tarafına ne kadar basınç uygulamak gerekir? Numuneyi, sıcaklığı ve derişimi değiştirdikçe ozmotik izoterm yeniden hesaplanır.</p></div>
 <div id="unavailable" role="alert" hidden></div>
@@ -42,7 +42,7 @@
 <div class="scroll"><table><thead><tr><th scope="col">T (K)</th><th scope="col">c (g/L)</th><th scope="col">Ölçüm (kPa)</th><th scope="col">Bulutlanma (kPa)</th><th scope="col">Bulutlanma + A₂ (kPa)</th><th scope="col">Model faz sayısı¹</th></tr></thead><tbody id="externalRows"></tbody></table></div>
 <p class="small">¹ Sırasıyla yalnız bulutlanma ve bulutlanma + A₂ uyumları. Basınç, iki fazlı tahminlerde ortak teğetten hesaplanır. Kaynakta her basınç satırı için deneysel faz sayısı bildirilmemiştir. Bildirilen çalışma geneli hata yaklaşık %3’tür. Her nokta için ayrı bir standart sapma verilmemiştir.</p>
 <details><summary>Ölçülen basınç ve birim dönüşümü</summary><p>Kaynak, çözeltinin g/mL cinsinden derişimini ve indirgenmiş basıncı Q = 10⁶ Π/(RTc) biçiminde verir. Tablodaki kPa değerleri yuvarlanmış Q ile c çiftlerinden Π = 10⁻³ RTcQ üzerinden geri hesaplandı. Molar kütle dağılımı bu karşılaştırmada bilinmiyor. Dış numune tek etkin bileşenle temsil ediliyor.</p></details>
-<div class="links"><a href="https://doi.org/10.1021/ja01517a022">Krigbaum ve Geymer · Tablo I, s. 1862</a><button id="externalCsv" type="button">Ölçüm ve tahminleri indir</button></div>
+<div class="links"><a href="https://doi.org/10.1021/ja01517a022">Krigbaum ve Geymer · Tablo I, s. 1862</a><a href="dense.html">Derişik bölgede model hatasını incele</a><button id="externalCsv" type="button">Ölçüm ve tahminleri indir</button></div>
 </section>
 <details><summary>Basınç ve ikinci virial nasıl hesaplandı?</summary><p>İkili, sıkıştırılamaz çözeltide saf siklohekzan referans alınır. Ortak teğetin seçtiği fazda Δμ<sub>s</sub>/RT = f − φf′ ve Π = −Δμ<sub>s</sub>/V<sub>s</sub> kullanılır. Denge iki fazlıysa her iki fazda çözücünün kimyasal potansiyeli aynıdır. Toplam derişim faz oranlarını değiştirirken Π sabit kalır.</p>
 <p>İntegral etkileşim parametresi χ = A + B/T + Cφ olarak tanımlanır. c, g/mL olduğunda Π/(RT) = c/M<sub>n</sub> + A₂c² + … ifadesinin ikinci katsayısı A₂ = (v̄²/V<sub>s</sub>)(½ − A − B/T + C) olur. Her dar dağılımlı numune Mₙ kullanılarak tek etkin polimer bileşeni olarak temsil edilir. Ekrandaki derişim g/L cinsinden alınır.</p>

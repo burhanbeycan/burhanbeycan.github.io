@@ -1,0 +1,4 @@
+source_doi,primary_table,printed_page,fraction,Mn_g_mol,T_K,c_g_per_mL_solution,Q_1e6_Pi_over_RTc_mol_per_g,Pi_kPa_from_rounded_Q,source_tier
+10.1021/ja01517a022,I,1862,II,72000,317.15,0.0959,18.6,4.70360076,secondary_concentration
+10.1021/ja01517a022,I,1862,II,72000,317.15,0.178,28.1,13.18940557,cross_checked
+10.1021/ja01517a022,I,1862,II,72000,317.15,0.255,40.0,26.89670456,secondary_concentration

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153c37">
+<title>Çözücü aktivitesi · Polymer Research Studio</title>
+<link rel="stylesheet" href="activity-view.css">
+<script defer src="phase-engine.js"></script><script defer src="osmotic-engine.js"></script><script defer src="dense-engine.js"></script><script defer src="dense-results.js"></script><script defer src="activity-engine.js"></script><script defer src="activity-view.js"></script>
+</head>
+<body>
+<header><nav><a class="brand" href="index.html">Polymer Research Studio</a><div><a href="dense.html">Derişik çözeltide basınç</a><a href="phase.html?system=ps">Faz dengesi</a></div></nav></header>
+<main><p class="eyebrow">Polistiren / siklohekzan · Mₙ 72 kg/mol</p><h1>Çözücü aktivitesi</h1>
+<p class="intro">Polimer eklendiğinde siklohekzanın kimyasal potansiyeli nasıl değişir? Bir izoterm seçip modelin öngörüsünü aynı numunede izotermal damıtmayla ölçülen değerlerle karşılaştır.</p>
+<p role="alert" id="error" hidden>Hesabı açmak için uygulama paketindeki veri ve model dosyaları bu sayfayla aynı klasörde bulunmalı.</p>
+<div id="work" hidden>
+<section class="controls" aria-label="Hesap koşulları"><label>Sıcaklık<select id="activityT"><option value="307.15">34 °C · 307,15 K</option><option value="317.15">44 °C · 317,15 K</option></select></label><label>Grafikte göster<select id="quantity"><option value="activity">Çözücü aktivitesi · aₛ</option><option value="minusLogA">−ln aₛ</option><option value="deltaMu_J_mol">Δμₛ · J/mol</option></select></label><label class="range">Polimer hacim kesri <output id="phiText" for="phi"></output><input type="range" id="phi" min="0" max="0.70" step="0.001" value="0.546"></label></section>
+<div class="workspace"><section class="chart"><h2 id="chartTitle">Siklohekzanın aktivitesi</h2>
+<svg id="isotherm" viewBox="0 0 596 300" role="img" aria-label="Polimer hacim kesri boyunca iki model öngörüsü ve bağımsız yöntemle ölçülen noktalar"></svg>
+<div class="key"><span><i class="line"></i>Önceki model</span><span><i class="line new"></i>Basınca uydurulan model</span><span><i class="dot"></i>Damıtma ölçümü</span></div>
+<p class="caption">Renkli bant, basınç deneylerinde örneklenen bileşim aralığını gösterir. Bütün damıtma noktaları bu aralığın dışındadır.</p></section>
+<aside><h2>Seçili bileşim</h2><p id="condition"></p>
+<dl><div><dt>Önceki model</dt><dd id="oldValue"></dd></div><div><dt>Basınca uydurulan model</dt><dd id="newValue"></dd></div><div><dt>Damıtma ölçümü</dt><dd id="observedValue"></dd></div></dl><a id="osmoticLink" href="osmotic.html">Önceki modelin basıncını aç</a></aside></div>
+<section class="obs"><div class="section-head"><div><h2>Damıtma ölçümleri</h2><p>Bir bileşime dokunarak grafikteki karşılığını incele.</p></div><button id="saveCsv">Veri ve model sonuçlarını indir</button></div>
+<div class="scroll" tabindex="0" role="region" aria-label="Damıtma verileri ve tahminler"><table><thead><tr><th>Polimer hacim kesri</th><th>Ölçüm</th><th>Önceki model</th><th>Basınca uydurulan model</th></tr></thead><tbody id="recordBody"></tbody></table></div><p class="score" id="assessment"></p></section>
+<section class="obs"><h2>Yüksek polimer kesrinde iki model neden birleşiyor?</h2><p>Tek fazlı bölgede ek terimin −ln aₛ üzerindeki etkisi Dφ³(2 − 3φ) olur. φ = ⅔ olduğunda bu katkı sıfırlanır. 44 °C’de φ = 0,660 ölçümü bu sınırın çok yakınındadır. Bu noktada ölçüme göre aktivite sapması iki modelde de yaklaşık 0,037’dir.</p></section>
+<details><summary>Bu karşılaştırma hangi fiziksel varsayımlara dayanıyor?</summary>
+<p>Referans aynı sıcaklık ve basınçtaki saf sıvı siklohekzandır. Çözücünün molar kimyasal potansiyel farkı Δμₛ = RT ln aₛ olur. Sıkıştırılamaz kafes modelinde sabit çözücü molar hacmiyle ln aₛ = −ΠVₛ/(RT) elde edilir. İki faz dengedeyken çözücü aktivitesi her iki fazda aynıdır.</p>
+<p>Eski model bulutlanma ve seyreltik ikinci virial katsayısına uyduruldu. Aday model buna ek olarak sekiz membran ozmometrisi kaydıyla belirlenen Dφ² terimini içerir. Düzeltme, ikinci virial katsayısını korur ama üçüncü virial katsayısını değiştirir. Burada iki model de damıtma verileri görülmeden belirlenen katsayıları kullanır. Bu karşılaştırma aynı çalışmadaki aynı fraksiyonda ölçüm yöntemleri arası aktarımı sınar.</p>
+<p>Krigbaum ve Geymer, izotermal damıtmada kalibre edilmiş bir trifenilmetan referans çözeltisi kullandı. Tablodaki deneysel sütun, yazarların verdiği −ΔF̄₁/(RT) değeridir. Ekranda bundan −ln aₛ, aₛ ve Δμₛ türetilir. Tek tek ölçümler için hata çubuğu bildirilmemiştir.</p>
+<a href="https://doi.org/10.1021/ja01517a022">Krigbaum ve Geymer (1959), Tablo III, s. 1864</a> · <a href="transfer-inputs/ACTIVITY.md">Veri kaynağı ve kapsam</a> · <a href="transfer-inputs/ps_cyclohexane_activity.csv">Tablo III aktarımı (CSV)</a></details>
+</div><noscript>Model ve etkileşimli grafik için JavaScript gerekir.</noscript></main></body></html>

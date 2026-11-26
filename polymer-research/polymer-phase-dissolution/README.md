@@ -71,3 +71,19 @@ python tests/test_transfer.py
 node tests/test_osmotic.cjs
 python scripts/plot_transfer.py dist/transfer-results.js dist/PS_Siklohekzan_Dis_Sinama.png
 ```
+
+## Derişik çözeltide basınç ve çözücü aktivitesi
+
+`dense.html` PS–siklohekzan için Mₙ = 72 kg/mol numunesinin basınç izotermlerini açar. Temel modelin A, B, C katsayıları önceki sürümdeki bulutlanma ve A₂ uyumundan alınır. İntegral χ'ye eklenen Dφ² terimi her veri bölmesinde yalnız eğitim basınçlarına uydurulur. 24 °C serisi, 34 °C serisi veya iki izotermin en yüksek derişimleri sırayla dışarıda bırakılır. Sekiz noktanın tamamına uydurulan katsayı ayrıca 44 °C'de sınanır. Bu seride iki kaynakta doğrulanan bir derişim ana sonuçtur. Kalan iki derişimin ikincil kaynağa dayandığı duyarlılık görünümünde belirtilir.
+
+`solvent-activity.html` aynı fraksiyonda izotermal damıtma ile elde edilen, eğitimde kullanılmamış beş aktiviteyi inceler. Saf siklohekzan referanslı aₛ, −ln aₛ ve Δμₛ arasında geçiş yapılabilir. Bu karşılaştırmada ölçüm yöntemi ve bileşim aralığı birlikte değişir. Kaynak kayıtları ve belirsiz basamaklar `transfer-inputs/ACTIVITY.md` ile `transfer-inputs/PRESSURE44.md` dosyalarında açıklanır.
+
+Aday modelin bağımsız θ bölgesi verisiyle çelişen negatif üçüncü virial katsayısı nedeniyle önceki uygulamanın varsayılanı korunur. A₃ ≥ 0 işaret kısıtı çoğu uydurmada A₃ = 0 sınırına gelir. Bu sınır da ölçülen pozitif büyüklüğün yeniden üretildiğini göstermez. İzoterm eğrileri denge serbest enerjisinden hesaplanır. Modelin iki fazlı bölgesinde ortak teğet platosu oluşur. Basınç noktalarının deneysel faz sayısı bilinmiyor.
+
+```sh
+node scripts/fit-dense.cjs
+node tests/test-dense.cjs
+node tests/test_activity.cjs
+```
+
+İsteğe bağlı Eφ³ duyarlılık hesabı `python scripts/probe-e.py` komutuyla yeniden üretilebilir (NumPy ve SciPy). Bu model, Dφ² sonuçları incelendikten sonra tasarlandı.
