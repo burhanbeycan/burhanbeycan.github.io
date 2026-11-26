@@ -1,0 +1,21 @@
+<!doctype html><html lang="tr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173b37">
+<title>Yapı atölyesi · Polymer Research Studio</title>
+<link rel="stylesheet" href="chem/editor.css"><link rel="stylesheet" href="structure.css">
+<script defer src="chem/ocl-vendor.js"></script><script defer src="chem/editor.js"></script><script defer src="chem/reference.js"></script><script defer src="structure.js"></script>
+</head><body>
+<header><nav><a href="index.html">Polymer Research Studio</a><div><a href="phase.html">Faz dengesi</a><a href="contact.html">Moleküler film</a></div></nav></header>
+<main><h1>Yapı atölyesi</h1><p class="intro">Sonlu zincirini çiz, SMILES ile gir veya önceki hesabını aç. Önce kimyasal yapıyı ve uzaydaki konformerini incele, sonra aynı yapı için mevcut çözücü sonuçlarına geç.</p>
+<section aria-label="Girdi"><h2>Kimyasal yapı</h2><div class="modes" aria-label="Girdi yöntemi">
+<button type="button" data-tab="smiles" aria-pressed="true">SMILES</button><button type="button" data-tab="sketch" aria-pressed="false">Atom atom çiz</button><button type="button" data-tab="import" aria-pressed="false">JSON kaydı aç</button></div>
+<div data-pane="smiles"><label for="smiles">Uç grupları dâhil sonlu zincirin SMILES gösterimi</label><textarea id="smiles" rows="2" maxlength="1800" autocomplete="off" spellcheck="false"></textarea><button class="primary" id="build">3B konformeri oluştur</button></div>
+<div data-pane="sketch" hidden><div id="sketch"></div><button class="primary" id="build-sketch">Çizimden 3B konformer oluştur</button></div>
+<div data-pane="import" hidden><label for="import-file">Yapı ve Konformer Enerjisi uygulamasından indirilen konformer JSON dosyası veya burada kaydettiğin yapı</label><input type="file" id="import-file" accept=".json,application/json"></div>
+<details><summary>Tekrar birimi, dizi, yıldız polimer veya taktisite ile çalış</summary><p>Yapı ve Konformer Enerjisi uygulaması iki bağlantı noktalı tekrar birimleri, A/B dizileri, yıldız kolları ve uygun vinil zincirlerinin taktisitesi için sonlu modeli kurar. İndirilen arşivdeki README kurulum adımlarını içerir. Sonuç ekranında <b>JSON indir</b> seçeneğini kullanıp dosyayı burada açabilirsin.</p><a href="chem/polymer-structure-energy-1.0.0.zip" download>Yapı ve Konformer Enerjisi 1.0.0 (ZIP)</a></details>
+<p><button id="reference" class="secondary">MD çalışmasındaki PEtOx trimerinin kaydını aç</button></p><div role="status" aria-live="polite" id="status"></div>
+</section>
+<div id="output" hidden><div class="results">
+<section><h2>Sonlu yapı</h2><dl id="identity"></dl><details><summary>SMILES, stereokimya ve yapı kaydı</summary><div id="detail"></div></details><button type="button" id="save">Bu yapıyı JSON olarak kaydet</button></section>
+<section><h2>3B konformer</h2><canvas id="geometry" width="600" height="400" aria-label="Üç boyutlu molekül görünümü">3B görünüm</canvas><div id="geom-controls"><button id="turn" type="button">90° döndür</button> <label><input type="checkbox" id="hs"> Hidrojenleri göster</label></div><p id="geom-note"></p></section>
+</div><section><h2>Bu yapıya bağlı sonuçlar</h2><p id="scope"></p><div class="actions" id="next"></div></section></div>
+</main></body></html>

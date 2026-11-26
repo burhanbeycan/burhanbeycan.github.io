@@ -31,3 +31,7 @@ LDI–PEG/PCL esaslı üretan zincirlerini, PEtOx hidrolizini ve diziye bağlı 
 Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç gruplarını karşılaştırır ve birbiriyle temas eden iki oligomerin sudaki hareketini gerçek atomistik karelerden izletir. Koşu girdileri, ham koordinatlar ve analizler birlikte sunulur.
 
 [Hidratasyon çalışması ve sonuçları](polymer-solvent-md/hydration/README.md) · [Uygulamayı ve ham verileri indir](downloads/polymer-solvent-md-1.1.0/README.md)
+
+## Polimer–çözücü faz davranışı ve çözünme
+
+[Yapı, faz dengesi ve kinetik uygulaması](polymer-phase-dissolution/README.md) · [İki PEtOx zinciri arasına giren suyu izle (MP4)](polymer-phase-dissolution/PEtOx_Iki_Temas.mp4)
