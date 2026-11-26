@@ -1,0 +1,7 @@
+id,label,source_id,Mw_g_mol,Rg_nm,Rg_reported_pm_nm,T_K,method,role,source_doi,table,printed_page,numeric_crosscheck_doi
+BK2500-4,BK2500-4,miyaki1978,8790000,87.9,2,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949
+BK2500-3,BK2500-3,miyaki1978,15200000,116,2,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949
+BK2500-2,BK2500-2,miyaki1978,23500000,145,3,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949
+BK2500-1,BK2500-1,miyaki1978,32000000,167,4,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949
+IK1500-2,IK1500-2,miyaki1978,38000000,183,4,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949
+IK1500-1,IK1500-1,miyaki1978,55700000,228,5,307.65,Statik ışık saçılması,calibration,10.1021/ma60066a022,I,1183,10.1063/1.555949

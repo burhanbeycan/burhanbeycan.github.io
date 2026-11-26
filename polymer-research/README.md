@@ -43,3 +43,7 @@ Modelin 1.1 sürümü, H/H uçlu PEtOx'un örneklemesini uzatır, kimyasal uç g
 ## Derişik çözeltide ozmotik basınç ve çözücü aktivitesi
 
 [PS–siklohekzan basınç ölçümlerini modellerle karşılaştır](polymer-phase-dissolution/dense.html). [Çözücü aktivitesini incele](polymer-phase-dissolution/solvent-activity.html).
+
+## Zincir boyutu ve örtüşme
+
+[Zincir boyutunu ve örtüşme derişimini incele](polymer-phase-dissolution/chain.html). Jirasyon yarıçapını ve çözeltinin derişimini birlikte değerlendir. [İki çözücüde aynı zincirin boyutunu karşılaştır](polymer-phase-dissolution/chain-solvents.html).

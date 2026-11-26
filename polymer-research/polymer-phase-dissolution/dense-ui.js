@@ -99,6 +99,7 @@
   function renderRecord() {
     const r=getRecord();
     if (!r) return;
+    $('chainLink').href='chain.html?'+new URLSearchParams({source:'dense',system:'ps',sample:'ps-kg-fr2',T:String(r.T_K),c:String(r.c_g_L),Mn:String(results.sample.Mn_g_mol),phaseCount:String(r.base_phases)});
     $('sampleRole').textContent=auxiliary(r)
       ? 'Sınama ölçümü · derişim ikincil kaynaktan'
       : r.role==='test'?'Sınama ölçümü · D uyumunun dışında':'Uyum ölçümü · D değerinin belirlenmesinde';

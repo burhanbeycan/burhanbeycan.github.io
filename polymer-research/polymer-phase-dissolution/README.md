@@ -87,3 +87,12 @@ node tests/test_activity.cjs
 ```
 
 İsteğe bağlı Eφ³ duyarlılık hesabı `python scripts/probe-e.py` komutuyla yeniden üretilebilir (NumPy ve SciPy). Bu model, Dφ² sonuçları incelendikten sonra tasarlandı.
+
+## Zincir boyutu ve örtüşme
+
+- **chain.html** altı lineer PS fraksiyonunun siklohekzanda 34,5 °C ölçülmüş seyreltik Rg verisini kullanır. Bir çalışma içinde fraksiyon dışarıda bırakma sınaması, ayrı yayından düşük kütleli iki SAXS ölçümü ve indirilebilir ebeveyn-seri sınaması ayrı raporlanır. Model seçenekleri logaritmik uyum ve sabit θ üssüdür. İstenilen başka bir numunede ölçülmüş Mw ile aynı koşuldaki Rg verilirse geometrik örtüşme hesabı yapılır. Sıcaklık, numune ve mol kütlesi türü önceki uygulamalardan aktarılır.
+- **chain-solvents.html** aynı altı fraksiyonun benzendeki 25 °C ve siklohekzandaki 34,5 °C ölçümlerini kimlik üzerinden eşler. Her iki ortamdaki Rg, Mw, geometrik c* ve seçilen derişimdeki c/c* gösterilir. Kaynaklar Miyaki, Einaga ve Fujita'nın Tablo I'i ile sayıları yeniden basan Fetters ve arkadaşlarının Tablo 7 ve 8'idir. Karşılaştırma çözücü ile birlikte sıcaklığın da değiştiği bu koşullara aittir.
+- **chain-rotation.mp4** 64 adımlı tek bir θ Gauss konformasyonunun 8 saniyelik rijit dönüşüdür. Uzunluk ölçeği IK1500-1'in ölçülen kareli-ortalama Rg değeridir. Hesap, tek tek konformasyonların boyutunu sonradan bu değere eşitlemez. Tarayıcıdaki etkileşimli zincir görünümü farklı tohumlardan yeni bağımsız örnekler oluşturur. Zaman ölçeği veya kinetik parametre uydurulmaz.
+- **solvent-activity.html** basınç uyumuna alınmayan iki ek ozmometri fraksiyonunun 13 damıtma kaydına aktarım sonuçlarını içerir. Bu numuneler saçılma fraksiyonlarıyla eşleştirilmez.
+
+Kaynak izleri, ham saçılma kayıtları, sayısal kontroller ve birimler `chain-inputs/` altında sunulur. `node tests/test-chain.cjs` sayısal kontrolleri çalıştırır. `node scripts/chain-validation.cjs` doğrulama raporunu, `node scripts/check_mass_activity.cjs` önceki özellik uygulamasının damıtma sınamasını üretir. `python scripts/render_chain_rotation.py` MP4'ü yerel Node, Pillow ve FFmpeg ile yeniden oluşturur.

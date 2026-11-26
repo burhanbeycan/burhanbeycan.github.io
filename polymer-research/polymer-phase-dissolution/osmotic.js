@@ -136,6 +136,11 @@
     $('domain').textContent='Bulutlanma kalibrasyonu '+format(vdata.T_K[0],5)+'–'+format(vdata.T_K[1],5)+' K ve φ = '+format(vdata.phi[0])+'–'+format(vdata.phi[1])+'. '+(isExt?'Fraksiyon II bağımsız basınç numunesidir.':inSample?'Bu seçim numunenin kayıtlı sıcaklık ve bileşim aralıklarında.':'Bu seçimin sıcaklığı veya bileşimi, numuneye ait bulutlanma kayıt aralığının dışında.')+($('model').value==='joint'&&experimentalT?' Ek ozmotik veri '+format(experimentalT[0],5)+'–'+format(experimentalT[1],5)+' K aralığında.':'');
     const a2Text=s.A2>0?'Seyreltik limitte A₂ pozitiftir ve net iki-zincir etkileşimi ideal katkıya göre basıncı artırır.':s.A2<0?'Seyreltik limitte A₂ negatiftir ve net iki-zincir etkileşimi ideal katkıya göre basıncı düşürür.':'İkinci virial terimi bu modelde sıfırdır.';
     $('regime').textContent=point.phase.count===2?'Bu ortalama derişimde dengedeki iki fazın bileşimleri φ₁ = '+scientific(s.eq.bin[0])+' ve φ₂ = '+scientific(s.eq.bin[1])+'. Basınç aynı çözücü kimyasal potansiyelinden hesaplanır. '+a2Text:a2Text;
+    const coil=new URLSearchParams({source:'osmotic',system:'ps',sample:sample.id,T:numberInput(T),c:numberInput(c),Mn:String(sample.Mn_g_mol)});
+    coil.set('phaseCount',String(point.phase.count));
+    if(point.phase.count===2 && s.eq.bin){coil.set('cLean',String(s.eq.bin[0]*1000/v));coil.set('cRich',String(s.eq.bin[1]*1000/v));}
+    if (sample.Mw_g_mol>0) coil.set('Mw',String(sample.Mw_g_mol));
+    $('chainLink').href='chain.html?'+coil;
     const params=new URLSearchParams({system:'ps',sample:sample.id,T:numberInput(T),phi:numberInput(point.phi)});
     const fitCode=$('model').value==='fh0'?'fh0':$('model').value==='cloud'?'fh1':'combined';
     params.set('fit',fitCode);

@@ -165,6 +165,15 @@ function update(){
  const queryK=new URLSearchParams({N:String(N),chi:String(c0),chi1:String(C),phi:String(p),mode:"quench"});if(sys.value==="ps")queryK.set("T",T);
  const osmoticLink = get("osmoticTransfer");
  osmoticLink.hidden = sys.value !== "ps";
+ const chainLink=get("chainTransfer");chainLink.hidden=sys.value!=="ps";
+ if(sys.value==="ps"){
+   const v=window.EVIDENCE.systems.ps.volume_model.polymer_specific_volume_mL_g;
+   const q=new URLSearchParams({system:"ps",source:"phase",sample:selectedSample.id,T:String(T),c:String(1000*p/v),Mn:String(selectedSample.Mn_g_mol)});
+   q.set("phaseCount",String(res.count));
+   if(res.count===2 && eq.bin){q.set("cLean",String(eq.bin[0]*1000/v));q.set("cRich",String(eq.bin[1]*1000/v));}
+   if (selectedSample.Mw_g_mol>0) q.set("Mw",String(selectedSample.Mw_g_mol));
+   chainLink.href="chain.html?"+q;
+ }
  if (sys.value === "ps") {
    const condition = new URLSearchParams({sample: selectedSample.id, T: String(T), phi: String(p), model: selectedFit.id === "fh0" ? "fh0" : "cloud"});
    osmoticLink.href = "osmotic.html?" + condition;

@@ -70,6 +70,7 @@
     $('newValue').textContent=f(ext)+unit;
     $('observedValue').classList.toggle('no',!match);
     $('observedValue').textContent=match?f(match.observed[key])+unit:'Bu bileşimde ölçüm yok';
+    $('activityChain').href='chain.html?'+new URLSearchParams({source:'activity',system:'ps',sample:'ps-kg-fr2',T:String(T),c:String(p*1000/window.DENSE_RESULTS.sample.vbar_ml_g),Mn:'72000'});
     $('osmoticLink').href='osmotic.html?'+new URLSearchParams({sample:'ps-kg-fr2',model:'joint',T:String(T),phi:String(p)});
     const body=$('recordBody'); body.replaceChildren();
     for (const r of series) {

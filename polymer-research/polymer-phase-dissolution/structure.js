@@ -146,6 +146,7 @@
     $("scope").textContent = result.exact ?
       "Bu sonlu graf, su içindeki PEtOx trimer çiftinin model kimyasıyla eşleşiyor. Makroskopik faz hesabı için deneysel numunenin molar kütle dağılımı ve ölçüm koşulları ayrıca gerekli." :
       "Bu sonlu kimyasal yapı için eşleşmiş bir çözücü yörüngesi veya deneysel faz numunesi kayıtlı değil. Yapı bilgisi saklanabilir. Sonlu modelin kütlesi numunenin sayı veya ağırlık ortalamalı molar kütlesini belirlemez.";
+    link("Bu yapı için çözeltideki zincir boyutunu incele", "chain.html?"+new URLSearchParams({source:"structure",system:"custom",name:s.formula+" · "+s.structure_id.slice(-10)}));
     if (result.exact) link("Bu kimyanın suyla temas filmini izle","contact.html");
     const p=new URLSearchParams({system:"unsupported",name:(result.exact?"PEtOx trimeri · ":"")+s.formula+" · "+s.structure_id.slice(-10),structure_id:s.structure_id});
     link("Bu yapının faz verisi durumunu gör","phase.html?"+p);

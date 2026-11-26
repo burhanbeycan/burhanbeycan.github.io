@@ -22,6 +22,13 @@
       Number.isFinite(kelvin) && kelvin > 0 && Number.isFinite(c) && c >= 0;
     el("pi").textContent = "—";
     el("detail").textContent = "";
+    el("chainLink").hidden = !ok;
+    if (ok) {
+      const next=new URLSearchParams({source:"osmotic",system:"custom",Mn:String(mn),T:String(kelvin),c:String(c)});
+      if (basis === "mw") next.set("Mw",String(valueOf("mw")));
+      if (basis === "species") next.set("Mw",String(finiteMass));
+      el("chainLink").href="chain.html?"+next;
+    }
     if (!ok) {
       el("note").textContent = charge !== 0 ? "Aktarılan molekül net yük taşıyor. Karşı iyonların katkısı için polielektrolit modeli gerekir." : "Geçerli bir mol kütlesi, sıcaklık ve derişim seçin. Dispersite en az 1 olmalıdır.";
       return;
